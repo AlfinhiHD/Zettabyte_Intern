@@ -1,2 +1,2 @@
 # Zettabyte_Intern
-Github repository for Zettabyte Internship
+Github repository for Zettabyte Pre Internship
