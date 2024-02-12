@@ -21,7 +21,7 @@ var majorityElement = function(nums) {
             // Simpan jumlah kemunculan nilai mayoritas sementara
             max = map[nums[i]];
         }
-        // console.log(`Iterasi ke-${i + 1}: ${nums[i]}, Jumlah Kemunculan: ${map[nums[i]]}, Mayoritas Sementara: ${majorNum}, Nilai Max Saat Ini: ${max}`);
+        // console.log(`Jumlah Kemunculan: ${map[nums[i]]}, Mayoritas Sementara: ${majorNum}, Nilai Max Saat Ini: ${max}`);
     }
 
     return majorNum;
@@ -29,3 +29,5 @@ var majorityElement = function(nums) {
 
 console.log(majorityElement([2, 2, 1, 2, 1, 2, 2, 3, 3, 3, 3, 1, 1])); //2
 console.log(majorityElement([2, 2, 1, 2, 1, 2, 0, 0, 3, 0, 0, 0, 0])); //0
+console.log(majorityElement([3, 2, 3])); // Output: 3 
+console.log(majorityElement([2, 2, 1, 1, 1, 2, 2])); // Output: 2 

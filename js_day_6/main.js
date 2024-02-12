@@ -63,10 +63,12 @@ function bookPurchase(bookDetails, discountPercentage, taxPercentage, purchasedA
 
   const monthlyPayment = totalAmount / creditTerm;
 
-  const dueDates = Array.from({ length: creditTerm }, (_, i) => {
+  console.log(creditTerm);
+  const dueDates = Array.from({ length: creditTerm }, (_, inDueDate) => {
     const nextMonth = new Date();
-    nextMonth.setMonth(nextMonth.getMonth() + i + 1);
+    nextMonth.setMonth(nextMonth.getMonth() + inDueDate + 1);
     return {
+      month: inDueDate + 1,
       dueDate: nextMonth.toDateString(),
       paymentAmount: monthlyPayment,
     };
@@ -85,7 +87,3 @@ function bookPurchase(bookDetails, discountPercentage, taxPercentage, purchasedA
 }
 
 bookPurchase(bookDetails[1], discountPercentage, taxPercentage, purchasedAmount, creditTerm);
-
-
-
-
