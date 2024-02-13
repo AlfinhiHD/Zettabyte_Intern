@@ -89,7 +89,7 @@ function shuffleArray(array) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
-  console.log(array);
+  // console.log(array);
   return array;
 }
 
@@ -97,7 +97,6 @@ function makePlaylist(songs) {
   let playlist = [];
   let playlistDuration = 0;
   let shuffledSongs = shuffleArray(songs);
-  let remainingSongs = [];
 
   shuffledSongs.forEach((song) => {
     const songDuration = durationToSeconds(song.duration);
@@ -117,17 +116,15 @@ function makePlaylist(songs) {
     .toString()
     .padStart(2, '0')}:${totalDurationSS.toString().padStart(2, '0')}`;
 
-  // playlist["total_duration"] = totalDurationFormatted;
-
   return { playlist, totalDurationFormatted };
 }
 
 console.log('Grouped songs by artist', groupByArtist('mic ha el'));
 console.log('\n');
-// console.log("Grouped songs by genre", groupByGenre("p"));
-// console.log("\n");
+console.log("Grouped songs by genre", groupByGenre("p"));
+console.log("\n");
 
-// const { playlist, totalDurationFormatted } = makePlaylist(songs);
-// console.log('Playlist:', playlist);
-// console.log('')
-// console.log('Total Durasi Playlist : ', totalDurationFormatted)
+const { playlist, totalDurationFormatted } = makePlaylist(songs);
+console.log('Playlist', playlist);
+console.log('')
+console.log('Total Durasi Playlist : ', totalDurationFormatted)
