@@ -52,7 +52,7 @@ const songs = [
   { title: 'Brown Eyed Girl', artist: 'Van Morrison', genre: 'Rock', duration: '00:03:05' },
   { title: 'You Shook Me All Night Long', artist: 'AC/DC', genre: 'Rock', duration: '00:03:30' },
 
-  // > 10 meniit Duration
+  // > 15 meniit Duration
   { title: 'Surah An-Naba', artist: 'Nur Hanif', genre: 'Religi', duration: '00:30:50' },
   { title: "Surah An-Nazi'at", artist: 'Nur Hanif', genre: 'Religi', duration: '00:20:00' },
   { title: 'Surah Ab-Basa', artist: 'Nur Hanif', genre: 'Religi', duration: '00:25:50' },
@@ -66,46 +66,50 @@ const songs = [
 ];
 
 function durationToSeconds(duration) {
-  const [hours, minutes, seconds] = duration.split(':').map(parseFloat);
+  const [hours, minutes, seconds] = duration.split(':').map(Number);
   return hours * 3600 + minutes * 60 + seconds;
 }
 
 function groupByArtist(character) {
-  const artistSongs = songs.filter((song) => song.artist.toLowerCase().replace(/\s+/g, '').includes(character.toLowerCase()));
+  const artistSongs = songs.filter((song) =>
+    song.artist.toLowerCase().replace(/\s+/g, '').includes(character.toLowerCase().replace(/\s+/g, ''))
+  );
   return artistSongs;
 }
 
 function groupByGenre(character) {
-  const genreSongs = songs.filter((song) => song.genre.toLowerCase().replace(/\s+/g, '').includes(character.toLowerCase()));
+  const genreSongs = songs.filter((song) =>
+    song.genre.toLowerCase().replace(/\s+/g, '').includes(character.toLowerCase().replace(/\s+/g, ''))
+  );
   return genreSongs;
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  console.log(array);
+  return array;
 }
 
 function makePlaylist(songs) {
   let playlist = [];
   let playlistDuration = 0;
-  let shuffledSongs = shuffle(songs);
+  let shuffledSongs = shuffleArray(songs);
   let remainingSongs = [];
 
   shuffledSongs.forEach((song) => {
     const songDuration = durationToSeconds(song.duration);
+    // console.log(songDuration)
     if (playlistDuration + songDuration <= 3600) {
       playlist.push(song);
       playlistDuration += songDuration;
     } else {
-      remainingSongs.push(song);
     }
   });
 
-  if (playlistDuration < 3600 && remainingSongs.length > 0) {
-    remainingSongs.forEach((song) => {
-      const songDuration = durationToSeconds(song.duration);
-      if (playlistDuration + songDuration <= 3600) {
-        playlist.push(song);
-        playlistDuration += songDuration;
-      }
-    });
-  }
-
+  //Format second to HH:MM:SS
   const totalDurationHH = Math.floor(playlistDuration / 3600);
   const totalDurationMM = Math.floor((playlistDuration % 3600) / 60);
   const totalDurationSS = playlistDuration % 60;
@@ -113,23 +117,17 @@ function makePlaylist(songs) {
     .toString()
     .padStart(2, '0')}:${totalDurationSS.toString().padStart(2, '0')}`;
 
-  return { playlist, totalDuration: totalDurationFormatted };
+  // playlist["total_duration"] = totalDurationFormatted;
+
+  return { playlist, totalDurationFormatted };
 }
 
-function shuffle(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-}
+console.log('Grouped songs by artist', groupByArtist('mic ha el'));
+console.log('\n');
+// console.log("Grouped songs by genre", groupByGenre("p"));
+// console.log("\n");
 
-
-console.log("Grouped songs by artist", groupByArtist("edshe"));
-console.log("/n")
-console.log("Grouped songs by genre", groupByGenre("p"));
-console.log("/n");
-
-const { playlist, totalDuration } = makePlaylist(songs);
-console.log('Playlist:', playlist);
-console.log('Total Duration:', totalDuration);
+// const { playlist, totalDurationFormatted } = makePlaylist(songs);
+// console.log('Playlist:', playlist);
+// console.log('')
+// console.log('Total Durasi Playlist : ', totalDurationFormatted)
