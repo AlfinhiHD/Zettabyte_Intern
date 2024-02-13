@@ -96,7 +96,7 @@ function shuffleArray(array) {
 function makePlaylist(songs) {
   let playlist = [];
   let playlistDuration = 0;
-  let shuffledSongs = shuffleArray(songs);
+  const shuffledSongs = shuffleArray(songs);
 
   shuffledSongs.forEach((song) => {
     const songDuration = durationToSeconds(song.duration);
@@ -104,7 +104,6 @@ function makePlaylist(songs) {
     if (playlistDuration + songDuration <= 3600) {
       playlist.push(song);
       playlistDuration += songDuration;
-    } else {
     }
   });
 
@@ -121,7 +120,7 @@ function makePlaylist(songs) {
 
 console.log('Grouped songs by artist', groupByArtist('mic ha el'));
 console.log('\n');
-console.log("Grouped songs by genre", groupByGenre("p"));
+console.log("Grouped songs by genre", groupByGenre("pop "));
 console.log("\n");
 
 const { playlist, totalDurationFormatted } = makePlaylist(songs);
