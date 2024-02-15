@@ -58,7 +58,7 @@ function findUserByTotalAddresses(totalAddresses) {
 }
 
 let usersWithTwoAddresses = findUserByTotalAddresses(2);
-console.log(Object.values(usersWithTwoAddresses));
+console.log(JSON.stringify(usersWithTwoAddresses));
 
 // // Fungsi sorting pengguna berdasarkan tanggal lahir (asc/desc) dan abjad kota (asc/desc)
 // function sortUsers(byBirthdate = "asc", byCity = "asc") {
