@@ -1,6 +1,6 @@
 const users = [
   {
-    FirstName: 'Varick',
+    FirstName: "Varic'k",
     LastName: 'Tovandy',
     Birthday: '2003/01/12',
     Address: [
@@ -32,13 +32,19 @@ const users = [
     Address: [
       {
         Street: 'Park Blvd, 456 Elm St',
-        City: 'Champaign',
+        City: "",
+        Province: 'IL',
+        PostalCode: '61820',
+      },
+      {
+        Street: 'Park Blvd, 456 Elm St',
+        City: "Zu0hampaign",
         Province: 'IL',
         PostalCode: '61820',
       },
       {
         Street: 'Lakeview Dr, 789 Oak St',
-        City: 'Urbana',
+        City: "Zu'rbana",
         Province: 'IL',
         PostalCode: '61801',
       },
@@ -353,68 +359,75 @@ const users = [
   },
 ];
 
-// function findUser(fullName) {
-//     const formattedFullName = fullName.toLowerCase().replace(/\s+/g, '');
+function findUser(fullName) {
+  const formattedFullName = fullName.toLowerCase().replace(/([^\w]+|\s+)/g, '');
 
-//     return users.filter(user =>
-//         `${user.FirstName.toLowerCase()}${user.LastName.toLowerCase()}`.includes(formattedFullName)
-//     );
-// }
+  return users.filter((user) =>
+    `${user.FirstName.toLowerCase().replace(/([^\w]+|\s+)/g, '')}${user.LastName.toLowerCase().replace(/([^\w]+|\s+)/g, '')}`.includes(
+      formattedFullName
+    )
+  );
+}
 
-// let searchedUser = findUser("ricktov");
-// console.log(searchedUser);
+let searchedUser = findUser('ricktov');
+console.log(searchedUser);
 
-// function findUserByTotalAddresses(totalAddresses) {
-//   return users.filter(user => user.Address.length === totalAddresses);
-// }
+function findUserByTotalAddresses(totalAddresses) {
+  const totalUsers = [...users];
 
-// let usersWithTwoAddresses = findUserByTotalAddresses(2);
-// console.log(usersWithTwoAddresses);
+  return totalUsers.filter((user) => user.Address.length === totalAddresses);
+}
 
-// function dateFormated(dateString) {
-//   const dateObject = new Date(dateString);
-//   console.log(dateObject)
-//   return dateObject;
-// }
+let usersWithTwoAddresses = findUserByTotalAddresses(5);
+console.log(usersWithTwoAddresses);
 
-// function sortUsersByAge(ascending = true) {
-//   const sortedUsers = users.sort((user1, user2) => {
-//     const age1 = dateFormated(user1.Birthday);
-//     const age2 = dateFormated(user2.Birthday);
-//     console.log(age1 - age2)
-//     return ascending ? age1 - age2 : age2 - age1;
-//   });
-//   return sortedUsers;   
-// }
+function dateFormated(dateString) {
+  const dateObject = new Date(dateString);
+  // console.log(dateObject)
+  return dateObject;
+}
 
-// console.log('Ascending:');
-// console.log(sortUsersByAge(true));
-// console.log('Descending:');
-// console.log(sortUsersByAge(false));
+function sortUsers(users, sortBy, isDescending = false) {
+  const sortedUsers = [...users];
 
-function sortUsersByCity(users, isDescending = false) {
-    const sortedUsers = [...users];
-  
-    // Sorting each user's addresses by city alphabetically
-    sortedUsers.forEach((user) => {
-      user.Address.sort((a, b) => a.City.localeCompare(b.City));
+  if (sortBy === 'age' || sortBy === 'Age') {
+    sortedUsers.sort((user1, user2) => {
+      const age1 = dateFormated(user1.Birthday);
+      const age2 = dateFormated(user2.Birthday);
+      return isDescending ? age2 - age1 : age1 - age2;
     });
-  
-    // Sorting users based on the first address city alphabetically
+  } else if (sortBy === 'city' || sortBy === 'City') {
+    sortedUsers.forEach((user) => {
+      user.Address.sort((a, b) => (isDescending ? b.City.localeCompare(a.City) : a.City.localeCompare(b.City)));
+    });
+
     sortedUsers.sort((a, b) => {
       const cityA = a.Address[0].City;
       const cityB = b.Address[0].City;
-      return isDescending ? cityB.localeCompare(cityA) : cityA.localeCompare(cityB);
+      let comparison = cityA.localeCompare(cityB);
+      if (comparison === 0) {
+        const minLength = Math.min(cityA.length, cityB.length);
+        let inCity = 0;
+        while (inCity < minLength && cityA[inCity] === cityB[inCity]) {
+          inCity++;
+        }
+        comparison = cityA[inCity] ? (cityB[inCity] ? cityA[inCity].localeCompare(cityB[inCity]) : 1) : cityB[inCity] ? -1 : 0;
+      }
+      return isDescending ? comparison * -1 : comparison;
     });
-  
-    return sortedUsers;
   }
-  
-  const sortedUserByCityAscending = sortUsersByCity(users);
-  console.log("Ascending:");
-  console.log(JSON.stringify((sortedUserByCityAscending),null,2));
 
-  const sortedUserByCityDescending = sortUsersByCity(users, true);
-  console.log("Descending:");
-  console.log(JSON.stringify((sortedUserByCityDescending),null,2));
+  return sortedUsers;
+}
 
+//Age Descending
+console.log(JSON.stringify(sortUsers(users, 'Age', true), null, 2));
+
+//Age Ascending
+console.log(JSON.stringify(sortUsers(users, 'age'), null, 2));
+
+//Address Descdending
+console.log(JSON.stringify(sortUsers(users, 'City', true), null, 2));
+
+//Address Ascending
+console.log(JSON.stringify(sortUsers(users, 'city'), null, 2));
