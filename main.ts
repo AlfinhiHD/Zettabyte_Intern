@@ -1,10 +1,17 @@
-function getSubstring(inputString: string, startIndex: number, endIndex: number): string {
-    return inputString.substring(startIndex, endIndex);
+type SubstringParams = {
+    testString: string;
+    startIndex: number;
+    endIndex: number;
 }
 
-const testString: string = "Learning Typescript is different than Javascript";
-const startIndex: number = 9;
-const endIndex: number = 19;
+function getSubstring(substringParams: SubstringParams): string {
+    return substringParams.testString.substring(substringParams.startIndex, substringParams.endIndex);
+}
 
-const result: string = getSubstring(testString, startIndex, endIndex);
+const result: string = getSubstring({
+    testString: "Learning Typescript is different than Javascript",
+    startIndex: 9,
+    endIndex: 19
+});
+
 console.log(result);
