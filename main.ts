@@ -1,4 +1,4 @@
-// // First function
+// // FUNGSI KE-1
 // function combineArray(arr: (number | string)[]): string {
 //   return arr.join(' ');
 // }
@@ -9,11 +9,11 @@
 // // Case 2
 // console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car']));
 
-// Second function
+// FUNGSI KE-2
 function sumOrConcat(arr: any[]): string | number {
   if (arr.every((item) => typeof item === 'number')) {
     // return arr.reduce((acc, curr) => acc + curr, 0);
-    
+
     let sum: number = 0;
     arr.forEach((el: number) => (sum += el));
     return sum;
@@ -33,7 +33,7 @@ console.log(sumOrConcat(['the', 'dolphins', 'of', 'zettacamp'])); // Output: 'th
 // Case 3
 console.log(sumOrConcat(['Bejo', 'has', 4, 'sport', 'car'])); // Output: 'invalid input'
 
-// // Third function
+// // FUNGSI KE-3
 // type Product = {
 //   name: string;
 //   vendor: string;
