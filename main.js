@@ -9,7 +9,11 @@
 // Second function
 function sumOrConcat(arr) {
     if (arr.every(function (item) { return typeof item === 'number'; })) {
-        return arr.reduce(function (acc, curr) { return acc + curr; }, 0);
+        // return arr.reduce((acc, curr) => acc + curr, 0);
+        var sum_1 = 0;
+        arr.forEach(function (el) { return (sum_1 += el); });
+        console.log(sum_1);
+        return sum_1;
     }
     else if (arr.every(function (item) { return typeof item === 'string'; })) {
         return arr.join(' ');

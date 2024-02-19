@@ -10,25 +10,28 @@
 // console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car']));
 
 // Second function
-function sumOrConcat(arr: (any)[]): any {
-    if (arr.every((item) => typeof item === 'number')) {
-      return arr.reduce((acc, curr) => acc + curr, 0);
-    } else if (arr.every((item) => typeof item === 'string')) {
-      return arr.join(' ');
-    } else {
-      return 'invalid input';
-    }
+function sumOrConcat(arr: any[]): string | number {
+  if (arr.every((item) => typeof item === 'number')) {
+    // return arr.reduce((acc, curr) => acc + curr, 0);
+    
+    let sum: number = 0;
+    arr.forEach((el: number) => (sum += el));
+    return sum;
+  } else if (arr.every((item) => typeof item === 'string')) {
+    return arr.join(' ');
+  } else {
+    return 'invalid input';
   }
-  
-  // Case 1
-  console.log(sumOrConcat([1, 2, 3, 4])); // Output: 10
-  
-  // Case 2
-  console.log(sumOrConcat(['the', 'dolphins', 'of', 'zettacamp'])); // Output: 'the dolphins of zettacamp'
-  
-  // Case 3
-  console.log(sumOrConcat(['Bejo', 'has', 4, 'sport', 'car'])); // Output: 'invalid input'
+}
 
+// Case 1
+console.log(sumOrConcat([1, 2, 3, 4])); // Output: 10
+
+// Case 2
+console.log(sumOrConcat(['the', 'dolphins', 'of', 'zettacamp'])); // Output: 'the dolphins of zettacamp'
+
+// Case 3
+console.log(sumOrConcat(['Bejo', 'has', 4, 'sport', 'car'])); // Output: 'invalid input'
 
 // // Third function
 // type Product = {
