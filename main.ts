@@ -14,7 +14,7 @@ console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car'])); // Expect : ‘
 
 // FUNGSI KE-2
 function sumOrConcat(arrayInput: stringNumArrtype): stringNumtype {
-  
+
   if (typeof arrayInput[0] === 'undefined') {
     return 'invalid input';
   }
@@ -22,7 +22,7 @@ function sumOrConcat(arrayInput: stringNumArrtype): stringNumtype {
     return arrayInput.reduce((acc, curr) => +acc + +curr, 0);
 
     // let sum: number = 0;
-    // arrayInput.forEach((el: number) => (sum += el));
+    // arrayInput.forEach((el) => (sum += +el));
     // return sum;
 
     // let sum: number = 0;

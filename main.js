@@ -15,7 +15,7 @@ function sumOrConcat(arrayInput) {
     else if (arrayInput.every(function (item) { return typeof item === 'number'; })) {
         return arrayInput.reduce(function (acc, curr) { return +acc + +curr; }, 0);
         // let sum: number = 0;
-        // arrayInput.forEach((el: number) => (sum += el));
+        // arrayInput.forEach((el) => (sum += +el));
         // return sum;
         // let sum: number = 0;
         // for (let i = 0; i < arrayInput.length; i++) {
