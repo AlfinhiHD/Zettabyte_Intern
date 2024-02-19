@@ -9,7 +9,6 @@ console.log(combineArray([1, 'data', '3', 'result'])); // Expect : ‘1 data 3 r
 console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car'])); // Expect : ‘Bejo has 4 sport car’
 // FUNGSI KE-2
 function sumOrConcat(arrayInput) {
-    // Array with Empty value
     if (typeof arrayInput[0] === 'undefined') {
         return 'invalid input';
     }
