@@ -4,13 +4,13 @@ function combineArray(arr) {
 }
 console.log("\nOutput fungsi ke-1");
 // Case 1
-console.log(combineArray([1, 'data', '3', 'result']));
+console.log(combineArray([1, 'data', '3', 'result'])); // Expect : ‘1 data 3 result’
 // Case 2
-console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car']));
+console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car'])); // Expect : ‘Bejo has 4 sport car’
 // FUNGSI KE-2
 function sumOrConcat(arr) {
     if (arr.every(function (item) { return typeof item === 'number'; })) {
-        return arr.reduce(function (acc, curr) { return +acc + +curr; });
+        return arr.reduce(function (acc, curr) { return +acc + +curr; }, 0);
         // let sum: number = 0;
         // arr.forEach((el: number) => (sum += el));
         // return sum;
