@@ -2,34 +2,28 @@
 // function combineArray(arr: (number | string)[]): string {
 //   return arr.join(' ');
 // }
-
 // // Case 1
 // console.log(combineArray([1, 'data', '3', 'result']));
-
 // // Case 2
 // console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car']));
-
 // Second function
-function sumOrConcat(arr: (any)[]): any {
-    if (arr.every((item) => typeof item === 'number')) {
-      return arr.reduce((acc, curr) => acc + curr, 0);
-    } else if (arr.every((item) => typeof item === 'string')) {
-      return arr.join(' ');
-    } else {
-      return 'invalid input';
+function sumOrConcat(arr) {
+    if (arr.every(function (item) { return typeof item === 'number'; })) {
+        return arr.reduce(function (acc, curr) { return acc + curr; }, 0);
     }
-  }
-  
-  // Case 1
-  console.log(sumOrConcat([1, 2, 3, 4])); // Output: 10
-  
-  // Case 2
-  console.log(sumOrConcat(['the', 'dolphins', 'of', 'zettacamp'])); // Output: 'the dolphins of zettacamp'
-  
-  // Case 3
-  console.log(sumOrConcat(['Bejo', 'has', 4, 'sport', 'car'])); // Output: 'invalid input'
-
-
+    else if (arr.every(function (item) { return typeof item === 'string'; })) {
+        return arr.join(' ');
+    }
+    else {
+        return 'invalid input';
+    }
+}
+// Case 1
+console.log(sumOrConcat([1, 2, 3, 4])); // Output: 10
+// Case 2
+console.log(sumOrConcat(['the', 'dolphins', 'of', 'zettacamp'])); // Output: 'the dolphins of zettacamp'
+// Case 3
+console.log(sumOrConcat(['Bejo', 'has', 4, 'sport', 'car'])); // Output: 'invalid input'
 // // Third function
 // type Product = {
 //   name: string;
@@ -38,26 +32,21 @@ function sumOrConcat(arr: (any)[]): any {
 //   inStock: number;
 //   price: number;
 // };
-
 // type SimplifiedProduct = {
 //   name: string;
 //   buyable: boolean;
 //   totalPrice?: number;
 // };
-
 // function transformProduct(product: Product): SimplifiedProduct {
 //   const simplifiedProduct: SimplifiedProduct = {
 //     name: product.name,
 //     buyable: product.inStock > 0,
 //   };
-
 //   if (simplifiedProduct.buyable) {
 //     simplifiedProduct.totalPrice = product.quantity * product.price;
 //   }
-
 //   return simplifiedProduct;
 // }
-
 // // Case 1
 // const product1: Product = {
 //   name: 'Coca Cola',
@@ -67,7 +56,6 @@ function sumOrConcat(arr: (any)[]): any {
 //   price: 5000,
 // };
 // console.log(transformProduct(product1));
-
 // // Case 2
 // const product2: Product = {
 //   name: 'Sari Roti',
