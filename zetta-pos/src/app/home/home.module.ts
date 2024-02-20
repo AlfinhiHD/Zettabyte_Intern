@@ -18,9 +18,6 @@ import { HomeComponent } from './home.component';
     CommonModule
   ],
   exports: [
-    FeatureComponent,
-    HeroComponent,
-    TestimonialComponent,
     HomeComponent
   ]
 })
