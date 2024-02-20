@@ -15,7 +15,10 @@ console.log(combineArray(['Bejo', 'has', '4', 'sport', 'car'])); // Expect : ‘
 // FUNGSI KE-2
 function sumOrConcat(arrayInput: stringNumArrtype): stringNumtype {
 
-  if (typeof arrayInput[0] === 'undefined') {
+  // if (typeof arrayInput[0] === 'undefined') {
+  //   return 'invalid input';
+  // }
+  if (arrayInput.length <= 0) {
     return 'invalid input';
   }
   else if (arrayInput.every((item) => typeof item === 'number')) {
@@ -62,7 +65,7 @@ type SimplifiedProduct = {
   totalPrice?: number;
 };
 
-function transformProduct(product: Product): SimplifiedProduct {
+function transformProduct(product: Product): {} {
   const simplifiedProduct: SimplifiedProduct = {
     name: product.name,
     buyable: product.inStock > 0,
