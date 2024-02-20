@@ -18,9 +18,6 @@ import { AboutComponent } from './about.component';
     CommonModule
   ],
   exports: [
-    AddressComponent,
-    TeamComponent,
-    ContactComponent,
     AboutComponent
   ]
 })
