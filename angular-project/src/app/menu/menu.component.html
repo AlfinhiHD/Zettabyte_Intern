@@ -1,1 +1,15 @@
-<p>menu works!</p>
+<h1>Menu App</h1>
+<button (click)="toggleMenu()">Toggle Menu</button>
+
+<div *ngIf="showMenu">
+  <div *ngFor="let menu of menus">
+    <app-card-menu [menu]="menu"></app-card-menu>
+  </div>
+</div>
+
+<!-- <div *ngIf="selectedMenu">
+  <h2>{{ selectedMenu.name }}</h2>
+  <img [src]="selectedMenu.image" [alt]="selectedMenu.name">
+  <p>{{ selectedMenu.description }}</p>
+</div> -->
+
