@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CardMenuComponent } from './card-menu/card-menu.component';
 import { MenuComponent } from './menu.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -11,7 +12,9 @@ import { MenuComponent } from './menu.component';
     MenuComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
+
   ],
   exports: [
     CardMenuComponent,

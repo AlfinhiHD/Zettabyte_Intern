@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+  searchTerm: string = '';
   showMenu: boolean = false;
   menus: any[] = [
     {
@@ -34,9 +35,9 @@ export class MenuComponent implements OnInit {
     },
     {
       image:
-        '',
+        'https://asset.kompas.com/crops/hgYCTwrFpAN5wQ35-Z2STU9C0vQ=/3x0:700x465/750x500/data/photo/2020/11/08/5fa7d069849e2.jpg',
       name: 'Soto Ayam',
-      desc: '',
+      desc: 'Soto ayam adalah makanan berupa sup ayam yang berisi potongan daging ayam, bihun, dan sayuran.',
     },
     {
       image:
@@ -48,6 +49,10 @@ export class MenuComponent implements OnInit {
 
   toggleMenu() {
     this.showMenu = !this.showMenu;
+  }
+
+  get filteredMenus(): any[] {
+    return this.menus.filter(menu => menu.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
 
   constructor() {}
