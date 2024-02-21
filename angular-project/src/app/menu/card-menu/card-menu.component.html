@@ -1,8 +1,8 @@
-<div class="card mb-5" style="width: 25rem;">
-    <img [src]="menu.image" class="card-img-top" [alt]="menu.name">
-    <!-- <img src="{{menu.image}}" class="card-img-top" alt="{{menu.name}}"> -->
-    <div class="card-body">
-      <h5 class="card-title">{{menu.name}}</h5>
-      <p class="card-text">{{menu.desc}}</p>
-    </div>
+<div class="card mb-5" [style.width]="cardWidth">
+  <img [src]="menu.image" class="card-img-top" [alt]="menu.name" />
+  <!-- <img src="{{menu.image}}" class="card-img-top" alt="{{menu.name}}"> -->
+  <div class="card-body">
+    <h5 class="card-title">{{ menu.name }}</h5>
+    <p class="card-text">{{ menu.desc }}</p>
   </div>
+</div>

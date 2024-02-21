@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./menu.component.scss'],
 })
 export class MenuComponent implements OnInit {
+
+  backgroundColor: any = "#f0f0f0"
   searchTerm: string = '';
   showMenu: boolean = false;
   menus: any[] = [
@@ -58,8 +60,12 @@ export class MenuComponent implements OnInit {
 
   ];
 
+  changeBackground() {
+    this.backgroundColor = null;   
+  }
+
   toggleMenu() {
-    this.showMenu = !this.showMenu;
+    this.showMenu = !this.showMenu;   
   }
 
   get filteredMenus(): any[] {

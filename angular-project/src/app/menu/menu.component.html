@@ -1,7 +1,14 @@
-<div
+<button type="button" class="btn btn-warning" (click)="changeBackground()">
+  Hilangkan background dibawah
+</button>
+
+<!-- <div
   class="d-flex flex-column align-items-center pb-5"
-  style="background-color: #f0f0f0"
->
+  [style]="'background-color:' + backgroundColor"
+> -->
+<div
+class="d-flex flex-column align-items-center pb-5"
+[attr.style]="'background-color:' + backgroundColor">
   <h1 class="mt-5">Warung Makan</h1>
   <p class="fw-semibold">Sehat Sejahtera Abadi</p>
 

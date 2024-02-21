@@ -8,6 +8,8 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 export class CardMenuComponent implements OnInit {
   @Input() menu: any ={};
 
+  cardWidth: string = "25rem"
+
   constructor() {}
 
   ngOnInit(): void {}
