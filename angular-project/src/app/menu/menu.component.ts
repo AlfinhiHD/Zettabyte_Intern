@@ -10,6 +10,7 @@ export class MenuComponent implements OnInit {
   backgroundColor: any = "#f0f0f0"
   searchTerm: string = '';
   showMenu: boolean = false;
+  
   menus: any[] = [
     {
       image:
@@ -72,7 +73,8 @@ export class MenuComponent implements OnInit {
     return this.menus.filter(menu => menu.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
 
-  constructor() {}
+  constructor() {
+  }
 
   ngOnInit(): void {}
 }

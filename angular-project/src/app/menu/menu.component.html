@@ -28,8 +28,8 @@ class="d-flex flex-column align-items-center pb-5"
 
 <div *ngIf="showMenu" class="ms-5 mt-5">
   <div class="row">
-    <div *ngFor="let menu of filteredMenus" class="col-md-4">
-      <app-card-menu [menu]="menu"></app-card-menu>
+    <div *ngFor="let menus of filteredMenus" class="col-md-4">
+      <app-card-menu [menu]="menus"></app-card-menu>
     </div>
   </div>
 </div>
