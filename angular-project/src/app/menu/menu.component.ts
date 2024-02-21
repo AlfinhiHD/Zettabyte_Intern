@@ -45,6 +45,17 @@ export class MenuComponent implements OnInit {
       name: 'Bakso',
       desc: 'Bakso adalah makanan berupa bola daging yang terbuat dari campuran daging sapi, tepung tapioka, dan bumbu-bumbu tertentu.',
     },
+    {
+      image: 'https://cdn0-production-images-kly.akamaized.net/WZYZPMA5TseXST9AWCrnATkrGGo=/62x841:5670x4000/469x260/filters:quality(75):strip_icc():format(webp)/kly-media-production/medias/2978831/original/070900100_1574827507-shutterstock_1375884227.jpg',
+      name: 'Sambal Goreng Kentang',
+      desc: 'Sambal goreng kentang adalah makanan yang terbuat dari kentang yang digoreng dan dicampur dengan sambal, santan, dan bumbu-bumbu lainnya.',
+    },
+    {
+      image: 'https://asset.kompas.com/crops/95lbOeaNwZJy00eSdngWHEzuO4w=/0x381:667x826/750x500/data/photo/2021/03/17/60515f1ed8d5c.jpeg',
+      name: 'Kue Lapis Ketan',
+      desc: 'Kue lapis ketan adalah kue tradisional Indonesia yang terbuat dari ketan yang dikukus lapis demi lapis dengan warna yang berbeda.',
+    },
+
   ];
 
   toggleMenu() {

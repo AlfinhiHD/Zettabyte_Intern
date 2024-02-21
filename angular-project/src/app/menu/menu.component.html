@@ -1,15 +1,28 @@
-<div class="d-flex flex-column align-items-center">
-  <h1>Menu App</h1>
-  <input type="text" class="form-control" placeholder="Search" [(ngModel)]="searchTerm">
-  <button type="button" class="btn btn-primary" (click)="toggleMenu()">
-    Toggle Menu
+<div
+  class="d-flex flex-column align-items-center pb-5"
+  style="background-color: #f0f0f0"
+>
+  <h1 class="mt-5">Warung Makan</h1>
+  <p class="fw-semibold">Sehat Sejahtera Abadi</p>
+
+  <button type="button" class="btn btn-success" (click)="toggleMenu()">
+    Munculkan menu makanan
   </button>
+  <input
+    type="text"
+    class="form-control w-50 my-4"
+    placeholder="Search by menu name"
+    [(ngModel)]="searchTerm"
+  />
+  <div *ngIf="searchTerm">
+    <p>Anda sedang mencari {{ searchTerm }}</p>
+  </div>
 </div>
 
 <div *ngIf="showMenu" class="ms-5 mt-5">
-    <div class="row">
-      <div *ngFor="let menu of filteredMenus" class="col-md-4">
-        <app-card-menu [menu]="menu"></app-card-menu>
-      </div>
+  <div class="row">
+    <div *ngFor="let menu of filteredMenus" class="col-md-4">
+      <app-card-menu [menu]="menu"></app-card-menu>
     </div>
   </div>
+</div>
