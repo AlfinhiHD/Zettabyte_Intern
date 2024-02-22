@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Hero } from '../helpers/hero.interface';
 
 @Component({
   selector: 'app-hero-card',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./hero-card.component.scss'],
 })
 export class HeroCardComponent implements OnInit {
-  @Input() hero: any ={};
+  @Input() hero: Hero;
 
   cardWidth: string = "22rem"
   showDetails: boolean = false;
