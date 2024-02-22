@@ -4,7 +4,6 @@ import { Component, OnInit, ViewEncapsulation } from '@angular/core';
   selector: 'app-superheroes',
   templateUrl: './superheroes.component.html',
   styleUrls: ['./superheroes.component.scss'],
-  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class SuperheroesComponent implements OnInit {
 
