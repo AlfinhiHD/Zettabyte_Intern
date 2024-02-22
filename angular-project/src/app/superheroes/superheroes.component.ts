@@ -1,11 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-superheroes',
   templateUrl: './superheroes.component.html',
   styleUrls: ['./superheroes.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class SuperheroesComponent implements OnInit {
+
+  searchTerm: string = '';
+
+  searchSuperheroes(searchTerm: string): void {
+    this.searchTerm = searchTerm;
+  }
+
   heroes: any[] = [
     //ganti nanti tipe datanya
     {
@@ -87,6 +95,10 @@ export class SuperheroesComponent implements OnInit {
   addSuperhero(superhero: { name: string, actor: string, detail: string, image?: string }): void {
     this.heroes.push(superhero);
     // this.newSuperhero = { name: '', actor: '', detail: '', image: '' };
+  }
+
+  get filteredSuperheroes(): any[] {
+    return this.heroes.filter(hero => hero.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
 
   constructor() {}

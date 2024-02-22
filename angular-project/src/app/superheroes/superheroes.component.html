@@ -1,17 +1,4 @@
-<div class="hero-banner">
-  <div class="hero-background-image">
-    <div class="hero-content">
-      <h1 class="fw-bold">Superheroes Wiki</h1>
-      <p>Your superheroes wiki app</p>
-      <input
-        type="text"
-        class="form-control mt-5"
-        placeholder="Search superheroes"
-      />
-    </div>
-  </div>
-</div>
-
+<app-hero-banner (search)="searchSuperheroes($event)"> </app-hero-banner>
 <div class="hero-add-forms">
   <app-add-hero-form (addSuperhero)="addSuperhero($event)"></app-add-hero-form>
 </div>

@@ -4,6 +4,7 @@ import { HeroCardComponent } from './hero-card/hero-card.component';
 import { SuperheroesComponent } from './superheroes.component';
 import { AddHeroFormComponent } from './add-hero-form/add-hero-form.component';
 import { FormsModule } from '@angular/forms';
+import { HeroBannerComponent } from './hero-banner/hero-banner.component';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     HeroCardComponent,
     SuperheroesComponent,
-    AddHeroFormComponent
+    AddHeroFormComponent,
+    HeroBannerComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { FormsModule } from '@angular/forms';
   exports: [
     HeroCardComponent,
     SuperheroesComponent,
-    AddHeroFormComponent
+    AddHeroFormComponent,
+    HeroBannerComponent
   ]
 })
 export class SuperheroesModule { }
