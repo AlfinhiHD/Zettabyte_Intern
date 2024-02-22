@@ -1,9 +1,9 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-add-hero-form',
   templateUrl: './add-hero-form.component.html',
-  styleUrls: ['./add-hero-form.component.scss'],
+  styleUrls: ['./add-hero-form.component.scss']
 })
 export class AddHeroFormComponent implements OnInit {
   @Output() addSuperhero: EventEmitter<{
