@@ -8,12 +8,12 @@ import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@ang
 })
 export class HeroBannerComponent implements OnInit {
 
-  @Output() search: EventEmitter<string> = new EventEmitter<string>();
+  @Output() searchOutput = new EventEmitter<string>();
 
   searchTerm: string = '';
 
   onSearch(): void {
-    this.search.emit(this.searchTerm);
+    this.searchOutput.emit(this.searchTerm);
   }
 
   constructor() { }

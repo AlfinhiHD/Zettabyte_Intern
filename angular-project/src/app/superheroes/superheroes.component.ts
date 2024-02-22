@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Hero } from './helpers/hero.interface';
 
 @Component({
   selector: 'app-superheroes',
@@ -14,8 +15,7 @@ export class SuperheroesComponent implements OnInit {
     this.searchTerm = searchTerm;
   }
 
-  heroes: any[] = [
-    //ganti nanti tipe datanya
+  heroes: Hero[] = [
     {
       name: 'Spider-Man',
       actor: 'Tom Holland',
@@ -90,14 +90,11 @@ export class SuperheroesComponent implements OnInit {
     },
   ];
 
-  // newSuperhero: { name: string, actor: string, detail: string, image?: string } = { name: '', actor: '', detail: '', image: '' };
-
-  addSuperhero(superhero: { name: string, actor: string, detail: string, image?: string }): void {
+  addSuperhero(superhero: Hero): void {
     this.heroes.push(superhero);
-    // this.newSuperhero = { name: '', actor: '', detail: '', image: '' };
   }
 
-  get filteredSuperheroes(): any[] {
+  get filteredSuperheroes(): Hero[] {
     return this.heroes.filter(hero => hero.name.toLowerCase().includes(this.searchTerm.toLowerCase()));
   }
 

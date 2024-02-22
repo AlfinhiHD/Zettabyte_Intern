@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@angular/core';
+import { Hero } from '../helpers/hero.interface';
 
 @Component({
   selector: 'app-add-hero-form',
@@ -6,24 +7,9 @@ import { Component, EventEmitter, OnInit, Output, ViewEncapsulation } from '@ang
   styleUrls: ['./add-hero-form.component.scss']
 })
 export class AddHeroFormComponent implements OnInit {
-  @Output() addSuperhero: EventEmitter<{
-    name: string;
-    actor: string;
-    detail: string;
-    image?: string;
-  }> = new EventEmitter<{
-    name: string;
-    actor: string;
-    detail: string;
-    image?: string;
-  }>();
+  @Output() addSuperhero: EventEmitter<Hero> = new EventEmitter<Hero>();
 
-  newSuperhero: {
-    name: string;
-    actor: string;
-    detail: string;
-    image?: string;
-  } = { name: '', actor: '', detail: '', image: '' };
+  newSuperhero: Hero = { name: '', actor: '', detail: '', image: '' };
 
   submitForm(): void {
     this.addSuperhero.emit(this.newSuperhero);
