@@ -3,10 +3,10 @@
   <div class="card-body">
     <h5 class="card-title">{{ hero.name }}</h5>
     <p class="card-text">{{ hero.actor }}</p>
-    <button type="btn btn-primary">Show more detail</button>
-    <hr />
-    <div *ngIf="">
-      <p></p>
+    <button type="button" class="btn btn-danger" (click)="toggleDetails()">Show details</button>
+    <div *ngIf="showDetails">
+      <hr>
+      <p class="mt-4">{{hero.detail}}</p>
     </div>
   </div>
 </div>
