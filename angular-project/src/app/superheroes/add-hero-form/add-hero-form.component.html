@@ -1,19 +1,45 @@
-<form (ngSubmit)="submitForm()" class="w-50 text-align-center">
+<div class="add-hero-form ms-5">
+  <form (ngSubmit)="submitForm()" class="container">
+    <h3 class="mb-3 mt-3 text-white">Add Your Hero!</h3>
     <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" class="form-control" id="name" [(ngModel)]="newSuperhero.name" name="name">
+      <label class="text-white" for="name">Name:</label>
+      <input
+        type="text"
+        class="form-control mb-3"
+        id="name"
+        [(ngModel)]="newSuperhero.name"
+        name="name"
+      />
     </div>
     <div class="form-group">
-      <label for="actor">Actor:</label>
-      <input type="text" class="form-control" id="actor" [(ngModel)]="newSuperhero.actor" name="actor">
+      <label class="text-white" for="actor">Actor:</label>
+      <input
+        type="text"
+        class="form-control mb-3"
+        id="actor"
+        [(ngModel)]="newSuperhero.actor"
+        name="actor"
+      />
     </div>
     <div class="form-group">
-      <label for="detail">Detail:</label>
-      <textarea class="form-control" id="detail" [(ngModel)]="newSuperhero.detail" name="detail"></textarea>
+      <label class="text-white" for="detail">Detail:</label>
+      <textarea
+        class="form-control mb-3"
+        id="detail"
+        [(ngModel)]="newSuperhero.detail"
+        name="detail"
+      ></textarea>
     </div>
     <div class="form-group">
-      <label for="image">Image URL:</label>
-      <input type="text" class="form-control" id="image" [(ngModel)]="newSuperhero.image" name="image">
+      <label class="text-white" for="image">Image URL:</label>
+      <input
+        type="text"
+        class="form-control mb-3"
+        id="image"
+        [(ngModel)]="newSuperhero.image"
+        name="image"
+      />
     </div>
     <button type="submit" class="btn btn-primary">Add</button>
   </form>
+</div>

@@ -1,12 +1,18 @@
 <app-hero-banner (search)="searchSuperheroes($event)"> </app-hero-banner>
-<div class="hero-add-forms">
-  <app-add-hero-form (addSuperhero)="addSuperhero($event)"></app-add-hero-form>
-</div>
 
-<div class="hero-content mt-5">
-  <div class="row">
-    <div *ngFor="let hero of filteredSuperheroes" class="col-md-4">
-      <app-hero-card [hero]="hero"></app-hero-card>
+<div class="hero-content">
+  <div class="hero-add-forms">
+    <app-add-hero-form
+      (addSuperhero)="addSuperhero($event)"
+    ></app-add-hero-form>
+  </div>
+  <div class="mt-5 d-flex justify-content-around flex-wrap">
+    <div
+      *ngFor="let hero of filteredSuperheroes"
+    >
+      <div>
+        <app-hero-card [hero]="hero"></app-hero-card>
+      </div>
     </div>
   </div>
 </div>
