@@ -1,1 +1,12 @@
-<p>hero-card works!</p>
+<div class="card mb-5" [style.width]="cardWidth">
+  <img [src]="hero.image" class="card-img-top" [alt]="hero.name" />
+  <div class="card-body">
+    <h5 class="card-title">{{ hero.name }}</h5>
+    <p class="card-text">{{ hero.actor }}</p>
+    <button type="btn btn-primary">Show more detail</button>
+    <hr />
+    <div *ngIf="">
+      <p></p>
+    </div>
+  </div>
+</div>
