@@ -1,11 +1,18 @@
 <app-hero-banner (search)="searchSuperheroes($event)"> </app-hero-banner>
 
 <div class="hero-content">
-  <div class="hero-add-forms">
-    <app-add-hero-form
-      (addSuperhero)="addSuperhero($event)"
-    ></app-add-hero-form>
+  <div class="row">
+    <div class="hero-add-forms col-6">
+      <app-add-hero-form
+        (addSuperhero)="addSuperhero($event)"
+      ></app-add-hero-form>
+    </div>
+    <div class="col-6">
+      <img src="https://vik.kompas.com/wiro-sableng/assets/img/vino-ws.png" style="width: 23rem; margin-left: 200px;">
+    </div>
   </div>
+ 
+  <h1 class="text-center text-white mt-5">This is the Hero Card!</h1>
   <div class="mt-5 d-flex justify-content-around flex-wrap">
     <div
       *ngFor="let hero of filteredSuperheroes"
