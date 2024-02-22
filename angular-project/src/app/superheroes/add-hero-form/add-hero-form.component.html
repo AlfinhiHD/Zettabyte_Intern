@@ -9,6 +9,7 @@
         id="name"
         [(ngModel)]="newSuperhero.name"
         name="name"
+        required
       />
     </div>
     <div class="form-group">
@@ -19,6 +20,7 @@
         id="actor"
         [(ngModel)]="newSuperhero.actor"
         name="actor"
+        required
       />
     </div>
     <div class="form-group">
@@ -28,6 +30,7 @@
         id="detail"
         [(ngModel)]="newSuperhero.detail"
         name="detail"
+        required
       ></textarea>
     </div>
     <div class="form-group">
@@ -40,6 +43,6 @@
         name="image"
       />
     </div>
-    <button type="submit" class="btn btn-primary">Add</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!newSuperhero.name || !newSuperhero.actor || !newSuperhero.detail">Add</button>
   </form>
 </div>
