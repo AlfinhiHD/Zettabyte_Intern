@@ -2,13 +2,13 @@
   <img
     [src]="votingCard.image"
     class="card-img-top"
-    style="height: 12rem"
+    style="height: 16rem"
     [alt]="votingCard.name"
   />
-  <div class="card-body">
+  <div class="card-body d-flex flex-column justify-content-between">
     <h5 class="card-title">{{ votingCard.name }}</h5>
     <p class="card-text">{{ votingCard.description }}</p>
-    <p>Votes: {{ votes }}</p>
-    <button (click)="upVote()">Upvote</button>
+    <button class="btn btn-secondary align-self-center w-100" (click)="upVote()">Vote</button>
+    <h4 class="total-votes w-100 mt-4 text-white text-center">{{votes}}</h4>
   </div>
 </div>

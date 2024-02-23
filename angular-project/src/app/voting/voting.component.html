@@ -1,24 +1,24 @@
 <app-voting-banner></app-voting-banner>
 
-<div class="voting-content">
-  <div class="row">
-    <div class="voting-add-forms col-6">
-      <app-voting-add-form
-        (addNewVoting)="addNewVoting($event)"
-      ></app-voting-add-form>
+<div *ngIf="votingCards.length > 0" class="voting-content">
+  <div style="background-color: rgb(65, 65, 65); padding: 50px; border-radius: 20px;">
+    <div class="d-flex justify-content-between mt-5">
+      <!-- <button class="btn btn-secondary"  (click)="clearVotes()">Clear Votes</button> -->
+      <h1 class="text-white">Let's Vote!</h1>
+      <button class="btn btn-secondary"  (click)="clearCandidates()">Clear Candidates</button>
     </div>
-    <div class="col-6">
-      <img
-        src="https://vik.kompas.com/wiro-sableng/assets/img/vino-ws.png"
-        style="width: 23rem; margin-left: 200px"
-      />
-    </div>
-  </div>
-  <div class="mt-5 d-flex justify-content-around flex-wrap">
-    <div *ngFor="let voting of votingCards">
-      <div>
-        <app-voting-card [votingCard]="voting"></app-voting-card>
+    <div class="mt-5 d-flex justify-content-around flex-wrap">
+      <div *ngFor="let voting of votingCards" class="voting-cards">
+        <div>
+          <app-voting-card [votingCard]="voting"></app-voting-card>
+        </div>
       </div>
     </div>
   </div>
+</div>
+
+<div class="voting-add-forms">
+  <app-voting-add-form
+    (addNewVoting)="addNewVoting($event)"
+  ></app-voting-add-form>
 </div>

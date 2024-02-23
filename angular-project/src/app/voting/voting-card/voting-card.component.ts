@@ -8,9 +8,10 @@ import { VotingCard } from '../helpers/voting-card.interface';
 })
 export class VotingCardComponent implements OnInit {
   @Input() votingCard: VotingCard;
+  
 
   votes: number = 0 
-  cardWidth: string = '22rem';
+  cardWidth: string = '20rem';
 
   upVote(): void {
     this.votes++;
