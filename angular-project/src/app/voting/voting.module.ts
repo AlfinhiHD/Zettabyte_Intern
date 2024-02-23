@@ -4,6 +4,7 @@ import { VotingComponent } from './voting.component';
 import { VotingCardComponent } from './voting-card/voting-card.component';
 import { VotingAddFormComponent } from './voting-add-form/voting-add-form.component';
 import { VotingBannerComponent } from './voting-banner/voting-banner.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { VotingBannerComponent } from './voting-banner/voting-banner.component';
     VotingBannerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     VotingComponent,

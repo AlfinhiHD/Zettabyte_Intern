@@ -1,1 +1,38 @@
-<p>voting-add-form works!</p>
+<div class="add-hero-form w-100">
+    <form (ngSubmit)="submitForm()" class="container">
+      <h3 class="mb-3 mt-3">Add Your Hero!</h3>
+      <div class="form-group">
+        <label class="text-white" for="name">Name:</label>
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="name"
+          [(ngModel)]="newVoting.name"
+          name="name"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label class="text-white" for="description">Description:</label>
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="description"
+          [(ngModel)]="newVoting.description"
+          name="description"
+          required
+        />
+      </div>
+      <div class="form-group">
+        <label class="text-white" for="image">Image URL:</label>
+        <input
+          type="text"
+          class="form-control mb-3"
+          id="image"
+          [(ngModel)]="newVoting.image"
+          name="image"
+        />
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!newVoting.name || !newVoting.description || !newVoting.image">Add</button>
+    </form>
+  </div>

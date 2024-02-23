@@ -1,1 +1,14 @@
-<p>voting-card works!</p>
+<div class="card mb-5 me-5" [style.width]="cardWidth">
+  <img
+    [src]="votingCard.image"
+    class="card-img-top"
+    style="height: 12rem"
+    [alt]="votingCard.name"
+  />
+  <div class="card-body">
+    <h5 class="card-title">{{ votingCard.name }}</h5>
+    <p class="card-text">{{ votingCard.description }}</p>
+    <p>Votes: {{ votes }}</p>
+    <button (click)="upVote()">Upvote</button>
+  </div>
+</div>
