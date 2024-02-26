@@ -1,8 +1,8 @@
-<div class="card m-4" style="width: 12rem; background-color: #9f3434;">
-  <img [src]="menu.image" class="card-img-top" style="height: 8rem;" [alt]="menu.name" />
+<div class="card m-3" style="width: 12rem; background-color: #9f3434;">
+  <img [src]="menu.image" class="card-img-top" style="height: 6rem;" [alt]="menu.name" />
   <div class="card-body">
     <h5 class="card-title text-white">{{menu.name}}</h5>
     <h6 class="card-subtitle my-3 text-white">Rp. {{menu.price}}</h6>
-    <a href="#" style="background-color: #f2d1b5; color: black;" (click)="addToCart(menu)" class="btn w-100">Add to cart</a>
+    <a href="#" style="background-color: #f2d1b5; color: black;" (click)="addToCart(menu)" class="btn w-100 fw-bold">Add to cart</a>
   </div>
 </div>

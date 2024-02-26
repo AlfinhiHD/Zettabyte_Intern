@@ -1,9 +1,8 @@
-<div class="menu-content">
+<div class="menu-content ps-4 mt-4">
     <app-header-menu></app-header-menu>
     <div class="d-flex justify-content-around flex-wrap">
         <div *ngFor="let food of foodList">
             <app-card-menu [menu]="food"></app-card-menu>
         </div>
     </div>
-  
 </div>

@@ -13,13 +13,14 @@ export class MenuService implements OnInit {
   cart: BehaviorSubject<CartType[]> = new BehaviorSubject<CartType[]>([]);
   cart$ = this.cart.asObservable();
 
+  totalPrice: BehaviorSubject<number> = new BehaviorSubject<number>(0);
+  totalPrice$ = this.totalPrice.asObservable();
+
   constructor() {
     this.food.next([...this.food.getValue(), ...FoodData]);
   }
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void {}
 
   addToCart(food: FoodType): void {
     const existingCartItem = this.cart
@@ -37,6 +38,7 @@ export class MenuService implements OnInit {
       };
       this.cart.next([...this.cart.getValue(), newCartItem]);
     }
+    this.updateTotalPrice();
   }
 
   removeFromCart(food: CartType): void {
@@ -55,5 +57,19 @@ export class MenuService implements OnInit {
         this.cart.next(updatedCart);
       }
     }
+    this.updateTotalPrice();
+  }
+
+  updateTotalPrice(): void {
+    const totalCartPrice = this.cart
+      .getValue()
+      .reduce((total, cartItem) => total + cartItem.totalPrice, 0);
+    this.totalPrice.next(totalCartPrice);
+  }
+
+  submitCart(): void {
+    alert(`Total price: Rp. ${this.totalPrice.getValue()}`);
+    this.cart.next([]);
+    this.totalPrice.next(0);
   }
 }

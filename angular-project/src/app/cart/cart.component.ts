@@ -5,19 +5,20 @@ import { CartType } from '../shared/helpers/interfaces';
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
-  styleUrls: ['./cart.component.scss']
+  styleUrls: ['./cart.component.scss'],
 })
 export class CartComponent implements OnInit {
-  cartList: CartType[] = []
+  cartList: CartType[] = [];
+  totalCartPrice: number = 0;
 
-  constructor(private MenuService: MenuService) { }
+  constructor(private menuService: MenuService) {}
 
   ngOnInit(): void {
-    this.MenuService.cart$.subscribe(cart => {
-      this.cartList = cart
+    this.menuService.cart$.subscribe((cart) => {
+      this.cartList = cart;
+    });
+    this.menuService.totalPrice$.subscribe((totalPrice) => {
+      this.totalCartPrice = totalPrice;
     })
   }
-
-
-
 }

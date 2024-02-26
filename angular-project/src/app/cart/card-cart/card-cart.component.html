@@ -1,16 +1,18 @@
-<div class="card m-4" style="width: 12rem; background-color: #9f3434">
-  <div class="card-body">
-    <h5 class="card-title text-white">{{ cart.name }}</h5>
-    <h6 class="card-subtitle my-3 text-white">{{ cart.amount }}</h6>
-    <p>Total Amount :</p>
-    <p>Rp. {{ cart.totalPrice }}</p>
-
-    <a
-      href="#"
-      style="background-color: #9f3434; color: #f2d1b5"
-      class="btn w-100"
-      (click)="removeFromCart(cart)"
-      >Remove item</a
-    >
+<div
+  class="my-4"
+  style="background-color: #9f3434; color: #f2d1b5; padding: 10px"
+>
+  <div class="d-flex justify-content-between flex-wrap">
+    <h5>{{ cart.name }}</h5>
+    <h5>{{ cart.amount }} pcs</h5>
   </div>
+
+  <p>Rp. {{ cart.totalPrice }}</p>
+  <button
+    class="btn w-100"
+    style="background-color: #9f3434; color: #f2d1b5"
+    (click)="removeFromCart(cart)"
+  >
+    Remove item
+  </button>
 </div>

@@ -1,1 +1,11 @@
-<p>totalprice-cart works!</p>
+<div class="text-white" style="background-color: #9f3434">
+  <p class="fs-5 fw-bolder ms-3">Total Price:</p>
+  <p class="fs-6 fw-bold text-center">Rp. {{ totalCartPrice }}</p>
+  <button
+    class="btn w-100 fw-bold text-white"
+    style="background-color: #331d1d; color: #f2d1b5"
+    (click)="payCart()"
+  >
+    Submit
+  </button>
+</div>

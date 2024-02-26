@@ -40,10 +40,5 @@ export const FoodData : FoodType[] = [
       image: 'https://d1vbn70lmn1nqe.cloudfront.net/prod/wp-content/uploads/2023/07/03071924/Suka-Takoyaki_-Ini-Manfaat-Daging-Gurita-untuk-Kesehatan-.jpg.webp',
       name: 'Takoyaki',
       price: 20000
-    },
-    {
-      image: 'https://static01.nyt.com/images/2021/05/23/dining/kc-chicken-katsu/merlin_185308080_a60a6563-292e-4f52-a33b-386113aca0b2-square640.jpg',
-      name: 'Katsu',
-      price: 60000
     }
   ];

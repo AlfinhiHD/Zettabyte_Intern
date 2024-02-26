@@ -1,6 +1,14 @@
-<div class="cart-content col-3 pt-3 h-100" style="background-color: #f2d1b5">
-  <h3 class="text-center fs-3 fw-bold" style="color: #331d1d">Your Cart</h3>
-  <div *ngFor="let cart of cartList">
-    <app-card-cart [cart]="cart"></app-card-cart>
-  </div>
+<div
+  class="cart-content h-100 px-0"
+  style="background-color: #e1b486; display: flex; flex-direction: column"
+>
+  <h3 class="text-center fs-3 fw-bold pt-4" style="color: #331d1d">
+    Your Cart
+  </h3>
+  <ul style="list-style-type: none; flex-grow: 1; overflow-y: auto">
+    <li *ngFor="let cart of cartList" style="margin-bottom: 10px">
+      <app-card-cart [cart]="cart"></app-card-cart>
+    </li>
+  </ul>
+  <app-totalprice-cart [totalCartPrice]="totalCartPrice"></app-totalprice-cart>
 </div>

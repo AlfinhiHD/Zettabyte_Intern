@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MenuService } from 'src/app/shared/service/menu/menu.service';
 
 @Component({
   selector: 'app-totalprice-cart',
   templateUrl: './totalprice-cart.component.html',
-  styleUrls: ['./totalprice-cart.component.scss']
+  styleUrls: ['./totalprice-cart.component.scss'],
 })
 export class TotalpriceCartComponent implements OnInit {
+  @Input() totalCartPrice: number = 0;
 
-  constructor() { }
+  constructor(private MenuService: MenuService) {}
 
-  ngOnInit(): void {
+  ngOnInit(): void {}
+
+  payCart(): void {
+    this.MenuService.submitCart();
   }
-
 }
