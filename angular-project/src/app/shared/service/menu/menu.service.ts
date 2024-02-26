@@ -1,4 +1,4 @@
-import { Injectable, OnInit } from '@angular/core';
+import { Injectable} from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { CartType, FoodType } from '../../helpers/interfaces';
 import { FoodData } from '../../helpers/data';
@@ -6,7 +6,7 @@ import { FoodData } from '../../helpers/data';
 @Injectable({
   providedIn: 'root',
 })
-export class MenuService implements OnInit {
+export class MenuService{
   food: BehaviorSubject<FoodType[]> = new BehaviorSubject<FoodType[]>([]);
   food$ = this.food.asObservable();
 
@@ -19,8 +19,6 @@ export class MenuService implements OnInit {
   constructor() {
     this.food.next([...this.food.getValue(), ...FoodData]);
   }
-
-  ngOnInit(): void {}
 
   addToCart(food: FoodType): void {
     const existingCartItem = this.cart
