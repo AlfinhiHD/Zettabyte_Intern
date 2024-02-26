@@ -1,1 +1,9 @@
-<p>menu works!</p>
+<div class="menu-content">
+    <app-header-menu></app-header-menu>
+    <div class="d-flex justify-content-around flex-wrap">
+        <div *ngFor="let food of foodList">
+            <app-card-menu [menu]="food"></app-card-menu>
+        </div>
+    </div>
+  
+</div>
