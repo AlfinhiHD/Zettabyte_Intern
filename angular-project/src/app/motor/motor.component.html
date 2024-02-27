@@ -1,1 +1,8 @@
-<p>motor works!</p>
+<div class="menu-content ps-4 mt-4">
+    <app-motor-banner (searchOutput)="searchMotor($event)"></app-motor-banner>
+    <div class="d-flex justify-content-around flex-wrap">
+        <div *ngFor="let motor of filteredMotor">
+            <app-motor-card [motor]="motor"></app-motor-card>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MotorService } from '../shared/service/motor/motor.service';
+import { MotorType } from '../shared/helpers/interface';
 
 @Component({
   selector: 'app-selectedmotor',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SelectedmotorComponent implements OnInit {
 
-  constructor() { }
+  selectedMotor: MotorType | null = null;
+
+  constructor(private MotorService: MotorService) { }
 
   ngOnInit(): void {
+    this.MotorService.selectedMotor$.subscribe((motor) => {
+      this.selectedMotor = motor;
+    })
   }
 
 }

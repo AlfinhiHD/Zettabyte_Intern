@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MotorComponent } from './motor.component';
 import { MotorCardComponent } from './motor-card/motor-card.component';
 import { MotorBannerComponent } from './motor-banner/motor-banner.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -13,7 +14,8 @@ import { MotorBannerComponent } from './motor-banner/motor-banner.component';
     MotorBannerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports: [
     MotorComponent,

@@ -1,1 +1,15 @@
-<p>motor-banner works!</p>
+<h2 class="fs-2 fw-bold" style="color: #331d1d">Alpin Motorcycle</h2>
+<h2 class="fs-5 mb-4" style="color: #331d1d">Here's List of Motorcycle</h2>
+<input
+  type="text"
+  class="form-control mt-5"
+  placeholder="Search motor"
+  [(ngModel)]="searchTerm"
+/>
+<button
+  type="button"
+  class="search-button btn btn-primary mt-2"
+  (click)="onSearch()"
+>
+  Search
+</button>

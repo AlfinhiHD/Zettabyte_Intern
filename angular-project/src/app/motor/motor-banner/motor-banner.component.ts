@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-motor-banner',
@@ -6,6 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./motor-banner.component.scss']
 })
 export class MotorBannerComponent implements OnInit {
+  @Output() searchOutput = new EventEmitter<string>();
+  searchTerm: string = ""
+
+  onSearch(): void {
+    this.searchOutput.emit(this.searchTerm);
+  }
 
   constructor() { }
 

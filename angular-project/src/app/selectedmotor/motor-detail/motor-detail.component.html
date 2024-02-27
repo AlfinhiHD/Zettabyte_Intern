@@ -1,1 +1,16 @@
-<p>motor-detail works!</p>
+<div class="card" *ngIf="selectedMotor">
+    <img [src]="selectedMotor.image" class="card-img-top" [alt]="selectedMotor.name" />
+    <div class="card-body">
+      <h5 class="card-title">{{ selectedMotor.name }}</h5>
+      <p class="card-text">Police Number: {{ selectedMotor.policeNumber }}</p>
+      <p class="card-text">Type: {{ selectedMotor.type }}</p>
+      <p class="card-text">Created Year: {{ selectedMotor.createdYear }}</p>
+      <p class="card-text">Colour: {{ selectedMotor.colour }}</p>
+      <p class="card-text">CC: {{ selectedMotor.cc }}</p>
+      <p class="card-text">Status Peminjaman: {{ selectedMotor.status }}</p>
+      <p class="card-text">Deskripsi: {{ selectedMotor.description }}</p>
+    </div>
+  </div>
+  <div *ngIf="!selectedMotor">
+    No motor was selected.
+  </div>

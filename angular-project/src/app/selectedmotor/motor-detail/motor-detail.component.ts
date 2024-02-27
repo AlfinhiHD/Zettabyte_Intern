@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { MotorType } from 'src/app/shared/helpers/interface';
 
 @Component({
   selector: 'app-motor-detail',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./motor-detail.component.scss']
 })
 export class MotorDetailComponent implements OnInit {
+  @Input() selectedMotor: MotorType | null = null;
+  ;
 
   constructor() { }
 
