@@ -5,7 +5,7 @@ export type MotorType = {
     createdYear: number,
     colour: string,
     cc: number,
-    status: string,
+    status?: string,
     image: string,
     description: string
 }

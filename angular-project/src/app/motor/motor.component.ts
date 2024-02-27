@@ -12,10 +12,10 @@ export class MotorComponent implements OnInit {
 
   searchTerm: string = '';
 
-  constructor(private MotorService: MotorService) {}
+  constructor(private motorService: MotorService) {}
 
   ngOnInit(): void {
-    this.MotorService.motor$.subscribe(motor => {
+    this.motorService.motor$.subscribe(motor => {
       this.motorList = motor
     })
   }

@@ -4,6 +4,7 @@ import { MotorComponent } from './motor.component';
 import { MotorCardComponent } from './motor-card/motor-card.component';
 import { MotorBannerComponent } from './motor-banner/motor-banner.component';
 import { FormsModule } from '@angular/forms';
+import { MotorAddformComponent } from './motor-addform/motor-addform.component';
 
 
 
@@ -11,7 +12,8 @@ import { FormsModule } from '@angular/forms';
   declarations: [
     MotorComponent,
     MotorCardComponent,
-    MotorBannerComponent
+    MotorBannerComponent,
+    MotorAddformComponent
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { FormsModule } from '@angular/forms';
   exports: [
     MotorComponent,
     MotorCardComponent,
-    MotorBannerComponent
+    MotorBannerComponent,
+    MotorAddformComponent
   ]
 })
 export class MotorModule { }

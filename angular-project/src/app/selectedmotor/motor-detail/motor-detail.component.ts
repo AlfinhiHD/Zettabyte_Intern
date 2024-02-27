@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { MotorType } from 'src/app/shared/helpers/interface';
+import { MotorService } from 'src/app/shared/service/motor/motor.service';
 
 @Component({
   selector: 'app-motor-detail',
@@ -10,9 +11,19 @@ export class MotorDetailComponent implements OnInit {
   @Input() selectedMotor: MotorType | null = null;
   ;
 
-  constructor() { }
+  constructor(private motorService: MotorService) { }
 
   ngOnInit(): void {
   }
 
+  updateStatus(status: string) {
+    if (this.selectedMotor) {
+      const newStatus = status === 'Tersedia' ? 'Dipinjam' : 'Tersedia';
+      this.motorService.updateMotorStatus(newStatus);
+    }
+  }
+
+  closeSelectedMotor() {
+    this.motorService.closeSelectedMotor();
+  }
 }

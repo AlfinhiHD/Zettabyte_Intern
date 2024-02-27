@@ -1,0 +1,35 @@
+<form (submit)="onSubmit()">
+    <div class="form-group">
+        <label for="image">Image:</label>
+        <input type="text" class="form-control" id="image" [(ngModel)]="newMotor.image" name="image">
+      </div>
+    <div class="form-group">
+      <label for="policeNumber">Police Number:</label>
+      <input type="text" class="form-control" id="policeNumber" [(ngModel)]="newMotor.policeNumber" name="policeNumber">
+    </div>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" [(ngModel)]="newMotor.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <input type="text" class="form-control" id="type" [(ngModel)]="newMotor.type" name="type">
+    </div>
+    <div class="form-group">
+      <label for="createdYear">Created Year:</label>
+      <input type="text" class="form-control" id="createdYear" [(ngModel)]="newMotor.createdYear" name="createdYear">
+    </div>
+    <div class="form-group">
+      <label for="colour">Colour:</label>
+      <input type="text" class="form-control" id="colour" [(ngModel)]="newMotor.colour" name="colour">
+    </div>
+    <div class="form-group">
+      <label for="cc">CC:</label>
+      <input type="text" class="form-control" id="cc" [(ngModel)]="newMotor.cc" name="cc">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" id="description" [(ngModel)]="newMotor.description" name="description"></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>

@@ -10,13 +10,13 @@ import { MotorService } from 'src/app/shared/service/motor/motor.service';
 export class MotorCardComponent implements OnInit {
   @Input() motor: MotorType
 
-  constructor(private MotorSevice: MotorService) { }
+  constructor(private motorSevice: MotorService) { }
 
   ngOnInit(): void {
   }
 
   addSelectedMotor(motorItem: MotorType): void {
-    this.MotorSevice.setSelectedMotor(motorItem)
+    this.motorSevice.setSelectedMotor(motorItem)
   }
 
 }

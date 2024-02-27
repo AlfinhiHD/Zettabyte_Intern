@@ -20,4 +20,23 @@ export class MotorService {
   setSelectedMotor(data: MotorType) {
     this.selectedMotor.next(data)
   }
+
+  updateMotorStatus(status: string) {
+    const selectedMotor = this.selectedMotor.getValue();
+    if (selectedMotor) {
+      const updatedMotor = { ...selectedMotor, status: status };
+      const motorList = this.motor.getValue().map(motor => motor.policeNumber === selectedMotor.policeNumber ? updatedMotor : motor);
+      this.motor.next(motorList);
+      this.selectedMotor.next(updatedMotor);
+    }
+  }
+
+  addNewMotor(motor: MotorType) {
+    const newMotor: MotorType = {...motor, status: "Tersedia"};
+    this.motor.next([...this.motor.getValue(), newMotor])
+  }
+
+  closeSelectedMotor() {
+    this.selectedMotor.next(null)
+  }
 }

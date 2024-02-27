@@ -11,10 +11,10 @@ export class SelectedmotorComponent implements OnInit {
 
   selectedMotor: MotorType | null = null;
 
-  constructor(private MotorService: MotorService) { }
+  constructor(private motorService: MotorService) { }
 
   ngOnInit(): void {
-    this.MotorService.selectedMotor$.subscribe((motor) => {
+    this.motorService.selectedMotor$.subscribe((motor) => {
       this.selectedMotor = motor;
     })
   }
