@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { MotorType } from 'src/app/shared/helpers/interface';
 import { MotorService } from 'src/app/shared/service/motor/motor.service';
 
@@ -8,6 +8,8 @@ import { MotorService } from 'src/app/shared/service/motor/motor.service';
   styleUrls: ['./motor-addform.component.scss'],
 })
 export class MotorAddformComponent implements OnInit {
+  @Output() backOutput = new EventEmitter<void>();
+
   newMotor: MotorType = {
     image: '',
     policeNumber: '',

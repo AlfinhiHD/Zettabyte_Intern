@@ -1,9 +1,22 @@
-<div class="menu-content ps-4 mt-4" [ngStyle]="selectedMotor ? {'overflow-x': 'auto', 'max-height': '40vw'} : {}">
-    <app-motor-banner (searchOutput)="searchMotor($event)" (filterOutput)="filterStatusMotor($event)"></app-motor-banner>
-    <div class="d-flex justify-content-around flex-wrap mt-4">
-        <div *ngFor="let motor of filteredMotor">
-            <app-motor-card [motor]="motor"></app-motor-card>
-        </div>
+<div
+  class="menu-content ps-4 mt-4"
+  [ngStyle]="
+    selectedMotor ? { 'overflow-x': 'auto', 'max-height': '40vw' } : {}
+  "
+>
+  <app-motor-banner
+    *ngIf="!showAddForm"
+    (searchOutput)="searchMotor($event)"
+    (filterOutput)="filterStatusMotor($event)"
+    (addFormOutput)="showAddForm = true"
+  ></app-motor-banner>
+  <div class="d-flex justify-content-around flex-wrap mt-4">
+    <div *ngFor="let motor of filteredMotor">
+      <app-motor-card *ngIf="!showAddForm" [motor]="motor"></app-motor-card>
     </div>
-    <!-- <app-motor-addform></app-motor-addform> -->
+  </div>
+  <app-motor-addform
+    *ngIf="showAddForm"
+    (backOutput)="showAddForm = false"
+  ></app-motor-addform>
 </div>

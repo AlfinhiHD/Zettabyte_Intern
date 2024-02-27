@@ -15,6 +15,7 @@ export class MotorComponent implements OnInit {
   statusTerm: string = '';
 
   constructor(private motorService: MotorService) {}
+  showAddForm: boolean = false;
 
   ngOnInit(): void {
     this.motorService.motor$.subscribe((motor) => {

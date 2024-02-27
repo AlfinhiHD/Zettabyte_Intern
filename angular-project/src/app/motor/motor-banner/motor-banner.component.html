@@ -1,9 +1,10 @@
 <div class="d-flex flex-row justify-content-between ms-4">
   <h2 class="fs-5 mb-4" style="color: #ffffff">Here's List of Motorcycle</h2>
   <div class="d-flex me-3">
+    <button class="btn btn-secondary me-1" (click)="addFormOutput.emit()">Add Motorcycle</button>
     <input
       type="text"
-      class="form-control"
+      class="search form-control"
       placeholder="Search motor"
       [(ngModel)]="searchTerm"
       (ngModelChange)="onSearch($event)"
