@@ -1,11 +1,14 @@
 <app-navbar></app-navbar>
 <div class="row">
-  <div class="col-8">
+  <div
+    [class.col-9]="selectedMotor"
+    [ngClass]="{ 'w-100': !selectedMotor }"
+    style="background-color: #343a40"
+  >
     <app-motor></app-motor>
   </div>
-  <div class="col-4 pe-0">
+  <div class="col-3 pe-0">
     <app-selectedmotor></app-selectedmotor>
   </div>
-
 </div>
 <app-footer></app-footer>

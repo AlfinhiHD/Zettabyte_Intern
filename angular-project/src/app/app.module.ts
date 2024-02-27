@@ -16,7 +16,7 @@ import { SelectedmotorModule } from './selectedmotor/selectedmotor.module';
     AppRoutingModule,
     SharedModule,
     MotorModule,
-    SelectedmotorModule
+    SelectedmotorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
