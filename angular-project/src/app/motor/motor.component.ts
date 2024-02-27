@@ -9,6 +9,7 @@ import { MotorType } from '../shared/helpers/interface';
 })
 export class MotorComponent implements OnInit {
   motorList: MotorType[] = [];
+  selectedMotor: MotorType | null = null;
 
   searchTerm: string = '';
   statusTerm: string = '';
@@ -18,6 +19,9 @@ export class MotorComponent implements OnInit {
   ngOnInit(): void {
     this.motorService.motor$.subscribe((motor) => {
       this.motorList = motor;
+    });
+    this.motorService.selectedMotor$.subscribe((selectedmotor) => {
+      this.selectedMotor = selectedmotor;
     });
   }
 
