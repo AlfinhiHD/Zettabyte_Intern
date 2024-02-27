@@ -26,6 +26,10 @@ export class MotorComponent implements OnInit {
     });
   }
 
+  toggleForm(toggle: boolean): void {
+    this.showAddForm = toggle;
+  }
+
   searchMotor(searchTerm: string): void {
     this.searchTerm = searchTerm;
   }

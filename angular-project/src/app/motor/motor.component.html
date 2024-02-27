@@ -17,6 +17,6 @@
   </div>
   <app-motor-addform
     *ngIf="showAddForm"
-    (backOutput)="showAddForm = false"
+    (backOutput)="toggleForm($event)"
   ></app-motor-addform>
 </div>

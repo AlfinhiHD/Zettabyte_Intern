@@ -8,7 +8,7 @@ import { MotorService } from 'src/app/shared/service/motor/motor.service';
   styleUrls: ['./motor-addform.component.scss'],
 })
 export class MotorAddformComponent implements OnInit {
-  @Output() backOutput = new EventEmitter<void>();
+  @Output() backOutput = new EventEmitter<boolean>();
 
   newMotor: MotorType = {
     image: '',
@@ -20,6 +20,10 @@ export class MotorAddformComponent implements OnInit {
     cc: null,
     description: '',
   };
+
+  backAction() {
+    this.backOutput.emit(false)
+  }
 
   constructor(private motorService: MotorService) {}
 
@@ -37,5 +41,6 @@ export class MotorAddformComponent implements OnInit {
       cc: null,
       description: '',
     };
+    this.backOutput.emit(false)
   }
 }
