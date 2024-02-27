@@ -1,6 +1,8 @@
 <div class="d-flex justify-content-between mx-5">
   <h4 class="text-white">Add new Motorcycle</h4>
-  <button class="btn btn-secondary" style="width: 10rem;" (click)="backAction()">Back</button>
+  <button class="btn btn-secondary" style="width: 10rem" (click)="backAction()">
+    Back
+  </button>
 </div>
 
 <form (submit)="onSubmit()" class="p-5 mb-5" style="color: white">
@@ -40,18 +42,22 @@
     <div class="col-4">
       <div class="form-group mb-3">
         <label for="type">Type:</label>
-        <input
-          type="text"
+        <select
           class="form-control"
           id="type"
           [(ngModel)]="newMotor.type"
           name="type"
-        />
+        >
+          <option value="Matic">Matic</option>
+          <option value="Sport">Sport</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Cruiser">Cruiser</option>
+        </select>
       </div>
       <div class="form-group mb-3">
         <label for="createdYear">Created Year:</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="createdYear"
           [(ngModel)]="newMotor.createdYear"
@@ -73,7 +79,7 @@
       <div class="form-group mb-3">
         <label for="cc">CC:</label>
         <input
-          type="text"
+          type="number"
           class="form-control"
           id="cc"
           [(ngModel)]="newMotor.cc"
@@ -92,5 +98,20 @@
     </div>
   </div>
 
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button
+    type="submit"
+    [disabled]="
+      !newMotor.name ||
+      !newMotor.type ||
+      !newMotor.image ||
+      !newMotor.description ||
+      !newMotor.createdYear ||
+      !newMotor.cc ||
+      !newMotor.colour ||
+      !newMotor.policeNumber
+    "
+    class="btn btn-primary"
+  >
+    Submit
+  </button>
 </form>

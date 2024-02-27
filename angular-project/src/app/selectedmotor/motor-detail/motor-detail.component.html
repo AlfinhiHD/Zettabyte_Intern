@@ -29,6 +29,6 @@
         selectedMotor.status === 'Dipinjam' ? 'Selesai Dipinjam' : 'Pinjam'
       "
     ></button>
-    <button class="btn btn-danger w-100 mt-2">Hapus Data Motor</button>
+    <button class="btn btn-danger w-100 mt-2" (click)="handleDeleteMotor(selectedMotor.policeNumber)" >Hapus Data Motor</button>
   </div>
 </div>

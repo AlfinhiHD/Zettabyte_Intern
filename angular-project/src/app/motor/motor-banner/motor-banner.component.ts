@@ -7,17 +7,23 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class MotorBannerComponent implements OnInit {
   @Output() searchOutput = new EventEmitter<string>();
-  @Output() filterOutput = new EventEmitter<string>();
+  @Output() filterStatusOutput = new EventEmitter<string>();
+  @Output() filterTypeOutput = new EventEmitter<string>();
   @Output() addFormOutput = new EventEmitter<void>();
   searchTerm: string = ""
   selectedStatus: string = ""
+  selectedType: string = ""
 
   onSearch(value: string): void {
     this.searchOutput.emit(value);
   }
 
   onFilterStatus() {
-    this.filterOutput.emit(this.selectedStatus)
+    this.filterStatusOutput.emit(this.selectedStatus)
+  }
+
+  onFilterType() {
+    this.filterTypeOutput.emit(this.selectedType)
   }
 
   constructor() { }

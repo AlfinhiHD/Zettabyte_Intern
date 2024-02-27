@@ -16,14 +16,18 @@ export class MotorDetailComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  updateStatus(status: string) {
+  updateStatus(status: string): void {
     if (this.selectedMotor) {
       const newStatus = status === 'Tersedia' ? 'Dipinjam' : 'Tersedia';
       this.motorService.updateMotorStatus(newStatus);
     }
   }
 
-  closeSelectedMotor() {
+  handleDeleteMotor(policeNumber: string): void {
+    this.motorService.deleteMotor(policeNumber);
+  }
+
+  closeSelectedMotor(): void {
     this.motorService.closeSelectedMotor();
   }
 }

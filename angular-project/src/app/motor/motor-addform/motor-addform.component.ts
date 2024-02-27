@@ -9,6 +9,7 @@ import { MotorService } from 'src/app/shared/service/motor/motor.service';
 })
 export class MotorAddformComponent implements OnInit {
   @Output() backOutput = new EventEmitter<boolean>();
+  isFormValid: boolean = false
 
   newMotor: MotorType = {
     image: '',

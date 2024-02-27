@@ -7,7 +7,8 @@
   <app-motor-banner
     *ngIf="!showAddForm"
     (searchOutput)="searchMotor($event)"
-    (filterOutput)="filterStatusMotor($event)"
+    (filterStatusOutput)="filterStatusMotor($event)"
+    (filterTypeOutput)="filterTypeMotor($event)"
     (addFormOutput)="showAddForm = true"
   ></app-motor-banner>
   <div class="d-flex justify-content-around flex-wrap mt-4">

@@ -39,4 +39,10 @@ export class MotorService {
   closeSelectedMotor() {
     this.selectedMotor.next(null)
   }
+
+  deleteMotor(policeNumber: string) {
+    const motorList = this.motor.getValue().filter(motor => motor.policeNumber !== policeNumber);
+    this.motor.next(motorList);
+    this.selectedMotor.next(null)
+  }
 }

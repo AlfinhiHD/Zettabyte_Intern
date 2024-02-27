@@ -13,6 +13,7 @@ export class MotorComponent implements OnInit {
 
   searchTerm: string = '';
   statusTerm: string = '';
+  typeTerm: string = '';
 
   constructor(private motorService: MotorService) {}
   showAddForm: boolean = false;
@@ -38,12 +39,18 @@ export class MotorComponent implements OnInit {
     this.statusTerm = statusTerm;
   }
 
+  filterTypeMotor(typeTerm: string): void {
+    this.typeTerm = typeTerm;
+  }
+
   get filteredMotor(): MotorType[] {
     return this.motorList.filter(
       (motor) =>
         motor.name.toLowerCase().includes(this.searchTerm.toLowerCase()) &&
         (this.statusTerm === '' ||
-          motor.status.toLowerCase() === this.statusTerm.toLowerCase())
+          motor.status.toLowerCase() === this.statusTerm.toLowerCase()) &&
+        (this.typeTerm === '' ||
+          motor.type.toLowerCase() === this.typeTerm.toLowerCase())
     );
   }
 }

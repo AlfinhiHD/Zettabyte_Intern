@@ -15,9 +15,22 @@
         [(ngModel)]="selectedStatus"
         (change)="onFilterStatus()"
       >
-        <option value="">Status</option>
+        <option value="">Semua status</option>
         <option value="Tersedia">Tersedia</option>
         <option value="Dipinjam">Dipinjam</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <select
+        class="form-control ms-1"
+        [(ngModel)]="selectedType"
+        (change)="onFilterType()"
+      >
+        <option value="">Semua type</option>
+        <option value="Matic">Matic</option>
+        <option value="Sporty">Sporty</option>
+        <option value="Adventure">Adventure</option>
+        <option value="Cruiser">Cruiser</option>
       </select>
     </div>
   </div>
