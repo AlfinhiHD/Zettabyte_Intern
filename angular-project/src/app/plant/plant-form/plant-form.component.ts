@@ -1,16 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { filter, map } from 'rxjs';
 import { PlantType } from 'src/app/shared/helpers/interface';
 import { PlantService } from 'src/app/shared/service/plant.service';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
-  selector: 'app-plant-add',
-  templateUrl: './plant-add.component.html',
-  styleUrls: ['./plant-add.component.scss'],
+  selector: 'app-plant-Form',
+  templateUrl: './plant-form.component.html',
+  styleUrls: ['./plant-form.component.scss'],
 })
-export class PlantAddComponent implements OnInit {
+export class PlantFormComponent implements OnInit {
   newPlant: PlantType = {
     id: '',
     name: '',
@@ -30,11 +29,11 @@ export class PlantAddComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.route.queryParams.subscribe((params) => {
-    //   console.log(params);
-    //   this.id = params['id'];
-    //   console.log(this.id);
-    // });
+    this.route.queryParams.subscribe((params) => {
+      console.log(params);
+      this.id = params['id'];
+      console.log(this.id);
+    });
     this.id = this.route.snapshot.queryParams['id'];
     if (!this.id) {
       return;

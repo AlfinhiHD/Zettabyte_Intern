@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { PlantComponent } from './plant.component';
 import { PlantBannerComponent } from './plant-banner/plant-banner.component';
 import { PlantCardComponent } from './plant-card/plant-card.component';
-import { PlantAddComponent } from './plant-add/plant-add.component';
+import { PlantFormComponent } from './plant-form/plant-form.component';
 import { FormsModule } from '@angular/forms';
 
 
@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
     PlantComponent,
     PlantBannerComponent,
     PlantCardComponent,
-    PlantAddComponent
+    PlantFormComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +23,7 @@ import { FormsModule } from '@angular/forms';
     PlantComponent,
     PlantBannerComponent,
     PlantCardComponent,
-    PlantAddComponent
+    PlantFormComponent
   ]
 })
 export class PlantModule { }
