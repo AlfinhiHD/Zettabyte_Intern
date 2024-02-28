@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" (click)="goToDetailPlant(plant.id)" style="cursor: pointer">
   <div
     class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
     data-mdb-ripple-color="light"
@@ -24,3 +24,10 @@
     <h6 class="mb-3">{{ plant.price }}</h6>
   </div>
 </div>
+<!-- <button
+  class="btn btn-primary"
+  [routerLink]="['/detail', plant.id]"
+  routerLinkActive="active"
+>
+  Detail
+</button> -->

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PlantType } from 'src/app/shared/helpers/interface';
 
 @Component({
@@ -9,9 +10,13 @@ import { PlantType } from 'src/app/shared/helpers/interface';
 export class PlantCardComponent implements OnInit {
   @Input() plant: PlantType
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToDetailPlant(id: string) {
+    this.router.navigate(['/detail', id]);
   }
 
 }

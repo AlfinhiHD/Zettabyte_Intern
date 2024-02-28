@@ -25,4 +25,8 @@ export class PlantService {
     const plantList = this.plant.getValue().filter((plant) => plant.id !== id);
     this.plant.next(plantList);
   }
+
+  getPlantById(id: string) {
+    return this.plant.getValue().find((plant) => plant.id === id);
+  }
 }
