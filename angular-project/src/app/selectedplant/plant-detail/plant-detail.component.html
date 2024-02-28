@@ -28,7 +28,13 @@
       [routerLink]="['/editplant']"
       [queryParams]="{ id: plant.id }"
     >
-      Edit nih
+      Edit
+    </button>
+    <button
+      class="btn btn-danger"
+      (click)="onDeletePlant(plant.id)"
+    >
+      Delete
     </button>
   </div>
 </section>
