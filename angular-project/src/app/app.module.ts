@@ -3,6 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { PlantModule } from './plant/plant.module';
+import { SelectedPlantModule } from './selectedplant/selectedplant.module';
 
 @NgModule({
   declarations: [
@@ -10,7 +12,9 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    PlantModule,
+    SelectedPlantModule
   ],
   providers: [],
   bootstrap: [AppComponent]

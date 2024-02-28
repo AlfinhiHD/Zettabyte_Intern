@@ -1,1 +1,26 @@
-<p>plant-card works!</p>
+<div class="card">
+  <div
+    class="bg-image hover-zoom ripple ripple-surface ripple-surface-light"
+    data-mdb-ripple-color="light"
+  >
+    <img [src]="plant.imageUrl" class="w-100" style="height: 14rem" />
+    <div class="mask">
+      <div class="d-flex justify-content-start align-items-end h-100">
+        <h5>
+          <span class="badge bg-success ms-2">Rating : {{ plant.rating }}</span>
+        </h5>
+      </div>
+    </div>
+    <div class="hover-overlay">
+      <div
+        class="mask"
+        style="background-color: rgba(251, 251, 251, 0.15)"
+      ></div>
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title mb-3">{{ plant.name }}</h5>
+    <p>{{ plant.type }}</p>
+    <h6 class="mb-3">{{ plant.price }}</h6>
+  </div>
+</div>

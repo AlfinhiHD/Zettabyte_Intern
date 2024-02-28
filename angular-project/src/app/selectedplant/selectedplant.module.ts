@@ -21,4 +21,4 @@ import { PlantDetailComponent } from './plant-detail/plant-detail.component';
     SelectedPlantComponent
   ]
 })
-export class SelectedplantModule { }
+export class SelectedPlantModule { }
