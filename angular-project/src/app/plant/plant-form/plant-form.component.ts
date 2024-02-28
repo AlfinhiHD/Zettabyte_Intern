@@ -29,11 +29,11 @@ export class PlantFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.route.queryParams.subscribe((params) => {
-      console.log(params);
-      this.id = params['id'];
-      console.log(this.id);
-    });
+    // this.route.queryParams.subscribe((params) => {
+    //   console.log(params);
+    //   this.id = params['id'];
+    //   console.log(this.id);
+    // });
     this.id = this.route.snapshot.queryParams['id'];
     if (!this.id) {
       return;
