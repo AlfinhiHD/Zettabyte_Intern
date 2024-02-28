@@ -21,20 +21,17 @@
         <p class="lead">
           {{ plant.description }}
         </p>
+        <button
+          class="btn btn-warning me-3"
+          [routerLink]="['/editplant']"
+          [queryParams]="{ id: plant.id }"
+        >
+          Edit
+        </button>
+        <button class="btn btn-danger" (click)="onDeletePlant(plant.id)">
+          Delete
+        </button>
       </div>
     </div>
-    <button
-      class="btn btn-warning"
-      [routerLink]="['/editplant']"
-      [queryParams]="{ id: plant.id }"
-    >
-      Edit
-    </button>
-    <button
-      class="btn btn-danger"
-      (click)="onDeletePlant(plant.id)"
-    >
-      Delete
-    </button>
   </div>
 </section>
