@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PlantType } from 'src/app/shared/helpers/interface';
 
 @Component({
   selector: 'app-plant-detail',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./plant-detail.component.scss']
 })
 export class PlantDetailComponent implements OnInit {
+  @Input() plant : PlantType
 
   constructor() { }
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SelectedPlantComponent } from './selectedplant.component';
 import { PlantEditComponent } from './plant-edit/plant-edit.component';
 import { PlantDetailComponent } from './plant-detail/plant-detail.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -13,7 +14,8 @@ import { PlantDetailComponent } from './plant-detail/plant-detail.component';
     PlantDetailComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   exports: [
     PlantEditComponent,

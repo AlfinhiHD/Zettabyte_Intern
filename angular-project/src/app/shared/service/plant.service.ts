@@ -17,8 +17,7 @@ export class PlantService {
   }
 
   addNewplant(plant: PlantType) {
-    const newplant: PlantType = { ...plant };
-    this.plant.next([...this.plant.getValue(), newplant]);
+    this.plant.next([...this.plant.getValue(), plant]);
   }
 
   deleteplant(id: string) {
@@ -28,5 +27,13 @@ export class PlantService {
 
   getPlantById(id: string) {
     return this.plant.getValue().find((plant) => plant.id === id);
+  }
+  updatePlant(updatedPlant: PlantType) {
+    const plants = this.plant.getValue();
+    const index = plants.findIndex((plant) => plant.id === updatedPlant.id);
+    if (index !== -1) {
+      plants[index] = updatedPlant;
+      this.plant.next([...plants]);
+    }
   }
 }

@@ -1,0 +1,91 @@
+<form (submit)="onSubmit()" class="p-5 mb-5">
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group mb-3">
+        <label for="imageUrl">ImageUrl :</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imageUrl"
+          [(ngModel)]="newPlant.imageUrl"
+          name="imageUrl"
+        />
+      </div>
+      <div class="form-group mb-3">
+        <label for="name">Plant Name :</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="newPlant.name"
+          name="name"
+        />
+      </div>
+      <div class="col-4">
+        <div class="form-group mb-3">
+          <label for="type">Type :</label>
+          <select
+            class="form-control"
+            id="type"
+            [(ngModel)]="newPlant.type"
+            name="type"
+          >
+            <option value="Orchid">Orchid</option>
+            <option value="Tree">Tree</option>
+            <option value="Flower">Flower</option>
+            <option value="Cactus">Cactus</option>
+            <option value="Rose">Rose</option>
+          </select>
+        </div>
+    </div>
+   
+      <div class="form-group mb-3">
+        <label for="price">Price :</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          [(ngModel)]="newPlant.price"
+          name="price"
+        />
+      </div>
+    </div>
+    <div class="col-4">
+      <div class="form-group mb-3">
+        <label for="stock">Stock :</label>
+        <input
+          type="number"
+          class="form-control"
+          id="stock"
+          [(ngModel)]="newPlant.stock"
+          name="stock"
+        />
+      </div>
+      <div class="form-group mb-4">
+        <label for="description">Description:</label>
+        <textarea
+          class="form-control"
+          id="description"
+          [(ngModel)]="newPlant.description"
+          name="description"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="
+      !newPlant.name ||
+      !newPlant.type ||
+      !newPlant.imageUrl ||
+      !newPlant.description ||
+      !newPlant.price ||
+      !newPlant.stock ||
+      !newPlant.description
+    "
+    class="btn btn-primary"
+  >
+    Submit
+  </button>
+</form>
