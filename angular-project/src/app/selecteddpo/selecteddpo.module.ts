@@ -3,10 +3,13 @@ import { CommonModule } from '@angular/common';
 import { DpoFormComponent } from './dpo-form/dpo-form.component';
 import { SelecteddpoComponent } from './selecteddpo.component';
 import { DpoDetailComponent } from './dpo-detail/dpo-detail.component';
-import { RouterModule } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 
-
+const routes: Routes = [
+  { path: 'detail/:id', component: SelecteddpoComponent},
+  { path: 'inputform', component: DpoFormComponent},
+];
 
 @NgModule({
   declarations: [
@@ -17,7 +20,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     RouterModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forChild(routes)
   ],
   exports: [
     DpoFormComponent,

@@ -47,7 +47,7 @@ export class DpoFormComponent implements OnInit {
     if (this.id) {
       const dpo = this.dpoService.getdpoById(this.id);
       if (dpo) {
-        this.dpoForm.patchValue(dpo);
+        this.dpoForm.setValue(dpo);
       }
     }
   }
@@ -67,7 +67,6 @@ export class DpoFormComponent implements OnInit {
     });
 
     if (this.dpoForm.invalid) {
-      // Form tidak valid, tidak melakukan apa-apa
       return;
     }
 
