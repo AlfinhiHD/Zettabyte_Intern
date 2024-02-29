@@ -28,17 +28,17 @@ export class DpoFormComponent implements OnInit {
       id: ['', Validators.required],
       name: ['', Validators.required],
       image: ['', Validators.required],
-      age: ['', [Validators.required, Validators.min(18), Validators.pattern(/^[0-9]*$/)]],
+      age: [null, [Validators.required, Validators.min(18), Validators.pattern(/^[0-9]*$/)]],
       gender: ['', Validators.required],
       marital: ['', Validators.required],
       job: ['', Validators.required],
       status: ['', Validators.required],
       description: ['', Validators.required],
-      height: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-      weight: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+      height: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+      weight: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       addresses: this.fb.group({
         address: ['', Validators.required],
-        zipcode: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+        zipcode: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
         city: ['', Validators.required],
         country: ['', Validators.required],
       }),
@@ -54,16 +54,15 @@ export class DpoFormComponent implements OnInit {
 
   onSubmit(): void {
     const formData = this.dpoForm.value;
-    console.log(formData);
 
     Object.keys(this.dpoForm.controls).forEach((key) => {
-      this.dpoForm.get(key)?.markAsTouched();
+      this.dpoForm.get(key).markAsTouched();
     });
 
     const addressesGroup = this.dpoForm.get('addresses') as FormGroup;
 
     Object.keys(addressesGroup.controls).forEach((key) => {
-      addressesGroup.get(key)?.markAsTouched();
+      addressesGroup.get(key).markAsTouched();
     });
 
     if (this.dpoForm.invalid) {
