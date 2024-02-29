@@ -1,63 +1,77 @@
 <section class="py-5" style="min-height: 90vh; margin-bottom: 1rem">
-    <div class="container px-4 px-lg-5 mt-5">
-      <div class="row gx-4 gx-lg-5 align-items-center">
-        <div class="col-md-6">
-          <img
-            class="card-img-top mb-5 mb-md-0"
-            [src]="dpo.image"
-            [alt]="dpo.name"
-          />
-        </div>
-        <div class="col-md-6">
-          <p class="fs-4 mb-1">{{ dpo.id }}</p>
-          <h1 class="display-5 fw-bolder">{{ dpo.name }}</h1>
-          <div class="fs-5 mb-4">
-            <span class="badge bg-warning ms-2">Rating: {{ dpo.status }}</span>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.age }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.gender }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.marital }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.job }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.height }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.weight }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.addresses.address }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.addresses.zipcode }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.addresses.city }}</p>
-          </div>
-          <div class="fs-4 fw-bolder">
-            <p>{{ dpo.addresses.country }}</p>
-          </div>
-          <p class="lead">
-            {{ dpo.description }}
-          </p>
-          <button
-            class="btn btn-warning me-3"
-            [routerLink]="['/dpo/inputform']"
-            [queryParams]="{ id: dpo.id }"
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="col-md-6">
+        <img
+          class="card-img-top mb-5 mb-md-0"
+          [src]="dpo.image"
+          [alt]="dpo.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <p class="fs-8 mb-1">{{ dpo.id }}</p>
+        <h1 class="display-5 fw-bolder">{{ dpo.name }}</h1>
+        <div class="fs-5 mb-4">
+          <span
+            class="badge ms-2"
+            [ngClass]="{
+              'bg-danger': dpo.status === 'Wanted',
+              'bg-success': dpo.status === 'Found'
+            }"
+            >{{ dpo.status }}</span
           >
-            Edit
-          </button>
-          <button class="btn btn-danger" (click)="onDeleteDPO(dpo.id)">
-            Delete
-          </button>
         </div>
+        <div class="row">
+          <div class="col-6">
+            <div class="fs-5 ">
+              <p>Age : {{ dpo.age }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>Gender : {{ dpo.gender }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>Marital Status : {{ dpo.marital }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>Job : {{ dpo.job }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>Height : {{ dpo.height }}</p>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="fs-5 ">
+              <p>Weight : {{ dpo.weight }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>Address : {{ dpo.addresses.address }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>Zipcode : {{ dpo.addresses.zipcode }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>City : {{ dpo.addresses.city }}</p>
+            </div>
+            <div class="fs-5 ">
+              <p>Country : {{ dpo.addresses.country }}</p>
+            </div>
+          </div>
+        </div>
+
+        <p class="lead my-5">
+          {{ dpo.description }}
+        </p>
+        <button
+          class="btn btn-warning me-3"
+          [routerLink]="['/dpo/inputform']"
+          [queryParams]="{ id: dpo.id }"
+        >
+          Edit
+        </button>
+        <button class="btn btn-danger" (click)="onDeleteDPO(dpo.id)">
+          Delete
+        </button>
       </div>
     </div>
-  </section>
+  </div>
+</section>
