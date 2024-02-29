@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectedPlantComponent } from './selectedplant.component';
 import { PlantDetailComponent } from './plant-detail/plant-detail.component';
-import { AppRoutingModule } from '../app-routing.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +13,7 @@ import { AppRoutingModule } from '../app-routing.module';
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
+    RouterModule.forChild([{path: '', component: SelectedPlantComponent}])
   ],
   exports: [
     PlantDetailComponent,

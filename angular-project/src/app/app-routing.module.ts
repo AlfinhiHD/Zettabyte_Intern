@@ -1,13 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PlantComponent } from './plant/plant.component';
-import { SelectedPlantComponent } from './selectedplant/selectedplant.component';
 import { PlantFormComponent } from './plant/plant-form/plant-form.component';
 import { NotFoundComponent } from './shared/components/not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'home', component: PlantComponent },
-  { path: 'detail/:id', component: SelectedPlantComponent },
+  {
+    path: 'detail/:id',
+    loadChildren: () =>
+      import('./selectedplant/selectedplant.module').then(
+        (m) => m.SelectedPlantModule
+      ),
+  },
   { path: 'addplant', component: PlantFormComponent },
   { path: 'editplant', component: PlantFormComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
