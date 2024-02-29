@@ -1,1 +1,11 @@
-<p>dpo works!</p>
+<app-dpo-banner></app-dpo-banner>
+<section style="background-color: #33658A">
+  <div class="text-center container py-5">
+    <h3 class="mt-4 mb-5 text-white"><strong>The Person We Are Looking For!</strong></h3>
+    <div class="row">
+      <div class="col-lg-4 col-md-12 mb-4" *ngFor="let dpo of dpoList">
+        <app-dpo-card [dpo]="dpo"></app-dpo-card>
+      </div>
+    </div>
+  </div>
+</section>

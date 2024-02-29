@@ -48,7 +48,7 @@ export const DPOData: DPOType[] = [
         marital: 'Divorced',
         job: 'Lawyer',
         status: 'Wanted',
-        description: 'Wanted for perjury and bribery.',
+        description: 'Wanted for perjury, injury and bribery.',
         height: 170,
         weight: 65,
         addresses: {
