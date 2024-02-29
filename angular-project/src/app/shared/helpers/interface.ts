@@ -3,7 +3,7 @@ export interface DPOType {
     name: string;
     image: string;
     age: number;
-    gender: 'Man' | 'Women';
+    gender: 'Man' | 'Woman';
     marital: 'Single' | 'Married' | 'Divorced' | 'Widowed';
     job: string;
     status: 'Wanted' | 'Found';
