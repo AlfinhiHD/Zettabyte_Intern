@@ -13,7 +13,7 @@ import { DpoBannerComponent } from './dpo-banner/dpo-banner.component';
     DpoBannerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
   ],
   exports: [
     DpoComponent,
