@@ -1,5 +1,9 @@
 <div class="container">
-  <div class="card shadow b-0" (click)="goToDetailDPO(dpo.id)" style="cursor: pointer">
+  <div
+    class="card shadow b-0"
+    (click)="goToDetailDPO(dpo.id)"
+    style="cursor: pointer"
+  >
     <div class="row g-0">
       <div class="col-sm-4">
         <img
@@ -12,12 +16,19 @@
       <div class="col-sm-8">
         <div class="card-body">
           <h5 class="card-title">
-              {{dpo.name}}
+            {{ dpo.name }}
           </h5>
           <p class="card-text">
-            {{dpo.description}}
+            {{ dpo.description }}
           </p>
-          <span class="card-footer badge rounded-pill bg-dark">{{dpo.status}}</span>
+          <span
+            class="card-footer badge rounded-pill"
+            [ngClass]="{
+              'bg-danger': dpo.status === 'Wanted',
+              'bg-success': dpo.status === 'Found'
+            }"
+            >{{ dpo.status }}</span
+          >
         </div>
       </div>
     </div>
