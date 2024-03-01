@@ -5,6 +5,11 @@ export interface DPOAddressType {
     country: string;
 }
 
+export interface DPOContactType {
+    telp: number;
+    as: string;
+}
+
 export interface DPOType {
     id: string;
     name: string;
@@ -17,5 +22,6 @@ export interface DPOType {
     description: string;
     height: number;
     weight: number;
+    contacts: DPOContactType[];
     addresses: DPOAddressType[];
 }

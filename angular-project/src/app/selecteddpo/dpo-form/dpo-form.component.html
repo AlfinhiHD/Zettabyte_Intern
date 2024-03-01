@@ -1,8 +1,10 @@
 <h1>{{ id ? "EDIT FORM" : "ADD FORM" }}</h1>
 
 <form [formGroup]="dpoForm" (ngSubmit)="onSubmit()">
+  
   <div class="row">
     <div class="col-6">
+
       <div class="form-group">
         <label for="image">Name</label>
         <input
@@ -143,6 +145,7 @@
           Marital status is required
         </div>
       </div>
+
       <div class="form-group">
         <label for="job">Job</label>
         <input
@@ -167,6 +170,7 @@
           Job is required
         </div>
       </div>
+
       <div class="form-group">
         <label for="description">Description</label>
         <textarea
@@ -192,6 +196,88 @@
           Description is required
         </div>
       </div>
+
+      <div formArrayName="contacts">
+        <div
+          *ngFor="
+            let contact of dpoForm.get('contacts')['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+        >
+        <div class="form-group">
+          <label for="telp">Handphone Number</label>
+          <input
+            type="number"
+            formControlName="telp"
+            class="form-control"
+            id="telp"
+            [class.is-invalid]="
+              contact.get('telp').touched && contact.get('telp').invalid
+            "
+            [class.is-valid]="
+              contact.get('telp').touched && contact.get('telp').valid
+            "
+          />
+          <div
+            *ngIf="
+              contact.get('telp').touched &&
+              contact.get('telp').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Handphone number must required
+          </div>
+          <div
+            *ngIf="
+              contact.get('telp').touched &&
+              contact.get('telp').hasError('pattern')
+            "
+            class="text-danger error-message"
+          >
+            Handphone number must a valid number
+          </div>
+        </div>
+          <div class="form-group">
+            <label for="as">As</label>
+            <input
+              type="text"
+              formControlName="as"
+              class="form-control"
+              id="as"
+              [class.is-invalid]="
+                contact.get('as').touched && contact.get('as').invalid
+              "
+              [class.is-valid]="
+                contact.get('as').touched && contact.get('as').valid
+              "
+            />
+            <div
+              *ngIf="
+                contact.get('as').touched &&
+                contact.get('as').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Contact as is required
+            </div>
+          </div>
+      
+      
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="removeField(i, 'contact')"
+            [disabled]="isFirstField(i, 'contact')"
+          >
+            Remove Contact
+          </button>
+        </div>
+      </div>
+
+      <button type="button" class="btn btn-primary" (click)="addField('contact')">
+        Add Contact
+      </button>
     </div>
     <div class="col-6">
       <div *ngIf="id" class="form-group">
@@ -210,6 +296,7 @@
           Status is required
         </div>
       </div>
+
       <div class="form-group">
         <label for="height">Height (cm)</label>
         <input
@@ -394,14 +481,15 @@
           <button
             type="button"
             class="btn btn-danger"
-            (click)="removeAddress(i)"
-            [disabled]="isFirstAddress(i)"
+            (click)="removeField(i, 'address')"
+            [disabled]="isFirstField(i, 'address')"
           >
             Remove Address
           </button>
         </div>
       </div>
-      <button type="button" class="btn btn-primary" (click)="addAddress()">
+
+      <button type="button" class="btn btn-primary" (click)="addField('address')">
         Add Address
       </button>
     </div>
@@ -410,3 +498,4 @@
     <button type="submit" class="btn btn-primary w-25">Submit</button>
   </div>
 </form>
+

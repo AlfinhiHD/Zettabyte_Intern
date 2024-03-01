@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import {
+  DPOAddressType,
+  DPOContactType,
+} from 'src/app/shared/helpers/interface';
 import { DpoService } from 'src/app/shared/service/dpo.service';
 import Swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
@@ -42,6 +46,12 @@ export class DpoFormComponent implements OnInit {
       job: ['', Validators.required],
       status: [''],
       description: ['', Validators.required],
+      contacts: this.fb.array([
+        this.fb.group({
+          telp: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+          as: ['', Validators.required],
+        }),
+      ]),
       height: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       weight: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       addresses: this.fb.array([
@@ -61,33 +71,18 @@ export class DpoFormComponent implements OnInit {
       const dpo = this.dpoService.getdpoById(this.id);
       if (dpo) {
         this.dpoForm.patchValue(dpo);
-        this.setAddresses(dpo.addresses);
+        this.setArrayData(dpo.addresses, dpo.contacts);
       }
     }
   }
 
-  setAddresses(addresses: any[]): void {
+  setArrayData(addresses: DPOAddressType[], contacts: DPOContactType[]): void {
     const addressFormArray = this.dpoForm.get('addresses') as FormArray;
     addresses.forEach((address, index) => {
       if (index === 0) {
         index++;
       } else {
-        console.log(index);
-
-        // addressFormArray.push(
-        //   this.fb.group({
-        //     address: [address.address, Validators.required],
-        //     zipcode: [
-        //       address.zipcode,
-        //       [Validators.required, Validators.pattern(/^[0-9]*$/)],
-        //     ],
-        //     city: [address.city, Validators.required],
-        //     country: [address.country, Validators.required],
-        //   })
-        // );
-
-        addressFormArray.insert(
-          index + 1,
+        addressFormArray.push(
           this.fb.group({
             address: [address.address, Validators.required],
             zipcode: [
@@ -100,30 +95,69 @@ export class DpoFormComponent implements OnInit {
         );
       }
     });
+
+    const contactsFormArray = this.dpoForm.get('contacts') as FormArray;
+    contacts.forEach((contact, index) => {
+      if (index === 0) {
+        index++;
+      } else {
+        contactsFormArray.push(
+          this.fb.group({
+            telp: [
+              contact.telp,
+              [Validators.required, Validators.pattern(/^[0-9]*$/)],
+            ],
+            as: [contact.as, Validators.required],
+          })
+        );
+      }
+    });
   }
 
-  addAddress() {
-    const addresses = this.dpoForm.get('addresses') as FormArray;
-    addresses.push(
-      this.fb.group({
-        address: ['', Validators.required],
-        zipcode: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-        city: ['', Validators.required],
-        country: ['', Validators.required],
-      })
-    );
-  }
-
-  removeAddress(index: number) {
-    const addresses = this.dpoForm.get('addresses') as FormArray;
-    if (addresses && addresses.length > index) {
-      addresses.removeAt(index);
+  addField(type: string): void {
+    if (type === 'contact') {
+      const contacts = this.dpoForm.get('contacts') as FormArray;
+      contacts.push(
+        this.fb.group({
+          telp: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+          as: ['', Validators.required],
+        })
+      );
+    } else if (type === 'address') {
+      const addresses = this.dpoForm.get('addresses') as FormArray;
+      addresses.push(
+        this.fb.group({
+          address: ['', Validators.required],
+          zipcode: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+          city: ['', Validators.required],
+          country: ['', Validators.required],
+        })
+      );
     }
   }
-
-  isFirstAddress(index: number): boolean {
-    const addresses = this.dpoForm.get('addresses') as FormArray;
-    return index === 0 && addresses.length === 1;
+  
+  removeField(index: number, type: string): void {
+    if (type === 'contact') {
+      const contacts = this.dpoForm.get('contacts') as FormArray;
+      if (contacts && contacts.length > index) {
+        contacts.removeAt(index);
+      }
+    } else if (type === 'address') {
+      const addresses = this.dpoForm.get('addresses') as FormArray;
+      if (addresses && addresses.length > index) {
+        addresses.removeAt(index);
+      }
+    }
+  }
+  
+  isFirstField(index: number, type: string): any {
+    if (type === 'contact') {
+      const contacts = this.dpoForm.get('contacts') as FormArray;
+      return index === 0 && contacts.length === 1;
+    } else if (type === 'address') {
+      const addresses = this.dpoForm.get('addresses') as FormArray;
+      return index === 0 && addresses.length === 1;
+    }
   }
 
   onSubmit(): void {
@@ -131,13 +165,8 @@ export class DpoFormComponent implements OnInit {
     const formData = this.dpoForm.value;
     console.log(this.dpoForm);
 
-    Object.keys(this.dpoForm.controls).forEach((key) => {
-      this.dpoForm.get(key).markAsTouched();
-    });
-
-    Object.keys(addressesGroup.controls).forEach((key) => {
-      addressesGroup.get(key).markAsTouched();
-    });
+    this.dpoForm.markAllAsTouched();
+    addressesGroup.markAllAsTouched();
 
     if (this.dpoForm.invalid) {
       return;
@@ -145,7 +174,7 @@ export class DpoFormComponent implements OnInit {
 
     let successMessage = '';
     let confirmButtonText = '';
-    
+
     if (!this.id) {
       formData.id = uuidv4();
       formData.status = 'Wanted';
@@ -164,23 +193,14 @@ export class DpoFormComponent implements OnInit {
       icon: 'warning',
       showCancelButton: true,
       confirmButtonText: confirmButtonText,
-      cancelButtonText: 'No, keep it'
+      cancelButtonText: 'No, keep it',
     }).then((result) => {
       if (result.isConfirmed) {
         this.router.navigate(['/home']);
-        Swal.fire(
-          'Submitted!',
-          successMessage,
-          'success'
-        );
+        Swal.fire('Submitted!', successMessage, 'success');
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        Swal.fire(
-          'Cancelled',
-          'Your form is safe :)',
-          'error'
-        );
+        Swal.fire('Cancelled', 'Your form is safe :)', 'error');
       }
     });
   }
-
 }

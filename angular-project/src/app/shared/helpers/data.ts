@@ -14,6 +14,16 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for arson and vandalism.',
       height: 160,
       weight: 55,
+      contacts: [
+        {
+          telp: 123456789,
+          as: 'Mom'
+        },
+        {
+          telp: 123456222,
+          as: 'Dad'
+        }
+      ],
       addresses: [
         {
           address: '789 Oak St',
@@ -36,6 +46,16 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for tax evasion and fraud.',
       height: 175,
       weight: 80,
+      contacts: [
+        {
+          telp: 987654321,
+          as: 'Dad'
+        },
+        {
+          telp: 123456789,
+          as: 'Brother'
+        }
+      ],
       addresses: [
         {
           address: '987 Pine St',
@@ -70,6 +90,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for perjury, injury and bribery.',
       height: 170,
       weight: 65,
+      contacts: [
+        {
+          telp: 123456789,
+          as: 'Mom'
+        }
+      ],
       addresses: [
         {
           address: '654 Maple St',
@@ -92,6 +118,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for medical malpractice and negligence.',
       height: 185,
       weight: 90,
+      contacts: [
+        {
+          telp: 987654321,
+          as: 'Dad'
+        }
+      ],
       addresses: [
         {
           address: '321 Cedar St',
@@ -114,6 +146,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for theft of medical supplies.',
       height: 165,
       weight: 60,
+      contacts: [
+        {
+          telp: 123456789,
+          as: 'Mom'
+        }
+      ],
       addresses: [
         {
           address: '456 Birch St',
@@ -136,6 +174,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for corruption and abuse of power.',
       height: 180,
       weight: 85,
+      contacts: [
+        {
+          telp: 987654321,
+          as: 'Dad'
+        }
+      ],
       addresses: [
         {
           address: '789 Elm St',
@@ -158,6 +202,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for defamation and libel.',
       height: 170,
       weight: 70,
+      contacts: [
+        {
+          telp: 123456789,
+          as: 'Mom'
+        }
+      ],
       addresses: [
         {
           address: '123 Cedar St',
@@ -180,6 +230,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for fraud and embezzlement.',
       height: 185,
       weight: 95,
+      contacts: [
+        {
+          telp: 987654321,
+          as: 'Dad'
+        }
+      ],
       addresses: [
         {
           address: '456 Oak St',
@@ -202,6 +258,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for child endangerment and neglect.',
       height: 160,
       weight: 65,
+      contacts: [
+        {
+          telp: 123456789,
+          as: 'Mom'
+        }
+      ],
       addresses: [
         {
           address: '789 Maple St',
@@ -224,6 +286,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for auto theft and vandalism.',
       height: 175,
       weight: 85,
+      contacts: [
+        {
+          telp: 987654321,
+          as: 'Dad'
+        }
+      ],
       addresses: [
         {
           address: '987 Birch St',
@@ -246,6 +314,16 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for defamation and libel.',
       height: 170,
       weight: 70,
+      contacts: [
+        {
+          telp: 123456789,
+          as: 'Mom'
+        },
+        {
+          telp: 987654321,
+          as: 'Dad'
+        }
+      ],
       addresses: [
         {
           address: '123 Cedar St',
@@ -274,6 +352,12 @@ export const DPOData: DPOType[] = [
       description: 'Wanted for fraud and embezzlement.',
       height: 185,
       weight: 95,
+      contacts: [
+        {
+          telp: 987654321,
+          as: 'Dad'
+        }
+      ],
       addresses: [
         {
           address: '456 Oak St',
