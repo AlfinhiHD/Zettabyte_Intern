@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DpoService } from 'src/app/shared/service/dpo.service';
 import { v4 as uuidv4 } from 'uuid';
@@ -28,7 +28,14 @@ export class DpoFormComponent implements OnInit {
       id: [''],
       name: ['', Validators.required],
       image: ['', Validators.required],
-      age: [null, [Validators.required, Validators.min(18), Validators.pattern(/^[0-9]*$/)]],
+      age: [
+        null,
+        [
+          Validators.required,
+          Validators.min(18),
+          Validators.pattern(/^[0-9]*$/),
+        ],
+      ],
       gender: ['', Validators.required],
       marital: ['', Validators.required],
       job: ['', Validators.required],
@@ -36,12 +43,17 @@ export class DpoFormComponent implements OnInit {
       description: ['', Validators.required],
       height: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       weight: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-      addresses: this.fb.group({
-        address: ['', Validators.required],
-        zipcode: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-        city: ['', Validators.required],
-        country: ['', Validators.required],
-      }),
+      addresses: this.fb.array([
+        this.fb.group({
+          address: ['', Validators.required],
+          zipcode: [
+            null,
+            [Validators.required, Validators.pattern(/^[0-9]*$/)],
+          ],
+          city: ['', Validators.required],
+          country: ['', Validators.required],
+        }),
+      ]),
     });
 
     if (this.id) {
@@ -52,17 +64,32 @@ export class DpoFormComponent implements OnInit {
     }
   }
 
+  addAddress() {
+    const addresses = this.dpoForm.get('addresses') as FormArray;
+    addresses.push(
+      this.fb.group({
+        address: ['', Validators.required],
+        zipcode: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+        city: ['', Validators.required],
+        country: ['', Validators.required],
+      })
+    );
+  }
+
+  removeAddress(index: number) {
+    const addresses = this.dpoForm.get('addresses') as FormArray;
+    addresses.removeAt(index);
+  }
+
   onSubmit(): void {
+    const addressesGroup = this.dpoForm.get('addresses') as FormGroup;
     const formData = this.dpoForm.value;
     console.log(this.dpoForm);
-    
 
     Object.keys(this.dpoForm.controls).forEach((key) => {
       this.dpoForm.get(key).markAsTouched();
     });
-
-    const addressesGroup = this.dpoForm.get('addresses') as FormGroup;
-
+    
     Object.keys(addressesGroup.controls).forEach((key) => {
       addressesGroup.get(key).markAsTouched();
     });

@@ -278,121 +278,132 @@
         </div>
       </div>
 
-      <div formGroupName="addresses">
-        <div class="form-group">
-          <label for="address">Address</label>
-          <input
-            type="text"
-            formControlName="address"
-            class="form-control"
-            id="address"
-            [class.is-invalid]="
-              dpoForm.get('addresses.address').touched &&
-              dpoForm.get('addresses.address').invalid
-            "
-            [class.is-valid]="
-              dpoForm.get('addresses.address').touched &&
-              dpoForm.get('addresses.address').valid
-            "
-          />
-          <div
-            *ngIf="
-              dpoForm.get('addresses.address').touched &&
-              dpoForm.get('addresses.address').hasError('required')
-            "
-            class="text-danger error-message"
-          >
-            Address is required
+      <div formArrayName="addresses">
+        <div
+          *ngFor="
+            let address of dpoForm.get('addresses')['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+        >
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              formControlName="address"
+              class="form-control"
+              id="address"
+              [class.is-invalid]="
+                address.get('address').touched && address.get('address').invalid
+              "
+              [class.is-valid]="
+                address.get('address').touched && address.get('address').valid
+              "
+            />
+            <div
+              *ngIf="
+                address.get('address').touched &&
+                address.get('address').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Address is required
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="zipcode">Zip Code</label>
-          <input
-            type="number"
-            formControlName="zipcode"
-            class="form-control"
-            id="zipcode"
-            [class.is-invalid]="
-              dpoForm.get('addresses.zipcode').touched &&
-              dpoForm.get('addresses.zipcode').invalid
-            "
-            [class.is-valid]="
-              dpoForm.get('addresses.zipcode').touched &&
-              dpoForm.get('addresses.zipcode').valid
-            "
-          />
-          <div
-            *ngIf="
-              dpoForm.get('addresses.zipcode').touched &&
-              dpoForm.get('addresses.zipcode').hasError('required')
-            "
-            class="text-danger error-message"
-          >
-            Zip Code is required
+          <div class="form-group">
+            <label for="zipcode">Zip Code</label>
+            <input
+              type="number"
+              formControlName="zipcode"
+              class="form-control"
+              id="zipcode"
+              [class.is-invalid]="
+                address.get('zipcode').touched && address.get('zipcode').invalid
+              "
+              [class.is-valid]="
+                address.get('zipcode').touched && address.get('zipcode').valid
+              "
+            />
+            <div
+              *ngIf="
+                address.get('zipcode').touched &&
+                address.get('zipcode').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Zip Code is required
+            </div>
+            <div
+              *ngIf="
+                address.get('zipcode').touched &&
+                address.get('zipcode').hasError('pattern')
+              "
+              class="text-danger error-message"
+            >
+              Zip Code must be a valid number
+            </div>
           </div>
-          <div
-            *ngIf="
-              dpoForm.get('addresses.zipcode').touched &&
-              dpoForm.get('addresses.zipcode').hasError('pattern')
-            "
-            class="text-danger error-message"
-          >
-            Please input a valid Zip Code
+          <div class="form-group">
+            <label for="city">City</label>
+            <input
+              type="text"
+              formControlName="city"
+              class="form-control"
+              id="city"
+              [class.is-invalid]="
+                address.get('city').touched && address.get('city').invalid
+              "
+              [class.is-valid]="
+                address.get('city').touched && address.get('city').valid
+              "
+            />
+            <div
+              *ngIf="
+                address.get('city').touched &&
+                address.get('city').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              City is required
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="city">City</label>
-          <input
-            type="text"
-            formControlName="city"
-            class="form-control"
-            id="city"
-            [class.is-invalid]="
-              dpoForm.get('addresses.city').touched &&
-              dpoForm.get('addresses.city').invalid
-            "
-            [class.is-valid]="
-              dpoForm.get('addresses.city').touched &&
-              dpoForm.get('addresses.city').valid
-            "
-          />
-          <div
-            *ngIf="
-              dpoForm.get('addresses.city').touched &&
-              dpoForm.get('addresses.city').hasError('required')
-            "
-            class="text-danger error-message"
-          >
-            City is required
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              formControlName="country"
+              class="form-control"
+              id="country"
+              [class.is-invalid]="
+                address.get('country').touched && address.get('country').invalid
+              "
+              [class.is-valid]="
+                address.get('country').touched && address.get('country').valid
+              "
+            />
+            <div
+              *ngIf="
+                address.get('country').touched &&
+                address.get('country').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Country is required
+            </div>
           </div>
-        </div>
-        <div class="form-group">
-          <label for="country">Country</label>
-          <input
-            type="text"
-            formControlName="country"
-            class="form-control"
-            id="country"
-            [class.is-invalid]="
-              dpoForm.get('addresses.country').touched &&
-              dpoForm.get('addresses.country').invalid
-            "
-            [class.is-valid]="
-              dpoForm.get('addresses.country').touched &&
-              dpoForm.get('addresses.country').valid
-            "
-          />
-          <div
-            *ngIf="
-              dpoForm.get('addresses.country').touched &&
-              dpoForm.get('addresses.country').hasError('required')
-            "
-            class="text-danger error-message"
+          <button
+            *ngIf="i !== 0"
+            type="button"
+            class="btn btn-danger"
+            (click)="removeAddress(i)"
           >
-            Country is required
-          </div>
+            Remove Address
+          </button>
         </div>
       </div>
+      <button type="button" class="btn btn-primary" (click)="addAddress()">
+        Add Address
+      </button>
     </div>
   </div>
   <div class="text-center">
