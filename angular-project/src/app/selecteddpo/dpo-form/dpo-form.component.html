@@ -278,8 +278,13 @@
         </div>
       </div>
 
+      <div formArrayName="addresses">
         <div
-          formGroupName="addresses"
+          *ngFor="
+            let address of dpoForm.get('addresses')['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
         >
           <div class="form-group">
             <label for="address">Address</label>
@@ -289,16 +294,16 @@
               class="form-control"
               id="address"
               [class.is-invalid]="
-                 dpoForm.get('addresses.address').touched &&  dpoForm.get('addresses.address').invalid
+                address.get('address').touched && address.get('address').invalid
               "
               [class.is-valid]="
-                 dpoForm.get('addresses.address').touched && dpoForm.get('addresses.address').valid
+                address.get('address').touched && address.get('address').valid
               "
             />
             <div
               *ngIf="
-                 dpoForm.get('addresses.address').touched &&
-                 dpoForm.get('addresses.address').hasError('required')
+                address.get('address').touched &&
+                address.get('address').hasError('required')
               "
               class="text-danger error-message"
             >
@@ -313,16 +318,16 @@
               class="form-control"
               id="zipcode"
               [class.is-invalid]="
-                 dpoForm.get('addresses.zipcode').touched &&  dpoForm.get('addresses.zipcode').invalid
+                address.get('zipcode').touched && address.get('zipcode').invalid
               "
               [class.is-valid]="
-                 dpoForm.get('addresses.zipcode').touched &&  dpoForm.get('addresses.zipcode').valid
+                address.get('zipcode').touched && address.get('zipcode').valid
               "
             />
             <div
               *ngIf="
-                 dpoForm.get('addresses.zipcode').touched &&
-                 dpoForm.get('addresses.zipcode').hasError('required')
+                address.get('zipcode').touched &&
+                address.get('zipcode').hasError('required')
               "
               class="text-danger error-message"
             >
@@ -330,8 +335,8 @@
             </div>
             <div
               *ngIf="
-                 dpoForm.get('addresses.zipcode').touched &&
-                 dpoForm.get('addresses.zipcode').hasError('pattern')
+                address.get('zipcode').touched &&
+                address.get('zipcode').hasError('pattern')
               "
               class="text-danger error-message"
             >
@@ -346,16 +351,16 @@
               class="form-control"
               id="city"
               [class.is-invalid]="
-                 dpoForm.get('addresses.city').touched &&  dpoForm.get('addresses.city').invalid
+                address.get('city').touched && address.get('city').invalid
               "
               [class.is-valid]="
-                 dpoForm.get('addresses.city').touched &&  dpoForm.get('addresses.city').valid
+                address.get('city').touched && address.get('city').valid
               "
             />
             <div
               *ngIf="
-                 dpoForm.get('addresses.city').touched &&
-                 dpoForm.get('addresses.city').hasError('required')
+                address.get('city').touched &&
+                address.get('city').hasError('required')
               "
               class="text-danger error-message"
             >
@@ -370,23 +375,35 @@
               class="form-control"
               id="country"
               [class.is-invalid]="
-                 dpoForm.get('addresses.country').touched &&  dpoForm.get('addresses.country').invalid
+                address.get('country').touched && address.get('country').invalid
               "
               [class.is-valid]="
-                 dpoForm.get('addresses.country').touched &&  dpoForm.get('addresses.country').valid
+                address.get('country').touched && address.get('country').valid
               "
             />
             <div
               *ngIf="
-                 dpoForm.get('addresses.country').touched &&
-                 dpoForm.get('addresses.country').hasError('required')
+                address.get('country').touched &&
+                address.get('country').hasError('required')
               "
               class="text-danger error-message"
             >
               Country is required
             </div>
           </div>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="removeAddress(i)"
+            [disabled]="isFirstAddress(i)"
+          >
+            Remove Address
+          </button>
         </div>
+      </div>
+      <button type="button" class="btn btn-primary" (click)="addAddress()">
+        Add Address
+      </button>
     </div>
   </div>
   <div class="text-center">
