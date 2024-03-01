@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DpoService } from 'src/app/shared/service/dpo.service';
+import Swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 
 @Component({
@@ -57,11 +58,10 @@ export class DpoFormComponent implements OnInit {
     });
 
     if (this.id) {
-      const dpo = this.dpoService.getdpoById(this.id);        
+      const dpo = this.dpoService.getdpoById(this.id);
       if (dpo) {
         this.dpoForm.patchValue(dpo);
         this.setAddresses(dpo.addresses);
-        
       }
     }
   }
@@ -70,10 +70,10 @@ export class DpoFormComponent implements OnInit {
     const addressFormArray = this.dpoForm.get('addresses') as FormArray;
     addresses.forEach((address, index) => {
       if (index === 0) {
-        index++
+        index++;
       } else {
         console.log(index);
-        
+
         // addressFormArray.push(
         //   this.fb.group({
         //     address: [address.address, Validators.required],
@@ -86,15 +86,18 @@ export class DpoFormComponent implements OnInit {
         //   })
         // );
 
-        addressFormArray.insert(index + 1, this.fb.group({
-          address: [address.address, Validators.required],
-          zipcode: [
-            address.zipcode,
-            [Validators.required, Validators.pattern(/^[0-9]*$/)],
-          ],
-          city: [address.city, Validators.required],
-          country: [address.country, Validators.required],
-        }));
+        addressFormArray.insert(
+          index + 1,
+          this.fb.group({
+            address: [address.address, Validators.required],
+            zipcode: [
+              address.zipcode,
+              [Validators.required, Validators.pattern(/^[0-9]*$/)],
+            ],
+            city: [address.city, Validators.required],
+            country: [address.country, Validators.required],
+          })
+        );
       }
     });
   }
@@ -131,7 +134,7 @@ export class DpoFormComponent implements OnInit {
     Object.keys(this.dpoForm.controls).forEach((key) => {
       this.dpoForm.get(key).markAsTouched();
     });
-    
+
     Object.keys(addressesGroup.controls).forEach((key) => {
       addressesGroup.get(key).markAsTouched();
     });
@@ -140,13 +143,44 @@ export class DpoFormComponent implements OnInit {
       return;
     }
 
+    let successMessage = '';
+    let confirmButtonText = '';
+    
     if (!this.id) {
       formData.id = uuidv4();
       formData.status = 'Wanted';
+      successMessage = 'Successfully added new data!';
+      confirmButtonText = 'Yes, add it!';
       this.dpoService.addNewdpo(formData);
     } else {
+      successMessage = 'Your data has been edited!';
+      confirmButtonText = 'Yes, edit it!';
       this.dpoService.updatedpo(formData);
     }
-    this.router.navigate(['/home']);
+
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You are about to submit this form!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: confirmButtonText,
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.router.navigate(['/home']);
+        Swal.fire(
+          'Submitted!',
+          successMessage,
+          'success'
+        );
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Your form is safe :)',
+          'error'
+        );
+      }
+    });
   }
+
 }
