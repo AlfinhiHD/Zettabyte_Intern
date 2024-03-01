@@ -1,7 +1,23 @@
-<section class="py-5" style="min-height: 90vh; margin-bottom: 1rem">
-  <div class="container px-4 px-lg-5 mt-5">
+<section
+  class="py-5"
+  style="
+    min-height: 90vh;
+    padding-bottom: 1rem;
+    background-color: #33658a;
+    color: white;
+  "
+>
+  <div
+    class="container px-4 px-lg-5"
+    style="
+      padding-top: 2rem;
+      padding-bottom: 2rem;
+      border-radius: 10px;
+      background-color: rgba(0, 0, 0, 0.5);
+    "
+  >
     <div class="row gx-4 gx-lg-5">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <p class="fs-8 mb-1">DPO ID : {{ dpo.id }}</p>
         <h1 class="display-5 fw-bolder">{{ dpo.name }}</h1>
         <div class="fs-5 mb-4">
@@ -19,75 +35,74 @@
           [src]="dpo.image"
           [alt]="dpo.name"
         />
-      </div>
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-6">
-            <h3 class="mb-3">Basic Info</h3>
-            <div class="fs-5">
-              <p>Age : {{ dpo.age }}</p>
-            </div>
-            <div class="fs-5">
-              <p>Gender : {{ dpo.gender }}</p>
-            </div>
-            <div class="fs-5">
-              <p>Marital Status : {{ dpo.marital }}</p>
-            </div>
-            <div class="fs-5">
-              <p>Job : {{ dpo.job }}</p>
-            </div>
-            <div class="fs-5">
-              <p>Height : {{ dpo.height }}</p>
-            </div>
-            <div class="fs-5">
-              <p>Weight : {{ dpo.weight }}</p>
-            </div>
-            <h3 class="mb-3 mt-5">Relatives Contacts</h3>
-            <div *ngFor="let contact of dpo.contacts; let i = index">
-              <h5 class="mt-2">The {{ i + 1 }} Contacts</h5>
-              <hr />
-              <div class="fs-5">
-                <p>Handphone Number : {{ contact.telp }}</p>
-              </div>
-              <div class="fs-5">
-                <p>As : {{ contact.as }}</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <h3 class="mb-3">Last Seen</h3>
-            <div *ngFor="let address of dpo.addresses; let i = index">
-              <h5 class="mt-5">The {{ i + 1 }} Address</h5>
-              <hr />
-              <div class="fs-5">
-                <p>Address : {{ address.address }}</p>
-              </div>
-              <div class="fs-5">
-                <p>Zipcode : {{ address.zipcode }}</p>
-              </div>
-              <div class="fs-5">
-                <p>City : {{ address.city }}</p>
-              </div>
-              <div class="fs-5">
-                <p>Country : {{ address.country }}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
         <p class="lead my-5">
           {{ dpo.description }}
         </p>
         <button
-          class="btn btn-warning me-3"
+          class="btn btn-warning me-3 mb-5"
           [routerLink]="['/dpo/inputform']"
           [queryParams]="{ id: dpo.id }"
         >
           Edit
         </button>
-        <button class="btn btn-danger" (click)="onDeleteDPO(dpo.id)">
+        <button class="btn btn-danger mb-5" (click)="onDeleteDPO(dpo.id)">
           Delete
         </button>
+      </div>
+      <div class="col-md-8">
+        <div class="row">
+          <div class="ps-5 col-5">
+            <h3 class="mb-3 mt-s-5 fw-bolder">Basic Info</h3>
+            <div class="fs-7 mt-5">
+              <p>Age : {{ dpo.age }}</p>
+            </div>
+            <div class="fs-7">
+              <p>Gender : {{ dpo.gender }}</p>
+            </div>
+            <div class="fs-7">
+              <p>Marital Status : {{ dpo.marital }}</p>
+            </div>
+            <div class="fs-7">
+              <p>Job : {{ dpo.job }}</p>
+            </div>
+            <div class="fs-7">
+              <p>Height : {{ dpo.height }}</p>
+            </div>
+            <div class="fs-7">
+              <p>Weight : {{ dpo.weight }}</p>
+            </div>
+            <h3 class="mb-3 mt-5 fw-bolder">Relatives Contacts</h3>
+            <div *ngFor="let contact of dpo.contacts; let i = index">
+              <h5 class="mt-5">The {{ i + 1 }} Contacts</h5>
+              <hr />
+              <div class="fs-7">
+                <p>Handphone Number : {{ contact.telp }}</p>
+              </div>
+              <div class="fs-7">
+                <p>As : {{ contact.as }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="last-seen col-7">
+            <h3 class="mb-3 fw-bolder">Last Seen</h3>
+            <div *ngFor="let address of dpo.addresses; let i = index">
+              <h5 class="mt-5">The {{ i + 1 }} Address</h5>
+              <hr />
+              <div class="fs-7">
+                <p>Address : {{ address.address }}</p>
+              </div>
+              <div class="fs-7">
+                <p>Zipcode : {{ address.zipcode }}</p>
+              </div>
+              <div class="fs-7">
+                <p>City : {{ address.city }}</p>
+              </div>
+              <div class="fs-7">
+                <p>Country : {{ address.country }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

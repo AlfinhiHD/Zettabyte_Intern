@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { dpoFormInit } from 'src/app/shared/helpers/forms';
 import {
   DPOAddressType,
   DPOContactType,
@@ -29,43 +30,7 @@ export class DpoFormComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.route.snapshot.queryParams['id'];
 
-    this.dpoForm = this.fb.group({
-      id: [''],
-      name: ['', Validators.required],
-      image: ['', Validators.required],
-      age: [
-        null,
-        [
-          Validators.required,
-          Validators.min(18),
-          Validators.pattern(/^[0-9]*$/),
-        ],
-      ],
-      gender: ['', Validators.required],
-      marital: ['', Validators.required],
-      job: ['', Validators.required],
-      status: [''],
-      description: ['', Validators.required],
-      contacts: this.fb.array([
-        this.fb.group({
-          telp: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-          as: ['', Validators.required],
-        }),
-      ]),
-      height: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-      weight: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-      addresses: this.fb.array([
-        this.fb.group({
-          address: ['', Validators.required],
-          zipcode: [
-            null,
-            [Validators.required, Validators.pattern(/^[0-9]*$/)],
-          ],
-          city: ['', Validators.required],
-          country: ['', Validators.required],
-        }),
-      ]),
-    });
+    this.dpoForm = dpoFormInit(this.fb)
 
     if (this.id) {
       const dpo = this.dpoService.getdpoById(this.id);
