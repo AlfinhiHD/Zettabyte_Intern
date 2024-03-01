@@ -25,14 +25,14 @@ export class DpoFormComponent implements OnInit {
     this.id = this.route.snapshot.queryParams['id'];
 
     this.dpoForm = this.fb.group({
-      id: ['', Validators.required],
+      id: [''],
       name: ['', Validators.required],
       image: ['', Validators.required],
       age: [null, [Validators.required, Validators.min(18), Validators.pattern(/^[0-9]*$/)]],
       gender: ['', Validators.required],
       marital: ['', Validators.required],
       job: ['', Validators.required],
-      status: ['', Validators.required],
+      status: [''],
       description: ['', Validators.required],
       height: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       weight: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
@@ -54,6 +54,8 @@ export class DpoFormComponent implements OnInit {
 
   onSubmit(): void {
     const formData = this.dpoForm.value;
+    console.log(this.dpoForm);
+    
 
     Object.keys(this.dpoForm.controls).forEach((key) => {
       this.dpoForm.get(key).markAsTouched();
