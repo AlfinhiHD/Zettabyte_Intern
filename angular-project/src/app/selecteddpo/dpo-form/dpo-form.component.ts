@@ -28,14 +28,7 @@ export class DpoFormComponent implements OnInit {
       id: [''],
       name: ['', Validators.required],
       image: ['', Validators.required],
-      age: [
-        null,
-        [
-          Validators.required,
-          Validators.min(18),
-          Validators.pattern(/^[0-9]*$/),
-        ],
-      ],
+      age: [null, [Validators.required, Validators.min(18), Validators.pattern(/^[0-9]*$/)]],
       gender: ['', Validators.required],
       marital: ['', Validators.required],
       job: ['', Validators.required],
@@ -43,19 +36,13 @@ export class DpoFormComponent implements OnInit {
       description: ['', Validators.required],
       height: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
       weight: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
-      addresses: this.fb.array([
-        this.fb.group({
-          address: ['', Validators.required],
-          zipcode: [
-            null,
-            [Validators.required, Validators.pattern(/^[0-9]*$/)],
-          ],
-          city: ['', Validators.required],
-          country: ['', Validators.required],
-        }),
-      ]),
+      addresses: this.fb.group({
+        address: ['', Validators.required],
+        zipcode: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+        city: ['', Validators.required],
+        country: ['', Validators.required],
+      }),
     });
-
     if (this.id) {
       const dpo = this.dpoService.getdpoById(this.id);
       if (dpo) {
