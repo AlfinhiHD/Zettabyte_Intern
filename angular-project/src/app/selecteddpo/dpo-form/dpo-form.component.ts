@@ -30,15 +30,14 @@ export class DpoFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-
     this.dpoForm = dpoFormInit(this.fb);
 
-    this.route.queryParams.subscribe(queryParams => {
+    this.route.queryParams.subscribe((queryParams) => {
       this.id = queryParams['id'];
-      if(!this.id) {
-        this.dpoForm.reset()
+      if (!this.id) {
+        this.dpoForm.reset();
       }
-  });
+    });
 
     if (this.id) {
       const dpo = this.dpoService.getdpoById(this.id);
