@@ -28,6 +28,7 @@ export class DpoService {
   getdpoById(id: string) {
     return this.dpo.getValue().find((dpo) => dpo.id === id);
   }
+  
   updatedpo(updateddpo: DPOType) {
     const dpos = this.dpo.getValue();
     const index = dpos.findIndex((dpo) => dpo.id === updateddpo.id);

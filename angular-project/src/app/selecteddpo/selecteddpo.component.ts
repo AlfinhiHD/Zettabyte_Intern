@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DPOType } from '../shared/helpers/interface';
 import { DpoService } from '../shared/service/dpo.service';
 
@@ -14,12 +14,16 @@ export class SelecteddpoComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private dpoService: DpoService
+    private dpoService: DpoService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     this.dpoId = this.route.snapshot.paramMap.get('id');
     this.getDPODetail(this.dpoId);
+    if (!this.dpo) {
+      this.router.navigate(['/home']);
+    }
   }
 
   getDPODetail(id: string): void {

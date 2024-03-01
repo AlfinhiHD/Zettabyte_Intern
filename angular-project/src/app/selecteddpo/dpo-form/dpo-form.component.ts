@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { dpoFormInit } from 'src/app/shared/helpers/forms';
@@ -15,7 +15,7 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './dpo-form.component.html',
   styleUrls: ['./dpo-form.component.scss'],
 })
-export class DpoFormComponent implements OnInit {
+export class DpoFormComponent implements OnInit, OnChanges {
   dpoForm: FormGroup;
 
   id: string = '';
@@ -26,6 +26,11 @@ export class DpoFormComponent implements OnInit {
     private router: Router,
     private route: ActivatedRoute
   ) {}
+
+  ngOnChanges(changes: SimpleChanges): void {
+    console.log('masuk');
+    
+  }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.queryParams['id'];
