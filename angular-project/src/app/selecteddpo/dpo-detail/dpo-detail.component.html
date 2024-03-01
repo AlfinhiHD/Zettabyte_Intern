@@ -23,6 +23,7 @@
         </div>
         <div class="row">
           <div class="col-6">
+            <h3 class="mb-3">Basic Info</h3>
             <div class="fs-5 ">
               <p>Age : {{ dpo.age }}</p>
             </div>
@@ -38,22 +39,27 @@
             <div class="fs-5 ">
               <p>Height : {{ dpo.height }}</p>
             </div>
-          </div>
-          <div class="col-6">
             <div class="fs-5 ">
               <p>Weight : {{ dpo.weight }}</p>
             </div>
-            <div class="fs-5 ">
-              <p>Address : {{ dpo.addresses.address }}</p>
-            </div>
-            <div class="fs-5 ">
-              <p>Zipcode : {{ dpo.addresses.zipcode }}</p>
-            </div>
-            <div class="fs-5 ">
-              <p>City : {{ dpo.addresses.city }}</p>
-            </div>
-            <div class="fs-5 ">
-              <p>Country : {{ dpo.addresses.country }}</p>
+          </div>
+          <div class="col-6">
+            <h3 class="mb-3">Last Seen</h3>
+            <div *ngFor="let address of dpo.addresses let i = index">
+              <h5 class="mt-5">The {{i+1}} Address </h5>
+              <hr>
+              <div class="fs-5">
+                <p>Address : {{ address.address }}</p>
+              </div>
+              <div class="fs-5">
+                <p>Zipcode : {{ address.zipcode }}</p>
+              </div>
+              <div class="fs-5">
+                <p>City : {{ address.city }}</p>
+              </div>
+              <div class="fs-5">
+                <p>Country : {{ address.country }}</p>
+              </div>
             </div>
           </div>
         </div>
