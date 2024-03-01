@@ -1,6 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Subscription } from 'rxjs';
 import { dpoFormInit } from 'src/app/shared/helpers/forms';
 import {
   DPOAddressType,
@@ -15,10 +16,11 @@ import { v4 as uuidv4 } from 'uuid';
   templateUrl: './dpo-form.component.html',
   styleUrls: ['./dpo-form.component.scss'],
 })
-export class DpoFormComponent implements OnInit, OnChanges {
+export class DpoFormComponent implements OnInit {
   dpoForm: FormGroup;
 
   id: string = '';
+  routeSubscription: Subscription;
 
   constructor(
     private fb: FormBuilder,
@@ -27,15 +29,16 @@ export class DpoFormComponent implements OnInit, OnChanges {
     private route: ActivatedRoute
   ) {}
 
-  ngOnChanges(changes: SimpleChanges): void {
-    console.log('masuk');
-    
-  }
-
   ngOnInit(): void {
-    this.id = this.route.snapshot.queryParams['id'];
 
-    this.dpoForm = dpoFormInit(this.fb)
+    this.dpoForm = dpoFormInit(this.fb);
+
+    this.route.queryParams.subscribe(queryParams => {
+      this.id = queryParams['id'];
+      if(!this.id) {
+        this.dpoForm.reset()
+      }
+  });
 
     if (this.id) {
       const dpo = this.dpoService.getdpoById(this.id);
@@ -98,14 +101,17 @@ export class DpoFormComponent implements OnInit, OnChanges {
       addresses.push(
         this.fb.group({
           address: ['', Validators.required],
-          zipcode: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+          zipcode: [
+            null,
+            [Validators.required, Validators.pattern(/^[0-9]*$/)],
+          ],
           city: ['', Validators.required],
           country: ['', Validators.required],
         })
       );
     }
   }
-  
+
   removeField(index: number, type: string): void {
     if (type === 'contact') {
       const contacts = this.dpoForm.get('contacts') as FormArray;
@@ -119,7 +125,7 @@ export class DpoFormComponent implements OnInit, OnChanges {
       }
     }
   }
-  
+
   isFirstField(index: number, type: string): any {
     if (type === 'contact') {
       const contacts = this.dpoForm.get('contacts') as FormArray;
