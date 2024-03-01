@@ -1,3 +1,10 @@
+export interface DPOAddressType {
+    address: string;
+    zipcode: number;
+    city: string;
+    country: string;
+}
+
 export interface DPOType {
     id: string;
     name: string;
@@ -10,10 +17,5 @@ export interface DPOType {
     description: string;
     height: number;
     weight: number;
-    addresses: [{
-        address: string;
-        zipcode: number;
-        city: string;
-        country: string;
-    }];
+    addresses: DPOAddressType[];
 }

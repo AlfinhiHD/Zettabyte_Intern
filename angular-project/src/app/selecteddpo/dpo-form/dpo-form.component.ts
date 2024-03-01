@@ -57,11 +57,46 @@ export class DpoFormComponent implements OnInit {
     });
 
     if (this.id) {
-      const dpo = this.dpoService.getdpoById(this.id);
+      const dpo = this.dpoService.getdpoById(this.id);        
       if (dpo) {
-        this.dpoForm.setValue(dpo);
+        this.dpoForm.patchValue(dpo);
+        this.setAddresses(dpo.addresses);
+        
       }
     }
+  }
+
+  setAddresses(addresses: any[]): void {
+    const addressFormArray = this.dpoForm.get('addresses') as FormArray;
+    addresses.forEach((address, index) => {
+      if (index === 0) {
+        index++
+      } else {
+        console.log(index);
+        
+        // addressFormArray.push(
+        //   this.fb.group({
+        //     address: [address.address, Validators.required],
+        //     zipcode: [
+        //       address.zipcode,
+        //       [Validators.required, Validators.pattern(/^[0-9]*$/)],
+        //     ],
+        //     city: [address.city, Validators.required],
+        //     country: [address.country, Validators.required],
+        //   })
+        // );
+
+        addressFormArray.insert(index + 1, this.fb.group({
+          address: [address.address, Validators.required],
+          zipcode: [
+            address.zipcode,
+            [Validators.required, Validators.pattern(/^[0-9]*$/)],
+          ],
+          city: [address.city, Validators.required],
+          country: [address.country, Validators.required],
+        }));
+      }
+    });
   }
 
   addAddress() {
@@ -78,7 +113,9 @@ export class DpoFormComponent implements OnInit {
 
   removeAddress(index: number) {
     const addresses = this.dpoForm.get('addresses') as FormArray;
-    addresses.removeAt(index);
+    if (addresses && addresses.length > index) {
+      addresses.removeAt(index);
+    }
   }
 
   isFirstAddress(index: number): boolean {
