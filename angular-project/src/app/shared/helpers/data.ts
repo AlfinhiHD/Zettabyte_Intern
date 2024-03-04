@@ -12,10 +12,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Entry-Level',
     contacts: [
-      { type: 'phone', value: '1234567890' },
-      { type: 'email', value: 'alice@example.com' },
-      { type: 'instagram', value: '@alice' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/alice' },
+      { type: 'Phone', value: '1234567890' },
+      { type: 'Email', value: 'alice@example.com' },
+      { type: 'Instagram', value: '@alice' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/alice' },
     ],
     address: {
       address: '789 Oak St',
@@ -42,10 +42,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Mid-Level',
     contacts: [
-      { type: 'phone', value: '0987654321' },
-      { type: 'email', value: 'bob@example.com' },
-      { type: 'instagram', value: '@bob' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/bob' },
+      { type: 'Phone', value: '0987654321' },
+      { type: 'Email', value: 'bob@example.com' },
+      { type: 'Instagram', value: '@bob' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/bob' },
     ],
     address: {
       address: '987 Pine St',
@@ -72,10 +72,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Senior-Level',
     contacts: [
-      { type: 'phone', value: '9876543210' },
-      { type: 'email', value: 'carol@example.com' },
-      { type: 'instagram', value: '@carol' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/carol' },
+      { type: 'Phone', value: '9876543210' },
+      { type: 'Email', value: 'carol@example.com' },
+      { type: 'Instagram', value: '@carol' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/carol' },
     ],
     address: {
       address: '654 Maple St',
@@ -102,10 +102,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Mid-Level',
     contacts: [
-      { type: 'phone', value: '1234567890' },
-      { type: 'email', value: 'david@example.com' },
-      { type: 'instagram', value: '@david' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/david' },
+      { type: 'Phone', value: '1234567890' },
+      { type: 'Email', value: 'david@example.com' },
+      { type: 'Instagram', value: '@david' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/david' },
     ],
     address: {
       address: '321 Cedar St',
@@ -132,10 +132,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Entry-Level',
     contacts: [
-      { type: 'phone', value: '0987654321' },
-      { type: 'email', value: 'emily@example.com' },
-      { type: 'instagram', value: '@emily' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/emily' },
+      { type: 'Phone', value: '0987654321' },
+      { type: 'Email', value: 'emily@example.com' },
+      { type: 'Instagram', value: '@emily' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/emily' },
     ],
     address: {
       address: '456 Birch St',
@@ -162,10 +162,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'phone', value: '1234567890' },
-      { type: 'email', value: 'frank@example.com' },
-      { type: 'instagram', value: '@frank' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/frank' },
+      { type: 'Phone', value: '1234567890' },
+      { type: 'Email', value: 'frank@example.com' },
+      { type: 'Instagram', value: '@frank' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/frank' },
     ],
     address: {
       address: '789 Elm St',
@@ -192,10 +192,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Mid-Level',
     contacts: [
-      { type: 'phone', value: '0987654321' },
-      { type: 'email', value: 'grace@example.com' },
-      { type: 'instagram', value: '@grace' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/grace' },
+      { type: 'Phone', value: '0987654321' },
+      { type: 'Email', value: 'grace@example.com' },
+      { type: 'Instagram', value: '@grace' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/grace' },
     ],
     address: {
       address: '123 Cedar St',
@@ -222,10 +222,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'phone', value: '1234567890' },
-      { type: 'email', value: 'harry@example.com' },
-      { type: 'instagram', value: '@harry' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/harry' },
+      { type: 'Phone', value: '1234567890' },
+      { type: 'Email', value: 'harry@example.com' },
+      { type: 'Instagram', value: '@harry' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/harry' },
     ],
     address: {
       address: '456 Oak St',
@@ -252,10 +252,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'phone', value: '0987654321' },
-      { type: 'email', value: 'ivy@example.com' },
-      { type: 'instagram', value: '@ivy' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/ivy' },
+      { type: 'Phone', value: '0987654321' },
+      { type: 'Email', value: 'ivy@example.com' },
+      { type: 'Instagram', value: '@ivy' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/ivy' },
     ],
     address: {
       address: '789 Maple St',
@@ -282,10 +282,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Mid-Level',
     contacts: [
-      { type: 'phone', value: '1234567890' },
-      { type: 'email', value: 'jack@example.com' },
-      { type: 'instagram', value: '@jack' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/jack' },
+      { type: 'Phone', value: '1234567890' },
+      { type: 'Email', value: 'jack@example.com' },
+      { type: 'Instagram', value: '@jack' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/jack' },
     ],
     address: {
       address: '987 Birch St',
@@ -312,10 +312,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Mid-Level',
     contacts: [
-      { type: 'phone', value: '0987654321' },
-      { type: 'email', value: 'kelly@example.com' },
-      { type: 'instagram', value: '@kelly' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/kelly' },
+      { type: 'Phone', value: '0987654321' },
+      { type: 'Email', value: 'kelly@example.com' },
+      { type: 'Instagram', value: '@kelly' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/kelly' },
     ],
     address: {
       address: '123 Cedar St',
@@ -342,10 +342,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'phone', value: '1234567890' },
-      { type: 'email', value: 'larry@example.com' },
-      { type: 'instagram', value: '@larry' },
-      { type: 'linkedin', value: 'https://www.linkedin.com/in/larry' },
+      { type: 'Phone', value: '1234567890' },
+      { type: 'Email', value: 'larry@example.com' },
+      { type: 'Instagram', value: '@larry' },
+      { type: 'Linkedin', value: 'https://www.linkedin.com/in/larry' },
     ],
     address: {
       address: '456 Oak St',

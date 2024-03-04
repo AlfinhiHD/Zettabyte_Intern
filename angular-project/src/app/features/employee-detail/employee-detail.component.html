@@ -17,7 +17,7 @@
     "
   >
     <div class="row gx-4 gx-lg-5">
-      <div class="col-md-4">
+      <div class="col-md-5">
         <p class="fs-8 mb-1">Employee ID : {{ employee.id }}</p>
         <h1 class="display-5 fw-bolder">{{ employee.name }}</h1>
         <div class="fs-5 mb-4">
@@ -35,67 +35,68 @@
           [src]="employee.image"
           [alt]="employee.name"
         />
-        <p class="lead my-5">
-          {{ employee.title }}
-        </p>
+
         <button
-          class="btn btn-warning me-3 mb-5"
+          class="btn btn-warning me-3 mb-5 mt-5"
           [routerLink]="['/employee/inputform']"
           [queryParams]="{ id: employee.id }"
         >
           Edit
         </button>
-        <button class="btn btn-danger mb-5" (click)="onDeleteEmployee(employee.id)">
+        <button
+          class="btn btn-danger mb-5 mt-5"
+          (click)="onDeleteEmployee(employee.id)"
+        >
           Delete
         </button>
       </div>
-      <div class="col-md-8">
+      <div class="col-md-7">
         <div class="row">
           <div class="ps-5 col-5">
             <h3 class="mb-3 mt-s-5 fw-bolder">Basic Info</h3>
             <div class="fs-7 mt-5">
-              <p>Age : {{ employee.age }}</p>
+              <p><b>Age : </b>{{ employee.age }}</p>
             </div>
             <div class="fs-7">
-              <p>Gender : {{ employee.gender }}</p>
+              <p><b>Gender : </b>{{ employee.gender }}</p>
             </div>
             <div class="fs-7">
-              <p>Marital Status : {{ employee.email }}</p>
+              <p><b>Work Email : </b>{{ employee.email }}</p>
             </div>
             <div class="fs-7">
-              <p>Job : {{ employee.role }}</p>
+              <p><b>Role : </b>{{ employee.role }}</p>
             </div>
             <div class="fs-7">
-              <p>Height : {{ employee.department }}</p>
+              <p><b>Department : </b>{{ employee.department }}</p>
             </div>
             <div class="fs-7">
-              <p>Weight : {{ employee.title }}</p>
+              <p><b>Title : </b>{{ employee.title }}</p>
             </div>
-            <h3 class="mb-3 mt-5 fw-bolder">Relatives Contacts</h3>
-            <div *ngFor="let contact of employee.contacts; let i = index">
-              <h5 class="mt-5">The {{ i + 1 }} Contacts</h5>
-              <hr />
+            <h3 class="mb-3 mt-5 mb-5 fw-bolder">Contacts</h3>
+            <div
+              class=""
+              *ngFor="let contact of employee.contacts; let i = index"
+            >
               <div class="fs-7">
-                <p>Handphone Number : {{ contact.type }}</p>
-              </div>
-              <div class="fs-7">
-                <p>As : {{ contact.value }}</p>
+                <p><b>{{ contact.type }} : </b>{{ contact.value }}</p>
               </div>
             </div>
           </div>
           <div class="last-seen col-7">
-            <h3 class="mb-3 fw-bolder">Last Seen</h3>
-            <div *ngFor="let certificate of employee.certificates; let i = index">
+            <h3 class="mb-3 fw-bolder">Certificates</h3>
+            <div
+              *ngFor="let certificate of employee.certificates; let i = index"
+            >
               <h5 class="mt-5">The {{ i + 1 }} certificate</h5>
               <hr />
               <div class="fs-7">
-                <p>certificate : {{ certificate.name }}</p>
+                <p><b>Certificate : </b>{{ certificate.name }}</p>
               </div>
               <div class="fs-7">
-                <p>Zipcode : {{ certificate.description }}</p>
+                <p><b>Description : </b>{{ certificate.description }}</p>
               </div>
               <div class="fs-7">
-                <p>City : {{ certificate.dateUpload }}</p>
+                <p><b>Upload Date : </b>{{ certificate.dateUpload }}</p>
               </div>
             </div>
           </div>
