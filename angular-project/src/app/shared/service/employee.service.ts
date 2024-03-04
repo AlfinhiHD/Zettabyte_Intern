@@ -21,10 +21,14 @@ export class EmployeeService {
     this.employee.next([...this.employee.getValue(), newEmployee]);
   }
 
-  deleteEmployee(id: string) {
-    const EmployeeList = this.employee.getValue().filter((employee) => employee.id !== id);
-    this.employee.next(EmployeeList);
+deleteEmployee(id: string) {
+  const employeeList = this.employee.getValue();
+  const index = employeeList.findIndex((employee) => employee.id === id);
+  if (index !== -1) {
+    employeeList.splice(index, 1);
+    this.employee.next(employeeList);
   }
+}
 
   getEmployeeById(id: string) {
     return this.employee.getValue().find((employee) => employee.id === id);

@@ -9,8 +9,8 @@
         <img
           [src]="employee.image"
           class="h-100 card-img"
-          alt="..."
-          style="object-fit: cover"
+          [alt]="employee.name"
+          style="object-fit: cover; min-height: 12vw;"
         />
       </div>
       <div class="col-sm-8">
@@ -21,7 +21,6 @@
           <p class="card-text">
             {{ employee.role }}
           </p>
-          >
         </div>
       </div>
     </div>

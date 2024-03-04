@@ -131,13 +131,11 @@ export class EmployeeFormComponent implements OnInit {
   }
 
   onSubmit(): void {
-    // const contactsGroup = this.employeeForm.get('contacts') as FormGroup;
     const formData = this.employeeForm.value;
     console.log(this.employeeForm);
 
     this.employeeForm.markAllAsTouched();
-    // contactsGroup.markAllAsTouched();
-
+    
     if (this.employeeForm.invalid) {
       return;
     }
