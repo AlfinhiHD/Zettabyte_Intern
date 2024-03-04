@@ -3,14 +3,19 @@ import { FormBuilder, Validators } from '@angular/forms';
 export const employeeFormInit = (fb: FormBuilder) => {
   return fb.group({
     id: [''],
-    name: ['', Validators.required],
-    email: ['', Validators.required],
-    image: ['', Validators.required],
+    name: ['', [Validators.required, Validators.pattern(/^[a-zA-Z\s'-.]+$/)]],
+    email: [
+      '',
+      [Validators.required, Validators.email, Validators.pattern(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/)],
+    ],
+    image: [
+      '',
+      [Validators.required, Validators.pattern(/\.(gif|jpe?g|tiff|png|webp|bmp)$/i)],
+    ],
     age: [
       null,
       [
         Validators.required,
-        Validators.min(18),
         Validators.pattern(/^[0-9]*$/),
       ],
     ],
