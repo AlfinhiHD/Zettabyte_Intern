@@ -18,6 +18,7 @@ export class EmployeeFormComponent implements OnInit {
   roles: Role[] = ['Frontend Engineer', 'Backend Engineer', 'AI Engineer', 'QA Engineer', 'HR'];
   departments: Department[] = ['Finance Department', 'Research & Technology', 'Other'];
   titles: Title[] = ['Entry-Level', 'Mid-Level', 'Senior-Level'];
+  contactTypes: string[] = ['Email', 'Instagram', 'Phone', 'Linkedin'];
 
   id: string = '';
   routeSubscription: Subscription;
@@ -31,14 +32,14 @@ export class EmployeeFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.employeeForm = employeeFormInit(this.fb);
-
+  
     this.route.queryParams.subscribe((queryParams) => {
       this.id = queryParams['id'];
       if (!this.id) {
         this.employeeForm.reset();
       }
     });
-
+  
     if (this.id) {
       const employee = this.employeeService.getEmployeeById(this.id);
       if (employee) {
@@ -46,7 +47,24 @@ export class EmployeeFormComponent implements OnInit {
         this.setArrayData(employee.contacts, employee.certificates);
       }
     }
+  
+    // this.employeeForm.get('contacts').valueChanges.subscribe((contacts: Contact[]) => {
+    //   contacts.forEach((contact, index) => {
+    //     const valueControl = this.employeeForm.get(`contacts.${index}.value`);
+    //     if (contact.type === 'email') {
+    //       valueControl.setValidators([Validators.required, Validators.email]);
+    //     } else if (contact.type === 'phone') {
+    //       valueControl.setValidators([Validators.required, Validators.pattern(/^\d{10}$/)]);
+    //     } else if (contact.type === 'instagram') {
+    //       valueControl.setValidators([Validators.required, Validators.pattern(/^[a-zA-Z0-9_.-]*$/)]);
+    //     } else if (contact.type === 'linkedin') {
+    //       valueControl.setValidators([Validators.required, Validators.pattern(/^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/)]);
+    //     }
+    //     valueControl.updateValueAndValidity();
+    //   });
+    // });
   }
+
 
   setArrayData(contacts: Contact[], certificates: Certificate[]): void {
     const contactFormArray = this.employeeForm.get('contacts') as FormArray;
@@ -65,7 +83,7 @@ export class EmployeeFormComponent implements OnInit {
         );
       }
     });
-
+  
     const certificateFormArray = this.employeeForm.get('certificates') as FormArray;
     certificates.forEach((certificate, index) => {
       if (index === 0) {

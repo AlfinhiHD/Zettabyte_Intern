@@ -32,5 +32,5 @@ export interface EmployeeType {
   export interface Certificate {
     name: string;
     description: string;
-    dateUpload: string; // Format: YYYY-MM-DD
+    dateUpload: string; 
   }
