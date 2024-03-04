@@ -1,23 +1,23 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DPOType } from 'src/app/shared/helpers/interface';
-import { DpoService } from 'src/app/shared/service/dpo.service';
+import { EmployeeType } from 'src/app/shared/helpers/interface';
+import { EmployeeService } from 'src/app/shared/service/employee.service';
 import Swal from 'sweetalert2';
 
 @Component({
-  selector: 'app-dpo-detail',
-  templateUrl: './dpo-detail.component.html',
-  styleUrls: ['./dpo-detail.component.scss']
+  selector: 'app-employee-detail',
+  templateUrl: './employee-detail.component.html',
+  styleUrls: ['./employee-detail.component.scss']
 })
-export class DpoDetailComponent implements OnInit {
-  @Input() dpo: DPOType
+export class EmployeeDetailComponent implements OnInit {
+  @Input() employee: EmployeeType
 
-  constructor(private dpoService: DpoService, private router: Router) { }
+  constructor(private employeeService: EmployeeService, private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  onDeleteDPO(id: string): void {
+  onDeleteEmployee(id: string): void {
     Swal.fire({
       title: 'Are you sure?',
       text: 'You will not be able to recover this data!',
@@ -27,7 +27,7 @@ export class DpoDetailComponent implements OnInit {
       cancelButtonText: 'No, keep it'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.dpoService.deletedpo(id);
+        this.employeeService.deleteEmployee(id);
         Swal.fire(
           'Deleted!',
           'Your data has been deleted.',

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DpoBannerComponent } from './dpo-banner.component';
+import { FeaturesComponent } from './features.component';
 
-describe('DpoBannerComponent', () => {
-  let component: DpoBannerComponent;
-  let fixture: ComponentFixture<DpoBannerComponent>;
+describe('FeaturesComponent', () => {
+  let component: FeaturesComponent;
+  let fixture: ComponentFixture<FeaturesComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DpoBannerComponent ]
+      declarations: [ FeaturesComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DpoBannerComponent);
+    fixture = TestBed.createComponent(FeaturesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

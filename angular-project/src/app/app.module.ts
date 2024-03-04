@@ -3,9 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { DpoModule } from './dpo/dpo.module';
-import { SelecteddpoModule } from './selecteddpo/selecteddpo.module';
 import { SharedModule } from './shared/shared.module';
+import { EmployeeModule } from './employee/employee.module';
+import { FeaturesModule } from './features/features.module';
 
 @NgModule({
   declarations: [
@@ -14,9 +14,9 @@ import { SharedModule } from './shared/shared.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    DpoModule,
-    SelecteddpoModule,
-    SharedModule
+    EmployeeModule,
+    SharedModule,
+    FeaturesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

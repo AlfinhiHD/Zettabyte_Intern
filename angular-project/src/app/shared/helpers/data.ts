@@ -1,376 +1,366 @@
-import { DPOType } from "./interface";
+import { EmployeeType } from './interface';
 
-export const DPOData: DPOType[] = [
-    {
-      id: 'a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6',
-      name: 'Alice Johnson',
-      image:
-        'https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1378/2023/07/13141844/Screenshot-2023-07-13-141805_edited.webp',
-      age: 28,
-      gender: 'Woman',
-      marital: 'Single',
-      job: 'Teacher',
-      status: 'Wanted',
-      description: 'Wanted for arson and vandalism.',
-      height: 160,
-      weight: 55,
-      contacts: [
-        {
-          telp: 123456789,
-          as: 'Mom'
-        },
-        {
-          telp: 123456222,
-          as: 'Dad'
-        }
-      ],
-      addresses: [
-        {
-          address: '789 Oak St',
-          zipcode: 67890,
-          city: 'Villagetown',
-          country: 'USA',
-        }
-      ],
+const EmployeeData: EmployeeType[] = [
+  {
+    id: 'a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6',
+    name: 'Alice Johnson',
+    email: 'alice@example.com',
+    image: 'https://example.com/alice.jpg',
+    age: 28,
+    gender: 'Woman',
+    role: 'Frontend Engineer',
+    department: 'Finance Department',
+    title: 'Entry-Level',
+    contacts: [
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'alice@example.com' },
+      { type: 'instagram', value: '@alice' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/alice' },
+    ],
+    address: {
+      address: '789 Oak St',
+      zipcode: 67890,
+      city: 'Villagetown',
+      country: 'USA',
     },
-    {
-      id: 'b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7',
-      name: 'Bob Smith',
-      image:
-        'https://qph.cf2.quoracdn.net/main-qimg-d6af88eaced04028e668c8e5573cba08-lq',
-      age: 35,
-      gender: 'Man',
-      marital: 'Married',
-      job: 'Accountant',
-      status: 'Wanted',
-      description: 'Wanted for tax evasion and fraud.',
-      height: 175,
-      weight: 80,
-      contacts: [
-        {
-          telp: 987654321,
-          as: 'Dad'
-        },
-        {
-          telp: 123456789,
-          as: 'Brother'
-        }
-      ],
-      addresses: [
-        {
-          address: '987 Pine St',
-          zipcode: 54321,
-          city: 'Cityville',
-          country: 'USA',
-        },
-        {
-          address: '123 Elm St',
-          zipcode: 12345,
-          city: 'Townsville',
-          country: 'USA',
-        },
-        {
-            address: '456 Dam St',
-            zipcode: 56789,
-            city: 'Townsville',
-            country: 'USA',
-          }
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Achievement in Web Development',
+        description: 'Awarded for outstanding performance in web development.',
+        dateUpload: '2023-01-01',
+      },
+    ],
+  },
+  {
+    id: 'b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7',
+    name: 'Bob Smith',
+    email: 'bob@example.com',
+    image: 'https://example.com/bob.jpg',
+    age: 35,
+    gender: 'Man',
+    role: 'Backend Engineer',
+    department: 'Research & Technology',
+    title: 'Mid-Level',
+    contacts: [
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'bob@example.com' },
+      { type: 'instagram', value: '@bob' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/bob' },
+    ],
+    address: {
+      address: '987 Pine St',
+      zipcode: 54321,
+      city: 'Cityville',
+      country: 'USA',
     },
-    {
-      id: 'c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8',
-      name: 'Carol Williams',
-      image:
-        'https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1378/2023/07/13141844/Screenshot-2023-07-13-141805_edited.webp',
-      age: 40,
-      gender: 'Woman',
-      marital: 'Divorced',
-      job: 'Lawyer',
-      status: 'Wanted',
-      description: 'Wanted for perjury, injury and bribery.',
-      height: 170,
-      weight: 65,
-      contacts: [
-        {
-          telp: 123456789,
-          as: 'Mom'
-        }
-      ],
-      addresses: [
-        {
-          address: '654 Maple St',
-          zipcode: 43210,
-          city: 'Townsville',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Excellence in Database Management',
+        description: 'Awarded for exceptional skills in database management.',
+        dateUpload: '2023-02-15',
+      },
+    ],
+  },
+  {
+    id: 'c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8',
+    name: 'Carol Williams',
+    email: 'carol@example.com',
+    image: 'https://example.com/carol.jpg',
+    age: 40,
+    gender: 'Woman',
+    role: 'AI Engineer',
+    department: 'Finance Department',
+    title: 'Senior-Level',
+    contacts: [
+      { type: 'phone', value: '9876543210' },
+      { type: 'email', value: 'carol@example.com' },
+      { type: 'instagram', value: '@carol' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/carol' },
+    ],
+    address: {
+      address: '654 Maple St',
+      zipcode: 43210,
+      city: 'Townsville',
+      country: 'USA',
     },
-    {
-      id: 'd4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9',
-      name: 'David Brown',
-      image:
-        'https://qph.cf2.quoracdn.net/main-qimg-d6af88eaced04028e668c8e5573cba08-lq',
-      age: 45,
-      gender: 'Man',
-      marital: 'Widowed',
-      job: 'Doctor',
-      status: 'Wanted',
-      description: 'Wanted for medical malpractice and negligence.',
-      height: 185,
-      weight: 90,
-      contacts: [
-        {
-          telp: 987654321,
-          as: 'Dad'
-        }
-      ],
-      addresses: [
-        {
-          address: '321 Cedar St',
-          zipcode: 12345,
-          city: 'Hamletville',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Mastery in Machine Learning',
+        description: 'Awarded for mastery in machine learning techniques.',
+        dateUpload: '2023-03-20',
+      },
+    ],
+  },
+  {
+    id: 'd4e5f6g7-h8i9-j0k1-l2m3-n4o5p6q7r8s9',
+    name: 'David Brown',
+    email: 'david@example.com',
+    image: 'https://example.com/david.jpg',
+    age: 45,
+    gender: 'Man',
+    role: 'QA Engineer',
+    department: 'Finance Department',
+    title: 'Mid-Level',
+    contacts: [
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'david@example.com' },
+      { type: 'instagram', value: '@david' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/david' },
+    ],
+    address: {
+      address: '321 Cedar St',
+      zipcode: 12345,
+      city: 'Hamletville',
+      country: 'USA',
     },
-    {
-      id: 'e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0',
-      name: 'Emily Jones',
-      image:
-        'https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1378/2023/07/13141844/Screenshot-2023-07-13-141805_edited.webp',
-      age: 32,
-      gender: 'Woman',
-      marital: 'Single',
-      job: 'Nurse',
-      status: 'Wanted',
-      description: 'Wanted for theft of medical supplies.',
-      height: 165,
-      weight: 60,
-      contacts: [
-        {
-          telp: 123456789,
-          as: 'Mom'
-        }
-      ],
-      addresses: [
-        {
-          address: '456 Birch St',
-          zipcode: 56789,
-          city: 'Forestville',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Excellence in Software Testing',
+        description: 'Awarded for excellence in software testing techniques.',
+        dateUpload: '2023-04-25',
+      },
+    ],
+  },
+  {
+    id: 'e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0',
+    name: 'Emily Jones',
+    email: 'emily@example.com',
+    image: 'https://example.com/emily.jpg',
+    age: 32,
+    gender: 'Woman',
+    role: 'HR',
+    department: 'Finance Department',
+    title: 'Entry-Level',
+    contacts: [
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'emily@example.com' },
+      { type: 'instagram', value: '@emily' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/emily' },
+    ],
+    address: {
+      address: '456 Birch St',
+      zipcode: 56789,
+      city: 'Forestville',
+      country: 'USA',
     },
-    {
-      id: 'f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1',
-      name: 'Frank Davis',
-      image:
-        'https://qph.cf2.quoracdn.net/main-qimg-d6af88eaced04028e668c8e5573cba08-lq',
-      age: 50,
-      gender: 'Man',
-      marital: 'Married',
-      job: 'Police Officer',
-      status: 'Wanted',
-      description: 'Wanted for corruption and abuse of power.',
-      height: 180,
-      weight: 85,
-      contacts: [
-        {
-          telp: 987654321,
-          as: 'Dad'
-        }
-      ],
-      addresses: [
-        {
-          address: '789 Elm St',
-          zipcode: 98765,
-          city: 'Metropolis',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Achievement in Employee Relations',
+        description: 'Awarded for excellence in employee relations.',
+        dateUpload: '2023-05-30',
+      },
+    ],
+  },
+  {
+    id: 'f6g7h8i9-j0k1-l2m3-n4o5-p6q7r8s9t0u1',
+    name: 'Frank Davis',
+    email: 'frank@example.com',
+    image: 'https://example.com/frank.jpg',
+    age: 50,
+    gender: 'Man',
+    role: 'Frontend Engineer',
+    department: 'Research & Technology',
+    title: 'Senior-Level',
+    contacts: [
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'frank@example.com' },
+      { type: 'instagram', value: '@frank' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/frank' },
+    ],
+    address: {
+      address: '789 Elm St',
+      zipcode: 98765,
+      city: 'Metropolis',
+      country: 'USA',
     },
-    {
-      id: 'g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2',
-      name: 'Grace Wilson',
-      image:
-        'https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1378/2023/07/13141844/Screenshot-2023-07-13-141805_edited.webp',
-      age: 38,
-      gender: 'Woman',
-      marital: 'Married',
-      job: 'Journalist',
-      status: 'Wanted',
-      description: 'Wanted for defamation and libel.',
-      height: 170,
-      weight: 70,
-      contacts: [
-        {
-          telp: 123456789,
-          as: 'Mom'
-        }
-      ],
-      addresses: [
-        {
-          address: '123 Cedar St',
-          zipcode: 13579,
-          city: 'Villageville',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Excellence in Web Development',
+        description: 'Awarded for outstanding performance in web development.',
+        dateUpload: '2023-06-15',
+      },
+    ],
+  },
+  {
+    id: 'g7h8i9j0-k1l2-m3n4-o5p6-q7r8s9t0u1v2',
+    name: 'Grace Wilson',
+    email: 'grace@example.com',
+    image: 'https://example.com/grace.jpg',
+    age: 38,
+    gender: 'Woman',
+    role: 'Backend Engineer',
+    department: 'Research & Technology',
+    title: 'Mid-Level',
+    contacts: [
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'grace@example.com' },
+      { type: 'instagram', value: '@grace' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/grace' },
+    ],
+    address: {
+      address: '123 Cedar St',
+      zipcode: 13579,
+      city: 'Villageville',
+      country: 'USA',
     },
-    {
-      id: 'h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3',
-      name: 'Harry Miller',
-      image:
-        'https://qph.cf2.quoracdn.net/main-qimg-d6af88eaced04028e668c8e5573cba08-lq',
-      age: 55,
-      gender: 'Man',
-      marital: 'Divorced',
-      job: 'Businessman',
-      status: 'Wanted',
-      description: 'Wanted for fraud and embezzlement.',
-      height: 185,
-      weight: 95,
-      contacts: [
-        {
-          telp: 987654321,
-          as: 'Dad'
-        }
-      ],
-      addresses: [
-        {
-          address: '456 Oak St',
-          zipcode: 24680,
-          city: 'Citytown',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Excellence in Database Management',
+        description: 'Awarded for exceptional skills in database management.',
+        dateUpload: '2023-07-20',
+      },
+    ],
+  },
+  {
+    id: 'h8i9j0k1-l2m3-n4o5-p6q7-r8s9t0u1v2w3',
+    name: 'Harry Miller',
+    email: 'harry@example.com',
+    image: 'https://example.com/harry.jpg',
+    age: 55,
+    gender: 'Man',
+    role: 'AI Engineer',
+    department: 'Research & Technology',
+    title: 'Senior-Level',
+    contacts: [
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'harry@example.com' },
+      { type: 'instagram', value: '@harry' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/harry' },
+    ],
+    address: {
+      address: '456 Oak St',
+      zipcode: 24680,
+      city: 'Citytown',
+      country: 'USA',
     },
-    {
-      id: 'i9j0k1l2-m3n4-o5p6q7-r8s9t0u1-v2w3x4y5',
-      name: 'Ivy White',
-      image:
-        'https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1378/2023/07/13141844/Screenshot-2023-07-13-141805_edited.webp',
-      age: 42,
-      gender: 'Woman',
-      marital: 'Single',
-      job: 'Teacher',
-      status: 'Wanted',
-      description: 'Wanted for child endangerment and neglect.',
-      height: 160,
-      weight: 65,
-      contacts: [
-        {
-          telp: 123456789,
-          as: 'Mom'
-        }
-      ],
-      addresses: [
-        {
-          address: '789 Maple St',
-          zipcode: 35791,
-          city: 'Treetown',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Mastery in Machine Learning',
+        description: 'Awarded for mastery in machine learning techniques.',
+        dateUpload: '2023-08-25',
+      },
+    ],
+  },
+  {
+    id: 'i9j0k1l2-m3n4-o5p6q7-r8s9t0u1-v2w3x4y5',
+    name: 'Ivy White',
+    email: 'ivy@example.com',
+    image: 'https://example.com/ivy.jpg',
+    age: 42,
+    gender: 'Woman',
+    role: 'QA Engineer',
+    department: 'Research & Technology',
+    title: 'Senior-Level',
+    contacts: [
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'ivy@example.com' },
+      { type: 'instagram', value: '@ivy' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/ivy' },
+    ],
+    address: {
+      address: '789 Maple St',
+      zipcode: 35791,
+      city: 'Treetown',
+      country: 'USA',
     },
-    {
-      id: 'j0k1l2m3-n4o5-p6q7-r8s9t0u1-v2w3x4y5z6',
-      name: 'Jack Brown',
-      image:
-        'https://qph.cf2.quoracdn.net/main-qimg-d6af88eaced04028e668c8e5573cba08-lq',
-      age: 48,
-      gender: 'Man',
-      marital: 'Widowed',
-      job: 'Mechanic',
-      status: 'Wanted',
-      description: 'Wanted for auto theft and vandalism.',
-      height: 175,
-      weight: 85,
-      contacts: [
-        {
-          telp: 987654321,
-          as: 'Dad'
-        }
-      ],
-      addresses: [
-        {
-          address: '987 Birch St',
-          zipcode: 57913,
-          city: 'Woodville',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Excellence in Software Testing',
+        description: 'Awarded for excellence in software testing techniques.',
+        dateUpload: '2023-09-30',
+      },
+    ],
+  },
+  {
+    id: 'j0k1l2m3-n4o5-p6q7-r8s9t0u1-v2w3x4y5z6',
+    name: 'Jack Brown',
+    email: 'jack@example.com',
+    image: 'https://example.com/jack.jpg',
+    age: 48,
+    gender: 'Man',
+    role: 'HR',
+    department: 'Finance Department',
+    title: 'Mid-Level',
+    contacts: [
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'jack@example.com' },
+      { type: 'instagram', value: '@jack' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/jack' },
+    ],
+    address: {
+      address: '987 Birch St',
+      zipcode: 57913,
+      city: 'Woodville',
+      country: 'USA',
     },
-    {
-      id: 'k1l2m3n4-o5p6-q7r8s9t0u1-v2w3x4y5z6a7',
-      name: 'Kelly Wilson',
-      image:
-        'https://dehayf5mhw1h7.cloudfront.net/wp-content/uploads/sites/1378/2023/07/13141844/Screenshot-2023-07-13-141805_edited.webp',
-      age: 38,
-      gender: 'Woman',
-      marital: 'Married',
-      job: 'Journalist',
-      status: 'Wanted',
-      description: 'Wanted for defamation and libel.',
-      height: 170,
-      weight: 70,
-      contacts: [
-        {
-          telp: 123456789,
-          as: 'Mom'
-        },
-        {
-          telp: 987654321,
-          as: 'Dad'
-        }
-      ],
-      addresses: [
-        {
-          address: '123 Cedar St',
-          zipcode: 13579,
-          city: 'Villageville',
-          country: 'USA',
-        },
-        {
-          address: '456 Elm St',
-          zipcode: 24680,
-          city: 'Citytown',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Achievement in Employee Relations',
+        description: 'Awarded for excellence in employee relations.',
+        dateUpload: '2023-10-15',
+      },
+    ],
+  },
+  {
+    id: 'k1l2m3n4-o5p6-q7r8s9t0u1-v2w3x4y5z6a7',
+    name: 'Kelly Wilson',
+    email: 'kelly@example.com',
+    image: 'https://example.com/kelly.jpg',
+    age: 38,
+    gender: 'Woman',
+    role: 'Frontend Engineer',
+    department: 'Finance Department',
+    title: 'Mid-Level',
+    contacts: [
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'kelly@example.com' },
+      { type: 'instagram', value: '@kelly' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/kelly' },
+    ],
+    address: {
+      address: '123 Cedar St',
+      zipcode: 13579,
+      city: 'Villageville',
+      country: 'USA',
     },
-    {
-      id: 'l2m3n4o5-p6q7-r8s9t0u1-v2w3x4y5z6a7b8',
-      name: 'Larry Miller',
-      image:
-        'https://qph.cf2.quoracdn.net/main-qimg-d6af88eaced04028e668c8e5573cba08-lq',
-      age: 55,
-      gender: 'Man',
-      marital: 'Divorced',
-      job: 'Businessman',
-      status: 'Wanted',
-      description: 'Wanted for fraud and embezzlement.',
-      height: 185,
-      weight: 95,
-      contacts: [
-        {
-          telp: 987654321,
-          as: 'Dad'
-        }
-      ],
-      addresses: [
-        {
-          address: '456 Oak St',
-          zipcode: 24680,
-          city: 'Citytown',
-          country: 'USA',
-        },
-        {
-          address: '789 Elm St',
-          zipcode: 98765,
-          city: 'Metropolis',
-          country: 'USA',
-        },
-      ],
+    certificates: [
+      {
+        name: 'Certificate of Excellence in Web Development',
+        description: 'Awarded for outstanding performance in web development.',
+        dateUpload: '2023-11-20',
+      },
+    ],
+  },
+  {
+    id: 'l2m3n4o5-p6q7-r8s9t0u1-v2w3x4y5z6a7b8',
+    name: 'Larry Miller',
+    email: 'larry@example.com',
+    image: 'https://example.com/larry.jpg',
+    age: 55,
+    gender: 'Man',
+    role: 'Backend Engineer',
+    department: 'Research & Technology',
+    title: 'Senior-Level',
+    contacts: [
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'larry@example.com' },
+      { type: 'instagram', value: '@larry' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/larry' },
+    ],
+    address: {
+      address: '456 Oak St',
+      zipcode: 24680,
+      city: 'Citytown',
+      country: 'USA',
     },
-  ];
+    certificates: [
+      {
+        name: 'Certificate of Excellence in Database Management',
+        description: 'Awarded for exceptional skills in database management.',
+        dateUpload: '2023-12-25',
+      },
+    ],
+  },
+];
+
+export default EmployeeData;

@@ -18,34 +18,34 @@
   >
     <div class="row gx-4 gx-lg-5">
       <div class="col-md-4">
-        <p class="fs-8 mb-1">DPO ID : {{ dpo.id }}</p>
-        <h1 class="display-5 fw-bolder">{{ dpo.name }}</h1>
+        <p class="fs-8 mb-1">Employee ID : {{ employee.id }}</p>
+        <h1 class="display-5 fw-bolder">{{ employee.name }}</h1>
         <div class="fs-5 mb-4">
           <span
             class="badge ms-2"
             [ngClass]="{
-              'bg-danger': dpo.status === 'Wanted',
-              'bg-success': dpo.status === 'Found'
+              'bg-danger': employee.role === 'Frontend Engineer',
+              'bg-success': employee.role === 'Backend Engineer'
             }"
-            >{{ dpo.status }}</span
+            >{{ employee.role }}</span
           >
         </div>
         <img
           class="card-img-top mb-5 mb-md-0"
-          [src]="dpo.image"
-          [alt]="dpo.name"
+          [src]="employee.image"
+          [alt]="employee.name"
         />
         <p class="lead my-5">
-          {{ dpo.description }}
+          {{ employee.title }}
         </p>
         <button
           class="btn btn-warning me-3 mb-5"
-          [routerLink]="['/dpo/inputform']"
-          [queryParams]="{ id: dpo.id }"
+          [routerLink]="['/employee/inputform']"
+          [queryParams]="{ id: employee.id }"
         >
           Edit
         </button>
-        <button class="btn btn-danger mb-5" (click)="onDeleteDPO(dpo.id)">
+        <button class="btn btn-danger mb-5" (click)="onDeleteEmployee(employee.id)">
           Delete
         </button>
       </div>
@@ -54,51 +54,48 @@
           <div class="ps-5 col-5">
             <h3 class="mb-3 mt-s-5 fw-bolder">Basic Info</h3>
             <div class="fs-7 mt-5">
-              <p>Age : {{ dpo.age }}</p>
+              <p>Age : {{ employee.age }}</p>
             </div>
             <div class="fs-7">
-              <p>Gender : {{ dpo.gender }}</p>
+              <p>Gender : {{ employee.gender }}</p>
             </div>
             <div class="fs-7">
-              <p>Marital Status : {{ dpo.marital }}</p>
+              <p>Marital Status : {{ employee.email }}</p>
             </div>
             <div class="fs-7">
-              <p>Job : {{ dpo.job }}</p>
+              <p>Job : {{ employee.role }}</p>
             </div>
             <div class="fs-7">
-              <p>Height : {{ dpo.height }}</p>
+              <p>Height : {{ employee.department }}</p>
             </div>
             <div class="fs-7">
-              <p>Weight : {{ dpo.weight }}</p>
+              <p>Weight : {{ employee.title }}</p>
             </div>
             <h3 class="mb-3 mt-5 fw-bolder">Relatives Contacts</h3>
-            <div *ngFor="let contact of dpo.contacts; let i = index">
+            <div *ngFor="let contact of employee.contacts; let i = index">
               <h5 class="mt-5">The {{ i + 1 }} Contacts</h5>
               <hr />
               <div class="fs-7">
-                <p>Handphone Number : {{ contact.telp }}</p>
+                <p>Handphone Number : {{ contact.type }}</p>
               </div>
               <div class="fs-7">
-                <p>As : {{ contact.as }}</p>
+                <p>As : {{ contact.value }}</p>
               </div>
             </div>
           </div>
           <div class="last-seen col-7">
             <h3 class="mb-3 fw-bolder">Last Seen</h3>
-            <div *ngFor="let address of dpo.addresses; let i = index">
-              <h5 class="mt-5">The {{ i + 1 }} Address</h5>
+            <div *ngFor="let certificate of employee.certificates; let i = index">
+              <h5 class="mt-5">The {{ i + 1 }} certificate</h5>
               <hr />
               <div class="fs-7">
-                <p>Address : {{ address.address }}</p>
+                <p>certificate : {{ certificate.name }}</p>
               </div>
               <div class="fs-7">
-                <p>Zipcode : {{ address.zipcode }}</p>
+                <p>Zipcode : {{ certificate.description }}</p>
               </div>
               <div class="fs-7">
-                <p>City : {{ address.city }}</p>
-              </div>
-              <div class="fs-7">
-                <p>Country : {{ address.country }}</p>
+                <p>City : {{ certificate.dateUpload }}</p>
               </div>
             </div>
           </div>

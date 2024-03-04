@@ -1,0 +1,423 @@
+<h1
+  style="
+    margin: 0;
+    background-color: #33658a;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: white;
+  "
+>
+  {{ id ? "EDIT FORM" : "ADD FORM" }}
+</h1>
+
+<form
+  [formGroup]="employeeForm"
+  (ngSubmit)="onSubmit()"
+  style="background-color: #33658a"
+>
+  <div
+    class="row px-5"
+    style="border-radius: 10px; background-color: rgba(0, 0, 0, 0.5)"
+  >
+    <div class="col-3">
+      <h3 class="mt-5 text-white">Basic Information</h3>
+
+      <div class="form-group">
+        <label for="image">Name</label>
+        <input
+          type="text"
+          formControlName="name"
+          class="form-control"
+          id="name"
+          [class.is-invalid]="
+            employeeForm.get('name').touched && employeeForm.get('name').invalid
+          "
+          [class.is-valid]="
+            employeeForm.get('name').touched && employeeForm.get('name').valid
+          "
+        />
+        <div
+          *ngIf="
+            employeeForm.get('name').touched &&
+            employeeForm.get('name').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Name is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          type="text"
+          formControlName="email"
+          class="form-control"
+          id="email"
+          [class.is-invalid]="
+            employeeForm.get('email').touched &&
+            employeeForm.get('email').invalid
+          "
+          [class.is-valid]="
+            employeeForm.get('email').touched && employeeForm.get('email').valid
+          "
+        />
+        <div
+          *ngIf="
+            employeeForm.get('email').touched &&
+            employeeForm.get('email').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Email is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="image">Image URL</label>
+        <input
+          type="text"
+          formControlName="image"
+          class="form-control"
+          id="image"
+          [class.is-invalid]="
+            employeeForm.get('image').touched &&
+            employeeForm.get('image').invalid
+          "
+          [class.is-valid]="
+            employeeForm.get('image').touched && employeeForm.get('image').valid
+          "
+        />
+        <div
+          *ngIf="
+            employeeForm.get('image').touched &&
+            employeeForm.get('image').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Image is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="age">Age</label>
+        <input
+          type="number"
+          formControlName="age"
+          class="form-control"
+          id="age"
+          [class.is-invalid]="
+            employeeForm.get('age').touched && employeeForm.get('age').invalid
+          "
+          [class.is-valid]="
+            employeeForm.get('age').touched && employeeForm.get('age').valid
+          "
+        />
+        <div
+          *ngIf="
+            employeeForm.get('age').touched &&
+            employeeForm.get('age').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Age is required
+        </div>
+        <div
+          *ngIf="
+            employeeForm.get('age').touched &&
+            employeeForm.get('age').hasError('pattern') &&
+            employeeForm.get('age').hasError('min')
+          "
+          class="text-danger error-message"
+        >
+          Age must a valid number
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select
+          formControlName="gender"
+          class="form-control"
+          id="gender"
+          [class.is-invalid]="
+            employeeForm.get('gender').touched &&
+            employeeForm.get('gender').invalid
+          "
+          [class.is-valid]="
+            employeeForm.get('gender').touched &&
+            employeeForm.get('gender').valid
+          "
+        >
+          <option value="Man">Man</option>
+          <option value="Woman">Woman</option>
+        </select>
+        <div
+          *ngIf="
+            employeeForm.get('gender').touched &&
+            employeeForm.get('gender').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Gender is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="role">Role</label>
+        <select formControlName="role" class="form-control" id="role">
+          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
+        </select>
+        <div
+          *ngIf="
+            employeeForm.get('role').touched &&
+            employeeForm.get('role').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Role is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="department">Department</label>
+        <select
+          formControlName="department"
+          class="form-control"
+          id="department"
+        >
+          <option *ngFor="let department of departments" [value]="department">
+            {{ department }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            employeeForm.get('department').touched &&
+            employeeForm.get('department').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Department is required
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="title">Title</label>
+        <select formControlName="title" class="form-control" id="title">
+          <option *ngFor="let title of titles" [value]="title">
+            {{ title }}
+          </option>
+        </select>
+        <div
+          *ngIf="
+            employeeForm.get('title').touched &&
+            employeeForm.get('title').hasError('required')
+          "
+          class="text-danger error-message"
+        >
+          Title is required
+        </div>
+      </div>
+    </div>
+    <div class="middle-form col-6">
+      <h3 class="mt-5 text-white">Contacts</h3>
+
+      <div formArrayName="contacts">
+        <div
+          *ngFor="
+            let contact of employeeForm.get('contacts')['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+        >
+          <div class="form-group">
+            <label for="type">Type</label>
+            <input
+              type="text"
+              formControlName="type"
+              class="form-control"
+              id="type"
+              [class.is-invalid]="
+                contact.get('type').touched && contact.get('type').invalid
+              "
+              [class.is-valid]="
+                contact.get('type').touched && contact.get('type').valid
+              "
+            />
+            <div
+              *ngIf="
+                contact.get('type').touched &&
+                contact.get('type').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Contact type is required
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="value">Value</label>
+            <input
+              type="string"
+              formControlName="value"
+              class="form-control"
+              id="value"
+              [class.is-invalid]="
+                contact.get('value').touched && contact.get('value').invalid
+              "
+              [class.is-valid]="
+                contact.get('value').touched && contact.get('value').valid
+              "
+            />
+            <div
+              *ngIf="
+                contact.get('value').touched &&
+                contact.get('value').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Handphone number must required
+            </div>
+            <div
+              *ngIf="
+                contact.get('value').touched &&
+                contact.get('value').hasError('pattern')
+              "
+              class="text-danger error-message"
+            >
+              Handphone number must a valid number
+            </div>
+          </div>
+
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="removeField(i, 'contact')"
+            [disabled]="isFirstField(i, 'contact')"
+          >
+            Remove Contact
+          </button>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="addField('contact')"
+      >
+        Add Contact
+      </button>
+    </div>
+
+    <div class="col-3">
+      <h3 class="mt-5 text-white">Certificates</h3>
+
+      <div formArrayName="certificates">
+        <div
+          *ngFor="
+            let certificate of employeeForm.get('certificates')['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+        >
+          <div class="form-group">
+            <label for="name">Certificate</label>
+            <input
+              type="text"
+              formControlName="name"
+              class="form-control"
+              id="name"
+              [class.is-invalid]="
+                certificate.get('name').touched &&
+                certificate.get('name').invalid
+              "
+              [class.is-valid]="
+                certificate.get('name').touched && certificate.get('name').valid
+              "
+            />
+            <div
+              *ngIf="
+                certificate.get('name').touched &&
+                certificate.get('name').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              The name of certificate is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="description">Description</label>
+            <input
+              type="text"
+              formControlName="description"
+              class="form-control"
+              id="description"
+              [class.is-invalid]="
+                certificate.get('description').touched &&
+                certificate.get('description').invalid
+              "
+              [class.is-valid]="
+                certificate.get('description').touched &&
+                certificate.get('description').valid
+              "
+            />
+            <div
+              *ngIf="
+                certificate.get('description').touched &&
+                certificate.get('description').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Description is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dateUpload">Date Upload</label>
+            <input
+              type="text"
+              formControlName="dateUpload"
+              class="form-control"
+              id="dateUpload"
+              [class.is-invalid]="
+                certificate.get('dateUpload').touched &&
+                certificate.get('dateUpload').invalid
+              "
+              [class.is-valid]="
+                certificate.get('dateUpload').touched &&
+                certificate.get('dateUpload').valid
+              "
+            />
+            <div
+              *ngIf="
+                certificate.get('dateUpload').touched &&
+                certificate.get('dateUpload').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Date Upload is required
+            </div>
+          </div>
+          <button
+            type="button"
+            class="btn btn-danger"
+            (click)="removeField(i, 'certificate')"
+            [disabled]="isFirstField(i, 'certificate')"
+          >
+            Remove Certificates
+          </button>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="addField('certificate')"
+      >
+        Add Certificates
+      </button>
+    </div>
+    <div class="text-center mb-5">
+      <button type="submit" class="btn btn-primary w-25">Submit</button>
+    </div>
+  </div>
+</form>

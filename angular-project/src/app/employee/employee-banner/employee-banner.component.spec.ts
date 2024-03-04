@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DpoFormComponent } from './dpo-form.component';
+import { EmployeeBannerComponent } from './employee-banner.component';
 
-describe('DpoFormComponent', () => {
-  let component: DpoFormComponent;
-  let fixture: ComponentFixture<DpoFormComponent>;
+describe('EmployeeBannerComponent', () => {
+  let component: EmployeeBannerComponent;
+  let fixture: ComponentFixture<EmployeeBannerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DpoFormComponent ]
+      declarations: [ EmployeeBannerComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DpoFormComponent);
+    fixture = TestBed.createComponent(EmployeeBannerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

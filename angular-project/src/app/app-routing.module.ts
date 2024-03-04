@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DpoComponent } from './dpo/dpo.component';
+import { EmployeeComponent } from './employee/employee.component';
 import { NotfoundComponent } from './shared/components/notfound/notfound.component';
 
 const routes: Routes = [
-  { path: 'home', component: DpoComponent},
+  { path: 'home', component: EmployeeComponent},
   {
-    path: 'dpo',
+    path: 'employee',
     loadChildren: () =>
-      import('./selecteddpo/selecteddpo.module').then(
-        (m) => m.SelecteddpoModule
+      import('./features/features.module').then(
+        (m) => m.FeaturesModule
       ),
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
