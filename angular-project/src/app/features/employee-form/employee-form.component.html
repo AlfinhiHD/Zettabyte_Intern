@@ -256,8 +256,7 @@
             employeeForm.get('title').invalid
           "
           [class.is-valid]="
-            employeeForm.get('title').touched &&
-            employeeForm.get('title').valid
+            employeeForm.get('title').touched && employeeForm.get('title').valid
           "
         >
           <option *ngFor="let title of titles" [value]="title">
@@ -404,7 +403,7 @@
         >
           <div class="form-group">
             <label for="type">Type</label>
-            <input
+            <select
               type="text"
               formControlName="type"
               class="form-control"
@@ -415,7 +414,11 @@
               [class.is-valid]="
                 contact.get('type').touched && contact.get('type').valid
               "
-            />
+            >
+              <option *ngFor="let type of contactTypes" [value]="type">
+                {{ type }}
+              </option>
+            </select>
             <div
               *ngIf="
                 contact.get('type').touched &&
@@ -448,7 +451,7 @@
               "
               class="text-danger error-message"
             >
-              Handphone number must required
+              The value must required
             </div>
             <div
               *ngIf="
@@ -457,7 +460,16 @@
               "
               class="text-danger error-message"
             >
-              Handphone number must a valid number
+              Contact value must a valid value
+            </div>
+            <div
+              *ngIf="
+                contact.get('value').touched &&
+                contact.get('value').hasError('email')
+              "
+              class="text-danger error-message"
+            >
+              Contact email value must a valid email
             </div>
           </div>
 
@@ -550,6 +562,7 @@
               formControlName="dateUpload"
               class="form-control"
               id="dateUpload"
+              [readOnly]="true"
               [class.is-invalid]="
                 certificate.get('dateUpload').touched &&
                 certificate.get('dateUpload').invalid
