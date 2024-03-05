@@ -3,7 +3,7 @@ import { EmployeeType } from './interface';
 const EmployeeData: EmployeeType[] = [
   {
     id: 'a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6',
-    name: 'Alice Johnson',
+    name: 'âme île hôtel sûr être',
     email: 'alice@example.com',
     image: 'https://chanzuckerberg.com/wp-content/uploads/2022/03/p_edit-2022-v2.jpg',
     age: 28,
@@ -12,10 +12,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Entry-Level',
     contacts: [
-      { type: 'Phone', value: '1234567890' },
-      { type: 'Email', value: 'alice@example.com' },
-      { type: 'Instagram', value: '@alice' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/alice' },
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'alice@example.com' },
+      { type: 'instagram', value: '@alice' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/alice' },
     ],
     address: {
       address: '789 Oak St',
@@ -33,7 +33,7 @@ const EmployeeData: EmployeeType[] = [
   },
   {
     id: 'b2c3d4e5-f6g7-h8i9-j0k1-l2m3n4o5p6q7',
-    name: 'Bob Smith',
+    name: 'Frédéric Maël',
     email: 'bob@example.com',
     image: 'https://upload.wikimedia.org/wikipedia/commons/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg',
     age: 35,
@@ -42,10 +42,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Mid-Level',
     contacts: [
-      { type: 'Phone', value: '0987654321' },
-      { type: 'Email', value: 'bob@example.com' },
-      { type: 'Instagram', value: '@bob' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/bob' },
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'bob@example.com' },
+      { type: 'instagram', value: '@bob' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/bob' },
     ],
     address: {
       address: '987 Pine St',
@@ -63,7 +63,7 @@ const EmployeeData: EmployeeType[] = [
   },
   {
     id: 'c3d4e5f6-g7h8-i9j0-k1l2-m3n4o5p6q7r8',
-    name: 'Carol Williams',
+    name: 'Hélène Noémie',
     email: 'carol@example.com',
     image: 'https://chanzuckerberg.com/wp-content/uploads/2022/03/p_edit-2022-v2.jpg',
     age: 40,
@@ -72,10 +72,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Senior-Level',
     contacts: [
-      { type: 'Phone', value: '9876543210' },
-      { type: 'Email', value: 'carol@example.com' },
-      { type: 'Instagram', value: '@carol' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/carol' },
+      { type: 'phone', value: '9876543210' },
+      { type: 'email', value: 'carol@example.com' },
+      { type: 'instagram', value: '@carol' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/carol' },
     ],
     address: {
       address: '654 Maple St',
@@ -102,10 +102,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Mid-Level',
     contacts: [
-      { type: 'Phone', value: '1234567890' },
-      { type: 'Email', value: 'david@example.com' },
-      { type: 'Instagram', value: '@david' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/david' },
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'david@example.com' },
+      { type: 'instagram', value: '@david' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/david' },
     ],
     address: {
       address: '321 Cedar St',
@@ -132,10 +132,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Entry-Level',
     contacts: [
-      { type: 'Phone', value: '0987654321' },
-      { type: 'Email', value: 'emily@example.com' },
-      { type: 'Instagram', value: '@emily' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/emily' },
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'emily@example.com' },
+      { type: 'instagram', value: '@emily' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/emily' },
     ],
     address: {
       address: '456 Birch St',
@@ -162,10 +162,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'Phone', value: '1234567890' },
-      { type: 'Email', value: 'frank@example.com' },
-      { type: 'Instagram', value: '@frank' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/frank' },
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'frank@example.com' },
+      { type: 'instagram', value: '@frank' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/frank' },
     ],
     address: {
       address: '789 Elm St',
@@ -192,10 +192,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Mid-Level',
     contacts: [
-      { type: 'Phone', value: '0987654321' },
-      { type: 'Email', value: 'grace@example.com' },
-      { type: 'Instagram', value: '@grace' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/grace' },
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'grace@example.com' },
+      { type: 'instagram', value: '@grace' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/grace' },
     ],
     address: {
       address: '123 Cedar St',
@@ -222,10 +222,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'Phone', value: '1234567890' },
-      { type: 'Email', value: 'harry@example.com' },
-      { type: 'Instagram', value: '@harry' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/harry' },
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'harry@example.com' },
+      { type: 'instagram', value: '@harry' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/harry' },
     ],
     address: {
       address: '456 Oak St',
@@ -252,10 +252,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'Phone', value: '0987654321' },
-      { type: 'Email', value: 'ivy@example.com' },
-      { type: 'Instagram', value: '@ivy' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/ivy' },
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'ivy@example.com' },
+      { type: 'instagram', value: '@ivy' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/ivy' },
     ],
     address: {
       address: '789 Maple St',
@@ -282,10 +282,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Mid-Level',
     contacts: [
-      { type: 'Phone', value: '1234567890' },
-      { type: 'Email', value: 'jack@example.com' },
-      { type: 'Instagram', value: '@jack' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/jack' },
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'jack@example.com' },
+      { type: 'instagram', value: '@jack' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/jack' },
     ],
     address: {
       address: '987 Birch St',
@@ -312,10 +312,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Finance Department',
     title: 'Mid-Level',
     contacts: [
-      { type: 'Phone', value: '0987654321' },
-      { type: 'Email', value: 'kelly@example.com' },
-      { type: 'Instagram', value: '@kelly' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/kelly' },
+      { type: 'phone', value: '0987654321' },
+      { type: 'email', value: 'kelly@example.com' },
+      { type: 'instagram', value: '@kelly' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/kelly' },
     ],
     address: {
       address: '123 Cedar St',
@@ -342,10 +342,10 @@ const EmployeeData: EmployeeType[] = [
     department: 'Research & Technology',
     title: 'Senior-Level',
     contacts: [
-      { type: 'Phone', value: '1234567890' },
-      { type: 'Email', value: 'larry@example.com' },
-      { type: 'Instagram', value: '@larry' },
-      { type: 'Linkedin', value: 'https://www.linkedin.com/in/larry' },
+      { type: 'phone', value: '1234567890' },
+      { type: 'email', value: 'larry@example.com' },
+      { type: 'instagram', value: '@larry' },
+      { type: 'linkedin', value: 'https://www.linkedin.com/in/larry' },
     ],
     address: {
       address: '456 Oak St',

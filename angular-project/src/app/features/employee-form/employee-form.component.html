@@ -428,7 +428,7 @@
               "
             >
               <option *ngFor="let type of contactTypes" [value]="type">
-                {{ type }}
+                {{ type | titlecase }}
               </option>
             </select>
             <div

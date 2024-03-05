@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe, TitleCasePipe } from '@angular/common';
 import { EmployeeFormComponent } from './employee-form/employee-form.component';
 import { FeaturesComponent } from './features.component';
 import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
@@ -21,7 +21,9 @@ const routes: Routes = [
     CommonModule,
     RouterModule,
     ReactiveFormsModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    DatePipe,
+    TitleCasePipe
   ],
   exports: [
     EmployeeFormComponent,

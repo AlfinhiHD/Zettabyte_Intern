@@ -82,7 +82,7 @@
               *ngFor="let contact of employee.contacts; let i = index"
             >
               <div class="fs-7">
-                <p><b>{{ contact.type }} : </b>{{ contact.value }}</p>
+                <p><b>{{ contact.type | titlecase  }} : </b>{{ contact.value }}</p>
               </div>
             </div>
           </div>
@@ -100,7 +100,7 @@
                 <p><b>Description : </b>{{ certificate.description }}</p>
               </div>
               <div class="fs-7">
-                <p><b>Upload Date : </b>{{ certificate.dateUpload }}</p>
+                <p><b>Upload Date : </b>{{ certificate.dateUpload | date: 'fullDate' }}</p>
               </div>
             </div>
           </div>

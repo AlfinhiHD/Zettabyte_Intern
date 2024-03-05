@@ -4,6 +4,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { AccentRemovalPipe } from './pipes/accent-removal/accent-removal.pipe';
 
 
 
@@ -11,7 +12,9 @@ import { AppRoutingModule } from '../app-routing.module';
   declarations: [
     NavbarComponent,
     FooterComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AccentRemovalPipe
+    
   ],
   imports: [
     CommonModule,
@@ -20,7 +23,8 @@ import { AppRoutingModule } from '../app-routing.module';
   exports: [
     NavbarComponent,
     FooterComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    AccentRemovalPipe
   ]
 })
 export class SharedModule { }

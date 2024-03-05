@@ -4,6 +4,8 @@ import { EmployeeComponent } from './employee.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { EmployeeBannerComponent } from './employee-banner/employee-banner.component';
 import { FormsModule } from '@angular/forms';
+import { AccentRemovalPipe } from '../shared/pipes/accent-removal/accent-removal.pipe';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -15,7 +17,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   exports: [
     EmployeeComponent,

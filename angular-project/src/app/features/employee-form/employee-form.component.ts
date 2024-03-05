@@ -34,7 +34,7 @@ export class EmployeeFormComponent implements OnInit {
     'Other',
   ];
   titles: Title[] = ['Entry-Level', 'Mid-Level', 'Senior-Level'];
-  contactTypes: string[] = ['Email', 'Instagram', 'Phone', 'Linkedin'];
+  contactTypes: string[] = ['email', 'instagram', 'phone', 'linkedin'];
 
   id: string = '';
   routeSubscription: Subscription;
@@ -82,19 +82,19 @@ export class EmployeeFormComponent implements OnInit {
         contacts.forEach((contact, index) => {
           const valueControl = this.employeeForm.get(`contacts.${index}.value`);
           console.log(contact.type)
-          if (contact.type === 'Email') {
+          if (contact.type === 'email') {
             valueControl.setValidators([Validators.required, Validators.email]);
-          } else if (contact.type === 'Phone') {
+          } else if (contact.type === 'phone') {
             valueControl.setValidators([
               Validators.required,
               Validators.pattern(/^[0-9]*$/),
             ]);
-          } else if (contact.type === 'Instagram') {
+          } else if (contact.type === 'instagram') {
             valueControl.setValidators([
               Validators.required,
               Validators.pattern(/^(?=@[a-zA-Z0-9_.-]+$)/)
             ]);
-          } else if (contact.type === 'Linkedin') {
+          } else if (contact.type === 'linkedin') {
             valueControl.setValidators([
               Validators.required,
               Validators.pattern(
