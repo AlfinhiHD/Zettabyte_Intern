@@ -16,390 +16,402 @@
   style="background-color: #33658a"
 >
   <div
-    class="row px-5"
+    class="px-5"
     style="border-radius: 10px; background-color: rgba(0, 0, 0, 0.5)"
   >
-    <div class="col-3">
+    <div class="row">
       <h3 class="mt-5 text-white">Basic Information</h3>
-
-      <div class="form-group">
-        <label for="image">Name</label>
-        <input
-          type="text"
-          formControlName="name"
-          class="form-control"
-          id="name"
-          [class.is-invalid]="
-            employeeForm.get('name').touched && employeeForm.get('name').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('name').touched && employeeForm.get('name').valid
-          "
-        />
-        <div
-          *ngIf="
-            employeeForm.get('name').touched &&
-            employeeForm.get('name').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Name is required
-        </div>
-        <div
-          *ngIf="
-            employeeForm.get('name').touched &&
-            employeeForm.get('name').hasError('pattern')
-          "
-          class="text-danger error-message"
-        >
-          Name must a valid name
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          type="text"
-          formControlName="email"
-          class="form-control"
-          id="email"
-          [class.is-invalid]="
-            employeeForm.get('email').touched &&
-            employeeForm.get('email').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('email').touched && employeeForm.get('email').valid
-          "
-        />
-        <div
-          *ngIf="
-            employeeForm.get('email').touched &&
-            employeeForm.get('email').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Email is required
-        </div>
-        <div
-          *ngIf="
-            employeeForm.get('email').touched &&
-            employeeForm.get('email').hasError('pattern')
-          "
-          class="text-danger error-message"
-        >
-          Email must a valid email
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="image">Image URL</label>
-        <input
-          type="text"
-          formControlName="image"
-          class="form-control"
-          id="image"
-          [class.is-invalid]="
-            employeeForm.get('image').touched &&
-            employeeForm.get('image').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('image').touched && employeeForm.get('image').valid
-          "
-        />
-        <div
-          *ngIf="
-            employeeForm.get('image').touched &&
-            employeeForm.get('image').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Image is required
-        </div>
-        <div
-          *ngIf="
-            employeeForm.get('image').touched &&
-            employeeForm.get('image').hasError('pattern')
-          "
-          class="text-danger error-message"
-        >
-          Image can only accept (.gif,jpg,jpeg,tiff,png,webp,bmp)
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="age">Age</label>
-        <input
-          type="number"
-          formControlName="age"
-          class="form-control"
-          id="age"
-          [class.is-invalid]="
-            employeeForm.get('age').touched && employeeForm.get('age').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('age').touched && employeeForm.get('age').valid
-          "
-        />
-        <div
-          *ngIf="
-            employeeForm.get('age').touched &&
-            employeeForm.get('age').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Age is required
-        </div>
-        <div
-          *ngIf="
-            employeeForm.get('age').touched &&
-            employeeForm.get('age').hasError('pattern')
-          "
-          class="text-danger error-message"
-        >
-          Age must a valid number
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="gender">Gender</label>
-        <select
-          formControlName="gender"
-          class="form-control"
-          id="gender"
-          [class.is-invalid]="
-            employeeForm.get('gender').touched &&
-            employeeForm.get('gender').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('gender').touched &&
-            employeeForm.get('gender').valid
-          "
-        >
-          <option value="Man">Man</option>
-          <option value="Woman">Woman</option>
-        </select>
-        <div
-          *ngIf="
-            employeeForm.get('gender').touched &&
-            employeeForm.get('gender').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Gender is required
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="role">Role</label>
-        <select
-          formControlName="role"
-          class="form-control"
-          id="role"
-          [class.is-invalid]="
-            employeeForm.get('role').touched && employeeForm.get('role').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('role').touched && employeeForm.get('role').valid
-          "
-        >
-          <option *ngFor="let role of roles" [value]="role">{{ role }}</option>
-        </select>
-        <div
-          *ngIf="
-            employeeForm.get('role').touched &&
-            employeeForm.get('role').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Role is required
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="department">Department</label>
-        <select
-          formControlName="department"
-          class="form-control"
-          id="department"
-          [class.is-invalid]="
-            employeeForm.get('department').touched &&
-            employeeForm.get('department').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('department').touched &&
-            employeeForm.get('department').valid
-          "
-        >
-          <option *ngFor="let department of departments" [value]="department">
-            {{ department }}
-          </option>
-        </select>
-        <div
-          *ngIf="
-            employeeForm.get('department').touched &&
-            employeeForm.get('department').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Department is required
-        </div>
-      </div>
-
-      <div class="form-group">
-        <label for="title">Title</label>
-        <select
-          formControlName="title"
-          class="form-control"
-          id="title"
-          [class.is-invalid]="
-            employeeForm.get('title').touched &&
-            employeeForm.get('title').invalid
-          "
-          [class.is-valid]="
-            employeeForm.get('title').touched && employeeForm.get('title').valid
-          "
-        >
-          <option *ngFor="let title of titles" [value]="title">
-            {{ title }}
-          </option>
-        </select>
-        <div
-          *ngIf="
-            employeeForm.get('title').touched &&
-            employeeForm.get('title').hasError('required')
-          "
-          class="text-danger error-message"
-        >
-          Title is required
-        </div>
-      </div>
-
-      <div formGroupName="address">
+      <div class="col-12 col-sm-4">
         <div class="form-group">
-          <label for="address">Address</label>
+          <label for="image">Name</label>
           <input
             type="text"
-            formControlName="address"
+            formControlName="name"
             class="form-control"
-            id="address"
+            id="name"
             [class.is-invalid]="
-              employeeForm.get('address.address').touched &&
-              employeeForm.get('address.address').invalid
+              employeeForm.get('name').touched &&
+              employeeForm.get('name').invalid
             "
             [class.is-valid]="
-              employeeForm.get('address.address').touched &&
-              employeeForm.get('address.address').valid
+              employeeForm.get('name').touched && employeeForm.get('name').valid
             "
           />
           <div
             *ngIf="
-              employeeForm.get('address.address').touched &&
-              employeeForm.get('address.address').hasError('required')
+              employeeForm.get('name').touched &&
+              employeeForm.get('name').hasError('required')
             "
             class="text-danger error-message"
           >
-            Address is required
+            Name is required
+          </div>
+          <div
+            *ngIf="
+              employeeForm.get('name').touched &&
+              employeeForm.get('name').hasError('pattern')
+            "
+            class="text-danger error-message"
+          >
+            Name must a valid name
           </div>
         </div>
+
         <div class="form-group">
-          <label for="zipcode">Zip Code</label>
+          <label for="email">Email</label>
+          <input
+            type="text"
+            formControlName="email"
+            class="form-control"
+            id="email"
+            [class.is-invalid]="
+              employeeForm.get('email').touched &&
+              employeeForm.get('email').invalid
+            "
+            [class.is-valid]="
+              employeeForm.get('email').touched &&
+              employeeForm.get('email').valid
+            "
+          />
+          <div
+            *ngIf="
+              employeeForm.get('email').touched &&
+              employeeForm.get('email').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Email is required
+          </div>
+          <div
+            *ngIf="
+              employeeForm.get('email').touched &&
+              employeeForm.get('email').hasError('pattern')
+            "
+            class="text-danger error-message"
+          >
+            Email must a valid email
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="image">Image URL</label>
+          <input
+            type="text"
+            formControlName="image"
+            class="form-control"
+            id="image"
+            [class.is-invalid]="
+              employeeForm.get('image').touched &&
+              employeeForm.get('image').invalid
+            "
+            [class.is-valid]="
+              employeeForm.get('image').touched &&
+              employeeForm.get('image').valid
+            "
+          />
+          <div
+            *ngIf="
+              employeeForm.get('image').touched &&
+              employeeForm.get('image').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Image is required
+          </div>
+          <div
+            *ngIf="
+              employeeForm.get('image').touched &&
+              employeeForm.get('image').hasError('pattern')
+            "
+            class="text-danger error-message"
+          >
+            Image can only accept (.gif,jpg,jpeg,tiff,png,webp,bmp)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="age">Age</label>
           <input
             type="number"
-            formControlName="zipcode"
+            formControlName="age"
             class="form-control"
-            id="zipcode"
+            id="age"
             [class.is-invalid]="
-              employeeForm.get('address.zipcode').touched &&
-              employeeForm.get('address.zipcode').invalid
+              employeeForm.get('age').touched && employeeForm.get('age').invalid
             "
             [class.is-valid]="
-              employeeForm.get('address.zipcode').touched &&
-              employeeForm.get('address.zipcode').valid
+              employeeForm.get('age').touched && employeeForm.get('age').valid
             "
           />
           <div
             *ngIf="
-              employeeForm.get('address.zipcode').touched &&
-              employeeForm.get('address.zipcode').hasError('required')
+              employeeForm.get('age').touched &&
+              employeeForm.get('age').hasError('required')
             "
             class="text-danger error-message"
           >
-            Zip Code is required
+            Age is required
           </div>
           <div
             *ngIf="
-              employeeForm.get('address.zipcode').touched &&
-              employeeForm.get('address.zipcode').hasError('pattern')
+              employeeForm.get('age').touched &&
+              employeeForm.get('age').hasError('pattern')
             "
             class="text-danger error-message"
           >
-            Zip Code must be a valid number
+            Age must a valid number
           </div>
         </div>
+      </div>
+      <div class="col-12 col-sm-4">
         <div class="form-group">
-          <label for="city">City</label>
-          <input
-            type="text"
-            formControlName="city"
+          <label for="gender">Gender</label>
+          <select
+            formControlName="gender"
             class="form-control"
-            id="city"
+            id="gender"
             [class.is-invalid]="
-              employeeForm.get('address.city').touched &&
-              employeeForm.get('address.city').invalid
+              employeeForm.get('gender').touched &&
+              employeeForm.get('gender').invalid
             "
             [class.is-valid]="
-              employeeForm.get('address.city').touched &&
-              employeeForm.get('address.city').valid
+              employeeForm.get('gender').touched &&
+              employeeForm.get('gender').valid
             "
-          />
+          >
+            <option value="Man">Man</option>
+            <option value="Woman">Woman</option>
+          </select>
           <div
             *ngIf="
-              employeeForm.get('address.city').touched &&
-              employeeForm.get('address.city').hasError('required')
+              employeeForm.get('gender').touched &&
+              employeeForm.get('gender').hasError('required')
             "
             class="text-danger error-message"
           >
-            City is required
+            Gender is required
           </div>
         </div>
+
         <div class="form-group">
-          <label for="country">Country</label>
-          <input
-            type="text"
-            formControlName="country"
+          <label for="role">Role</label>
+          <select
+            formControlName="role"
             class="form-control"
-            id="country"
+            id="role"
             [class.is-invalid]="
-              employeeForm.get('address.country').touched &&
-              employeeForm.get('address.country').invalid
+              employeeForm.get('role').touched &&
+              employeeForm.get('role').invalid
             "
             [class.is-valid]="
-              employeeForm.get('address.country').touched &&
-              employeeForm.get('address.country').valid
+              employeeForm.get('role').touched && employeeForm.get('role').valid
             "
-          />
+          >
+            <option *ngFor="let role of roles" [value]="role">
+              {{ role }}
+            </option>
+          </select>
           <div
             *ngIf="
-              employeeForm.get('address.country').touched &&
-              employeeForm.get('address.country').hasError('required')
+              employeeForm.get('role').touched &&
+              employeeForm.get('role').hasError('required')
             "
             class="text-danger error-message"
           >
-            Country is required
+            Role is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="department">Department</label>
+          <select
+            formControlName="department"
+            class="form-control"
+            id="department"
+            [class.is-invalid]="
+              employeeForm.get('department').touched &&
+              employeeForm.get('department').invalid
+            "
+            [class.is-valid]="
+              employeeForm.get('department').touched &&
+              employeeForm.get('department').valid
+            "
+          >
+            <option *ngFor="let department of departments" [value]="department">
+              {{ department }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              employeeForm.get('department').touched &&
+              employeeForm.get('department').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Department is required
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="title">Title</label>
+          <select
+            formControlName="title"
+            class="form-control"
+            id="title"
+            [class.is-invalid]="
+              employeeForm.get('title').touched &&
+              employeeForm.get('title').invalid
+            "
+            [class.is-valid]="
+              employeeForm.get('title').touched &&
+              employeeForm.get('title').valid
+            "
+          >
+            <option *ngFor="let title of titles" [value]="title">
+              {{ title }}
+            </option>
+          </select>
+          <div
+            *ngIf="
+              employeeForm.get('title').touched &&
+              employeeForm.get('title').hasError('required')
+            "
+            class="text-danger error-message"
+          >
+            Title is required
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-4">
+        <div formGroupName="address">
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="text"
+              formControlName="address"
+              class="form-control"
+              id="address"
+              [class.is-invalid]="
+                employeeForm.get('address.address').touched &&
+                employeeForm.get('address.address').invalid
+              "
+              [class.is-valid]="
+                employeeForm.get('address.address').touched &&
+                employeeForm.get('address.address').valid
+              "
+            />
+            <div
+              *ngIf="
+                employeeForm.get('address.address').touched &&
+                employeeForm.get('address.address').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Address is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="zipcode">Zip Code</label>
+            <input
+              type="number"
+              formControlName="zipcode"
+              class="form-control"
+              id="zipcode"
+              [class.is-invalid]="
+                employeeForm.get('address.zipcode').touched &&
+                employeeForm.get('address.zipcode').invalid
+              "
+              [class.is-valid]="
+                employeeForm.get('address.zipcode').touched &&
+                employeeForm.get('address.zipcode').valid
+              "
+            />
+            <div
+              *ngIf="
+                employeeForm.get('address.zipcode').touched &&
+                employeeForm.get('address.zipcode').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Zip Code is required
+            </div>
+            <div
+              *ngIf="
+                employeeForm.get('address.zipcode').touched &&
+                employeeForm.get('address.zipcode').hasError('pattern')
+              "
+              class="text-danger error-message"
+            >
+              Zip Code must be a valid number
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input
+              type="text"
+              formControlName="city"
+              class="form-control"
+              id="city"
+              [class.is-invalid]="
+                employeeForm.get('address.city').touched &&
+                employeeForm.get('address.city').invalid
+              "
+              [class.is-valid]="
+                employeeForm.get('address.city').touched &&
+                employeeForm.get('address.city').valid
+              "
+            />
+            <div
+              *ngIf="
+                employeeForm.get('address.city').touched &&
+                employeeForm.get('address.city').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              City is required
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="country">Country</label>
+            <input
+              type="text"
+              formControlName="country"
+              class="form-control"
+              id="country"
+              [class.is-invalid]="
+                employeeForm.get('address.country').touched &&
+                employeeForm.get('address.country').invalid
+              "
+              [class.is-valid]="
+                employeeForm.get('address.country').touched &&
+                employeeForm.get('address.country').valid
+              "
+            />
+            <div
+              *ngIf="
+                employeeForm.get('address.country').touched &&
+                employeeForm.get('address.country').hasError('required')
+              "
+              class="text-danger error-message"
+            >
+              Country is required
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="middle-form col-6">
-      <h3 class="mt-5 text-white">Contacts</h3>
 
-      <div formArrayName="contacts">
+    <div class="mt-5">
+      <h3 class="text-white">Contacts</h3>
+
+      <div formArrayName="contacts" class="row">
         <div
           *ngFor="
             let contact of employeeForm.get('contacts')['controls'];
             let i = index
           "
           [formGroupName]="i"
+          class="col-12 col-sm-4"
         >
           <div class="form-group">
             <label for="type">Type</label>
@@ -486,23 +498,24 @@
 
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary mt-5"
         (click)="addField('contact')"
       >
         Add Contact
       </button>
     </div>
 
-    <div class="col-3">
-      <h3 class="mt-5 text-white">Certificates</h3>
+    <div class="mt-5">
+      <h3 class="text-white">Certificates</h3>
 
-      <div formArrayName="certificates">
+      <div formArrayName="certificates" class="row">
         <div
           *ngFor="
             let certificate of employeeForm.get('certificates')['controls'];
             let i = index
           "
           [formGroupName]="i"
+          class="col-12 col-sm-4"
         >
           <div class="form-group">
             <label for="name">Certificate</label>
@@ -595,14 +608,15 @@
 
       <button
         type="button"
-        class="btn btn-primary"
+        class="btn btn-primary mt-5"
         (click)="addField('certificate')"
       >
         Add Certificates
       </button>
     </div>
-    <div class="text-center mb-5">
-      <button type="submit" class="btn btn-primary w-25">Submit</button>
+
+    <div class="text-center pb-5 mb-5">
+      <button type="submit" class="btn btn-primary w-25 mt-5">Submit</button>
     </div>
   </div>
 </form>

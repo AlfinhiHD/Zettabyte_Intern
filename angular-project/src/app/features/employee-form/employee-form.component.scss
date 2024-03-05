@@ -8,8 +8,12 @@ form {
 label {
   margin-bottom: 5px;
   font-weight: bold;
-  margin-top: 20px;
+  margin-top: 2.5rem;
   color: white;
+}
+
+.error-message {
+  position: absolute;
 }
 
 button {
