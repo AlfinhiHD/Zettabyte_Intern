@@ -3,7 +3,7 @@ import { EmployeeType } from './interface';
 const EmployeeData: EmployeeType[] = [
   {
     id: 'a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6',
-    name: 'âme île hôtel sûr être',
+    name: 'âme.île hôtel sûr.être',
     email: 'alice@example.com',
     image: 'https://chanzuckerberg.com/wp-content/uploads/2022/03/p_edit-2022-v2.jpg',
     age: 28,
@@ -123,7 +123,7 @@ const EmployeeData: EmployeeType[] = [
   },
   {
     id: 'e5f6g7h8-i9j0-k1l2-m3n4-o5p6q7r8s9t0',
-    name: 'Emily Jones',
+    name: 'Céline Véronique',
     email: 'emily@example.com',
     image: 'https://chanzuckerberg.com/wp-content/uploads/2022/03/p_edit-2022-v2.jpg',
     age: 32,

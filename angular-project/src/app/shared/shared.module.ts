@@ -5,6 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { AccentRemovalPipe } from './pipes/accent-removal/accent-removal.pipe';
+import { CombineWordsPipe } from './pipes/combine-words/combine-words.pipe';
+
 
 
 
@@ -13,18 +15,19 @@ import { AccentRemovalPipe } from './pipes/accent-removal/accent-removal.pipe';
     NavbarComponent,
     FooterComponent,
     NotfoundComponent,
-    AccentRemovalPipe
+    AccentRemovalPipe,
+    CombineWordsPipe
     
   ],
   imports: [
     CommonModule,
-    AppRoutingModule
   ],
   exports: [
     NavbarComponent,
     FooterComponent,
     NotfoundComponent,
-    AccentRemovalPipe
+    AccentRemovalPipe,
+    CombineWordsPipe
   ]
 })
 export class SharedModule { }

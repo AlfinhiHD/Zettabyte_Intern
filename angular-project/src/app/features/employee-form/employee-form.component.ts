@@ -38,6 +38,7 @@ export class EmployeeFormComponent implements OnInit {
 
   id: string = '';
   routeSubscription: Subscription;
+  isFormValid: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -65,6 +66,7 @@ export class EmployeeFormComponent implements OnInit {
     });
 
     if (this.id) {
+      this.isFormValid = true;
       const employee = this.employeeService.getEmployeeById(this.id);
       if (employee) {
         this.employeeForm.patchValue(employee);
@@ -79,32 +81,69 @@ export class EmployeeFormComponent implements OnInit {
     this.employeeForm
       .get('contacts')
       .valueChanges.subscribe((contacts: Contact[]) => {
-        contacts.forEach((contact, index) => {
-          const valueControl = this.employeeForm.get(`contacts.${index}.value`);
-          console.log(contact.type)
-          if (contact.type === 'email') {
-            valueControl.setValidators([Validators.required, Validators.email]);
-          } else if (contact.type === 'phone') {
-            valueControl.setValidators([
-              Validators.required,
-              Validators.pattern(/^[0-9]*$/),
-            ]);
-          } else if (contact.type === 'instagram') {
-            valueControl.setValidators([
-              Validators.required,
-              Validators.pattern(/^(?=@[a-zA-Z0-9_.-]+$)/)
-            ]);
-          } else if (contact.type === 'linkedin') {
-            valueControl.setValidators([
-              Validators.required,
-              Validators.pattern(
-                /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/
-              ),
-            ]);
-          }
-          valueControl.updateValueAndValidity({ emitEvent: false });
-        });
+        this.AddContactsValidator(contacts);
       });
+
+    this.employeeForm.get('name').valueChanges.subscribe((name: string) => {
+      this.validateInput(name, 'name');
+    });
+
+    this.employeeForm.get('email').valueChanges.subscribe((email: string) => {
+      this.validateInput(email, 'email');
+    });
+
+
+
+    this.employeeForm.valueChanges.subscribe(() => {
+      console.log(this.employeeForm);
+      this.isFormValid = this.employeeForm.valid;
+    });
+  }
+
+  AddContactsValidator(contacts: Contact[]) {
+    contacts.forEach((contact, index) => {
+      const valueControl = this.employeeForm.get(`contacts.${index}.value`);
+      console.log(contact.type);
+      if (contact.type === 'email') {
+        valueControl.setValidators([Validators.required, Validators.email]);
+      } else if (contact.type === 'phone') {
+        valueControl.setValidators([
+          Validators.required,
+          Validators.pattern(/^[0-9]*$/),
+        ]);
+      } else if (contact.type === 'instagram') {
+        valueControl.setValidators([
+          Validators.required,
+          Validators.pattern(/^(?=@[a-zA-Z0-9_.-]+$)/),
+        ]);
+      } else if (contact.type === 'linkedin') {
+        valueControl.setValidators([
+          Validators.required,
+          Validators.pattern(
+            /^(https?:\/\/)?(www\.)?linkedin\.com\/in\/[a-zA-Z0-9_-]+\/?$/
+          ),
+        ]);
+      }
+      valueControl.updateValueAndValidity({ emitEvent: false });
+    });
+  }
+
+  validateInput(value: string, controlName: string) {
+    if (!value) {
+      this.employeeForm.controls[controlName].setErrors({ required: true });
+    } else {
+      const pattern =
+        controlName === 'name'
+          ? /^[a-zA-Z\s'\-.À-ÖØ-öø-ÿß]+$/
+          : /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (!pattern.test(value)) {
+        this.employeeForm.controls[controlName].setErrors({
+          invalidInput: true,
+        });
+      } else {
+        this.employeeForm.controls[controlName].setErrors(null);
+      }
+    }
   }
 
   setArrayData(contacts: Contact[], certificates: Certificate[]): void {
@@ -190,7 +229,7 @@ export class EmployeeFormComponent implements OnInit {
 
   onSubmit(): void {
     const formData = this.employeeForm.value;
-    console.log(this.employeeForm);
+    
 
     this.employeeForm.markAllAsTouched();
 

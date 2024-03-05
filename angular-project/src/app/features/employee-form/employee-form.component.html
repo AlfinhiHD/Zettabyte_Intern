@@ -49,11 +49,11 @@
           <div
             *ngIf="
               employeeForm.get('name').touched &&
-              employeeForm.get('name').hasError('pattern')
+              employeeForm.get('name').hasError('invalidInput')
             "
             class="text-danger error-message"
           >
-            Name must a valid name
+          Name must a valid
           </div>
         </div>
 
@@ -85,7 +85,7 @@
           <div
             *ngIf="
               employeeForm.get('email').touched &&
-              employeeForm.get('email').hasError('pattern')
+              employeeForm.get('email').hasError('invalidInput')
             "
             class="text-danger error-message"
           >
@@ -616,7 +616,7 @@
     </div>
 
     <div class="text-center pb-5 mb-5">
-      <button type="submit" class="btn btn-primary w-25 mt-5">Submit</button>
+      <button type="submit" class="btn btn-primary w-25 mt-5" [disabled]="!isFormValid">Submit</button>
     </div>
   </div>
 </form>

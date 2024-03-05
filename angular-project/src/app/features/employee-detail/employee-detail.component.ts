@@ -1,3 +1,4 @@
+import { DatePipe, TitleCasePipe } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { EmployeeType } from 'src/app/shared/helpers/interface';
@@ -7,6 +8,10 @@ import Swal from 'sweetalert2';
 @Component({
   selector: 'app-employee-detail',
   templateUrl: './employee-detail.component.html',
+  providers: [
+    DatePipe,
+    TitleCasePipe,
+  ],
   styleUrls: ['./employee-detail.component.scss']
 })
 export class EmployeeDetailComponent implements OnInit {

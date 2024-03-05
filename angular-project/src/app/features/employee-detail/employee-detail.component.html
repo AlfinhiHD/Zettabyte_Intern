@@ -19,7 +19,7 @@
     <div class="row gx-4 gx-lg-5">
       <div class="col-md-5">
         <p class="fs-8 mb-1">Employee ID : {{ employee.id }}</p>
-        <h1 class="display-5 fw-bolder">{{ employee.name }}</h1>
+        <h1 class="display-5 fw-bolder">{{ employee.name | accentRemoval }}</h1>
         <div class="fs-5 mb-4">
           <span
             class="badge ms-2"
