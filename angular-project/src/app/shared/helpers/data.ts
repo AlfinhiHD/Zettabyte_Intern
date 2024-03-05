@@ -128,7 +128,7 @@ const EmployeeData: EmployeeType[] = [
     image: 'https://chanzuckerberg.com/wp-content/uploads/2022/03/p_edit-2022-v2.jpg',
     age: 32,
     gender: 'Woman',
-    role: 'HR',
+    role: 'Human Resource',
     department: 'Finance Department',
     title: 'Entry-Level',
     contacts: [
@@ -278,7 +278,7 @@ const EmployeeData: EmployeeType[] = [
     image: 'https://asset.kompas.com/crops/GQUver5Id7jVYzbXgJveT7OJ0qg=/65x0:650x390/1200x800/data/photo/2015/10/27/1658302Mark-Jadi780x390.jpg',
     age: 48,
     gender: 'Man',
-    role: 'HR',
+    role: 'Human Resource',
     department: 'Finance Department',
     title: 'Mid-Level',
     contacts: [

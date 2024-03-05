@@ -25,13 +25,17 @@
             class="badge ms-2"
             [ngClass]="{
               'bg-danger': employee.role === 'Frontend Engineer',
-              'bg-success': employee.role === 'Backend Engineer'
+              'bg-secondary': employee.role === 'Backend Engineer',
+              'bg-primary' : employee.role === 'AI Engineer',
+              'bg-warning' : employee.role === 'QA Engineer',
+              'bg-success' : employee.role === 'Human Resource'
             }"
             >{{ employee.role }}</span
           >
         </div>
         <img
           class="card-img-top mb-5 mb-md-0"
+          style="max-height: 30rem;"
           [src]="employee.image"
           [alt]="employee.name"
         />

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { EmployeeComponent } from './employee.component';
 import { EmployeeCardComponent } from './employee-card/employee-card.component';
 import { EmployeeBannerComponent } from './employee-banner/employee-banner.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -14,6 +15,7 @@ import { EmployeeBannerComponent } from './employee-banner/employee-banner.compo
   ],
   imports: [
     CommonModule,
+    FormsModule
   ],
   exports: [
     EmployeeComponent,

@@ -13,7 +13,7 @@ export interface EmployeeType {
     certificates: Certificate[];
   }
   
-  export type Role = 'Frontend Engineer' | 'Backend Engineer' | 'AI Engineer' | 'QA Engineer' | 'HR';
+  export type Role = 'Frontend Engineer' | 'Backend Engineer' | 'AI Engineer' | 'QA Engineer' | 'Human Resource';
   export type Department = 'Finance Department' | 'Research & Technology' | 'Other';
   export type Title = 'Entry-Level' | 'Mid-Level' | 'Senior-Level';
   

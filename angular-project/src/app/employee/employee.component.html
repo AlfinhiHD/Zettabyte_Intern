@@ -1,9 +1,22 @@
 <app-employee-banner></app-employee-banner>
-<section style="background-color: #33658A">
+<section style="background-color: #33658a">
   <div class="text-center container py-5">
-    <h3 class="mt-4 mb-5 text-white"><strong>Our Marvelous Employee!</strong></h3>
+    <h3 class="mt-4 mb-5 text-white">
+      <strong>Our Marvelous Employee!</strong>
+    </h3>
+    <div class="d-flex justify-content-center">
+      <input
+        type="text"
+        [(ngModel)]="searchTerm"
+        class="form-control w-50 mb-5"
+        placeholder="Search..."
+      />
+    </div>
     <div class="row">
-      <div class="col-lg-4 col-md-12 mb-4" *ngFor="let employee of employeeList">
+      <div
+        class="col-lg-4 col-md-12 mb-4"
+        *ngFor="let employee of filteredEmployee"
+      >
         <app-employee-card [employee]="employee"></app-employee-card>
       </div>
     </div>

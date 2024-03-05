@@ -9,6 +9,7 @@ import { EmployeeType } from '../shared/helpers/interface';
 })
 export class EmployeeComponent implements OnInit {
   employeeList: EmployeeType[] = [];
+  searchTerm: string = '';
 
   constructor(private employeService: EmployeeService ) {}
 
@@ -16,5 +17,11 @@ export class EmployeeComponent implements OnInit {
     this.employeService.employee$.subscribe((employee) => {
       this.employeeList = employee;
     });
+  }
+
+  get filteredEmployee(): EmployeeType[] {
+    return this.employeeList.filter (
+      (employee) => employee.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    )
   }
 }

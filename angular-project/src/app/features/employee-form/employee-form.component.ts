@@ -26,7 +26,7 @@ export class EmployeeFormComponent implements OnInit {
     'Backend Engineer',
     'AI Engineer',
     'QA Engineer',
-    'HR',
+    'Human Resource',
   ];
   departments: Department[] = [
     'Finance Department',
