@@ -15,10 +15,10 @@ export class UserService {
   apiUrl = 'https://jsonplaceholder.typicode.com';
 
   constructor(private http: HttpClient) {
-    this.fetchPosts();
+    this.fetchUsers();
   }
 
-  fetchPosts(): void {
+  fetchUsers(): void {
     this.http
       .get<UserType[]>(`${this.apiUrl}/users`, { observe: 'response' })
       .subscribe({

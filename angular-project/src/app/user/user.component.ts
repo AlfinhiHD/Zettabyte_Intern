@@ -16,8 +16,7 @@ export class UserComponent implements OnInit {
   constructor(
     private userService: UserService,
     private filterPipe: FilterPipe
-  ) // private combinePipe: CombineWordsPipe
-  {}
+  ) {}
 
   ngOnInit(): void {
     this.userService.user$.subscribe((user) => {
