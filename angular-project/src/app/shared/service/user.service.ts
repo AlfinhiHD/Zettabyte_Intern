@@ -19,15 +19,16 @@ export class UserService {
   }
 
   fetchPosts(): void {
-    this.http.get<UserType[]>(`${this.apiUrl}/users`).subscribe(
-      (response) => {
-        console.log(response);
-        this.user.next(response);
-      },
-      (error) => {
-        console.error('Error fetching users:', error);
-      }
-    );
+    this.http
+      .get<UserType[]>(`${this.apiUrl}/users`, { observe: 'response' })
+      .subscribe({
+        next: (response: HttpResponse<any>) => {
+          this.user.next(response.body);
+        },
+        error: (error) => {
+          console.error('There was an error!', error);
+        },
+      });
   }
 
   getUserById(userId: number): Observable<UserType> {
