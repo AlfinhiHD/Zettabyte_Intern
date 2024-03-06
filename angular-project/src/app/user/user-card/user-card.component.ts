@@ -16,6 +16,9 @@ export class UserCardComponent implements OnInit {
   }
 
   goToDetailUser(id: number) {
+    if (id > 10) {
+      id = 10;
+    }
     this.router.navigate(['user/detail', id]);
   }
 

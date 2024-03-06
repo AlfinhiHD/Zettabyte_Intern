@@ -12,6 +12,12 @@ export class UserService {
   );
   user$ = this.user.asObservable();
 
+  private selecteduser: BehaviorSubject<UserType | null> = new BehaviorSubject<UserType | null>(
+    null
+  );
+  selecteduser$ = this.selecteduser.asObservable();
+  
+
   apiUrl = 'https://jsonplaceholder.typicode.com';
 
   constructor(private http: HttpClient) {
@@ -31,9 +37,21 @@ export class UserService {
       });
   }
 
-  getUserById(userId: number): Observable<UserType> {
-    return this.http.get<UserType>(`${this.apiUrl}/users/${userId}`);
+  getUserById(userId: number): void {
+    this.http.get<UserType>(`${this.apiUrl}/users/${userId}`, {observe: 'response'})
+    .subscribe({
+      next: (response: HttpResponse<any>) => {
+          this.selecteduser.next(response.body);
+      },
+      error: (error) => {
+        console.error('There was an error!', error)
+      }
+    })
   }
+
+  // getUserById(userId: number): Observable<UserType> {
+  //   return this.http.get<UserType>(`${this.apiUrl}/users/${userId}`);
+  // }
 
   deleteUser(id: number): void {
     this.http

@@ -4,7 +4,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { userFormInit } from 'src/app/shared/helpers/forms';
-import { UserType } from 'src/app/shared/helpers/interface';
 import { UserService } from 'src/app/shared/service/user.service';
 import Swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
@@ -28,6 +27,10 @@ export class UserFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.userService.selecteduser$.subscribe((selectedUser) => {
+      this.userForm.patchValue(selectedUser);
+      this.spinner.hide();
+    })
     this.userForm = userFormInit(this.fb);
     this.spinner.show();
     this.route.queryParams.subscribe((queryParams) => {
@@ -40,30 +43,27 @@ export class UserFormComponent implements OnInit {
     console.log(this.id);
 
     if (this.id) {
-      const user = this.userService.getUserById(this.id);
-      if (user) {
-        this.getUserById(this.id);
-      }
+      this.userService.getUserById(this.id);
     }
   }
 
-  getUserById(id: number): void {
-    this.userService.getUserById(id).subscribe(
-      (response: UserType) => {
-        this.userForm.patchValue(response);
-        this.spinner.hide();
-      },
-      (error) => {
-        console.error('Error fetching user detail:', error);
-        this.spinner.hide(); 
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong while fetching user detail!',
-        });
-      }
-    );
-  }
+  // getUserById(id: number): void {
+  //   this.userService.getUserById(id).subscribe(
+  //     (response: UserType) => {
+  //       this.userForm.patchValue(response);
+  //       this.spinner.hide();
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching user detail:', error);
+  //       this.spinner.hide(); 
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Oops...',
+  //         text: 'Something went wrong while fetching user detail!',
+  //       });
+  //     }
+  //   );
+  // }
 
   onSubmit(): void {
     const formData = this.userForm.value;

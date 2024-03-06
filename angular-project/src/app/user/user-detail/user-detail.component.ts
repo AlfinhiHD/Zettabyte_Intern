@@ -22,28 +22,37 @@ export class UserDetailComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.userService.selecteduser$.subscribe((selectedUser) => {
+      this.user = selectedUser
+      this.spinner.hide();
+    })
+
     this.userId = Number(this.route.snapshot.paramMap.get('id'));
     this.spinner.show();
-    this.getUserDetail(this.userId);
+    this.userService.getUserById(this.userId)
+    // this.getUserDetail(this.userId);
   }
 
-  getUserDetail(id: number): void {
-    this.userService.getUserById(id).subscribe(
-      (response: UserType) => {
-        this.user = response;
-        this.spinner.hide();
-      },
-      (error) => {
-        console.error('Error fetching user detail:', error);
-        this.spinner.hide(); 
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong while fetching user detail!',
-        });
-      }
-    );
-  }
+  // getUserDetail(id: number): void {
+  //   this.userService.getUserById(id).subscribe(
+  //     (response: UserType) => {
+  //       this.user = response;
+  //       this.spinner.hide();
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching user detail:', error);
+  //       this.spinner.hide(); 
+  //       Swal.fire({
+  //         icon: 'error',
+  //         title: 'Oops...',
+  //         text: 'Something went wrong while fetching user detail!',
+  //       }).then((res) => {
+  //         this.router.navigate(['/user']);
+  //       });
+
+  //     }
+  //   );
+  // }
   
   onDeleteUser(id: number): void {
     Swal.fire({
