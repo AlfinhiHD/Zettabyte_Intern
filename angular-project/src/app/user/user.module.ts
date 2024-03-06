@@ -6,6 +6,8 @@ import { UserFormComponent } from './user-form/user-form.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { NoopAnimationPlayer } from '@angular/animations';
 
 const routes: Routes = [
   {
@@ -13,11 +15,11 @@ const routes: Routes = [
     component: UserComponent,
   },
   {
-    path: '/detail/:id',
+    path: 'detail/:id',
     component: UserDetailComponent,
   },
   {
-    path: '/form',
+    path: 'form',
     component: UserFormComponent,
   },
 ];
@@ -34,7 +36,8 @@ const routes: Routes = [
     RouterModule,
     ReactiveFormsModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule,
+    NgxSpinnerModule
   ],
   exports: [
     UserComponent,

@@ -1,3 +1,12 @@
+<ngx-spinner
+  bdColor="rgba(0, 0, 0, 0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+  [fullScreen]="true"
+  ><p style="color: white">Loading...</p></ngx-spinner
+>
+
 <section class="py-5" style="min-height: 90vh; margin-bottom: 1rem">
   <div class="container px-4 px-lg-5 mt-5">
     <div class="row gx-4 gx-lg-5 align-items-center">
@@ -6,6 +15,7 @@
           class="card-img-top mb-5 mb-md-0"
           src="../../../assets/useravatar.png"
           [alt]="user.name"
+          style="width: 18rem;"
         />
       </div>
       <div class="col-md-6">
@@ -52,7 +62,7 @@
 
       <button
         class="btn btn-warning me-3"
-        [routerLink]="['/user/inputform']"
+        [routerLink]="['/user/form']"
         [queryParams]="{ id: user.id }"
       >
         Edit

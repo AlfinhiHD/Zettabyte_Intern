@@ -1,0 +1,55 @@
+form {
+    padding-bottom: 9vw;
+    padding-left: 9vw;
+    padding-right: 9vw;
+    padding-top: 1vw;
+  }
+  
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    margin-top: 2.5rem;
+    color: white;
+  }
+  
+  .error-message {
+    position: absolute;
+  }
+  
+  button {
+    margin-top: 2vw;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-top: 2vw;
+  }
+  
+  .middle-form {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  
+  @media (max-width: 1080px) {
+  
+    .col-3 {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .col-6 {
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  
+    .col-3:last-child {
+      margin-bottom: 2rem;
+    }
+  
+    .middle-form {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }

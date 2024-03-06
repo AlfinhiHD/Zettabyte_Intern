@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { UserType } from '../shared/helpers/interface';
 import { UserService } from '../shared/service/user.service';
+import { FilterPipe } from '../shared/pipes/filter.pipe';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
+  providers: [FilterPipe],
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
@@ -13,9 +15,9 @@ export class UserComponent implements OnInit {
 
   constructor(
     private userService: UserService,
-    // private accentPipe: AccentRemovalPipe,
-    // private combinePipe: CombineWordsPipe
-  ) {}
+    private filterPipe: FilterPipe
+  ) // private combinePipe: CombineWordsPipe
+  {}
 
   ngOnInit(): void {
     this.userService.user$.subscribe((user) => {
@@ -23,13 +25,11 @@ export class UserComponent implements OnInit {
     });
   }
 
-  // get filteredUser(): UserType[] {
-  //   return this.userList.filter((user) =>
-  //     this.combinePipe
-  //       .transform(this.accentPipe.transform(user.name))
-  //       .includes(
-  //         this.combinePipe.transform(this.accentPipe.transform(this.searchTerm))
-  //       )
-  //   );
-  // }
+  get filteredUser(): UserType[] {
+    return this.userList.filter((user) =>
+      this.filterPipe
+        .transform(user.name)
+        .includes(this.filterPipe.transform(this.searchTerm))
+    );
+  }
 }
