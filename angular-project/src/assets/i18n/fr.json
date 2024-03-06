@@ -1,0 +1,13 @@
+{
+    "Our Marvelous Employee!": "Notre merveilleux employé",
+    "Disini rata-rata orang india yang jago jago" : "Ici, l'Indien moyen est bon dans ce domaine",
+    "Zattecorps Solution" : "Solution Zattecorps",
+    
+    "roles": {
+        "Frontend Engineer": "Ingénieur Frontend",
+        "Backend Engineer": "Ingénieur Backend",
+        "AI Engineer": "Ingénieur IA",
+        "QA Engineer": "Ingénieur QA",
+        "Human Resource": "Ressources Humaines"
+      }
+}

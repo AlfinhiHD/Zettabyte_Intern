@@ -21,6 +21,7 @@ import { CombineWordsPipe } from './pipes/combine-words/combine-words.pipe';
   ],
   imports: [
     CommonModule,
+    AppRoutingModule
   ],
   exports: [
     NavbarComponent,

@@ -1,8 +1,24 @@
 <app-employee-banner></app-employee-banner>
 <section style="background-color: #33658a">
   <div class="text-center container py-5">
+    <button class="btn btn-link" (click)="switchLanguage('en')">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg"
+        alt="English"
+        width="30"
+        height="30"
+      />
+    </button>
+    <button class="btn btn-link" (click)="switchLanguage('fr')">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/800px-Flag_of_France.svg.png"
+        alt="French"
+        width="30"
+        height="30"
+      />  
+    </button>
     <h3 class="mt-4 mb-5 text-white">
-      <strong>Our Marvelous Employee!</strong>
+      <strong>{{ "Our Marvelous Employee!" | translate }}</strong>
     </h3>
     <div class="d-flex justify-content-center">
       <input

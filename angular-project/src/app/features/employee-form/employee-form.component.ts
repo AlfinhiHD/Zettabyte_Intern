@@ -94,7 +94,7 @@ export class EmployeeFormComponent implements OnInit {
 
 
 
-    this.employeeForm.valueChanges.subscribe(() => {
+    this.employeeForm.statusChanges.subscribe(() => {
       console.log(this.employeeForm);
       this.isFormValid = this.employeeForm.valid;
     });
