@@ -1,1 +1,65 @@
-<p>user-detail works!</p>
+<section class="py-5" style="min-height: 90vh; margin-bottom: 1rem">
+  <div class="container px-4 px-lg-5 mt-5">
+    <div class="row gx-4 gx-lg-5 align-items-center">
+      <div class="col-md-6">
+        <img
+          class="card-img-top mb-5 mb-md-0"
+          src="../../../assets/useravatar.png"
+          [alt]="user.name"
+        />
+      </div>
+      <div class="col-md-6">
+        <p class="fs-8 mb-1">user ID : {{ user.id }}</p>
+        <h1 class="display-5 fw-bolder">{{ user.name }}</h1>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="fs-5">
+            <p>Username : {{ user.username }}</p>
+          </div>
+          <div class="fs-5">
+            <p>Email : {{ user.email }}</p>
+          </div>
+          <div class="fs-5">
+            <p>Phone : {{ user.phone }}</p>
+          </div>
+          <div class="fs-5">
+            <p>Website : {{ user.website }}</p>
+          </div>
+        </div>
+        <div class="col-6">
+          <h3>User address</h3>
+          <div class="fs-5">
+            <p>Street : {{ user.address.street }}</p>
+          </div>
+          <div class="fs-5">
+            <p>Suite : {{ user.address.suite }}</p>
+          </div>
+          <div class="fs-5">
+            <p>City : {{ user.address.city }}</p>
+          </div>
+          <div class="fs-5">
+            <p>Zipcode : {{ user.address.zipcode }}</p>
+          </div>
+          <div class="fs-5">
+            <p>Latitude : {{ user.address.geo.lat }}</p>
+          </div>
+          <div class="fs-5">
+            <p>Longitude : {{ user.address.geo.lng }}</p>
+          </div>
+        </div>
+      </div>
+
+      <button
+        class="btn btn-warning me-3"
+        [routerLink]="['/user/inputform']"
+        [queryParams]="{ id: user.id }"
+      >
+        Edit
+      </button>
+      <button class="btn btn-danger" (click)="onDeleteUser(user.id)">
+        Delete
+      </button>
+    </div>
+  </div>
+</section>

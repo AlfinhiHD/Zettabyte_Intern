@@ -1,1 +1,40 @@
-<p>user works!</p>
+<section>
+  <div class="text-center container py-5">
+    <!-- <button class="btn btn-link" (click)="switchLanguage('en')">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/f/f2/Flag_of_Great_Britain_%281707%E2%80%931800%29.svg"
+          alt="English"
+          width="30"
+          height="30"
+        />
+      </button>
+      <button class="btn btn-link" (click)="switchLanguage('fr')">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c3/Flag_of_France.svg/800px-Flag_of_France.svg.png"
+          alt="French"
+          width="30"
+          height="30"
+        />  
+      </button> -->
+    <!-- <h3 class="mt-4 mb-5 text-white">
+        <strong>{{ "Our Marvelous Employee!" | translate }}</strong>
+      </h3> -->
+    <div class="d-flex justify-content-center">
+        <input
+          type="text"
+          [(ngModel)]="searchTerm"
+          class="form-control w-50 mb-5"
+          placeholder="Search..."
+        />
+      </div>
+    <!-- <h1>{{ "Hâme.île hôtel sûr être.Frédéric Maël" | accentRemoval | combineWords }}</h1> -->
+    <div class="row">
+      <div
+        class="col-lg-4 col-md-12 mb-4"
+        *ngFor="let user of userList"
+      >
+        <app-user-card [user]="user"></app-user-card>
+      </div>
+    </div>
+  </div>
+</section>

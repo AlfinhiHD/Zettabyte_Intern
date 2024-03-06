@@ -1,0 +1,1 @@
+export const Image : string = "https://cdn4.iconfinder.com/data/icons/web-mobile-universal/32/universal_icons-35-512.png";
