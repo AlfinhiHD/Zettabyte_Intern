@@ -7,69 +7,71 @@
   ><p style="color: white">Loading...</p></ngx-spinner
 >
 
-<section class="py-5" style="min-height: 90vh; margin-bottom: 1rem">
+<section class="py-5" style="min-height: 90vh; padding-bottom: 1rem; background-color: #b7b7b7;">
   <div class="container px-4 px-lg-5 mt-5">
-    <div class="row gx-4 gx-lg-5 align-items-center">
+    <div class="row gx-4 gx-lg-5">
       <div class="col-md-6">
+        <p class="fs-8 mb-1">user ID : {{ user.id }}</p>
+        <h1 class="display-5 fw-bold mb-5">{{ user.name }}</h1>
         <img
           class="card-img-top mb-5 mb-md-0"
           src="../../../assets/useravatar.png"
           [alt]="user.name"
-          style="width: 18rem;"
+          style="width: 18rem"
         />
-      </div>
-      <div class="col-md-6">
-        <p class="fs-8 mb-1">user ID : {{ user.id }}</p>
-        <h1 class="display-5 fw-bolder">{{ user.name }}</h1>
-      </div>
-      <div class="row">
-        <div class="col-6">
-          <div class="fs-5">
-            <p>Username : {{ user.username }}</p>
-          </div>
-          <div class="fs-5">
-            <p>Email : {{ user.email }}</p>
-          </div>
-          <div class="fs-5">
-            <p>Phone : {{ user.phone }}</p>
-          </div>
-          <div class="fs-5">
-            <p>Website : {{ user.website }}</p>
-          </div>
-        </div>
-        <div class="col-6">
-          <h3>User address</h3>
-          <div class="fs-5">
-            <p>Street : {{ user.address.street }}</p>
-          </div>
-          <div class="fs-5">
-            <p>Suite : {{ user.address.suite }}</p>
-          </div>
-          <div class="fs-5">
-            <p>City : {{ user.address.city }}</p>
-          </div>
-          <div class="fs-5">
-            <p>Zipcode : {{ user.address.zipcode }}</p>
-          </div>
-          <div class="fs-5">
-            <p>Latitude : {{ user.address.geo.lat }}</p>
-          </div>
-          <div class="fs-5">
-            <p>Longitude : {{ user.address.geo.lng }}</p>
-          </div>
+        <div class="mt-4 ms-5">
+          <button
+            class="btn btn-warning me-3"
+            [routerLink]="['/user/form']"
+            [queryParams]="{ id: user.id }"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger" (click)="onDeleteUser(user.id)">
+            Delete
+          </button>
         </div>
       </div>
-
-      <button
-        class="btn btn-warning me-3"
-        [routerLink]="['/user/form']"
-        [queryParams]="{ id: user.id }"
-      >
-        Edit
-      </button>
-      <button class="btn btn-danger" (click)="onDeleteUser(user.id)">
-        Delete
-      </button>
+      <div class="col-6">
+        <div class="row">
+          <div class="col-6 mt-5">
+            <h3 class="mb-5">Basic Information</h3>
+            <div class="fs-5">
+              <p><b>Username : </b>{{ user.username }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>Email : </b>{{ user.email }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>Phone : </b>{{ user.phone }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>Website : </b>{{ user.website }}</p>
+            </div>
+          </div>
+          <div class="col-6 mt-5">
+            <h3 class="mb-5">User address</h3>
+            <div class="fs-5">
+              <p><b>Street : </b>{{ user.address.street }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>Suite : </b>{{ user.address.suite }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>City : </b>{{ user.address.city }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>Zipcode : </b>{{ user.address.zipcode }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>Latitude : </b>{{ user.address.geo.lat }}</p>
+            </div>
+            <div class="fs-5">
+              <p><b>Longitude : </b>{{ user.address.geo.lng }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
