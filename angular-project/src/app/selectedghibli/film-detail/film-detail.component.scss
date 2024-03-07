@@ -3,12 +3,20 @@
 }
 
 .subtitle {
-  /* Memberikan margin bawah untuk subtitle */
   margin-bottom: 10px;
   font-weight: 600;
 }
 
 .film-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.edit-button {
+  margin-right: 1vw;
+}
+
+.film-title > h1 {
   font-weight: bolder;
   font-size: 3vw;
   margin-bottom: 2vw;

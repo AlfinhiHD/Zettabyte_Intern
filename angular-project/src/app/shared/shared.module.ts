@@ -6,6 +6,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
@@ -18,6 +19,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatTabsModule,
     MatCardModule,
     MatListModule,
+    MatButtonModule
   ],
   exports: [
     MatIconModule,
@@ -27,6 +29,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatCardModule,
     NotFoundComponent,
     MatListModule,
+    MatButtonModule
   ],
 })
 export class SharedModule {}

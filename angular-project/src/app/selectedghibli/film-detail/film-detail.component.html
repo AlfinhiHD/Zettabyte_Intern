@@ -1,5 +1,27 @@
 <div class="film-detail">
-  <h1 class="film-title">{{ film.title }}</h1>
+  <div class="film-title">
+    <h1>{{ film.title }}</h1>
+    <div>
+      <button
+        mat-fab
+        class="edit-button"
+        color="primary"
+        aria-label="Example icon button with an edit icon"
+      >
+        <mat-icon>edit</mat-icon>
+      </button>
+      <button
+        mat-fab
+        class="delete-button"
+        color="primary"
+        aria-label="Example icon button with a delete icon"
+        (click)="onDeleteFilm(film.id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </div>
+  </div>
+
   <div class="subtitle">
     <p>
       {{ film.releaseYear }} | Rating: {{ film.rating }} | Duration:
@@ -11,18 +33,18 @@
     <img class="header-image" [src]="film.image.heading" alt="Header Image" />
   </div>
   <div class="film-description">
-    {{film.description}}
+    {{ film.description }}
   </div>
-  <hr/>
+  <hr />
   <div class="film-director">
-    <p class="director-title">Director : </p>
-    <p class="director-value">{{film.director}}</p>
+    <p class="director-title">Director :</p>
+    <p class="director-value">{{ film.director }}</p>
   </div>
-  <hr/>
+  <hr />
   <div class="film-character">
-    <p class="character-title">Characters : </p>
-    <p class="character-value" *ngFor="let character of characters">{{ character.name }}</p>
+    <p class="character-title">Characters :</p>
+    <p class="character-value" *ngFor="let character of characters">
+      {{ character.name }}
+    </p>
   </div>
-
-
 </div>

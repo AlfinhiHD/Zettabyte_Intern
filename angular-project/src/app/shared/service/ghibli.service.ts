@@ -28,7 +28,17 @@ export class GhibliService {
   }
 
   getCharactersByFilm(filmTitle: string): CharacterType[] {
-    return this.characters.getValue().filter(character => character.film === filmTitle);
+    return this.characters
+      .getValue()
+      .filter((character) => character.film === filmTitle);
   }
 
+  deleteMovie(id: string) {
+    const movieList = this.movies.getValue();
+    const index = movieList.findIndex((movie) => movie.id === id);
+    if (index !== -1) {
+      movieList.splice(index, 1);
+      this.movies.next(movieList);
+    }
+  }
 }

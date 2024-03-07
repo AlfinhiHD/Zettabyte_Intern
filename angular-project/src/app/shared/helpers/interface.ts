@@ -12,11 +12,11 @@ export interface FilmType {
   };
 }
 
-export interface CharacterType {
-  id: string;
-  name: string;
-  role: string;
-  description: string;
-  image: string;
-  film: string;
-}
+  export interface CharacterType {
+    id: string;
+    name: string;
+    role: string;
+    description: string;
+    image: string;
+    film: string;
+  }
