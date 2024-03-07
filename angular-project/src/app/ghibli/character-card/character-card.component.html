@@ -1,1 +1,7 @@
-<p>character-card works!</p>
+<mat-card class="character-card">
+    <mat-card-content class="character-content">
+      <img [src]="character.image" alt="Poster character" />
+      <p class="character-title">{{ character.name }}</p>
+      <p class="character-year">{{ character.role}}</p>
+    </mat-card-content>
+  </mat-card>

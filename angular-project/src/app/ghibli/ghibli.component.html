@@ -1,1 +1,16 @@
-<p>ghibli works!</p>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+  <mat-tab label="Films">
+    <div class="film-content">
+      <div *ngFor="let film of filmList">
+        <app-film-card class="film-card" [film]="film"></app-film-card>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Characters">
+    <div class="character-content">
+      <div *ngFor="let character of characterList">
+        <app-character-card [character]="character"></app-character-card>
+      </div>
+    </div>
+  </mat-tab>
+</mat-tab-group>

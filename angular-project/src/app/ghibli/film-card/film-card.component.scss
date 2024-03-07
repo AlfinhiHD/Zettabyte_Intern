@@ -1,0 +1,33 @@
+.film-card {
+    width: 20vw;
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .film-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .film-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .film-content img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .film-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .film-year {
+    font-size: 14px;
+    color: #888;
+  }
+  

@@ -18,4 +18,5 @@ export interface CharacterType {
   role: string;
   description: string;
   image: string;
+  film: string;
 }

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GhibliComponent } from './ghibli.component';
 import { FilmCardComponent } from './film-card/film-card.component';
 import { CharacterCardComponent } from './character-card/character-card.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { CharacterCardComponent } from './character-card/character-card.componen
     CharacterCardComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    SharedModule
   ],
   exports: [
     GhibliComponent,

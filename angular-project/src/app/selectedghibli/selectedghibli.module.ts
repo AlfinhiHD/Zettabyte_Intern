@@ -3,7 +3,11 @@ import { CommonModule } from '@angular/common';
 import { SelectedghibliComponent } from './selectedghibli.component';
 import { FilmDetailComponent } from './film-detail/film-detail.component';
 import { ListCharacterComponent } from './list-character/list-character.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  { path: '', component: SelectedghibliComponent},
+];
 
 
 @NgModule({
@@ -13,7 +17,8 @@ import { ListCharacterComponent } from './list-character/list-character.componen
     ListCharacterComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule.forChild(routes),
   ],
   exports: [
     SelectedghibliComponent,

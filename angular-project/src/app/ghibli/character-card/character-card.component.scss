@@ -1,0 +1,33 @@
+.character-card {
+    width: 20vw;
+    margin: 20px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  
+  .character-card:hover {
+    transform: scale(1.05);
+  }
+  
+  .character-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .character-content img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .character-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+  
+  .character-year {
+    font-size: 14px;
+    color: #888;
+  }
+  

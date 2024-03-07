@@ -1,1 +1,7 @@
-<p>film-card works!</p>
+<mat-card class="film-card">
+    <mat-card-content class="film-content">
+      <img [src]="film.image.main" alt="Poster Film" />
+      <p class="film-title">{{ film.title }}</p>
+      <p class="film-year">{{ film.releaseYear}}</p>
+    </mat-card-content>
+  </mat-card>
