@@ -4,6 +4,7 @@ import { SelectedghibliComponent } from './selectedghibli.component';
 import { FilmDetailComponent } from './film-detail/film-detail.component';
 import { ListCharacterComponent } from './list-character/list-character.component';
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from '../shared/shared.module';
 
 const routes: Routes = [
   { path: '', component: SelectedghibliComponent},
@@ -19,6 +20,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
+    SharedModule
   ],
   exports: [
     SelectedghibliComponent,

@@ -1,1 +1,11 @@
-<p>selectedghibli works!</p>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+  <mat-tab label="About Films">
+    <app-film-detail
+      [characters]="selectedCharacters"
+      [film]="film"
+    ></app-film-detail>
+  </mat-tab>
+  <mat-tab label="Characters">
+    <app-list-character [characters]="selectedCharacters"></app-list-character>
+  </mat-tab>
+</mat-tab-group>

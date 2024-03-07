@@ -1,0 +1,14 @@
+.character-detail {
+    margin-top: 2vw;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 16px; 
+    border: none;
+  }
+  
+  .item {
+    padding: 10px;
+  }

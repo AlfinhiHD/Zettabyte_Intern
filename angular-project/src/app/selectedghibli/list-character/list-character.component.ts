@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { CharacterType } from 'src/app/shared/helpers/interface';
 
 @Component({
   selector: 'app-list-character',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-character.component.scss']
 })
 export class ListCharacterComponent implements OnInit {
+  @Input() characters: CharacterType[]
 
   constructor() { }
 

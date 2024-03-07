@@ -1,4 +1,4 @@
-<mat-card class="film-card">
+<mat-card class="film-card" (click)="goToDetailFilm(film.id)">
     <mat-card-content class="film-content">
       <img [src]="film.image.main" alt="Poster Film" />
       <p class="film-title">{{ film.title }}</p>

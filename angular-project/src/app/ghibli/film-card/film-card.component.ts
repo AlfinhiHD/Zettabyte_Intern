@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FilmType } from 'src/app/shared/helpers/interface';
 
 @Component({
@@ -9,13 +10,13 @@ import { FilmType } from 'src/app/shared/helpers/interface';
 export class FilmCardComponent implements OnInit {
   @Input() film: FilmType
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
-  // goToDetailEmployee(id: string) {
-  //   this.router.navigate(['employee/detail', id]);
-  // }
+  goToDetailFilm(id: string) {
+    this.router.navigate(['detail', id]);
+  }
 
 }

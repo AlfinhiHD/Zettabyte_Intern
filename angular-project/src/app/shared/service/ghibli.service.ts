@@ -22,4 +22,13 @@ export class GhibliService {
     this.movies.next([...this.movies.getValue(), ...ghibliFilms]);
     this.characters.next([...this.characters.getValue(), ...ghibliCharacters]);
   }
+
+  getMovieById(id: string) {
+    return this.movies.getValue().find((movies) => movies.id === id);
+  }
+
+  getCharactersByFilm(filmTitle: string): CharacterType[] {
+    return this.characters.getValue().filter(character => character.film === filmTitle);
+  }
+
 }

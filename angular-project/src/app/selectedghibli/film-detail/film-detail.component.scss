@@ -1,0 +1,52 @@
+.film-detail {
+    margin-top: 2vw;
+}
+
+.subtitle {
+  /* Memberikan margin bawah untuk subtitle */
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.film-title {
+  font-weight: bolder;
+  font-size: 3vw;
+  margin-bottom: 2vw;
+}
+
+.image-container {
+  display: flex;
+}
+
+.main-image,
+.header-image {
+  height: 28vw;
+  margin-right: 5px;
+}
+
+.header-image {
+  object-fit: cover;
+}
+
+.film-description {
+  margin-top: 2vw;
+  font-size: large;
+  margin-bottom: 2vw;
+}
+
+.film-director,
+.film-character {
+  display: flex;
+  font-size: large;
+  padding-top: 0.5vw;
+}
+
+.director-title,
+.character-title {
+  font-weight: bold;
+}
+
+.character-value,
+.director-value {
+  padding-left: 1vw;
+}

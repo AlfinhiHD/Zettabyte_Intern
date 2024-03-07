@@ -1,1 +1,28 @@
-<p>film-detail works!</p>
+<div class="film-detail">
+  <h1 class="film-title">{{ film.title }}</h1>
+  <div class="subtitle">
+    <p>
+      {{ film.releaseYear }} | Rating: {{ film.rating }} | Duration:
+      {{ film.duration }}
+    </p>
+  </div>
+  <div class="image-container">
+    <img class="main-image" [src]="film.image.main" alt="Main Image" />
+    <img class="header-image" [src]="film.image.heading" alt="Header Image" />
+  </div>
+  <div class="film-description">
+    {{film.description}}
+  </div>
+  <hr/>
+  <div class="film-director">
+    <p class="director-title">Director : </p>
+    <p class="director-value">{{film.director}}</p>
+  </div>
+  <hr/>
+  <div class="film-character">
+    <p class="character-title">Characters : </p>
+    <p class="character-value" *ngFor="let character of characters">{{ character.name }}</p>
+  </div>
+
+
+</div>
