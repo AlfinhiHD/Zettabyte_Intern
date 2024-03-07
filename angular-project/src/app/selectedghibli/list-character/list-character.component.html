@@ -1,12 +1,18 @@
 <div *ngFor="let character of characters" class="character-detail">
   <div class="container">
     <div class="item">
-      <h1 class="character-name">{{ character.name }}</h1>
-      <img [src]="character.image" />
+      <div class="item-1">
+        <h1 class="character-name">{{ character.name }}</h1>
+        <img class="character-image" [src]="character.image" />
+      </div>
     </div>
     <div class="item">
-      <h1>Description</h1>
+      <h1 class="description-title">Description</h1>
       <p>{{ character.description }}</p>
+      <hr>
+      <h1 class="basic-title">Basic Info</h1>
+      <p><b>Role : </b> {{ character.role }}</p>
+      <p><b>Film : </b> {{ character.film }}</p>
     </div>
   </div>
 </div>

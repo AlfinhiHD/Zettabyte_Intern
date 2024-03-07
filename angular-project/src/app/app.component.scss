@@ -7,5 +7,19 @@ mat-sidenav {
 }
 
 .main-content {
-  margin: 5vw;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  margin-bottom: 5vw;
+}
+
+.main-title {
+  color: #074852;
+  text-align: center;
+  font-size: 3vw;
+  font-weight: 600;
+  padding-top: 7vw;
+  padding-bottom: 5.6vw;
+  background-image: url('https://e1.pxfuel.com/desktop-wallpaper/382/718/desktop-wallpaper-the-wind-rises.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }

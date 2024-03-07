@@ -1,4 +1,4 @@
-<h1>
+<h1 style="text-align: center; font-weight: 600;">
   {{ id ? "EDIT FORM" : "ADD FORM" }}
 </h1>
 
@@ -36,6 +36,14 @@
     </mat-form-field>
 
     <mat-form-field>
+      <mat-label>Duration</mat-label>
+      <input matInput formControlName="duration" placeholder="Duration" />
+      <mat-error *ngIf="filmForm.get('duration').hasError('required')"
+        >Duration is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
       <mat-label>Description</mat-label>
       <textarea
         matInput
@@ -48,20 +56,14 @@
     </mat-form-field>
 
     <mat-form-field>
-      <mat-label>Duration</mat-label>
-      <input matInput formControlName="duration" placeholder="Duration" />
-      <mat-error *ngIf="filmForm.get('duration').hasError('required')"
-        >Duration is required</mat-error
-      >
-    </mat-form-field>
-
-    <mat-form-field>
       <mat-label>Rating</mat-label>
       <input matInput formControlName="rating" placeholder="Rating" />
       <mat-error *ngIf="filmForm.get('rating').hasError('required')"
         >Rating is required</mat-error
       >
     </mat-form-field>
+
+    <button style="width: 25%;" mat-raised-button color="primary" type="submit">Submit</button>
 
     <div formGroupName="image">
       <mat-form-field>
@@ -90,5 +92,5 @@
     </div>
   </div>
 
-  <button mat-raised-button color="primary" type="submit">Submit</button>
+
 </form>

@@ -124,6 +124,96 @@ export const ghibliFilms: FilmType[] = [
 
 export const ghibliCharacters: CharacterType[] = [
   {
+    id: 'kds2',
+    name: 'Jiji',
+    role: 'Talking Cat',
+    description:
+      "Kiki's loyal companion and talking cat who provides moral support and comic relief.",
+    image:
+      'https://i.pinimg.com/564x/07/73/5a/07735a9af5e13f3601c7572d623d1aa3.jpg',
+    film: "Kiki's Delivery Service",
+  },
+  {
+    id: 'cits1',
+    name: 'Pazu',
+    role: 'Protagonist',
+    description:
+      'A young boy who dreams of finding the legendary floating castle and becomes involved in a quest to protect it.',
+    image:
+      'https://i.pinimg.com/originals/8e/51/9a/8e519a20a4abcf5dc43b27a60a2df792.jpg',
+    film: 'Castle in the Sky',
+  },
+  {
+    id: 'cits2',
+    name: 'Sheeta',
+    role: 'Protagonist',
+    description:
+      'A girl who possesses a mysterious crystal necklace and is pursued by both pirates and government agents.',
+    image:
+      'https://i.pinimg.com/736x/0c/3b/0d/0c3b0dd3db4c557d08b5335f6def330b.jpg',
+    film: 'Castle in the Sky',
+  },
+  {
+    id: 'twr1',
+    name: 'Jiro Horikoshi',
+    role: 'Protagonist',
+    description:
+      'A talented aircraft designer who dreams of creating beautiful airplanes, despite the tragedies of war.',
+    image:
+      'https://i.pinimg.com/originals/ca/78/ad/ca78ad83e9c9a5caaf1c9fdc0eab87eb.jpg',
+    film: 'The Wind Rises',
+  },
+  {
+    id: 'twr2',
+    name: 'Naoko Satomi',
+    role: 'Protagonist',
+    description:
+      'A young woman suffering from tuberculosis who provides inspiration and love for Jiro.',
+    image:
+      'https://i.pinimg.com/736x/fd/d5/7c/fdd57c2f14ca8e28ff4b9fd7996f0d75.jpg',
+    film: 'The Wind Rises',
+  },
+  {
+    id: 'ear1',
+    name: 'Umi Matsuzaki',
+    role: 'Protagonist',
+    description:
+      'A high school girl who raises flags every morning as a signal to her father, who died during the Korean War.',
+    image:
+      'https://i.pinimg.com/736x/97/e7/60/97e76054312b178e76e898d3959aba43.jpg',
+    film: 'From Up on Poppy Hill',
+  },
+  {
+    id: 'ear2',
+    name: 'Shun Kazama',
+    role: 'Protagonist',
+    description:
+      'A member of the school\'s "Latin Quarter" who dreams of becoming a writer and falls in love with Umi.',
+    image:
+      'https://i.pinimg.com/originals/92/db/37/92db37191783e653531023abd2354924.jpg',
+    film: 'From Up on Poppy Hill',
+  },
+  {
+    id: 'emb1',
+    name: 'Anna Sasaki',
+    role: 'Protagonist',
+    description:
+      'A young girl who moves to the countryside and befriends Marnie, uncovering the secrets of her past.',
+    image:
+      'https://i.pinimg.com/736x/e0/36/64/e036646592f20d3aa85564cbd9cd612e.jpg',
+    film: 'When Marnie Was There',
+  },
+  {
+    id: 'emb2',
+    name: 'Marnie',
+    role: 'Protagonist',
+    description:
+      'A mysterious girl who befriends Anna and lives in the old mansion by the marsh.',
+    image:
+      'https://i.pinimg.com/originals/b1/b1/6f/b1b16f41b55fb1583ecfa09b8c9ee24c.jpg',
+    film: 'When Marnie Was There',
+  },
+  {
     id: 'sa1',
     name: 'Chihiro Ogino',
     role: 'Protagonist',
@@ -139,8 +229,7 @@ export const ghibliCharacters: CharacterType[] = [
     role: 'River Spirit',
     description:
       'A boy who assists Chihiro in navigating the spirit world and helps her in her quest.',
-    image:
-      'https://static.wikia.nocookie.net/mattsayyay/images/9/90/Haku.png',
+    image: 'https://static.wikia.nocookie.net/mattsayyay/images/9/90/Haku.png',
     film: 'Spirited Away',
   },
   {
@@ -150,7 +239,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A large, friendly creature who lives in the forest and befriends the two main characters.',
     image:
-      'https://static.wikia.nocookie.net/p__/images/4/45/Totoro.png',
+      'https://cdnb.artstation.com/p/assets/images/images/023/696/733/large/marina-orgaz-totoro-5.jpg?1580067203',
     film: 'My Neighbor Totoro',
   },
   {
@@ -180,7 +269,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A human girl who was raised by wolves and seeks to protect the forest.',
     image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/2990b3df-eced-406e-ade8-631cfaa3b95d/df4wrhk-cbc89e88-0532-4d17-9766-1de360c88184.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzI5OTBiM2RmLWVjZWQtNDA2ZS1hZGU4LTYzMWNmYWEzYjk1ZFwvZGY0d3Joay1jYmM4OWU4OC0wNTMyLTRkMTctOTc2Ni0xZGUzNjBjODgxODQucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.EeLxSBJHU404G4zA0OVNgAbs-O1xiIyediU92PZgWww',
+      'https://i.pinimg.com/736x/74/70/27/7470271ad2bdf5c2152979c1ac89af19.jpg',
     film: 'Princess Mononoke',
   },
   {
@@ -199,7 +288,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A young woman who is cursed by a witch and transforms into an old woman. She seeks the help of Howl to break the curse.',
     image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3985ce19-18a5-4d70-a8cb-37fec9c9163b/da8b1c0-28ba132b-f39d-4737-b612-8c261b4d7ab0.png',
+      'https://thicc.mywaifulist.moe/waifus/18127/7b673b37bc9076e7872b5259d5a61c7bf067c8ffb37a39409578fbe58c6cb9ab_thumb.jpg',
     film: "Howl's Moving Castle",
   },
   {
@@ -209,97 +298,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A young witch who moves to a new town for her mandatory year of independent life and starts a delivery service.',
     image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1b82ba2b-aff7-44e6-9afe-a57a5c42014d/dg6hk92-9640a058-cd59-426a-b068-5ec1f2cedc20.png',
+      'https://i.pinimg.com/originals/d5/c4/30/d5c4309a9315b63ca1b37d32727eb012.jpg',
     film: "Kiki's Delivery Service",
-  },
-  {
-    id: 'kds2',
-    name: 'Jiji',
-    role: 'Talking Cat',
-    description:
-      "Kiki's loyal companion and talking cat who provides moral support and comic relief.",
-    image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/4bc8238a-57c9-470b-9cbf-f0ddda6065af/dervhse-5b9125c3-b334-4eda-89b1-5413cde374f0.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzRiYzgyMzhhLTU3YzktNDcwYi05Y2JmLWYwZGRkYTYwNjVhZlwvZGVydmhzZS01YjkxMjVjMy1iMzM0LTRlZGEtODliMS01NDEzY2RlMzc0ZjAucG5nIiwid2lkdGgiOiI8PTEwODIifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.EeLxSBJHU404G4zA0OVNgAbs-O1xiIyediU92PZgWww',
-    film: "Kiki's Delivery Service",
-  },
-  {
-    id: 'cits1',
-    name: 'Pazu',
-    role: 'Protagonist',
-    description:
-      'A young boy who dreams of finding the legendary floating castle and becomes involved in a quest to protect it.',
-    image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3fd64e9b-86ed-449d-b3b4-baf717dc5e6e/dg17tuf-ba8b94ee-2e17-48a4-87c4-db5b2ee74466.png/v1/fill/w_176,h_433/pazu_by_animemovierenders18_dg17tuf-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDMzIiwicGF0aCI6IlwvZlwvM2ZkNjRlOWItODZlZC00NDlkLWIzYjQtYmFmNzE3ZGM1ZTZlXC9kZzE3dHVmLWJhOGI5NGVlLTJlMTctNDhhNC04N2M0LWRiNWIyZWU3NDQ2Ni5wbmciLCJ3aWR0aCI6Ijw9MTc2In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.R0IFr2dS-YuA9QYi4WdXwDdvxKnz6dySgXnEfQSLvBk',
-    film: 'Castle in the Sky',
-  },
-  {
-    id: 'cits2',
-    name: 'Sheeta',
-    role: 'Protagonist',
-    description:
-      'A girl who possesses a mysterious crystal necklace and is pursued by both pirates and government agents.',
-    image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3fd64e9b-86ed-449d-b3b4-baf717dc5e6e/dg17tyu-72d95a44-7213-4900-81a1-2ea74d9a0f65.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzNmZDY0ZTliLTg2ZWQtNDQ5ZC1iM2I0LWJhZjcxN2RjNWU2ZVwvZGcxN3R5dS03MmQ5NWE0NC03MjEzLTQ5MDAtODFhMS0yZWE3NGQ5YTBmNjUucG5nIiwid2lkdGgiOiI8PTEyMTQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Xj6kvz5YK5JDzuzJX1LjzwLsIXhqi6LvfeQcDdJsrJ8',
-    film: 'Castle in the Sky',
-  },
-  {
-    id: 'twr1',
-    name: 'Jiro Horikoshi',
-    role: 'Protagonist',
-    description:
-      'A talented aircraft designer who dreams of creating beautiful airplanes, despite the tragedies of war.',
-    image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8122b14-7ad5-468e-8211-20d2941906eb/dbul1bd-d2683d01-7b2f-4d50-bd7b-944b1c37ec37.png/v1/fill/w_1024,h_614,q_80,strp/jiro_horikoshi_by_theautumnsoldier_dbul1bd-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4MTIyYjE0LTdhZDUtNDY4ZS04MjExLTIwZDI5NDE5MDZlYlwvZGJ1bDFiZC1kMjY4M2QwMS03YjJmLTRkNTAtYmQ3Yi05NDRiMWMzN2VjMzcuZ2lmIiwid2lkdGgiOiI8PTEwMjQiLCJoZWlnaHQiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.sngYpKxF8PtmdejjV2TWw-d_pMxopJ5CzA5aEwPSN3s',
-    film: 'The Wind Rises',
-  },
-  {
-    id: 'twr2',
-    name: 'Naoko Satomi',
-    role: 'Protagonist',
-    description:
-      'A young woman suffering from tuberculosis who provides inspiration and love for Jiro.',
-    image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/d8122b14-7ad5-468e-8211-20d2941906eb/dbul1b2-6b8d1a91-7242-4ff0-95f5-9fc187fb7997.png/v1/fill/w_1024,h_819,q_80,strp/naoko_satomi_by_theautumnsoldier_dbul1b2-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2Q4MTIyYjE0LTdhZDUtNDY4ZS04MjExLTIwZDI5NDE5MDZlYlwvZGJ1bDFiMi02YjhkMWE5MS03MjQyLTRmZjAtOTVmNS05ZmMxODdmYjc5OTcucG5nIiwid2lkdGgiOiI8PTEwMjQiLCJoZWlnaHQiOiI8PTEyODkifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.CkrsdOe9I-P_zk7em7K-JtDpvgC8w1M2k48X4vgyrS0',
-    film: 'The Wind Rises',
-  },
-  {
-    id: 'ear1',
-    name: 'Umi Matsuzaki',
-    role: 'Protagonist',
-    description:
-      'A high school girl who raises flags every morning as a signal to her father, who died during the Korean War.',
-    image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f2cb7b8c-39f8-4df7-a165-33fc0d1cfb1b/d4q7ymz-10b6c540-c73a-4f7f-b13b-5040b465ef49.png/v1/fill/w_1600,h_1943,q_80,strp/umi_matsuzaki_by_twikidarkness_d4q7ymz-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2YyY2I3YjhjLTM5ZjgtNGRmNy1hMTY1LTMzZmMwZDFjZmIxYlwvZDRxN3ltei0xMGI2YzU0MC1jNzNhLTRmN2YtYjEzYi01MDQwYjQ2NWVmNDkucG5nIiwid2lkdGgiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Xj6kvz5YK5JDzuzJX1LjzwLsIXhqi6LvfeQcDdJsrJ8',
-    film: 'From Up on Poppy Hill',
-  },
-  {
-    id: 'ear2',
-    name: 'Shun Kazama',
-    role: 'Protagonist',
-    description:
-      'A member of the school\'s "Latin Quarter" who dreams of becoming a writer and falls in love with Umi.',
-    image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f2cb7b8c-39f8-4df7-a165-33fc0d1cfb1b/d4q7yw7-624e5e95-ee94-40b1-a48c-15de5e7cb381.png/v1/fill/w_1024,h_640,q_80,strp/shun_kazama_by_twikidarkness_d4q7yw7-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2YyY2I3YjhjLTM5ZjgtNGRmNy1hMTY1LTMzZmMwZDFjZmIxYlwvZDRxN3l3Ny02MjRlNWU5NS1lZTk0LTQwYjEtYTQ4Yy0xNWRlNWU3Y2IzODEucG5nIiwid2lkdGgiOiI8PTEwMjQiLCJoZWlnaHQiOiI8PTE2MDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Xj6kvz5YK5JDzuzJX1LjzwLsIXhqi6LvfeQcDdJsrJ8',
-    film: 'From Up on Poppy Hill',
-  },
-  {
-    id: 'emb1',
-    name: 'Anna Sasaki',
-    role: 'Protagonist',
-    description:
-      'A young girl who moves to the countryside and befriends Marnie, uncovering the secrets of her past.',
-    image:
-      'https://static.wikia.nocookie.net/studio-ghibli/images/2/25/Anna.png',
-    film: 'When Marnie Was There',
-  },
-  {
-    id: 'emb2',
-    name: 'Marnie',
-    role: 'Protagonist',
-    description:
-      'A mysterious girl who befriends Anna and lives in the old mansion by the marsh.',
-    image:
-      'https://static.wikia.nocookie.net/studio-ghibli/images/3/34/Marnie.png',
-    film: 'When Marnie Was There',
   },
 ];
