@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FilmType } from '../shared/helpers/interface';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { GhibliService } from '../shared/service/ghibli.service';
