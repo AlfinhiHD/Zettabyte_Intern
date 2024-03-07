@@ -2,6 +2,7 @@ import { CharacterType, FilmType } from './interface';
 
 export const ghibliFilms: FilmType[] = [
   {
+    id: 'a1b2c3d4-e5f6-g7h8-i9j0-k1l2m3n4o5p6',
     title: 'Spirited Away',
     director: 'Hayao Miyazaki',
     releaseYear: 2001,
@@ -16,6 +17,7 @@ export const ghibliFilms: FilmType[] = [
     },
   },
   {
+    id: 'ji82c3d4-e7ff-gsh8-i9j0-k1l2m3n4o5p6',
     title: 'My Neighbor Totoro',
     director: 'Hayao Miyazaki',
     releaseYear: 1988,
@@ -29,6 +31,7 @@ export const ghibliFilms: FilmType[] = [
     },
   },
   {
+    id: 'po82c3d4-e7ff-gau8-i090-pol6f3n4o5p6',
     title: 'Princess Mononoke',
     director: 'Hayao Miyazaki',
     releaseYear: 1997,
@@ -43,6 +46,7 @@ export const ghibliFilms: FilmType[] = [
     },
   },
   {
+    id: 'lk82g2d4-e7tt-gsht-i9t0-k1l2maa4o5p6',
     title: "Howl's Moving Castle",
     director: 'Hayao Miyazaki',
     releaseYear: 2004,
@@ -57,6 +61,7 @@ export const ghibliFilms: FilmType[] = [
     },
   },
   {
+    id: '999993d4-e7ff-gsh8-i9j0-k1l2m3n4o5p6',
     title: "Kiki's Delivery Service",
     director: 'Hayao Miyazaki',
     releaseYear: 1989,
@@ -71,6 +76,7 @@ export const ghibliFilms: FilmType[] = [
     },
   },
   {
+    id: 'mnopc3r5-e7ff-gsh8-i9j0-k1l2m3n4o5p6',
     title: 'Castle in the Sky',
     director: 'Hayao Miyazaki',
     releaseYear: 1986,
@@ -85,6 +91,7 @@ export const ghibliFilms: FilmType[] = [
     },
   },
   {
+    id: '12345678-e7ff-gsh8-i9j0-k1l2m3n4o5p6',
     title: 'The Wind Rises',
     director: 'Hayao Miyazaki',
     releaseYear: 2013,
@@ -99,6 +106,7 @@ export const ghibliFilms: FilmType[] = [
     },
   },
   {
+    id: 'jibhiop4-e7ff-gsh8-i9j0-k1l2m3n4o5p6',
     title: 'Ponyo',
     director: 'Hayao Miyazaki',
     releaseYear: 2008,
@@ -117,6 +125,7 @@ export const ghibliFilms: FilmType[] = [
 export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   'Spirited Away': [
     {
+      id: 'sa1',
       name: 'Chihiro Ogino',
       role: 'Protagonist',
       description:
@@ -125,6 +134,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
         'https://static.wikia.nocookie.net/astro-boy-productions/images/e/e3/X39xc4.png/revision/latest/thumbnail/width/360/height/360?cb=20201106015804',
     },
     {
+      id: 'sa2',
       name: 'Haku',
       role: 'River Spirit',
       description:
@@ -135,6 +145,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   ],
   'My Neighbor Totoro': [
     {
+      id: 'mnt1',
       name: 'Totoro',
       role: 'Forest Spirit',
       description:
@@ -143,6 +154,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
         'https://static.wikia.nocookie.net/p__/images/4/45/Totoro.png/revision/latest/thumbnail/width/360/height/360?cb=20160227174205&path-prefix=protagonist',
     },
     {
+      id: 'mnt2',
       name: 'Satsuki Kusakabe',
       role: 'Protagonist',
       description:
@@ -153,6 +165,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   ],
   'Princess Mononoke': [
     {
+      id: 'pm1',
       name: 'Ashitaka',
       role: 'Protagonist',
       description:
@@ -161,6 +174,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
         'https://static.wikia.nocookie.net/vsbattles/images/c/ca/Ashitaka_render.png/revision/latest?cb=20160306081514',
     },
     {
+      id: 'pm2',
       name: 'San',
       role: 'Princess Mononoke',
       description:
@@ -171,6 +185,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   ],
   "Howl's Moving Castle": [
     {
+      id: 'hmc1',
       name: 'Howl Jenkins Pendragon',
       role: 'Wizard',
       description:
@@ -178,6 +193,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
       image: 'https://pbs.twimg.com/media/EXOSs4DVcAA0LjS.png',
     },
     {
+      id: 'hmc2',
       name: 'Sophie Hatter',
       role: 'Protagonist',
       description:
@@ -188,6 +204,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   ],
   "Kiki's Delivery Service": [
     {
+      id: 'kds1',
       name: 'Kiki',
       role: 'Witch',
       description:
@@ -196,6 +213,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
         'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1b82ba2b-aff7-44e6-9afe-a57a5c42014d/dg6hk92-9640a058-cd59-426a-b068-5ec1f2cedc20.png/v1/fill/w_1108,h_721/kiki_render_by_kingevan210_dg6hk92-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9ODMzIiwicGF0aCI6IlwvZlwvMWI4MmJhMmItYWZmNy00NGU2LTlhZmUtYTU3YTVjNDIwMTRkXC9kZzZoazkyLTk2NDBhMDU4LWNkNTktNDI2YS1iMDY4LTVlYzFmMmNlZGMyMC5wbmciLCJ3aWR0aCI6Ijw9MTI4MCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.qGTfAqaOkmuIs6hqOMFrS6mdXs_e9Xs-ft9mC-zCaB0',
     },
     {
+      id: 'kds2',
       name: 'Jiji',
       role: 'Talking Cat',
       description:
@@ -206,6 +224,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   ],
   'Castle in the Sky': [
     {
+      id: 'cits1',
       name: 'Pazu',
       role: 'Protagonist',
       description:
@@ -214,6 +233,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
         'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3fd64e9b-86ed-449d-b3b4-baf717dc5e6e/dg17tuf-ba8b94ee-2e17-48a4-87c4-db5b2ee74466.png/v1/fill/w_176,h_433/pazu_by_animemovierenders18_dg17tuf-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDMzIiwicGF0aCI6IlwvZlwvM2ZkNjRlOWItODZlZC00NDlkLWIzYjQtYmFmNzE3ZGM1ZTZlXC9kZzE3dHVmLWJhOGI5NGVlLTJlMTctNDhhNC04N2M0LWRiNWIyZWU3NDQ2Ni5wbmciLCJ3aWR0aCI6Ijw9MTc2In1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.R0IFr2dS-YuA9QYi4WdXwDdvxKnz6dySgXnEfQSLvBk',
     },
     {
+      id: 'cits2',
       name: 'Sheeta',
       role: 'Protagonist',
       description:
@@ -224,6 +244,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   ],
   'The Wind Rises': [
     {
+      id: 'twr1',
       name: 'Jiro Horikoshi',
       role: 'Protagonist',
       description:
@@ -232,6 +253,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
         'https://i.pinimg.com/originals/9a/e7/92/9ae7924208e0e769219452121b26a7da.png',
     },
     {
+      id: 'twr2',
       name: 'Naoko Satomi',
       role: 'Love Interest',
       description:
@@ -242,6 +264,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
   ],
   'Ponyo': [
     {
+      id: 'pon1',
       name: 'Ponyo',
       role: 'Goldfish Princess',
       description:
@@ -250,6 +273,7 @@ export const ghibliCharacters: { [key: string]: CharacterType[] } = {
         'https://mbavery.github.io/iffall2017/microsite/finished/images/ponyo.png',
     },
     {
+      id: 'pon2',
       name: 'Sosuke',
       role: 'Protagonist',
       description:

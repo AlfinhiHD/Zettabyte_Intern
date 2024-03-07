@@ -1,4 +1,5 @@
 export interface FilmType {
+  id: string;
   title: string;
   director: string;
   releaseYear: number;
@@ -12,6 +13,7 @@ export interface FilmType {
 }
 
 export interface CharacterType {
+  id: string;
   name: string;
   role: string;
   description: string;
