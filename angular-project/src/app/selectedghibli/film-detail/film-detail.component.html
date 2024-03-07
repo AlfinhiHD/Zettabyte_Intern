@@ -7,6 +7,8 @@
         class="edit-button"
         color="primary"
         aria-label="Example icon button with an edit icon"
+        [routerLink]="['/form']"
+        [queryParams]="{ id: film.id }"
       >
         <mat-icon>edit</mat-icon>
       </button>

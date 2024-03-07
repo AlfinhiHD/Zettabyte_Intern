@@ -41,4 +41,21 @@ export class GhibliService {
       this.movies.next(movieList);
     }
   }
+
+  addNewMovie(newMovie: FilmType) {
+    this.movies.next([...this.movies.getValue(), newMovie]);
+  }
+
+  updateMovie(updatedMovie: FilmType) {
+    console.log(updatedMovie);
+    
+    const movies = this.movies.getValue();
+    const index = movies.findIndex((movie) => movie.id === updatedMovie.id);
+    if (index !== -1) {
+      movies[index] = updatedMovie;
+      this.movies.next([...movies]);
+    }
+  }
+
+
 }

@@ -130,7 +130,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A 10-year-old girl who becomes trapped in the spirit world and works at a bathhouse to save her parents.',
     image:
-      'https://static.wikia.nocookie.net/astro-boy-productions/images/e/e3/X39xc4.png/revision/latest/thumbnail/width/360/height/360?cb=20201106015804',
+      'https://static.wikia.nocookie.net/astro-boy-productions/images/e/e3/X39xc4.png',
     film: 'Spirited Away',
   },
   {
@@ -140,7 +140,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A boy who assists Chihiro in navigating the spirit world and helps her in her quest.',
     image:
-      'https://static.wikia.nocookie.net/mattsayyay/images/9/90/Haku.png/revision/latest?cb=20221012013613',
+      'https://static.wikia.nocookie.net/mattsayyay/images/9/90/Haku.png',
     film: 'Spirited Away',
   },
   {
@@ -150,7 +150,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A large, friendly creature who lives in the forest and befriends the two main characters.',
     image:
-      'https://static.wikia.nocookie.net/p__/images/4/45/Totoro.png/revision/latest/thumbnail/width/360/height/360?cb=20160227174205&path-prefix=protagonist',
+      'https://static.wikia.nocookie.net/p__/images/4/45/Totoro.png',
     film: 'My Neighbor Totoro',
   },
   {
@@ -170,7 +170,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A prince who becomes involved in the conflict between the forest gods and humans.',
     image:
-      'https://static.wikia.nocookie.net/vsbattles/images/c/ca/Ashitaka_render.png/revision/latest?cb=20160306081514',
+      'https://static.wikia.nocookie.net/vsbattles/images/c/ca/Ashitaka_render.png',
     film: 'Princess Mononoke',
   },
   {
@@ -199,7 +199,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A young woman who is cursed by a witch and transforms into an old woman. She seeks the help of Howl to break the curse.',
     image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3985ce19-18a5-4d70-a8cb-37fec9c9163b/da8b1c0-28ba132b-f39d-4737-b612-8c261b4d7ab0.png/v1/fit/w_375,h_556/sophie_by_setsulko_da8b1c0-375w.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzM5ODVjZTE5LTE4YTUtNGQ3MC1hOGNiLTM3ZmVjOWM5MTYzYlwvZGE4YjFjMC0yOGJhMTMyYi1mMzlkLTQ3MzctYjYxMi04YzI2MWI0ZDdhYjAucG5nIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.EeLxSBJHU404G4zA0OVNgAbs-O1xiIyediU92PZgWww',
+      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3985ce19-18a5-4d70-a8cb-37fec9c9163b/da8b1c0-28ba132b-f39d-4737-b612-8c261b4d7ab0.png',
     film: "Howl's Moving Castle",
   },
   {
@@ -209,7 +209,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A young witch who moves to a new town for her mandatory year of independent life and starts a delivery service.',
     image:
-      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1b82ba2b-aff7-44e6-9afe-a57a5c42014d/dg6hk92-9640a058-cd59-426a-b068-5ec1f2cedc20.png/v1/fill/w_1108,h_721/kiki_render_by_kingevan210_dg6hk92-pre.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcLzFiODJiYTJiLWFmZjctNDRlNi05YWZlLWE1N2E1YzQyMDE0ZFwvZGc2aGs5Mi05NjQwYTA1OC1jZDU5LTQyNmEtYjA2OC01ZWMxZjJjZWRjMjAucG5nIiwid2lkdGgiOiI8PTEyMTQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Xj6kvz5YK5JDzuzJX1LjzwLsIXhqi6LvfeQcDdJsrJ8',
+      'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/1b82ba2b-aff7-44e6-9afe-a57a5c42014d/dg6hk92-9640a058-cd59-426a-b068-5ec1f2cedc20.png',
     film: "Kiki's Delivery Service",
   },
   {
@@ -289,7 +289,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A young girl who moves to the countryside and befriends Marnie, uncovering the secrets of her past.',
     image:
-      'https://static.wikia.nocookie.net/studio-ghibli/images/2/25/Anna.png/revision/latest?cb=20171008114347',
+      'https://static.wikia.nocookie.net/studio-ghibli/images/2/25/Anna.png',
     film: 'When Marnie Was There',
   },
   {
@@ -299,7 +299,7 @@ export const ghibliCharacters: CharacterType[] = [
     description:
       'A mysterious girl who befriends Anna and lives in the old mansion by the marsh.',
     image:
-      'https://static.wikia.nocookie.net/studio-ghibli/images/3/34/Marnie.png/revision/latest?cb=20160602153805',
+      'https://static.wikia.nocookie.net/studio-ghibli/images/3/34/Marnie.png',
     film: 'When Marnie Was There',
   },
 ];

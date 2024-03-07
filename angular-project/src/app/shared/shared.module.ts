@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatDrawer, MatSidenavModule } from '@angular/material/sidenav';
+import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
 import {MatButtonModule} from '@angular/material/button';
+import {MatFormFieldModule} from '@angular/material/form-field';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import {MatInputModule} from '@angular/material/input';
 
 @NgModule({
   declarations: [NotFoundComponent],
@@ -19,7 +21,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatTabsModule,
     MatCardModule,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   exports: [
     MatIconModule,
@@ -29,7 +33,9 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatCardModule,
     NotFoundComponent,
     MatListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
 })
 export class SharedModule {}

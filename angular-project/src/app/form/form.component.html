@@ -1,1 +1,94 @@
-<p>form works!</p>
+<h1>
+  {{ id ? "EDIT FORM" : "ADD FORM" }}
+</h1>
+
+<form [formGroup]="filmForm" (ngSubmit)="onSubmit()">
+  <div class="form-container">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" placeholder="Title" />
+      <mat-error *ngIf="filmForm.get('title').hasError('required')"
+        >Title is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Director</mat-label>
+      <input matInput formControlName="director" placeholder="Director" />
+      <mat-error *ngIf="filmForm.get('director').hasError('required')"
+        >Director is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Release Year</mat-label>
+      <input
+        matInput
+        formControlName="releaseYear"
+        placeholder="Release Year"
+      />
+      <mat-error *ngIf="filmForm.get('releaseYear').hasError('required')"
+        >Release Year is required</mat-error
+      >
+      <mat-error *ngIf="filmForm.get('releaseYear').hasError('pattern')"
+        >Please enter a valid year</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        formControlName="description"
+        placeholder="Description"
+      ></textarea>
+      <mat-error *ngIf="filmForm.get('description').hasError('required')"
+        >Description is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Duration</mat-label>
+      <input matInput formControlName="duration" placeholder="Duration" />
+      <mat-error *ngIf="filmForm.get('duration').hasError('required')"
+        >Duration is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Rating</mat-label>
+      <input matInput formControlName="rating" placeholder="Rating" />
+      <mat-error *ngIf="filmForm.get('rating').hasError('required')"
+        >Rating is required</mat-error
+      >
+    </mat-form-field>
+
+    <div formGroupName="image">
+      <mat-form-field>
+        <mat-label>Main Image URL</mat-label>
+        <input
+          matInput
+          formControlName="main"
+          placeholder="Main Image URL"
+        />
+        <mat-error *ngIf="filmForm.get('image.main').hasError('required')"
+          >Main Image URL is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Heading Image URL</mat-label>
+        <input
+          matInput
+          formControlName="heading"
+          placeholder="Heading Image URL"
+        />
+        <mat-error *ngIf="filmForm.get('image.heading').hasError('required')"
+          >Heading Image URL is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+  </div>
+
+  <button mat-raised-button color="primary" type="submit">Submit</button>
+</form>
