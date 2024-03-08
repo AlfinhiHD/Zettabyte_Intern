@@ -1,5 +1,6 @@
 .sidenav-container {
     height: 100%;
+    min-height: 100vh;
   }
   
   mat-sidenav {
@@ -12,14 +13,3 @@
     padding-bottom: 5vw;
   }
   
-//   .main-title {
-//     color: #04292f;
-//     text-align: center;
-//     font-size: 3vw;
-//     font-weight: 600;
-//     padding-top: 7vw;
-//     padding-bottom: 5.6vw;
-//     background-image: url('https://e1.pxfuel.com/desktop-wallpaper/382/718/desktop-wallpaper-the-wind-rises.jpg');
-//     background-size: cover;
-//     background-repeat: no-repeat;
-//   }

@@ -1,1 +1,88 @@
-<p>mentor-form works!</p>
+<h1 style="text-align: center; font-weight: 600">
+  {{ id ? "EDIT FORM" : "ADD FORM" }}
+</h1>
+
+<form [formGroup]="mentorForm" (ngSubmit)="onSubmit()">
+  <div class="form-container">
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput formControlName="email" placeholder="Email" />
+      <mat-error *ngIf="mentorForm.get('email').hasError('required')"
+        >Email is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Civility</mat-label>
+      <mat-select formControlName="civility" placeholder="Civility">
+        <mat-option value="MR">MR</mat-option>
+        <mat-option value="MRS">MRS</mat-option>
+      </mat-select>
+      <mat-error *ngIf="mentorForm.get('civility').hasError('required')"
+        >Civility is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>First Name</mat-label>
+      <input matInput formControlName="first_name" placeholder="First Name" />
+      <mat-error *ngIf="mentorForm.get('first_name').hasError('required')"
+        >First Name is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Last Name</mat-label>
+      <input matInput formControlName="last_name" placeholder="Last Name" />
+      <mat-error *ngIf="mentorForm.get('last_name').hasError('required')"
+        >Last Name is required</mat-error
+      >
+    </mat-form-field>
+
+    <div formGroupName="company" class="company-group">
+      <mat-form-field>
+        <mat-label>Company Name</mat-label>
+        <input matInput formControlName="name" placeholder="Company Name" />
+        <mat-error *ngIf="mentorForm.get('company.name').hasError('required')"
+          >Company Name is required</mat-error
+        >
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>User Type</mat-label>
+        <input matInput formControlName="user_type" placeholder="User Type" />
+        <mat-error
+          *ngIf="mentorForm.get('company.user_type').hasError('required')"
+          >User Type is required</mat-error
+        >
+      </mat-form-field>
+    </div>
+
+    <mat-form-field>
+      <mat-label>User Status</mat-label>
+      <mat-select formControlName="user_status" placeholder="User Status">
+        <mat-option value="active">Active</mat-option>
+        <mat-option value="pending">Pending</mat-option>
+      </mat-select>
+      <mat-error *ngIf="mentorForm.get('user_status').hasError('required')"
+        >User Status is required</mat-error
+      >
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Count Document</mat-label>
+      <input
+        matInput
+        formControlName="count_document"
+        placeholder="Count Document"
+      />
+      <mat-error *ngIf="mentorForm.get('count_document').hasError('required')"
+        >Count Document is required</mat-error
+      >
+    </mat-form-field>
+
+    <button style="width: 25%" mat-raised-button color="primary" type="submit">
+      Submit
+    </button>
+  </div>
+</form>

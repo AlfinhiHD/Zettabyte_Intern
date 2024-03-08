@@ -28,30 +28,32 @@ export class MentorService {
     });
   }
 
-  // getMentorById(id: string) {
-  //   return this.mentor.getValue().find((mentor) => mentor._id === id);
-  // }
+  getMentorById(id: string) {
+    return this.mentor.getValue().find((mentor) => mentor._id === id);
+  }
 
-  // deletementor(id: string) {
-  //   const mentorList = this.mentor.getValue();
-  //   const index = mentorList.findIndex((mentor) => mentor._id === id);
-  //   if (index !== -1) {
-  //     mentorList.splice(index, 1);
-  //     this.mentor.next(mentorList);
-  //   }
-  // }
+  deleteMentor(id: string) {
+    const mentorList = this.mentor.getValue();
+    const index = mentorList.findIndex((mentor) => mentor._id === id);
+    if (index !== -1) {
+      mentorList.splice(index, 1);
+      this.mentor.next(mentorList);
+    }
+  }
 
-  // addNewmentor(newmentor: MentorType) {
-  //   this.mentor.next([...this.mentor.getValue(), newmentor]);
-  // }
+  addNewMentor(newMentor: MentorType) {
+    console.log(newMentor);
+    
+    this.mentor.next([...this.mentor.getValue(), newMentor]);
+  }
 
-  // updatementor(updatedMentor: MentorType) {
+  updateMentor(updatedMentor: MentorType) {
 
-  //   const mentor = this.mentor.getValue();
-  //   const index = mentor.findIndex((mentor) => mentor._id === updatedMentor._id);
-  //   if (index !== -1) {
-  //     mentor[index] = updatedMentor;
-  //     this.mentor.next([...mentor]);
-  //   }
-  // }
+    const mentor = this.mentor.getValue();
+    const index = mentor.findIndex((mentor) => mentor._id === updatedMentor._id);
+    if (index !== -1) {
+      mentor[index] = updatedMentor;
+      this.mentor.next([...mentor]);
+    }
+  }
 }

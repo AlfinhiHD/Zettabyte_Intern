@@ -2,8 +2,10 @@ import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort, Sort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
+import { Router } from '@angular/router';
 import { MentorType } from 'src/app/shared/helpers/interface';
 import { MentorService } from 'src/app/shared/service/mentor.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-mentor-table',
@@ -34,7 +36,7 @@ export class MentorTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private mentorService: MentorService) {}
+  constructor(private mentorService: MentorService, private router: Router) {}
 
   ngOnInit(): void {
     this.mentorService.mentor$.subscribe((mentors) => {
@@ -111,11 +113,34 @@ export class MentorTableComponent implements OnInit, AfterViewInit {
     return (a - b) * (isAsc ? 1 : -1);
   }
 
-  editMentor(mentor: any) {
-    // Logika untuk mengedit mentor
+  goToDetailMentor(id: string) {
+    this.router.navigate(['detail', id]);
   }
   
-  deleteMentor(mentor: any) {
-    // Logika untuk menghapus mentor
+  deleteMentor(id: string) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: 'You will not be able to recover this data!',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Yes, delete it!',
+      cancelButtonText: 'No, keep it'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.mentorService.deleteMentor(id);
+        Swal.fire(
+          'Deleted!',
+          'Your data has been deleted.',
+          'success'
+        )
+        this.router.navigate(['/home']);
+      } else if (result.dismiss === Swal.DismissReason.cancel) {
+        Swal.fire(
+          'Cancelled',
+          'Your data is safe :)',
+          'error'
+        )
+      }
+    })
   }
 }
