@@ -7,7 +7,15 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import {MatButtonModule} from '@angular/material/button';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatSortModule} from '@angular/material/sort';
+import { MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -21,7 +29,16 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatTabsModule,
     MatCardModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatListModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatOptionModule,
+    MatSelectModule
+
   ],
   exports: [
     MatIconModule,
@@ -31,7 +48,15 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
-    NotFoundComponent
+    NotFoundComponent,
+    MatListModule,
+    MatButtonModule,
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatOptionModule,
+    MatSelectModule
   ]
 })
 export class SharedModule { }

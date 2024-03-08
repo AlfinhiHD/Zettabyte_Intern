@@ -1,2 +1,43 @@
-<mat-sidenav></mat-sidenav>
-<mat-icon></mat-icon>
+<mat-sidenav-container class="sidenav-container">
+    <div style="color: white"></div>
+    <mat-sidenav
+      style="background-color: #79c2ce"
+      #sidenav
+      mode="side"
+      [opened]="isSidenavOpen"
+    >
+      <img
+        style="width: 12vw"
+        src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/800px-Studio_Ghibli_logo.svg.png"
+      />
+      <mat-nav-list>
+        <a mat-list-item routerLink="/home">Home</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <a mat-list-item routerLink="/form">Form</a>
+      </mat-nav-list>
+      <mat-nav-list>
+        <button mat-button [matMenuTriggerFor]="menu">Menu</button>
+        <mat-menu #menu="matMenu" xPosition="after">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </mat-nav-list>
+    </mat-sidenav>
+  
+    <mat-sidenav-content>
+      <div>
+        <!-- <h1 class="main-title">Your Ghibli Gallery!</h1> -->
+        <button
+          style="margin-left: 1vw"
+          mat-icon-button
+          (click)="toggleSidenav()"
+        >
+          <mat-icon style="font-size: 2vw">menu</mat-icon>
+        </button>
+        <div class="main-content">
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>

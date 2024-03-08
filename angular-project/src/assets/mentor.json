@@ -140,7 +140,7 @@
         "user_type": "Mentor"
     },
     "user_status": "active",
-    "count_document": 15
+    "count_document": 14
   },
   {
     "_id": "12",
@@ -153,7 +153,7 @@
         "user_type": "Mentor"
     },
     "user_status": "pending",
-    "count_document": 15
+    "count_document": 13
   },
   {
     "_id": "13",
@@ -166,7 +166,7 @@
         "user_type": "Mentor"
     },
     "user_status": "pending",
-    "count_document": 15
+    "count_document": 12
   },
   {
     "_id": "14",

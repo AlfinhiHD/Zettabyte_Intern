@@ -5,6 +5,7 @@ import { MentorTableComponent } from './mentor-table/mentor-table.component';
 import { MentorHeaderComponent } from './mentor-header/mentor-header.component';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -16,7 +17,8 @@ import { RouterModule, Routes } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
     MentorComponent,
