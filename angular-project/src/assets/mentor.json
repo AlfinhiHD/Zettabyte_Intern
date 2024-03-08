@@ -6,7 +6,7 @@
     "first_name": "Frédéric",
     "last_name": "FELDESI",
     "company": {
-        "name": "Company",
+        "name": "Google",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -19,7 +19,7 @@
     "first_name": "Nadia",
     "last_name": "BONOMALLY",
     "company": {
-        "name": "Company",
+        "name": "Microsoft",
         "user_type": "Mentor"
     },
     "user_status": "active",
@@ -32,7 +32,7 @@
     "first_name": "Dominique",
     "last_name": "MONACHON",
     "company": {
-        "name": "Company",
+        "name": "Amazon",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -45,7 +45,7 @@
     "first_name": "Annie",
     "last_name": "MASSARD",
     "company": {
-        "name": "Company",
+        "name": "Apple",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -58,7 +58,7 @@
     "first_name": "Rémi",
     "last_name": "COLINDRE",
     "company": {
-        "name": "Company",
+        "name": "Facebook",
         "user_type": "Mentor"
     },
     "user_status": "active",
@@ -71,7 +71,7 @@
     "first_name": "Nancy",
     "last_name": "LEO",
     "company": {
-        "name": "Company",
+        "name": "Google",
         "user_type": "Mentor"
     },
     "user_status": "active",
@@ -84,7 +84,7 @@
     "first_name": "Amine",
     "last_name": "DAHA",
     "company": {
-        "name": "Company",
+        "name": "Tesla",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -97,7 +97,7 @@
     "first_name": "Cédric",
     "last_name": "BEYHURST",
     "company": {
-        "name": "Company",
+        "name": "SpaceX",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -110,7 +110,7 @@
     "first_name": "Pierre-Alain",
     "last_name": "BONY",
     "company": {
-        "name": "Company",
+        "name": "Netflix",
         "user_type": "Mentor"
     },
     "user_status": "active",
@@ -123,7 +123,7 @@
     "first_name": "Laurent",
     "last_name": "MELISSE",
     "company": {
-        "name": "Company",
+        "name": "IBM",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -136,7 +136,7 @@
     "first_name": "Patrick",
     "last_name": "PAGONIS",
     "company": {
-        "name": "Company",
+        "name": "Google",
         "user_type": "Mentor"
     },
     "user_status": "active",
@@ -149,7 +149,7 @@
     "first_name": "Patrick",
     "last_name": "PAGONIS",
     "company": {
-        "name": "Company",
+        "name": "IBM",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -162,7 +162,7 @@
     "first_name": "Pierrick",
     "last_name": "MESSON",
     "company": {
-        "name": "Company",
+        "name": "Intel",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -175,7 +175,7 @@
     "first_name": "Sylvie",
     "last_name": "DUPIN",
     "company": {
-        "name": "Company",
+        "name": "Netflix",
         "user_type": "Mentor"
     },
     "user_status": "pending",
@@ -188,7 +188,7 @@
     "first_name": "Lionel",
     "last_name": "DARVE",
     "company": {
-        "name": "Company",
+        "name": "Amazon",
         "user_type": "Mentor"
     },
     "user_status": "pending",

@@ -1,5 +1,7 @@
 <div class="mat-elevation-z8">
-  <mat-form-field>
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
     <mat-label>Civility</mat-label>
     <mat-select [(ngModel)]="civilityValue" (ngModelChange)="filterMentors()">
       <mat-option value="">All</mat-option>
@@ -8,7 +10,9 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
     <mat-label>Status</mat-label>
     <mat-select [(ngModel)]="statusValue" (ngModelChange)="filterMentors()">
       <mat-option value="">All</mat-option>
@@ -17,15 +21,25 @@
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
     <mat-label>Search Type</mat-label>
-    <mat-select [(ngModel)]="selectedSearchType" (ngModelChange)="filterMentors()">
+    <mat-select
+      [(ngModel)]="selectedSearchType"
+      (ngModelChange)="filterMentors()"
+    >
       <mat-option value="name">Name</mat-option>
+      <mat-option value="id">ID</mat-option>
       <mat-option value="email">Email</mat-option>
+      <mat-option value="company">Company</mat-option>
     </mat-select>
   </mat-form-field>
 
-  <mat-form-field appearance="fill">
+  <mat-form-field
+    appearance="fill"
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw; width: 17vw"
+  >
     <mat-label>Search</mat-label>
     <input
       matInput
@@ -51,7 +65,7 @@
         Name
       </th>
       <td mat-cell *matCellDef="let mentor" colspan="2">
-        {{ mentor.civility }} {{ mentor.first_name }} {{ mentor.last_name }}
+        {{ mentor.civility }} {{ mentor.last_name }} {{ mentor.first_name }}
       </td>
     </ng-container>
 
@@ -61,7 +75,14 @@
     </ng-container>
 
     <ng-container matColumnDef="company">
-      <th mat-header-cell *matHeaderCellDef colspan="2">User Type</th>
+      <th
+        mat-header-cell
+        mat-sort-header="company"
+        *matHeaderCellDef
+        colspan="2"
+      >
+        User Type
+      </th>
       <td mat-cell *matCellDef="let mentor" colspan="2">
         {{ mentor.company.name }} - {{ mentor.company.user_type }}
       </td>
@@ -71,14 +92,34 @@
       <th mat-header-cell mat-sort-header="user_status" *matHeaderCellDef>
         User Status
       </th>
-      <td mat-cell *matCellDef="let mentor">{{ mentor.user_status }}</td>
-    </ng-container>
+      <td mat-cell *matCellDef="let mentor" class="status-cell">
+        <mat-icon *ngIf="mentor.user_status === 'active'" color="primary" class="status-icon"
+          >check_circle</mat-icon
+        >
+        <mat-icon *ngIf="mentor.user_status === 'pending'" color="warn" class="status-icon"
+          >schedule</mat-icon
+        >
+        <span class="status-value">{{ mentor.user_status | uppercase }}</span>
+      </td>
 
+    </ng-container>
     <ng-container matColumnDef="count_document">
       <th mat-header-cell mat-sort-header="count_document" *matHeaderCellDef>
         Document Count
       </th>
-      <td mat-cell *matCellDef="let mentor">{{ mentor.count_document }}</td>
+      <td mat-cell style="text-align: center;" *matCellDef="let mentor">{{ mentor.count_document }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="action">
+      <th mat-header-cell *matHeaderCellDef>Action</th>
+      <td mat-cell *matCellDef="let mentor">
+        <button mat-icon-button color="primary" (click)="editMentor(mentor)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteMentor(mentor)">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
