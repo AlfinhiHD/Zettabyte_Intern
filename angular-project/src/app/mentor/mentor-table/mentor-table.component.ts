@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class MentorTableComponent implements OnInit, AfterViewInit {
   mentorList: MentorType[] = [];
-  dataSource = new MatTableDataSource<MentorType>(this.mentorList);
+  dataSource = new MatTableDataSource<MentorType>();
   sortedData: MentorType[] = [];
 
   searchValue: string = '';
@@ -30,7 +30,7 @@ export class MentorTableComponent implements OnInit, AfterViewInit {
     'company',
     'user_status',
     'count_document',
-    'action'
+    'action',
   ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

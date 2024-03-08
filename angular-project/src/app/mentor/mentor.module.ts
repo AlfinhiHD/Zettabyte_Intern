@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { MentorComponent } from './mentor.component';
 import { MentorTableComponent } from './mentor-table/mentor-table.component';
 import { SharedModule } from '../shared/shared.module';
-import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 

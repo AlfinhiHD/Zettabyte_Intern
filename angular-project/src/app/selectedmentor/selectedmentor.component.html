@@ -1,20 +1,26 @@
-<div class="detail-container">
-  <div class="detail-left mat-elevation-z2">
+<div
+  class="detail-container mat-elevation-z2"
+  style="background-color: #c9a6e3; border-radius: 20px"
+>
+  <div class="detail-left">
     <div class="image-container">
+      <h1 style="font-weight: 600; text-align: center" class="name">
+        {{ mentor.civility }} {{ mentor.first_name }} {{ mentor.last_name }}
+      </h1>
       <img
+        style="margin-left: 5.5vw; margin-top: 2vw"
         src="https://cdn.icon-icons.com/icons2/2643/PNG/512/male_man_people_person_avatar_white_tone_icon_159363.png"
         alt="Dummy Image"
       />
     </div>
-    <h1 class="name">{{ mentor.first_name }} {{ mentor.last_name }}</h1>
   </div>
-  <div class="detail-right mat-elevation-z2">
+  <div class="detail-right" style="margin-top: 2vw; font-size: larger; width: 100vw;">
     <div class="detail-item"><strong>Email:</strong> {{ mentor.email }}</div>
     <div class="detail-item">
       <strong>Civility:</strong> {{ mentor.civility }}
     </div>
     <div class="detail-item">
-      <strong>User Status:</strong> {{ mentor.user_status }}
+      <strong>User Status:</strong> {{ mentor.user_status | titlecase }}
     </div>
     <div class="detail-item">
       <strong>Company:</strong> {{ mentor.company.name }}
@@ -22,11 +28,20 @@
     <div class="detail-item">
       <strong>Document Count:</strong> {{ mentor.count_document }}
     </div>
+  </div>
+
+  <div style="flex: 3; margin-left: 15vw;">
     <div class="button-container">
-      <button mat-button color="primary" (click)="goBack()">Back</button>
       <button
-        mat-button
-        color="primary"
+        mat-raised-button
+        style="margin-right: 10px; background-color: #9076a3; color: white"
+        (click)="goBack()"
+      >
+        Back
+      </button>
+      <button
+        style="background-color: #623b7e; color: white"
+        mat-raised-button
         [routerLink]="['/form']"
         [queryParams]="{ id: mentor._id }"
       >
