@@ -1,0 +1,32 @@
+Notes fitur :
+- About the school (Profles, dll)
+- Show data (Students, Teacher) -> (Table, Cards, Carousel)
+- Forms
+- Favorite (Loved by icon in detail, show data by 1 potrait cards)
+
+Styling :
+- All responsive
+- Add global background, fonts, and colour pallette
+
+Folder Structure :
+- Pages {
+    a. Detail 
+    b. List 
+    c. Forms 
+    d. About 
+    e. Favorite
+}
+- Modules {
+    a. home 
+    b. form 
+    c. favorite 
+    d. characters (cards, table, carousel)
+}
+- Service {
+    2 observables (favorite and characters)
+    a. crud function
+    b. get by id, get favorite icon, 
+}
+
+References : 
+- https://myheroacademia.fandom.com/wiki/My_Hero_Academia_Wiki
