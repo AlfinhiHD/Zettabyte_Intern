@@ -21,6 +21,7 @@ Folder Structure :
     b. form 
     c. favorite 
     d. characters (cards, table, carousel)
+    e. reusable (?)
 }
 - Service {
     2 observables (favorite and characters)
