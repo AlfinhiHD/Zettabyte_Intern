@@ -1,7 +1,7 @@
 Notes fitur :
 - About the school (Profles, dll)
 - Show data (Students, Teacher) -> (Table, Cards, Carousel)
-- Forms
+- Forms (add and edit data)
 - Favorite (Loved by icon in detail, show data by 1 potrait cards)
 
 Styling :
