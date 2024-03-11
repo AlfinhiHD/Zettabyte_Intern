@@ -12,9 +12,9 @@ Folder Structure :
 - Pages {
     a. Detail 
     b. List 
-    c. Forms 
+    c. Forms (add hint text, add validations) 
     d. About 
-    e. Favorite
+    e. Favorite (Ada notif barhasil menambah favorite, dan popularity nya +5 max 100)
 }
 - Modules {
     a. home 
@@ -24,6 +24,7 @@ Folder Structure :
     e. reusable (?)
 }
 - Service {
+    all data goes to local storage
     2 observables (favorite and characters)
     a. crud function
     b. get by id, get favorite icon, 
