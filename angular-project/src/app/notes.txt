@@ -11,8 +11,8 @@ Styling :
 Folder Structure :
 - Pages {
     a. Detail 
-    b. List 
-    c. Forms (add hint text, add validations) 
+    b. List !important
+    c. Forms (add hint text, add validations) !important
     d. About 
     e. Favorite (Ada notif barhasil menambah favorite, dan popularity nya +5 max 100)
 }
@@ -21,7 +21,7 @@ Folder Structure :
     b. form 
     c. favorite 
     d. characters (cards, table, carousel)
-    e. reusable (?)
+    e. reusable (?) - sementara tidak perlu
 }
 - Service {
     all data goes to local storage
@@ -32,3 +32,14 @@ Folder Structure :
 
 References : 
 - https://myheroacademia.fandom.com/wiki/My_Hero_Academia_Wiki
+
+Prior =
+1. List, card and tables
+2. crud -> forms
+3. detail
+
+Addons = 
+1. favorite
+2. home
+3. local storage
+4. carousel

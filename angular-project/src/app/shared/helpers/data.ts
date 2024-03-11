@@ -1,7 +1,7 @@
 import { v4 as uuidv4 } from 'uuid';
 import { CharacterType } from './interface';
 
-export const Characters: CharacterType[] = [
+export const CharactersData: CharacterType[] = [
   {
     id: uuidv4(),
     name: {

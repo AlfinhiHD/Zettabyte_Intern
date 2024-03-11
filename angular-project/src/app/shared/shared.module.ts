@@ -15,11 +15,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import {MatSortModule} from '@angular/material/sort';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     MatSidenavModule,
     MatMenuModule,
     MatIconModule,
@@ -37,6 +39,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatSelectModule
   ],
   exports: [
+    ReactiveFormsModule,
     MatIconModule,
     MatSidenavModule,
     MatMenuModule,
