@@ -1,1 +1,39 @@
-<img src="https://c4.wallpaperflare.com/wallpaper/577/889/216/anime-my-hero-academia-denki-kaminari-wallpaper-preview.jpg"/>
+<mat-sidenav-container class="sidenav-container">
+  <div style="color: white"></div>
+  <mat-sidenav
+    style="background-color: #c9a6e3"
+    #sidenav
+    mode="side"
+    [opened]="isSidenavOpen"
+  >
+    <img
+      style="width: 8vw; padding-left: 3vw; padding-top: 1vw"
+      src="https://zettabyte.life/wp-content/uploads/2020/12/unnamed-1.png"
+    />
+    <mat-nav-list>
+      <a style="font-weight: 500" mat-list-item routerLink="/home">Home</a>
+    </mat-nav-list>
+    <mat-nav-list>
+      <a style="font-weight: 500" mat-list-item routerLink="/form">Form</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div style="background-color: #8c60ab; min-height: 100vh">
+      <!-- <h1 class="main-title">Your Ghibli Gallery!</h1> -->
+      <button
+        style="margin-left: 1vw; color: #ffffff"
+        mat-icon-button
+        (click)="toggleSidenav()"
+      >
+        <mat-icon style="font-size: 2vw">menu</mat-icon>
+      </button>
+      <div class="main-content">
+        <img
+          src="https://c4.wallpaperflare.com/wallpaper/577/889/216/anime-my-hero-academia-denki-kaminari-wallpaper-preview.jpg"
+        />
+        <!-- <router-outlet></router-outlet> -->
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
