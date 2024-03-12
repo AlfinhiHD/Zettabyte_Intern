@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { CharacterType } from 'src/app/shared/helpers/interface';
 
 @Component({
   selector: 'app-character-card',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CharacterCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() character: CharacterType
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
+
+  goToDetailCharacter(id: string) {
+    // this.router.navigate(['detail', id]);
+  }
+
 
 }

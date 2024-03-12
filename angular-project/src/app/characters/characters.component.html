@@ -1,1 +1,17 @@
-<p>characters works!</p>
+<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+  <mat-tab label="Character Cards">
+    <div class="card-content">
+      <div *ngFor="let character of characterList">
+        <app-character-card
+          class="character-card"
+          [character]="character"
+        ></app-character-card>
+      </div>
+    </div>
+  </mat-tab>
+  <mat-tab label="Character Table">
+    <div class="table-content">
+      <app-character-table></app-character-table>
+    </div>
+  </mat-tab>
+</mat-tab-group>

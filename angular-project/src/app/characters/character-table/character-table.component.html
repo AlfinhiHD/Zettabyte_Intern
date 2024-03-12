@@ -1,1 +1,90 @@
-<p>character-table works!</p>
+<table
+  style="padding: 1vw; width: 100%"
+  mat-table
+  [dataSource]="dataSource"
+  matSort
+  (matSortChange)="sortData($event)"
+>
+  <ng-container matColumnDef="no">
+    <th mat-header-cell mat-sort-header="no" *matHeaderCellDef>No</th>
+    <td mat-cell *matCellDef="let character; let i = index">{{ i + 1 }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header="name" colspan="2">
+      Name
+    </th>
+    <td mat-cell *matCellDef="let character" colspan="2">
+      {{ character.name.real }} as <b>{{ character.name.hero | uppercase }}</b>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="email">
+    <th mat-header-cell mat-sort-header="email" *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let character">{{ character.email }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="role">
+    <th mat-header-cell mat-sort-header="role" *matHeaderCellDef colspan="2">
+      Role
+    </th>
+    <td mat-cell *matCellDef="let character" colspan="2">
+      {{ character.role }}
+      <ng-container *ngIf="character.class">
+        | {{ character.class }}
+      </ng-container>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="gender">
+    <th mat-header-cell mat-sort-header="gender" *matHeaderCellDef>Gender</th>
+    <td mat-cell *matCellDef="let character">{{ character.gender }}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="age">
+    <th mat-header-cell mat-sort-header="age" *matHeaderCellDef>Age</th>
+    <td mat-cell style="text-align: center" *matCellDef="let character">
+      {{ character.age }}
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="popularity">
+    <th mat-header-cell mat-sort-header="popularity" *matHeaderCellDef>
+      Popularity
+    </th>
+    <td mat-cell *matCellDef="let character" style="text-align: center">
+      <span>{{ character.popularity }}</span>
+    </td>
+  </ng-container>
+
+  <ng-container matColumnDef="action">
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let character">
+      <button
+        mat-icon-button
+        color="primary"
+        (click)="goToDetailcharacter(character._id)"
+      >
+        <mat-icon>details</mat-icon>
+      </button>
+      <button
+        mat-icon-button
+        color="warn"
+        (click)="deletecharacter(character._id)"
+      >
+        <mat-icon>delete</mat-icon>
+      </button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+</table>
+
+<mat-paginator
+  style="border-radius: 20px"
+  [pageSizeOptions]="[5, 10, 15]"
+  showFirstLastButtons
+  aria-label="Select page of characters"
+>
+</mat-paginator>

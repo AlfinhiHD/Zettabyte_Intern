@@ -1,1 +1,19 @@
-<p>character-card works!</p>
+<mat-card
+  class="character-card"
+  style="
+    cursor: pointer;
+    transition: transform 0.3s;
+    background-color: brown;
+    width: fit-content;
+    border-radius: 0;
+  "
+  (click)="goToDetailCharacter(character.id)"
+>
+  <mat-card-content class="character-content" style="text-align: center; color: white;">
+    <img [src]="character.image.cover" alt="Poster character" />
+    <p class="character-hero">
+      <b>{{ character.name.hero | uppercase }}</b>
+    </p>
+    <p class="character-name">{{ character.name.real }}</p>
+  </mat-card-content>
+</mat-card>

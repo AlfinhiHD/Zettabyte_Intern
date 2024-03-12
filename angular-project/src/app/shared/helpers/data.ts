@@ -72,7 +72,7 @@ export const CharactersData: CharacterType[] = [
     id: uuidv4(),
     name: {
       real: 'Katsuki Bakugo',
-      hero: 'Daibaku Kisshin Dainamaito',
+      hero: 'Daibaku Kisshin',
     },
     role: 'Student',
     class: '1-A',
@@ -1202,119 +1202,5 @@ export const CharactersData: CharacterType[] = [
     ],
     popularity: 80,
     bornDate: '06/06/1993',
-  },
-  {
-    id: 'cfb40e1b-8d25-40f0-8451-0d84f5685b81',
-    name: {
-      real: 'Mezo Shoji',
-      hero: 'Tentacole',
-    },
-    role: 'Student',
-    class: '1-A',
-    affiliation: 'U.A. High School',
-    image: {
-      cover: 'shoji_cover.jpg',
-      portrait: 'shoji_portrait.jpg',
-      banner: 'shoji_banner.jpg',
-    },
-    address: [
-      {
-        street: '456 Tentacle Street',
-        city: 'Musutafu',
-        zipcode: '36985',
-      },
-    ],
-    email: 'shoji@ua.academia.com',
-    gender: 'Male',
-    ability: [
-      {
-        image: 'dupli_arms.jpg',
-        name: 'Dupli-Arms',
-        description:
-          'Mezo Shoji possesses the quirk Dupli-Arms, which allows him to generate multiple extendable arms from various parts of his body, each with its own set of eyes and enhanced strength.',
-      },
-    ],
-    description:
-      'Mezo Shoji is a student in Class 1-A at U.A. High School. He is known for his calm demeanor and his ability to adapt to different situations using his versatile quirk.',
-    age: 16,
-    height: 177,
-    weight: 70,
-    popularity: 70,
-    bornDate: '10/14/2007',
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/mezo-shoji',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'shoji@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@tentacole',
-      },
-    ],
-  },
-  {
-    id: '1b1c2d3e-4f5g-6h7i-8j9k-0l1m2n3o4p5q',
-    name: {
-      real: 'Denki Kaminari',
-      hero: 'Chargebolt',
-    },
-    role: 'Student',
-    class: '1-A',
-    affiliation: 'U.A. High School',
-    image: {
-      cover: 'kaminari_cover.jpg',
-      portrait: 'kaminari_portrait.jpg',
-      banner: 'kaminari_banner.jpg',
-    },
-    address: [
-      {
-        street: '123 Lightning Street',
-        city: 'Musutafu',
-        zipcode: '36985',
-      },
-    ],
-    email: 'kaminari@ua.academia.com',
-    gender: 'Male',
-    ability: [
-      {
-        image: 'electrification.jpg',
-        name: 'Electrification',
-        description:
-          'Denki Kaminari possesses the quirk Electrification, which allows him to generate and manipulate electricity. However, overuse of his quirk can temporarily short-circuit his brain, causing him to become dumb.',
-      },
-    ],
-    description:
-      'Denki Kaminari is a student in Class 1-A at U.A. High School. He is known for his easygoing personality and his powerful electric quirk, which he often uses in creative ways.',
-    age: 16,
-    height: 168,
-    weight: 62,
-    popularity: 75,
-    bornDate: '06/29/2007',
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/denki-kaminari',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-555-5555',
-      },
-      {
-        type: 'email',
-        value: 'kaminari@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@chargebolt',
-      },
-    ],
   },
 ];
