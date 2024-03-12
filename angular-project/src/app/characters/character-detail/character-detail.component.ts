@@ -32,7 +32,7 @@ export class CharacterDetailComponent implements OnInit {
   }
 
   goBack() {
-    this.router.navigate(['/characters']);
+    this.router.navigate(['/character']);
   }
 
   goToEditForm(id: string) {
