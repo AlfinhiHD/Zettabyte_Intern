@@ -123,11 +123,11 @@ export class CharacterTableComponent implements OnInit, AfterViewInit {
     return (a - b) * (isAsc ? 1 : -1);
   }
 
-  goToDetailcharacter(id: string) {
+  goToDetailCharacter(id: string) {
     this.router.navigate(['detail', id]);
   }
 
-  deletecharacter(id: string) {
+  deleteCharacter(id: string) {
     Swal.fire({
       title: 'Are you sure?',
       text: 'You will not be able to recover this data!',

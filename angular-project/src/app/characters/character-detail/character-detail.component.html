@@ -1,1 +1,53 @@
-<p>character-detail works!</p>
+<div>
+  <!-- Header -->
+  <h1>{{ character.name.real }} as {{ character.name.hero }}</h1>
+
+  <!-- Hero Image -->
+  <img [src]="character.image.cover" alt="Hero Portrait" />
+
+  <!-- Description -->
+  <p>{{ character.description }}</p>
+
+  <!-- Basic Information -->
+  <ul>
+    <li><strong>Role:</strong> {{ character.role }}</li>
+    <li><strong>Class:</strong> {{ character.class }}</li>
+    <li><strong>Affiliation:</strong> {{ character.affiliation }}</li>
+    <li><strong>Gender:</strong> {{ character.gender }}</li>
+    <li><strong>Age:</strong> {{ character.age }}</li>
+    <li><strong>Height:</strong> {{ character.height }} cm</li>
+    <li><strong>Weight:</strong> {{ character.weight }} kg</li>
+    <li><strong>Born Date:</strong> {{ character.bornDate }}</li>
+    <li><strong>Popularity:</strong> {{ character.popularity }}</li>
+  </ul>
+
+  <!-- Abilities -->
+  <h2>Abilities</h2>
+  <div *ngFor="let ability of character.ability">
+    <img [src]="ability.image" alt="{{ ability.name }}" />
+    <p>
+      <strong>{{ ability.name }}:</strong> {{ ability.description }}
+    </p>
+  </div>
+
+  <!-- Address -->
+  <h2>Address</h2>
+  <p>
+    {{ character.address[0].street }}, {{ character.address[0].city }},
+    {{ character.address[0].zipcode }}
+  </p>
+
+  <!-- Contacts -->
+  <h2>Contacts</h2>
+  <ul>
+    <li *ngFor="let contact of character.contacts">
+      <strong>{{ contact.type }}:</strong> {{ contact.value }}
+    </li>
+  </ul>
+
+  <!-- Buttons -->
+  <h2>Buttons</h2>
+  <button (click)="goBack()">Back</button>
+  <button (click)="goToEditForm(character.id)">Edit</button>
+  <button (click)="onDeleteCharacter(character.id)">Delete</button>
+</div>
