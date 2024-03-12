@@ -1,38 +1,57 @@
 <mat-sidenav-container class="sidenav-container">
   <div style="color: white"></div>
   <mat-sidenav
-    style="background-color: #A12929"
+    style="background-color: #a12929"
     #sidenav
     mode="side"
     [opened]="isSidenavOpen"
   >
     <img
-      style="width: 8vw; padding-left: 3vw; padding-top: 1vw"
-      src="https://zettabyte.life/wp-content/uploads/2020/12/unnamed-1.png"
+      style="
+        width: 8vw;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        padding-top: 1vw;
+      "
+      src="https://cdn.freelogovectors.net/wp-content/uploads/2023/09/my-hero-academia-logo-freelogovectors.net_.png"
     />
     <mat-nav-list>
-      <a style="font-weight: 500" mat-list-item routerLink="/home">Home</a>
+      <a style="font-weight: 500; color: white" mat-list-item routerLink="/home"
+        >Home</a
+      >
     </mat-nav-list>
     <mat-nav-list>
-      <a style="font-weight: 500" mat-list-item routerLink="/form">Form</a>
+      <a style="font-weight: 500; color: white" mat-list-item routerLink="/form"
+        >Form</a
+      >
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <div style="background-color: #ffffff; min-height: 100vh">
-      <!-- <h1 class="main-title">Your Ghibli Gallery!</h1> -->
+    <div
+      style="
+        background-image: url('https://wallpapers.com/images/hd/yellow-my-hero-academia-logo-5gatt4vmajs3q8xx.jpg');
+        background-size: cover;
+        min-height: 100vh;
+      "
+    >
       <button
-        style="margin-left: 1vw; color: #ffffff"
+        style="margin-left: 1vw; color: #a12929"
         mat-icon-button
         (click)="toggleSidenav()"
       >
         <mat-icon style="font-size: 2vw">menu</mat-icon>
       </button>
-      <div class="main-content">
-        <img
-          src="https://c4.wallpaperflare.com/wallpaper/577/889/216/anime-my-hero-academia-denki-kaminari-wallpaper-preview.jpg"
-        />
-        <!-- <router-outlet></router-outlet> -->
+      <div
+        class="main-content mat-elevation-z8"
+        style="
+          background-color: white;
+          padding: 5vw;
+          margin-left: 4vw;
+          margin-right: 4vw;
+        "
+      >
+        <router-outlet></router-outlet>
       </div>
     </div>
   </mat-sidenav-content>
