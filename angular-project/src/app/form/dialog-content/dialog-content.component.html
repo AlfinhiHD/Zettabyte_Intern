@@ -1,0 +1,405 @@
+<h2 mat-dialog-title>Add New Character!</h2>
+<mat-dialog-content class="mat-typography" style="background-color: brown">
+  <form [formGroup]="characterForm" style="background-color: brown">
+    <div
+      class="form-container mat-elevation-z8"
+      style="background-color: white"
+    >
+      <div formGroupName="name" class="name-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Real Name</mat-label>
+          <input matInput formControlName="real" placeholder="Real name" />
+          <mat-error *ngIf="characterForm.get('name.real').hasError('required')"
+            >Real name is required</mat-error
+          >
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Hero Name</mat-label>
+          <input matInput formControlName="hero" placeholder="Hero name" />
+          <mat-error *ngIf="characterForm.get('name.hero').hasError('required')"
+            >Hero name is required</mat-error
+          >
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Role</mat-label>
+        <mat-select formControlName="role" placeholder="Select role">
+          <mat-option *ngFor="let role of roles" [value]="role">{{
+            role
+          }}</mat-option>
+        </mat-select>
+        <mat-error
+          *ngIf="
+            characterForm.get('role').invalid &&
+            characterForm.get('role').touched
+          "
+        >
+          Role is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Class</mat-label>
+        <input matInput formControlName="class" placeholder="Enter class" />
+        <mat-error
+          *ngIf="
+            characterForm.get('class').invalid &&
+            characterForm.get('class').touched
+          "
+        >
+          Class is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Affiliation</mat-label>
+        <input
+          matInput
+          formControlName="affiliation"
+          placeholder="Enter affiliation"
+        />
+        <mat-error
+          *ngIf="
+            characterForm.get('affiliation').invalid &&
+            characterForm.get('affiliation').touched
+          "
+        >
+          Affiliation is required
+        </mat-error>
+      </mat-form-field>
+
+      <div formGroupName="image" class="image-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Image Cover</mat-label>
+          <input
+            matInput
+            formControlName="cover"
+            placeholder="Enter image cover"
+          />
+          <mat-error
+            *ngIf="
+              characterForm.get('image.cover').invalid &&
+              characterForm.get('image.cover').touched
+            "
+          >
+            Image cover is required and must be a valid image URL
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Image Portrait</mat-label>
+          <input
+            matInput
+            formControlName="portrait"
+            placeholder="Enter image portrait"
+          />
+          <mat-error
+            *ngIf="
+              characterForm.get('image.portrait').invalid &&
+              characterForm.get('image.portrait').touched
+            "
+          >
+            Image portrait is required and must be a valid image URL
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Image Banner</mat-label>
+          <input
+            matInput
+            formControlName="banner"
+            placeholder="Enter image banner"
+          />
+          <mat-error
+            *ngIf="
+              characterForm.get('image.banner').invalid &&
+              characterForm.get('image.banner').touched
+            "
+          >
+            Image banner is required and must be a valid image URL
+          </mat-error>
+        </mat-form-field>
+      </div>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" placeholder="Enter email" />
+        <mat-error
+          *ngIf="
+            characterForm.get('email').invalid &&
+            characterForm.get('email').touched
+          "
+        >
+          Email is required and must be a valid email address
+        </mat-error>
+      </mat-form-field>
+
+      <mat-radio-group formControlName="gender">
+        <mat-label>Gender : </mat-label>
+        <mat-radio-button *ngFor="let gender of genders" [value]="gender">{{
+          gender
+        }}</mat-radio-button>
+      </mat-radio-group>
+      <mat-error
+        *ngIf="
+          characterForm.get('gender').invalid &&
+          characterForm.get('gender').touched
+        "
+      >
+        Gender is required
+      </mat-error>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+          placeholder="Enter description"
+        ></textarea>
+        <mat-error
+          *ngIf="
+            characterForm.get('description').invalid &&
+            characterForm.get('description').touched
+          "
+        >
+          Description is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput formControlName="age" placeholder="Enter age" />
+        <mat-error
+          *ngIf="
+            characterForm.get('age').invalid && characterForm.get('age').touched
+          "
+        >
+          Age is required and must be a number
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Height</mat-label>
+        <input matInput formControlName="height" placeholder="Enter height" />
+        <mat-error
+          *ngIf="
+            characterForm.get('height').invalid &&
+            characterForm.get('height').touched
+          "
+        >
+          Height is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Weight</mat-label>
+        <input matInput formControlName="weight" placeholder="Enter weight" />
+        <mat-error
+          *ngIf="
+            characterForm.get('weight').invalid &&
+            characterForm.get('weight').touched
+          "
+        >
+          Weight is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Born Date</mat-label>
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="bornDate"
+          placeholder="Choose a date"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error
+          *ngIf="
+            characterForm.get('bornDate').invalid &&
+            characterForm.get('bornDate').touched
+          "
+        >
+          Born Date is required
+        </mat-error>
+      </mat-form-field>
+
+      <div formArrayName="address">
+        <div
+          *ngFor="
+            let character of characterForm.get('address')['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+        >
+        <mat-form-field appearance="fill">
+          <mat-label>City</mat-label>
+          <input matInput formControlName="city" placeholder="Enter city" />
+          <mat-error
+            *ngIf="
+              character.get('city').invalid && character.get('city').touched
+            "
+            >City is required</mat-error
+          >
+        </mat-form-field>
+        
+          <mat-form-field appearance="fill">
+            <mat-label>Street</mat-label>
+            <input
+              matInput
+              formControlName="street"
+              placeholder="Enter street"
+            />
+            <mat-error
+              *ngIf="
+                character.get('street').invalid &&
+                character.get('street').touched
+              "
+              >Street is required</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Zipcode</mat-label>
+            <input
+              matInput
+              formControlName="zipcode"
+              placeholder="Enter zipcode"
+            />
+            <mat-error
+              *ngIf="
+                character.get('zipcode').invalid &&
+                character.get('zipcode').touched
+              "
+              >Zipcode is required and must be a valid number</mat-error
+            >
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            style="margin-bottom: 4vw"
+            type="button"
+            (click)="removeField(i, 'address')"
+            [disabled]="isFirstField(i, 'address')"
+          >
+            Remove Address
+          </button>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        type="button"
+        (click)="addField('address')"
+        style="margin-bottom: 4vw;"
+      >
+        Add Address
+      </button>
+
+      <div formArrayName="ability">
+        <div
+          *ngFor="
+            let character of characterForm.get('ability')['controls'];
+            let i = index
+          "
+          [formGroupName]="i"
+        >
+          <mat-form-field appearance="fill">
+            <mat-label>Ability Image</mat-label>
+            <input
+              matInput
+              formControlName="image"
+              placeholder="Enter image"
+            />
+            <mat-error
+              *ngIf="
+                character.get('image').invalid &&
+                character.get('image').touched
+              "
+              >image is required</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Ability Name</mat-label>
+            <input matInput formControlName="name" placeholder="Enter name" />
+            <mat-error
+              *ngIf="
+                character.get('name').invalid && character.get('name').touched
+              "
+              >Ability name is required</mat-error
+            >
+          </mat-form-field>
+
+          <mat-form-field appearance="fill">
+            <mat-label>Ability Description</mat-label>
+            <input
+              matInput
+              formControlName="description"
+              placeholder="Enter description"
+            />
+            <mat-error
+              *ngIf="
+                character.get('description').invalid &&
+                character.get('description').touched
+              "
+              >Ability description is required</mat-error
+            >
+          </mat-form-field>
+
+          <button
+            mat-raised-button
+            style="margin-bottom: 4vw"
+            type="button"
+            (click)="removeField(i, 'ability')"
+            [disabled]="isFirstField(i, 'ability')"
+          >
+            Remove ability
+          </button>
+        </div>
+      </div>
+
+      <button
+        mat-raised-button
+        type="button"
+        (click)="addField('ability')"
+        style="margin-bottom: 4vw;"
+      >
+        Add Ability
+      </button>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Popularity</mat-label>
+        <input matInput formControlName="popularity" placeholder="Enter popularity" />
+        <mat-error
+          *ngIf="
+            characterForm.get('popularity').invalid &&
+            characterForm.get('popularity').touched
+          "
+        >
+          Popularity is required
+        </mat-error>
+      </mat-form-field>
+
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="characterForm">
+    <!-- Elements of the form -->
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    mat-raised-button
+    style="background-color: brown; color: white"
+    (click)="onSubmit()"
+  >
+    Submit
+  </button>
+</mat-dialog-actions>

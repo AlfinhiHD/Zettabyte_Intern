@@ -25,6 +25,11 @@ export const CharactersData: CharacterType[] = [
         city: 'Musutafu',
         zipcode: '36985',
       },
+      {
+        street: '123 Deku Street',
+        city: 'Musutafu',
+        zipcode: '36985',
+      },
     ],
     email: 'midoriya@ua.academia.com',
     gender: 'Male',
@@ -47,25 +52,7 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     height: 166, // in centimeters
     weight: 62, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/izuku-midoriya',
-      },
-      {
-        type: 'phone number',
-        value: '+1 123-456-7890',
-      },
-      {
-        type: 'email',
-        value: 'izuku@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@izuku_midoriya',
-      },
-    ],
-    bornDate: '07/15/2008', // Born Date format: MM/DD/YYYY
+    bornDate: '2008-07-15', // Born Date format: MM/DD/YYYY
     popularity: 95, // Popularity range: 1-100
   },
   {
@@ -106,25 +93,8 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     height: 172, // in centimeters
     weight: 70, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/katsuki-bakugo',
-      },
-      {
-        type: 'phone number',
-        value: '+1 987-654-3210',
-      },
-      {
-        type: 'email',
-        value: 'bakugo@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@bakugo_katsuki',
-      },
-    ],
-    bornDate: '04/20/2008', // Born Date format: MM/DD/YYYY
+
+    bornDate: '2008-04-20', // Born Date format: MM/DD/YYYY
     popularity: 90, // Popularity range: 1-100
   },
   {
@@ -165,25 +135,8 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     height: 176, // in centimeters
     weight: 68, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/shoto-todoroki',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'todoroki@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@shoto_todoroki',
-      },
-    ],
-    bornDate: '01/11/2008', // Born Date format: MM/DD/YYYY
+    
+    bornDate: '2008-11-01', // Born Date format: MM/DD/YYYY
     popularity: 85, // Popularity range: 1-100
   },
   {
@@ -225,25 +178,8 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     height: 156, // in centimeters
     weight: 49, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/ochaco-uraraka',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'uraraka@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@ochaco_uraraka',
-      },
-    ],
-    bornDate: '12/27/2008', // Born Date format: MM/DD/YYYY
+  
+    bornDate: '2008-12-27', // Born Date format: MM/DD/YYYY
     popularity: 80, // Popularity range: 1-100
   },
   {
@@ -284,26 +220,8 @@ export const CharactersData: CharacterType[] = [
                         He is known for his strict demeanor and unwavering dedication to training his students.`,
     age: 30,
     height: 183, // in centimeters
-    weight: 76, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/shota-aizawa',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'aizawa@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@eraser_head',
-      },
-    ],
-    bornDate: '11/08/1978', // Born Date format: MM/DD/YYYY
+    weight: 76, // in kilog
+    bornDate: '1978-11-08', // Born Date format: MM/DD/YYYY
     popularity: 85, // Popularity range: 1-100
   },
   {
@@ -344,26 +262,8 @@ export const CharactersData: CharacterType[] = [
                       He was the previous wielder of One For All and a teacher at U.A. High School.`,
     age: 49,
     height: 220, // in centimeters
-    weight: 255, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/all-might',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'allmight@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@symbol_of_peace',
-      },
-    ],
-    bornDate: '03/08/1975', // Born Date format: MM/DD/YYYY
+    weight: 255, // in kilogram
+    bornDate: '1975-03-08', // Born Date format: MM/DD/YYYY
     popularity: 100, // Popularity range: 1-100
   },
   {
@@ -405,26 +305,8 @@ export const CharactersData: CharacterType[] = [
                       as well as her ability to adapt to various situations.`,
     age: 16,
     height: 150, // in centimeters
-    weight: 45, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/tsuyu-asui',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'asui@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@froppy',
-      },
-    ],
-    bornDate: '03/08/2008', // Born Date format: MM/DD/YYYY
+    weight: 45, //
+    bornDate: '2008-03-08', // Born Date format: MM/DD/YYYY
     popularity: 80, // Popularity range: 1-100
   },
   {
@@ -466,25 +348,8 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     height: 177, // in centimeters
     weight: 65, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/denki-kaminari',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'kaminari@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@denki_kaminari',
-      },
-    ],
-    bornDate: '03/08/2008', // Born Date format: MM/DD/YYYY
+    
+    bornDate: '2008-03-08', // Born Date format: MM/DD/YYYY
     popularity: 70, // Popularity range: 1-100
   },
   {
@@ -526,25 +391,9 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     height: 170, // in centimeters
     weight: 68, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/eijiro-kirishima',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'kirishima@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@hardened_hero',
-      },
-    ],
-    bornDate: '03/08/2008', // Born Date format: MM/DD/YYYY
+    
+  
+    bornDate: '2008-03-08', // Born Date format: MM/DD/YYYY
     popularity: 75, // Popularity range: 1-100
   },
   {
@@ -586,25 +435,9 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     height: 165, // in centimeters
     weight: 55, // in kilograms
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/momo-yaoyorozu',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'yaoyorozu@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@creativity_hero',
-      },
-    ],
-    bornDate: '03/08/2008', // Born Date format: MM/DD/YYYY
+    
+  
+    bornDate: '2008-03-08', // Born Date format: MM/DD/YYYY
     popularity: 85, // Popularity range: 1-100
   },
   {
@@ -644,27 +477,9 @@ export const CharactersData: CharacterType[] = [
     description:
       'Tetsutetsu Tetsutetsu is one of the students in Class 1-B at U.A. High School. He is known for his straightforward personality and strong sense of determination.',
     age: 15,
-    bornDate: '02/20/2009',
+    bornDate: '2009-02-20',
     height: 173,
     weight: 70,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/tetsutetsu-tetsutetsu',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'tetsutetsu@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@steel_hero',
-      },
-    ],
     popularity: 92,
   },
   {
@@ -705,25 +520,7 @@ export const CharactersData: CharacterType[] = [
     age: 16,
     bornDate: '01/15/2008',
     height: 165,
-    weight: 58,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/neito-monoma',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'monoma@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@copycat_hero',
-      },
-    ],
+    weight: 55,
     popularity: 78,
   },
   {
@@ -763,27 +560,9 @@ export const CharactersData: CharacterType[] = [
     description:
       'Itsuka Kendo is one of the students in Class 1-B at U.A. High School. She is known for her leadership skills and her ability to bring out the best in her classmates.',
     age: 16,
-    bornDate: '03/24/2007',
+    bornDate: '2007-03-24',
     height: 168,
-    weight: 60,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/itsuka-kendo',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'kendo@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@big_fist_hero',
-      },
-    ],
+    weight: 98,
     popularity: 85,
   },
   {
@@ -823,27 +602,10 @@ export const CharactersData: CharacterType[] = [
     description:
       'Juzo Honenuki is one of the students in Class 1-B at U.A. High School. He is known for his calm and analytical demeanor, as well as his strategic use of his quirk in battle.',
     age: 16,
-    bornDate: '11/03/2008',
+    bornDate: '2008-11-03',
     height: 175,
     weight: 65,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/juzo-honenuki',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'honenuki@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@softening_hero',
-      },
-    ],
+  
     popularity: 70,
   },
   {
@@ -883,27 +645,10 @@ export const CharactersData: CharacterType[] = [
     description:
       'Setsuna Tokage is one of the students in Class 1-B at U.A. High School. She is known for her quirky personality and her ability to surprise her opponents with her unique quirk.',
     age: 15,
-    bornDate: '12/19/2008',
+    bornDate: '2008-12-19',
     height: 162,
     weight: 50,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/setsuna-tokage',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'tokage@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@lizard_tail_hero',
-      },
-    ],
+    
     popularity: 85,
   },
   {
@@ -943,27 +688,9 @@ export const CharactersData: CharacterType[] = [
     description:
       'Kinoko Komori is one of the students in Class 1-B at U.A. High School. She is known for her shy and reserved personality, as well as her creative use of her quirk in combat.',
     age: 16,
-    bornDate: '07/06/2007',
+    bornDate: '2007-07-06',
     height: 160,
     weight: 52,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/kinoko-komori',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'komori@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@mushroom_hero',
-      },
-    ],
     popularity: 70,
   },
   {
@@ -1002,27 +729,9 @@ export const CharactersData: CharacterType[] = [
     description:
       'Pony Tsunotori is one of the students in Class 1-B at U.A. High School. She is known for her straightforward and confident personality, as well as her powerful quirk.',
     age: 15,
-    bornDate: '09/17/2009',
+    bornDate: '2009-09-17',
     height: 167,
     weight: 55,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/pony-tsunotori',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'tsunotori@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@horn_cannon_hero',
-      },
-    ],
     popularity: 92,
   },
   {
@@ -1061,27 +770,9 @@ export const CharactersData: CharacterType[] = [
     description:
       'Yui Kodai is one of the students in Class 1-B at U.A. High School. She is known for her cheerful and optimistic personality, as well as her unique quirk.',
     age: 16,
-    bornDate: '03/27/2007',
+    bornDate: '2007-03-27',
     height: 158,
     weight: 50,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/yui-kodai',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'kodai@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@size_manipulator_hero',
-      },
-    ],
     popularity: 80,
   },
   {
@@ -1120,27 +811,9 @@ export const CharactersData: CharacterType[] = [
     description:
       'Nemuri Kayama, also known as Midnight, is a pro hero and teacher at U.A. High School. She is known for her provocative costume and her ability to use her quirk to subdue villains.',
     age: 28,
-    bornDate: '05/07/1995',
+    bornDate: '1995-05-07',
     height: 175,
     weight: 58,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/nemuri-kayama',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-123-4567',
-      },
-      {
-        type: 'email',
-        value: 'kayama@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@midnight_hero',
-      },
-    ],
     popularity: 95,
   },
   {
@@ -1181,26 +854,8 @@ export const CharactersData: CharacterType[] = [
       'Hizashi Yamada, also known as Present Mic, is a pro hero and teacher at U.A. High School. He is known for his outgoing personality and his ability to use his quirk to inspire and motivate others.',
     age: 31,
     height: 185,
-    weight: 70,
-    contacts: [
-      {
-        type: 'linkedin',
-        value: 'linkedin.com/in/hizashi-yamada',
-      },
-      {
-        type: 'phone number',
-        value: '+1 555-987-6543',
-      },
-      {
-        type: 'email',
-        value: 'yamada@ua.academia.com',
-      },
-      {
-        type: 'ig',
-        value: '@present_mic',
-      },
-    ],
+    weight: 77,
     popularity: 80,
-    bornDate: '06/06/1993',
+    bornDate: '1993-06-06',
   },
 ];

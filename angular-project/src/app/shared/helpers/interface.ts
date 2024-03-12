@@ -28,10 +28,6 @@ export interface CharacterType {
   age: number;
   height: number;
   weight: number;
-  contacts: {
-    type: string;
-    value: string;
-  }[];
   bornDate: string;
   popularity: number;
 }

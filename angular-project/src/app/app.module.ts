@@ -8,11 +8,10 @@ import { SharedModule } from './shared/shared.module';
 import { CharactersModule } from './characters/characters.module';
 import { FormModule } from './form/form.module';
 import { HomeModule } from './home/home.module';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -20,9 +19,14 @@ import { HomeModule } from './home/home.module';
     SharedModule,
     CharactersModule,
     FormModule,
-    HomeModule
+    HomeModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: MatDialogRef,
+      useValue: {},
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

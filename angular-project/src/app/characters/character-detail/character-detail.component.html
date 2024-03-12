@@ -32,18 +32,12 @@
 
   <!-- Address -->
   <h2>Address</h2>
-  <p>
-    {{ character.address[0].street }}, {{ character.address[0].city }},
-    {{ character.address[0].zipcode }}
-  </p>
-
-  <!-- Contacts -->
-  <h2>Contacts</h2>
-  <ul>
-    <li *ngFor="let contact of character.contacts">
-      <strong>{{ contact.type }}:</strong> {{ contact.value }}
-    </li>
-  </ul>
+  <div *ngFor="let address of character.address">
+    <p>
+      <strong>{{ address.street }},</strong> {{ address.city }},
+      {{ address.zipcode }}
+    </p>
+  </div>
 
   <!-- Buttons -->
   <h2>Buttons</h2>

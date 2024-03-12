@@ -10,13 +10,6 @@ const routes: Routes = [
       (m) => m.CharactersModule
     )
   },
-  {
-    path: 'form',
-    loadChildren: () =>
-      import('./form/form.module').then(
-        (m) => m.FormModule
-      ),
-  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   // { path: '**', component: NotFoundComponent },
 ];

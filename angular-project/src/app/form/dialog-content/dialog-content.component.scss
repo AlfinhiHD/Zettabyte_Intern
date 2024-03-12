@@ -1,0 +1,24 @@
+.form-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 2vw;
+    margin-left: 18vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
+  }
+  
+  .mat-form-field {
+    width: 100%;
+    margin-bottom: 2vw;
+  }
+
+  .mat-radio-group {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .mat-radio-button {
+    margin-bottom: 2vw;
+    margin-left: 2vw;
+  }

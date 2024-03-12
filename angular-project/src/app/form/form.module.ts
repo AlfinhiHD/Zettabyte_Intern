@@ -1,25 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormComponent } from './form.component';
-import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
-
-
-const routes: Routes = [
-  { path: '', component: FormComponent}
-]
+import { DialogContentComponent } from './dialog-content/dialog-content.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    FormComponent
+    FormComponent,
+    DialogContentComponent
   ],
   imports: [
     CommonModule,
-    RouterModule.forChild(routes),
-    SharedModule
+    SharedModule,
+    FormsModule
   ],
   exports: [
-    FormComponent
+    FormComponent,
+    DialogContentComponent
   ]
 })
 export class FormModule { }
