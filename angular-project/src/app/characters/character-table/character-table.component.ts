@@ -17,11 +17,11 @@ export class CharacterTableComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<CharacterType>();
   sortedData: CharacterType[] = [];
 
-  // searchValue: string = '';
-  // statusValue: string = '';
-  // civilityValue: string = '';
+  searchValue: string = '';
+  roleValue: string = '';
+  genderValue: string = '';
 
-  // selectedSearchType: string = 'name';
+  selectedSearchType: string = 'realName';
 
   displayedColumns: string[] = [
     'no',
@@ -37,7 +37,10 @@ export class CharacterTableComponent implements OnInit, AfterViewInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private characterService: CharacterService, private router: Router) {}
+  constructor(
+    private characterService: CharacterService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.characterService.character$.subscribe((characters) => {
@@ -52,32 +55,31 @@ export class CharacterTableComponent implements OnInit, AfterViewInit {
     this.dataSource.sort = this.sort;
   }
 
-  // filtercharacters(): void {
-  //   const filteredData = this.characterList.filter((character) => {
-  //     const searchValue = this.searchValue.toLowerCase();
-  //     const statusValue = this.statusValue.toLowerCase();
-  //     const civilityValue = this.civilityValue.toLowerCase();
+  filterCharacters(): void {
+    const filteredData = this.characterList.filter((character) => {
+      const searchValue = this.searchValue.toLowerCase();
+      const roleValue = this.roleValue.toLowerCase();
+      const genderValue = this.genderValue.toLowerCase();
 
-  //     const searchProps = {
-  //       name: character.last_name.toLowerCase(),
-  //       email: character.email.toLowerCase(),
-  //       company: character.company.name.toLowerCase(),
-  //       id: character._id.toLowerCase(),
-  //     };
+      const searchProps = {
+        realName: character.name.real.toLowerCase(),
+        email: character.email.toLowerCase(),
+        heroName: character.name.hero.toLowerCase(),
+      };
 
-  //     const searchProp = searchProps[this.selectedSearchType];
+      const searchProp = searchProps[this.selectedSearchType];
 
-  //     return (
-  //       searchProp.includes(searchValue) &&
-  //       (statusValue === '' ||
-  //         character.user_status.toLowerCase() === statusValue) &&
-  //       (civilityValue === '' ||
-  //         character.civility.toLowerCase() === civilityValue)
-  //     );
-  //   });
+      return (
+        searchProp.includes(searchValue) &&
+        (roleValue === '' ||
+          character.role.toLowerCase() === roleValue) &&
+        (genderValue === '' ||
+          character.gender.toLowerCase() === genderValue)
+      );
+    });
 
-  //   this.dataSource.data = filteredData;
-  // }
+    this.dataSource.data = filteredData;
+  }
 
   sortData(sort: Sort) {
     const data = this.sortedData.slice();
@@ -90,16 +92,20 @@ export class CharacterTableComponent implements OnInit, AfterViewInit {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'no':
-          return this.compareNumber(a[sort.active], b[sort.active] , isAsc);
+          return this.compareNumber(
+            parseInt(a[sort.active]),
+            parseInt(b[sort.active]),
+            isAsc
+          );
         case 'gender':
-          case 'email':
+        case 'email':
           return this.compareString(a[sort.active], b[sort.active], isAsc);
         case 'name':
           return this.compareString(a.name.real, b.name.real, isAsc);
         case 'role':
           return this.compareString(a.role, b.role, isAsc);
         case 'age':
-        case 'popularity' :
+        case 'popularity':
           return this.compareNumber(a[sort.active], b[sort.active], isAsc);
         default:
           return 0;

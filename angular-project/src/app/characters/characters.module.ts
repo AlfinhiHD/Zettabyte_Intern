@@ -6,6 +6,7 @@ import { CharacterTableComponent } from './character-table/character-table.compo
 import { RouterModule, Routes } from '@angular/router';
 import { CharacterDetailComponent } from './character-detail/character-detail.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: CharactersComponent},
@@ -22,7 +23,8 @@ const routes: Routes = [
   imports: [
     CommonModule,
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FormsModule
   ],
   exports: [
     CharactersComponent,

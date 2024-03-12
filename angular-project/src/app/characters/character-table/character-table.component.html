@@ -1,3 +1,54 @@
+<div style="width: 100%">
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
+    <mat-label>Role</mat-label>
+    <mat-select [(ngModel)]="roleValue" (ngModelChange)="filterCharacters()">
+      <mat-option value="">All</mat-option>
+      <mat-option value="Student">Student</mat-option>
+      <mat-option value="Teacher">Teacher</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
+    <mat-label>Gender</mat-label>
+    <mat-select [(ngModel)]="genderValue" (ngModelChange)="filterCharacters()">
+      <mat-option value="">All</mat-option>
+      <mat-option value="Male">Male</mat-option>
+      <mat-option value="Female">Femal</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+  >
+    <mat-label>Search Type</mat-label>
+    <mat-select
+      [(ngModel)]="selectedSearchType"
+      (ngModelChange)="filterCharacters()"
+    >
+      <mat-option value="realName">Real Name</mat-option>
+      <mat-option value="heroName">Hero Name</mat-option>
+      <mat-option value="email">Email</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="fill"
+    style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw; width: 17vw"
+  >
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchValue"
+      (ngModelChange)="filterCharacters()"
+      placeholder="Search"
+    />
+  </mat-form-field>
+</div>
+
 <table
   style="padding: 1vw; width: 100%"
   mat-table
