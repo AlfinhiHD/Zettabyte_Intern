@@ -31,8 +31,6 @@ export class CharacterService {
   }
 
   addNewCharacter(newcharacter: CharacterType) {
-    console.log(newcharacter);
-    
     this.character.next([...this.character.getValue(), newcharacter]);
   }
 

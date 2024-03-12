@@ -26,6 +26,7 @@ export class CharactersComponent implements OnInit {
   openAddDialog(): void {
     const dialogRef = this.dialog.open(DialogContentComponent, {
       width: '100vw',
+      disableClose: true
     });
 
     dialogRef.afterClosed().subscribe((result) => {

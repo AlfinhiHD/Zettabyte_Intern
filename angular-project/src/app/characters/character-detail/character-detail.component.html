@@ -41,7 +41,21 @@
 
   <!-- Buttons -->
   <h2>Buttons</h2>
-  <button (click)="goBack()">Back</button>
-  <button (click)="goToEditForm(character.id)">Edit</button>
-  <button (click)="onDeleteCharacter(character.id)">Delete</button>
+  <div class="detail-button-wrap">
+    <button mat-raised-button color="basic" (click)="goBack()">Back</button>
+    <button
+      mat-raised-button
+      color="primary"
+      (click)="goToEditForm(character.id)"
+    >
+      Edit
+    </button>
+    <button
+      mat-raised-button
+      color="warn"
+      (click)="onDeleteCharacter(character.id)"
+    >
+      Delete
+    </button>
+  </div>
 </div>

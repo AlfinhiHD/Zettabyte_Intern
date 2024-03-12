@@ -183,7 +183,6 @@ export class DialogContentComponent implements OnInit {
         this.dialogRef.close();
         Swal.fire('Submitted!', successMessage, 'success');
       } else if (result.dismiss === Swal.DismissReason.cancel) {
-        this.dialogRef.close();
         Swal.fire('Cancelled', 'Your form is safe :)', 'error');
       }
     });

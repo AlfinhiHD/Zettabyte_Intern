@@ -40,7 +40,8 @@ export class CharacterDetailComponent implements OnInit {
 
   goToEditForm(id: string) {
     const dialogRef = this.dialog.open(DialogContentComponent, {
-      width: '100vw',
+      width: '100vw', 
+      disableClose: true,
       data: { id: id }
     });
 
