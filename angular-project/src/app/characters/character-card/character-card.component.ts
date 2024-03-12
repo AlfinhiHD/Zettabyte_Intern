@@ -17,7 +17,7 @@ export class CharacterCardComponent implements OnInit {
   }
 
   goToDetailCharacter(id: string) {
-    // this.router.navigate(['detail', id]);
+    this.router.navigate(['detail', id]);
   }
 
 
