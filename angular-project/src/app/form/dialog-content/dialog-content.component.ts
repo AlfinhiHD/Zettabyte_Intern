@@ -6,6 +6,7 @@ import { CharacterService } from 'src/app/shared/service/character.service';
 import Swal from 'sweetalert2';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { v4 as uuidv4 } from 'uuid';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-dialog-content',
@@ -18,12 +19,15 @@ export class DialogContentComponent implements OnInit {
   roles: string[] = ['Student', 'Teacher'];
   genders: string[] = ['Male', 'Female', 'Others'];
 
+  isFrench: boolean= true;
+
   constructor(
     @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
     private characterService: CharacterService,
     private router: Router,
-    private dialogRef: MatDialogRef<DialogContentComponent>
+    private dialogRef: MatDialogRef<DialogContentComponent>,
+    private translateService: TranslateService
   ) {}
 
   ngOnInit(): void {
@@ -40,6 +44,14 @@ export class DialogContentComponent implements OnInit {
         this.characterForm.patchValue(character);
         this.setArrayData(character.address, character.ability);
       }
+    }
+  }
+
+  toggleLanguage() {
+    if (this.isFrench) {
+      this.translateService.use('en');
+    } else {
+      this.translateService.use('fr');
     }
   }
 

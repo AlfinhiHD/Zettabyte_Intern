@@ -1,4 +1,16 @@
-<h2 mat-dialog-title>Add New Character!</h2>
+<div style="display: flex; justify-content: space-between">
+  <h2 mat-dialog-title>Add New Character!</h2>
+
+  <div style="display: flex">
+    <h3 style="margin-right: 1vw">FR</h3>
+
+    <mat-slide-toggle [(ngModel)]="isFrench" (change)="toggleLanguage()">
+    </mat-slide-toggle>
+
+    <h3 style="margin-left: 1vw">EN</h3>
+  </div>
+</div>
+
 <mat-dialog-content class="mat-typography" style="background-color: brown">
   <form [formGroup]="characterForm" style="background-color: brown">
     <div
@@ -7,27 +19,44 @@
     >
       <div formGroupName="name" class="name-group">
         <mat-form-field appearance="fill">
-          <mat-label>Real Name</mat-label>
-          <input matInput formControlName="real" placeholder="Real name" />
-          <mat-error *ngIf="characterForm.get('name.real').hasError('required')"
-            >Real name is required</mat-error
+          <mat-label>{{ "CHARACTER_FORM.REAL_NAME" | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="real"
+            placeholder="{{ 'CHARACTER_FORM.REAL_NAME' | translate }}"
+          />
+          <mat-hint>{{ "CHARACTER_FORM.REAL_NAME_HINT" | translate }}</mat-hint>
+          <mat-error
+            *ngIf="characterForm.get('name.real').hasError('required')"
           >
+            {{ "CHARACTER_FORM.REAL_NAME" | translate }} is required
+          </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill">
-          <mat-label>Hero Name</mat-label>
-          <input matInput formControlName="hero" placeholder="Hero name" />
-          <mat-error *ngIf="characterForm.get('name.hero').hasError('required')"
-            >Hero name is required</mat-error
+          <mat-label>{{ "CHARACTER_FORM.HERO_NAME" | translate }}</mat-label>
+          <input
+            matInput
+            formControlName="hero"
+            placeholder="{{ 'CHARACTER_FORM.HERO_NAME' | translate }}"
+          />
+          <mat-hint>{{ "CHARACTER_FORM.HERO_NAME_HINT" | translate }}</mat-hint>
+          <mat-error
+            *ngIf="characterForm.get('name.hero').hasError('required')"
           >
+            {{ "CHARACTER_FORM.HERO_NAME" | translate }} is required
+          </mat-error>
         </mat-form-field>
       </div>
 
       <mat-form-field appearance="fill">
-        <mat-label>Role</mat-label>
-        <mat-select formControlName="role" placeholder="Select role">
+        <mat-label>{{ "CHARACTER_FORM.ROLE" | translate }}</mat-label>
+        <mat-select
+          formControlName="role"
+          placeholder="{{ 'CHARACTER_FORM.ROLE' | translate }}"
+        >
           <mat-option *ngFor="let role of roles" [value]="role">{{
-            role
+            role | translate
           }}</mat-option>
         </mat-select>
         <mat-error
@@ -36,37 +65,42 @@
             characterForm.get('role').touched
           "
         >
-          Role is required
+          {{ "CHARACTER_FORM.ROLE" | translate }} is required
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Class</mat-label>
-        <input matInput formControlName="class" placeholder="Enter class" />
+        <mat-label>{{ "CHARACTER_FORM.CLASS" | translate }}</mat-label>
+        <input
+          matInput
+          formControlName="class"
+          placeholder="{{ 'CHARACTER_FORM.CLASS' | translate }}"
+        />
         <mat-error
           *ngIf="
             characterForm.get('class').invalid &&
             characterForm.get('class').touched
           "
         >
-          Class is required
+          {{ "CHARACTER_FORM.CLASS" | translate }} is required
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Affiliation</mat-label>
+        <mat-label>{{ "CHARACTER_FORM.AFFILIATION" | translate }}</mat-label>
         <input
           matInput
           formControlName="affiliation"
-          placeholder="Enter affiliation"
+          placeholder="{{ 'CHARACTER_FORM.AFFILIATION' | translate }}"
         />
+        <mat-hint>{{ "CHARACTER_FORM.AFFILIATION_HINT" | translate }}</mat-hint>
         <mat-error
           *ngIf="
             characterForm.get('affiliation').invalid &&
             characterForm.get('affiliation').touched
           "
         >
-          Affiliation is required
+          {{ "CHARACTER_FORM.AFFILIATION" | translate }} is required
         </mat-error>
       </mat-form-field>
 
@@ -78,6 +112,7 @@
             formControlName="cover"
             placeholder="Enter image cover"
           />
+          <mat-hint>Hint : image.jpg/.png/.jpeg/.png</mat-hint>
           <mat-error
             *ngIf="
               characterForm.get('image.cover').invalid &&
@@ -95,6 +130,7 @@
             formControlName="portrait"
             placeholder="Enter image portrait"
           />
+          <mat-hint>Hint : image.jpg/.png/.jpeg/.png</mat-hint>
           <mat-error
             *ngIf="
               characterForm.get('image.portrait').invalid &&
@@ -112,6 +148,7 @@
             formControlName="banner"
             placeholder="Enter image banner"
           />
+          <mat-hint>Hint : image.jpg/.png/.jpeg/.png</mat-hint>
           <mat-error
             *ngIf="
               characterForm.get('image.banner').invalid &&
@@ -124,40 +161,45 @@
       </div>
 
       <mat-form-field appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput formControlName="email" placeholder="Enter email" />
+        <mat-label>{{ "CHARACTER_FORM.EMAIL" | translate }}</mat-label>
+        <input
+          matInput
+          formControlName="email"
+          placeholder="{{ 'CHARACTER_FORM.EMAIL' | translate }}"
+        />
+        <mat-hint>{{ "CHARACTER_FORM.EMAIL_HINT" | translate }}</mat-hint>
         <mat-error
           *ngIf="
             characterForm.get('email').invalid &&
             characterForm.get('email').touched
           "
         >
-          Email is required and must be a valid email address
+          {{ "CHARACTER_FORM.EMAIL_INVALID" | translate }}
         </mat-error>
       </mat-form-field>
 
       <mat-radio-group formControlName="gender">
-        <mat-label>Gender : </mat-label>
-        <mat-radio-button *ngFor="let gender of genders" [value]="gender">{{
-          gender
-        }}</mat-radio-button>
+        <mat-label>{{ "CHARACTER_FORM.GENDER" | translate }} : </mat-label>
+        <mat-radio-button *ngFor="let gender of genders" [value]="gender">
+          {{ gender | translate }}
+        </mat-radio-button>
       </mat-radio-group>
       <mat-error
-      style="margin-bottom: 2vw;"
+        style="margin-bottom: 2vw"
         *ngIf="
           characterForm.get('gender').invalid &&
           characterForm.get('gender').touched
         "
       >
-        Gender is required
+        {{ "CHARACTER_FORM.GENDER_REQUIRED" | translate }}
       </mat-error>
 
       <mat-form-field appearance="fill">
-        <mat-label>Description</mat-label>
+        <mat-label>{{ "CHARACTER_FORM.DESCRIPTION" | translate }}</mat-label>
         <textarea
           matInput
           formControlName="description"
-          placeholder="Enter description"
+          placeholder="{{ 'CHARACTER_FORM.DESCRIPTION' | translate }}"
         ></textarea>
         <mat-error
           *ngIf="
@@ -165,55 +207,69 @@
             characterForm.get('description').touched
           "
         >
-          Description is required
+          {{ "CHARACTER_FORM.DESCRIPTION_REQUIRED" | translate }}
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Age</mat-label>
-        <input matInput formControlName="age" placeholder="Enter age" />
+        <mat-label>{{ "CHARACTER_FORM.AGE" | translate }}</mat-label>
+        <input
+          matInput
+          formControlName="age"
+          placeholder="{{ 'CHARACTER_FORM.AGE' | translate }}"
+        />
         <mat-error
           *ngIf="
             characterForm.get('age').invalid && characterForm.get('age').touched
           "
         >
-          Age is required and must be a number
+          {{ "CHARACTER_FORM.AGE_REQUIRED" | translate }}
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Height</mat-label>
-        <input matInput formControlName="height" placeholder="Enter height" />
+        <mat-label>{{ "CHARACTER_FORM.HEIGHT" | translate }}</mat-label>
+        <input
+          matInput
+          formControlName="height"
+          placeholder="{{ 'CHARACTER_FORM.HEIGHT' | translate }}"
+        />
+        <mat-hint>{{ "CHARACTER_FORM.HEIGHT_HINT" | translate }}</mat-hint>
         <mat-error
           *ngIf="
             characterForm.get('height').invalid &&
             characterForm.get('height').touched
           "
         >
-          Height is required
+          {{ "CHARACTER_FORM.HEIGHT_REQUIRED" | translate }}
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Weight</mat-label>
-        <input matInput formControlName="weight" placeholder="Enter weight" />
+        <mat-label>{{ "CHARACTER_FORM.WEIGHT" | translate }}</mat-label>
+        <input
+          matInput
+          formControlName="weight"
+          placeholder="{{ 'CHARACTER_FORM.WEIGHT' | translate }}"
+        />
+        <mat-hint>{{ "CHARACTER_FORM.WEIGHT_HINT" | translate }}</mat-hint>
         <mat-error
           *ngIf="
             characterForm.get('weight').invalid &&
             characterForm.get('weight').touched
           "
         >
-          Weight is required
+          {{ "CHARACTER_FORM.WEIGHT_REQUIRED" | translate }}
         </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="fill">
-        <mat-label>Born Date</mat-label>
+        <mat-label>{{ "CHARACTER_FORM.BORN_DATE" | translate }}</mat-label>
         <input
           matInput
           [matDatepicker]="picker"
           formControlName="bornDate"
-          placeholder="Choose a date"
+          placeholder="{{ 'CHARACTER_FORM.BORN_DATE' | translate }}"
         />
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -223,7 +279,7 @@
             characterForm.get('bornDate').touched
           "
         >
-          Born Date is required
+          {{ "CHARACTER_FORM.BORN_DATE_REQUIRED" | translate }}
         </mat-error>
       </mat-form-field>
 
@@ -235,17 +291,17 @@
           "
           [formGroupName]="i"
         >
-        <mat-form-field appearance="fill">
-          <mat-label>City</mat-label>
-          <input matInput formControlName="city" placeholder="Enter city" />
-          <mat-error
-            *ngIf="
-              character.get('city').invalid && character.get('city').touched
-            "
-            >City is required</mat-error
-          >
-        </mat-form-field>
-        
+          <mat-form-field appearance="fill">
+            <mat-label>City</mat-label>
+            <input matInput formControlName="city" placeholder="Enter city" />
+            <mat-error
+              *ngIf="
+                character.get('city').invalid && character.get('city').touched
+              "
+              >City is required</mat-error
+            >
+          </mat-form-field>
+
           <mat-form-field appearance="fill">
             <mat-label>Street</mat-label>
             <input
@@ -294,7 +350,7 @@
         mat-raised-button
         type="button"
         (click)="addField('address')"
-        style="margin-bottom: 4vw;"
+        style="margin-bottom: 4vw"
       >
         Add Address
       </button>
@@ -309,15 +365,11 @@
         >
           <mat-form-field appearance="fill">
             <mat-label>Ability Image</mat-label>
-            <input
-              matInput
-              formControlName="image"
-              placeholder="Enter image"
-            />
+            <input matInput formControlName="image" placeholder="Enter image" />
+            <mat-hint>Format : image.jpg/.png/.jpeg/.bmp</mat-hint>
             <mat-error
               *ngIf="
-                character.get('image').invalid &&
-                character.get('image').touched
+                character.get('image').invalid && character.get('image').touched
               "
               >image is required</mat-error
             >
@@ -326,6 +378,7 @@
           <mat-form-field appearance="fill">
             <mat-label>Ability Name</mat-label>
             <input matInput formControlName="name" placeholder="Enter name" />
+            <mat-hint>Hint : Full Cowl</mat-hint>
             <mat-error
               *ngIf="
                 character.get('name').invalid && character.get('name').touched
@@ -366,31 +419,29 @@
         mat-raised-button
         type="button"
         (click)="addField('ability')"
-        style="margin-bottom: 4vw;"
+        style="margin-bottom: 4vw"
       >
         Add Ability
       </button>
 
       <mat-form-field appearance="fill">
-        <mat-label>Popularity</mat-label>
-        <input matInput formControlName="popularity" placeholder="Enter popularity" />
+        <mat-label>{{ "CHARACTER_FORM.POPULARITY" | translate }}</mat-label>
+        <input
+          matInput
+          formControlName="popularity"
+          placeholder="{{ 'CHARACTER_FORM.POPULARITY' | translate }}"
+        />
+        <mat-hint>{{ "CHARACTER_FORM.POPULARITY_HINT" | translate }}</mat-hint>
         <mat-error
           *ngIf="
             characterForm.get('popularity').invalid &&
             characterForm.get('popularity').touched
           "
         >
-          Popularity is required
+          {{ "CHARACTER_FORM.POPULARITY_REQUIRED" | translate }}
         </mat-error>
       </mat-form-field>
-
     </div>
-  </form>
-</mat-dialog-content>
-
-<mat-dialog-content class="mat-typography">
-  <form [formGroup]="characterForm">
-    <!-- Elements of the form -->
   </form>
 </mat-dialog-content>
 

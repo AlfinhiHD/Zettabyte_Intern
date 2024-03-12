@@ -20,6 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 
 @NgModule({
   declarations: [],
@@ -46,6 +47,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatDatepickerModule,
     MatRadioModule,
     MatNativeDateModule,
+    MatSlideToggleModule
   ],
   exports: [
     ReactiveFormsModule,
@@ -69,6 +71,7 @@ import { MatRadioModule } from '@angular/material/radio';
     MatDatepickerModule,
     MatRadioModule,
     MatNativeDateModule,
+    MatSlideToggleModule
   ],
 })
 export class SharedModule {}

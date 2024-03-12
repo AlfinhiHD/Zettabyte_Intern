@@ -36,7 +36,7 @@ export const characterFormInit = (fb: FormBuilder): FormGroup => {
     height: [null, Validators.required],
     weight: [null, Validators.required],
     bornDate: ['', Validators.required],
-    popularity: [null, Validators.required],
+    popularity: [null, [Validators.required, Validators.pattern(/^[0-9]*$/), Validators.max(100)]],
   });
 };
 
