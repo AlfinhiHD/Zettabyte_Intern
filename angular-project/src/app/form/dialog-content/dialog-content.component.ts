@@ -37,10 +37,6 @@ export class DialogContentComponent implements OnInit {
       this.id = this.data.id;
       const character = this.characterService.getCharacterById(this.data.id);
       if (character) {
-        // const bornDateParts = character.bornDate.split('/');
-        // const formattedBornDate = `${bornDateParts[2]}-${bornDateParts[0]}-${bornDateParts[1]}`;
-        // character.bornDate = formattedBornDate;
-
         this.characterForm.patchValue(character);
         this.setArrayData(character.address, character.ability);
       }
@@ -171,9 +167,11 @@ export class DialogContentComponent implements OnInit {
       cancelButtonText: 'No, keep it',
     }).then((result) => {
       if (result.isConfirmed) {
-        this.router.navigate(['/home']);
+        this.router.navigate(['/character']);
+        this.dialogRef.close();
         Swal.fire('Submitted!', successMessage, 'success');
       } else if (result.dismiss === Swal.DismissReason.cancel) {
+        this.dialogRef.close();
         Swal.fire('Cancelled', 'Your form is safe :)', 'error');
       }
     });
