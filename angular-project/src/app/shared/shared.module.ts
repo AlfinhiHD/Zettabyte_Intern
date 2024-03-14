@@ -20,58 +20,38 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
+const modules: any = [
+  ReactiveFormsModule,
+  MatSidenavModule,
+  MatMenuModule,
+  MatIconModule,
+  MatTabsModule,
+  MatCardModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatListModule,
+  MatButtonModule,
+  MatGridListModule,
+  MatTableModule,
+  MatPaginatorModule,
+  MatSortModule,
+  MatOptionModule,
+  MatSelectModule,
+  MatDialogModule,
+  MatSliderModule,
+  MatDatepickerModule,
+  MatRadioModule,
+  MatNativeDateModule,
+  MatSlideToggleModule,
+  MatProgressSpinnerModule
+];
 
 @NgModule({
   declarations: [],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatIconModule,
-    MatTabsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatButtonModule,
-    MatGridListModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatDialogModule,
-    MatSliderModule,
-    MatDatepickerModule,
-    MatRadioModule,
-    MatNativeDateModule,
-    MatSlideToggleModule
-  ],
-  exports: [
-    ReactiveFormsModule,
-    MatIconModule,
-    MatSidenavModule,
-    MatMenuModule,
-    MatTabsModule,
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatListModule,
-    MatButtonModule,
-    MatGridListModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
-    MatOptionModule,
-    MatSelectModule,
-    MatDialogModule,
-    MatSliderModule,
-    MatDatepickerModule,
-    MatRadioModule,
-    MatNativeDateModule,
-    MatSlideToggleModule
-  ],
+  imports: [CommonModule, ...modules],
+  exports: [...modules],
 })
 export class SharedModule {}
