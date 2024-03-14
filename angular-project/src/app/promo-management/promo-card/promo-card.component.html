@@ -1,12 +1,25 @@
-<mat-card class="promo-card" style="width: 50vw">
+<mat-card
+  class="promo-card"
+  style="
+    width: 10vw;
+    padding: 2vw;
+    margin: 2vw;
+    background-color: rgb(173, 173, 173);
+  "
+>
   <mat-card-header>
-    <mat-card-title [innerHTML]="promo[0].title"></mat-card-title>
-    <mat-card-subtitle [innerHTML]="promo[0].sub_title"></mat-card-subtitle>
+    <mat-card-title [innerHTML]="promo.title"></mat-card-title>
+    <mat-card-subtitle [innerHTML]="promo.sub_title"></mat-card-subtitle>
   </mat-card-header>
   <img
     mat-card-image
-    [src]="promo[0].image_url || 'https://via.placeholder.com/150'"
+    [src]="promo.image_url || 'https://via.placeholder.com/150'"
     alt="Photo of Promo"
+    style="width: 5vw"
   />
-  <mat-card-content [innerHTML]="promo[0].description"> </mat-card-content>
+  <mat-card-content [innerHTML]="promo.description"> </mat-card-content>
+  <mat-card-actions align="start">
+    <button mat-raised-button color="warn" (click)="onDelete(promo._id)">Delete</button>
+    <button mat-raised-button color="primary" (click)="openDetailDialog()">Detail</button>
+  </mat-card-actions>
 </mat-card>

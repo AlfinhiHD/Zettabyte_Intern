@@ -1,1 +1,112 @@
-<p>promo-form works!</p>
+<h2 mat-dialog-title>Add New Promo!</h2>
+
+<mat-dialog-content class="mat-typography" style="background-color: rgb(60, 91, 194)">
+  <form [formGroup]="promoForm" style="background-color: rgb(60, 91, 194)">
+    <div
+      class="form-container mat-elevation-z8"
+      style="background-color: white"
+    >
+
+      <mat-form-field appearance="fill">
+        <mat-label> Reference </mat-label>
+        <input
+          matInput
+          formControlName="ref"
+          placeholder="Input refference"
+        />
+        <mat-error
+          *ngIf="
+            promoForm.get('ref').invalid &&
+            promoForm.get('ref').touched
+          "
+        >
+           Reference is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Promo Title </mat-label>
+        <input
+          matInput
+          formControlName="title"
+          placeholder="Input promo title"
+        />
+        <mat-hint> Hint : Title A </mat-hint>
+        <mat-error
+          *ngIf="
+            promoForm.get('title').invalid &&
+            promoForm.get('title').touched
+          "
+        >
+           Promo title is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Promo Subtitle </mat-label>
+        <input
+          matInput
+          formControlName="sub_title"
+          placeholder="Input subtitle"
+        />
+        <mat-hint> Hint : Subtitle A </mat-hint>
+        <mat-error
+          *ngIf="
+            promoForm.get('sub_title').invalid &&
+            promoForm.get('sub_title').touched
+          "
+        >
+           Promo subtitle is required 
+        </mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field appearance="fill">
+        <mat-label> Description </mat-label>
+        <textarea
+          matInput
+          formControlName="description"
+          placeholder="Input description"
+        ></textarea>
+        <mat-error
+          *ngIf="
+            promoForm.get('description').invalid &&
+            promoForm.get('description').touched
+          "
+        >
+           Description is required  
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label> Image Url </mat-label>
+        <textarea
+          matInput
+          formControlName="image_url"
+          placeholder="Input Image Url"
+        ></textarea>
+        <mat-error
+          *ngIf="
+            promoForm.get('image_url').invalid &&
+            promoForm.get('image_url').touched
+          "
+        >
+           Image Url is required  
+        </mat-error>
+      </mat-form-field>
+
+      
+    </div>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button
+    mat-raised-button
+    style="background-color: brown; color: white"
+    (click)="onSubmit()"
+  >
+    Submit
+  </button>
+</mat-dialog-actions>

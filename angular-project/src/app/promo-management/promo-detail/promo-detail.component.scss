@@ -1,0 +1,17 @@
+.promo-details {
+  display: flex;
+}
+
+.left-section {
+  margin-right: 20px;
+}
+
+.right-section {
+  flex-grow: 1;
+}
+
+.promo-image {
+  max-width: 300px;
+  max-height: 300px;
+  object-fit: cover;
+}

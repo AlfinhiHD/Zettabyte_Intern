@@ -5,6 +5,7 @@ import { PromoCardComponent } from './promo-card/promo-card.component';
 import { SharedModule } from '../shared/shared.module';
 import { PromoFormComponent } from './promo-form/promo-form.component';
 import { PromoManagementRoutingModule } from './promo-management-routing.module';
+import { PromoDetailComponent } from './promo-detail/promo-detail.component';
 
 
 
@@ -12,7 +13,8 @@ import { PromoManagementRoutingModule } from './promo-management-routing.module'
   declarations: [
     PromoManagementComponent,
     PromoCardComponent,
-    PromoFormComponent
+    PromoFormComponent,
+    PromoDetailComponent
   ],
   imports: [
     CommonModule,
@@ -22,7 +24,8 @@ import { PromoManagementRoutingModule } from './promo-management-routing.module'
   exports: [
     PromoManagementComponent,
     PromoCardComponent,
-    PromoFormComponent
+    PromoFormComponent,
+    PromoDetailComponent
   ]
 })
 export class PromoManagementModule { }

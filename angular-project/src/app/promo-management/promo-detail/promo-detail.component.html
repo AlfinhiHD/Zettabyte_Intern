@@ -1,0 +1,17 @@
+<h1 mat-dialog-title>{{ promo.title }}</h1>
+<div mat-dialog-content class="promo-details">
+  <div class="left-section">
+    <p>ID: {{ promo._id }}</p>
+    <img [src]="promo.image_url" alt="Promo Image" class="promo-image">
+    <button mat-button color="primary" (click)="openEditDialog()">Edit</button>
+  </div>
+  <div class="right-section">
+    <p><strong>Reference:</strong> {{ promo.ref }}</p>
+    <p><strong>Subtitle:</strong> {{ promo.sub_title }}</p>
+    <p><strong>Count Document:</strong> {{ promo.count_document }}</p>
+    <!-- tambahkan keterangan yang lain di sini -->
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeDialog()">Close</button>
+</div>

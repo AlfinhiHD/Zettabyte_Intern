@@ -5,8 +5,22 @@
     mode="indeterminate"
   ></mat-progress-spinner>
 </div>
-<div *ngIf="Promos.length">
-  <div class="p-grid">
-    <app-promo-card [promo]="Promos"></app-promo-card>
+
+<div>
+  <button
+    mat-raised-button
+    color="primary"
+    style="margin-bottom: 3vw; margin-top: 2vw"
+    (click)="openAddDialog()"
+  >
+    Add Promo
+  </button>
+  <div
+    *ngIf="Promos.length"
+    style="display: flex; flex-wrap: wrap; justify-content: space-between"
+  >
+    <div *ngFor="let promo of Promos">
+      <app-promo-card [promo]="promo"></app-promo-card>
+    </div>
   </div>
 </div>
