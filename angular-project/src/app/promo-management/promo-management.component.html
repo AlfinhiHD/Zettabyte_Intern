@@ -1,13 +1,12 @@
-<div *ngIf="!Promos.length">
-    <mat-progress-spinner
-      diameter="50"
-      mode="indeterminate"
-    ></mat-progress-spinner>
+<div *ngIf="!Promos.length" class="overlay">
+  <mat-progress-spinner
+    class="full-screen-spinner"
+    diameter="50"
+    mode="indeterminate"
+  ></mat-progress-spinner>
+</div>
+<div *ngIf="Promos.length">
+  <div class="p-grid">
+    <app-promo-card [promo]="Promos"></app-promo-card>
   </div>
-  
-  <div *ngIf="Promos.length">
-    <div class="p-grid">
-        <app-promo-card [promo]="Promos"></app-promo-card>
-    </div>
-  </div>
-  
+</div>

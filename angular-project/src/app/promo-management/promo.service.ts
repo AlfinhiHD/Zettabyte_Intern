@@ -23,6 +23,7 @@ export class PromoService {
   constructor(private apollo: Apollo) {}
 
   getAllPromo(): Observable<any[]> {
+    console.log("ini promo")
     return this.apollo
       .watchQuery<any>({query: getAllPromo})
       .valueChanges.pipe(map((result) => result.data.GetAllPromos));

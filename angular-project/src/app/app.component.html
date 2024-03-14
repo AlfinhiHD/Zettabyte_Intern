@@ -1,44 +1,46 @@
 <mat-sidenav-container class="sidenav-container">
-    <div style="color: white"></div>
-    <mat-sidenav
-     
-      #sidenav
-      mode="side"
-      [opened]="isSidenavOpen"
+  <div style="color: white"></div>
+  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen">
+    <img
+      style="
+        width: 8vw;
+        padding-left: 1vw;
+        padding-right: 1vw;
+        padding-top: 1vw;
+      "
+      src="https://zettabyte.life/wp-content/uploads/2020/12/unnamed-1.png"
+    />
+    <mat-nav-list>
+      <a style="font-weight: 500" mat-list-item routerLink="/home">Home</a>
+    </mat-nav-list>
+    <mat-nav-list>
+      <a style="font-weight: 500" mat-list-item routerLink="/users">User</a>
+    </mat-nav-list>
+    <mat-nav-list>
+      <a style="font-weight: 500" mat-list-item routerLink="/promo">Promo</a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <button
+        style="margin-left: 1vw; color: #000000"
+        mat-icon-button
+        (click)="toggleSidenav()"
+      >
+        <mat-icon style="font-size: 2vw">menu</mat-icon>
+      </button>
+    <div
+      class="mat-elevation-z8"
+      style="
+        background-color: #ffffff;
+        min-height: 100vh;
+        margin: 3vw 2vw 5vw 2vw;
+      "
     >
-      <img
-        style="width: 8vw; padding-left: 1vw; padding-right: 1vw; padding-top: 1vw"
-        src="https://zettabyte.life/wp-content/uploads/2020/12/unnamed-1.png"
-      />
-      <mat-nav-list>
-        <a style="font-weight: 500" mat-list-item routerLink="/home">Home</a>
-      </mat-nav-list>
-      <mat-nav-list>
-        <a style="font-weight: 500" mat-list-item routerLink="/schools"
-          >Schools</a
-        >
-      </mat-nav-list>
-      <mat-nav-list>
-        <a style="font-weight: 500" mat-list-item routerLink="/users">User</a>
-      </mat-nav-list>
-      <mat-nav-list>
-        <a style="font-weight: 500" mat-list-item routerLink="/promo">Promo</a>
-      </mat-nav-list>
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <div style="background-color: #ffffff; min-height: 100vh">
-        <button
-          style="margin-left: 1vw; color: #000000"
-          mat-icon-button
-          (click)="toggleSidenav()"
-        >
-          <mat-icon style="font-size: 2vw">menu</mat-icon>
-        </button>
-        <div class="main-content">
-          <router-outlet></router-outlet>
-        </div>
+      
+      <div class="main-content">
+        <router-outlet></router-outlet>
       </div>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

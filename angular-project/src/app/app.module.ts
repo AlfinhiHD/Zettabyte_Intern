@@ -19,7 +19,6 @@ import { PromoManagementModule } from './promo-management/promo-management.modul
     SharedModule,
     GraphQLModule,
     HttpClientModule,
-    PromoManagementModule
   ],
   providers: [],
   bootstrap: [AppComponent]
