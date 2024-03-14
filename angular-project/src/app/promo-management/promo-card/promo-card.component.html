@@ -4,6 +4,7 @@
     width: 10vw;
     padding: 2vw;
     margin: 2vw;
+    min-height: 15vw;
     background-color: rgb(173, 173, 173);
   "
 >
@@ -13,13 +14,25 @@
   </mat-card-header>
   <img
     mat-card-image
-    [src]="promo.image_url || 'https://via.placeholder.com/150'"
+    [src]="
+      isValidImageUrl(promo.image_url)
+        ? promo.image_url
+        : 'https://via.placeholder.com/150'
+    "
     alt="Photo of Promo"
-    style="width: 5vw"
+    style="width: 10vw; display: block; margin: 0 auto"
   />
-  <mat-card-content [innerHTML]="promo.description"> </mat-card-content>
-  <mat-card-actions align="start">
-    <button mat-raised-button color="warn" (click)="onDelete(promo._id)">Delete</button>
-    <button mat-raised-button color="primary" (click)="openDetailDialog()">Detail</button>
+
+  <mat-card-content>
+    <h3 style="font-weight: 500; margin-top: 1vw">Description :</h3>
+    <p [innerHTML]="promo.description"></p>
+  </mat-card-content>
+  <mat-card-actions align="end">
+    <button mat-raised-button color="warn" (click)="onDelete(promo._id)">
+      Delete
+    </button>
+    <button mat-raised-button color="primary" (click)="openDetailDialog()">
+      Detail
+    </button>
   </mat-card-actions>
 </mat-card>

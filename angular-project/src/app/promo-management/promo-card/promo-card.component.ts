@@ -16,6 +16,11 @@ export class PromoCardComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  isValidImageUrl(url: string): boolean {
+    const imageExtensions = /\.(jpeg|jpg|gif|png)$/i;
+    return url && imageExtensions.test(url);
+  }
+
   onDelete(id: string) {
     Swal.fire({
       title: 'Apakah Anda yakin?',

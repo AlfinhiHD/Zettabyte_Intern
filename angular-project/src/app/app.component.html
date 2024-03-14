@@ -22,22 +22,25 @@
   </mat-sidenav>
 
   <mat-sidenav-content>
-    <button
+    <div class="navbar-content mat-elevation-z8">
+      <button
         style="margin-left: 1vw; color: #000000"
         mat-icon-button
         (click)="toggleSidenav()"
       >
         <mat-icon style="font-size: 2vw">menu</mat-icon>
       </button>
+      <h1 style="font-weight: 500; margin-right: 2vw; color: #424242; padding-top: 1vw;">Zettabyte Promo App</h1>
+    </div>
+
     <div
       class="mat-elevation-z8"
       style="
         background-color: #ffffff;
         min-height: 100vh;
-        margin: 3vw 2vw 5vw 2vw;
+        margin: 2vw 2vw 5vw 2vw;
       "
     >
-      
       <div class="main-content">
         <router-outlet></router-outlet>
       </div>

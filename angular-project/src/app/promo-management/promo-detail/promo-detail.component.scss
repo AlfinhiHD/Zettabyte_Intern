@@ -1,5 +1,8 @@
 .promo-details {
   display: flex;
+  background-color: rgb(173, 173, 173);
+  padding-top: 4vw;
+  padding-bottom: 4vw;
 }
 
 .left-section {
@@ -8,6 +11,7 @@
 
 .right-section {
   flex-grow: 1;
+  padding-left: 4vw;
 }
 
 .promo-image {

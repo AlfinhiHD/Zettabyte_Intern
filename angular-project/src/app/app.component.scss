@@ -2,3 +2,10 @@
     margin: 3vw 2vw 5vw 2vw;
     min-height: 100vh;
 }
+
+.navbar-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content:space-between;
+    align-items: center;
+}

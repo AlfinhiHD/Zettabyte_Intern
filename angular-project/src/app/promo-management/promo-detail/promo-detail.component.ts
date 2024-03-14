@@ -22,6 +22,11 @@ export class PromoDetailComponent implements OnInit {
     this.promo = this.data
   }
 
+  isValidImageUrl(url: string): boolean {
+    const imageExtensions = /\.(jpeg|jpg|gif|png)$/i;
+    return url && imageExtensions.test(url);
+  }
+
   openEditDialog(): void {
     this.dialogRef.close();
     const dialogRef = this.dialog.open(PromoFormComponent, {

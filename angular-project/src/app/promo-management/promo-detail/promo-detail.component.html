@@ -2,16 +2,31 @@
 <div mat-dialog-content class="promo-details">
   <div class="left-section">
     <p>ID: {{ promo._id }}</p>
-    <img [src]="promo.image_url" alt="Promo Image" class="promo-image">
-    <button mat-button color="primary" (click)="openEditDialog()">Edit</button>
+    <img
+    mat-card-image
+    [src]="
+      isValidImageUrl(promo.image_url)
+        ? promo.image_url
+        : 'https://via.placeholder.com/150'
+    "
+    alt="Photo of Promo"
+    style="width: 15vw;"
+  />
+    
   </div>
   <div class="right-section">
+    <h3 style="font-weight: 600;"> Information : </h3>
     <p><strong>Reference:</strong> {{ promo.ref }}</p>
     <p><strong>Subtitle:</strong> {{ promo.sub_title }}</p>
     <p><strong>Count Document:</strong> {{ promo.count_document }}</p>
-    <!-- tambahkan keterangan yang lain di sini -->
+    
+    <div style="margin-top: 3vw;">
+        <h3 style="font-weight: 600;"> Description : </h3>
+        <p [innerHTML]="promo.description"></p>
+    </div>
   </div>
 </div>
-<div mat-dialog-actions>
-  <button mat-button (click)="closeDialog()">Close</button>
+<div mat-dialog-actions style="margin-left: 18vw;">
+  <button mat-raised-button (click)="closeDialog()" style="margin-right: 2vw;">Close</button>
+  <button mat-raised-button color="primary" (click)="openEditDialog()">Edit</button>
 </div>
