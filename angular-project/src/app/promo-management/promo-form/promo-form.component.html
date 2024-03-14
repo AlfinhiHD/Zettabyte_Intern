@@ -1,26 +1,23 @@
-<h2 mat-dialog-title>Add New Promo!</h2>
+<h2 mat-dialog-title>
+  {{ data?._id ? "Edit Promo" : "Add New Promo" }}
+</h2>
 
-<mat-dialog-content class="mat-typography" style="background-color: rgb(173, 173, 173)">
+<mat-dialog-content
+  class="mat-typography"
+  style="background-color: rgb(173, 173, 173)"
+>
   <form [formGroup]="promoForm" style="background-color: rgb(173, 173, 173)">
     <div
       class="form-container mat-elevation-z8"
       style="background-color: white"
     >
-
       <mat-form-field appearance="fill">
         <mat-label> Reference </mat-label>
-        <input
-          matInput
-          formControlName="ref"
-          placeholder="Input refference"
-        />
+        <input matInput formControlName="ref" placeholder="Input refference" />
         <mat-error
-          *ngIf="
-            promoForm.get('ref').invalid &&
-            promoForm.get('ref').touched
-          "
+          *ngIf="promoForm.get('ref').invalid && promoForm.get('ref').touched"
         >
-           Reference is required
+          Reference is required
         </mat-error>
       </mat-form-field>
 
@@ -34,11 +31,10 @@
         <mat-hint> Hint : Title A </mat-hint>
         <mat-error
           *ngIf="
-            promoForm.get('title').invalid &&
-            promoForm.get('title').touched
+            promoForm.get('title').invalid && promoForm.get('title').touched
           "
         >
-           Promo title is required
+          Promo title is required
         </mat-error>
       </mat-form-field>
 
@@ -56,10 +52,9 @@
             promoForm.get('sub_title').touched
           "
         >
-           Promo subtitle is required 
+          Promo subtitle is required
         </mat-error>
       </mat-form-field>
-
 
       <mat-form-field appearance="fill">
         <mat-label> Description </mat-label>
@@ -74,7 +69,7 @@
             promoForm.get('description').touched
           "
         >
-           Description is required  
+          Description is required
         </mat-error>
       </mat-form-field>
 
@@ -91,22 +86,14 @@
             promoForm.get('image_url').touched
           "
         >
-           Image Url is required  
+          Image Url is required
         </mat-error>
       </mat-form-field>
-
-      
     </div>
   </form>
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button
-    mat-raised-button
-    color="primary"
-    (click)="onSubmit()"
-  >
-    Submit
-  </button>
+  <button mat-raised-button color="primary" (click)="onSubmit()">Submit</button>
 </mat-dialog-actions>

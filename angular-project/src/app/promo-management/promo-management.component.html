@@ -1,23 +1,41 @@
-<div *ngIf="!Promos.length" class="overlay">
+<div *ngIf="isLoading" class="overlay" [ngClass]="{ show: isLoading }">
   <mat-progress-spinner
     class="full-screen-spinner"
     diameter="50"
     mode="indeterminate"
   ></mat-progress-spinner>
-</div>
-
+</div
+>
 <div>
-  <button
-    mat-raised-button
-    color="primary"
-    style="margin-bottom: 3vw; margin-top: 2vw"
-    (click)="openAddDialog()"
-  >
-    Add Promo
-  </button>
+  <div class="action-wrapper">
+    <button
+      mat-raised-button
+      color="primary"
+      style="margin-bottom: 3vw; margin-top: 2vw"
+      (click)="openAddDialog()"
+    >
+      Add Promo
+    </button>
+
+    <mat-form-field appearance="fill" style="color: black; margin-top: 1vw">
+      <mat-label>Search by Title</mat-label>
+      <input matInput [formControl]="searchInputControl" />
+      <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        *ngIf="searchInputControl.value"
+        (click)="clearSearchInput()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+
   <div
     *ngIf="Promos.length"
-    style="display: flex; flex-wrap: wrap; justify-content: space-between"
+    style="display: flex; flex-wrap: wrap; justify-content: space-around"
   >
     <div *ngFor="let promo of Promos">
       <app-promo-card [promo]="promo"></app-promo-card>

@@ -1,8 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription, debounceTime } from 'rxjs';
 import { PromoService } from './promo.service';
 import { PromoFormComponent } from './promo-form/promo-form.component';
 import { MatDialog } from '@angular/material/dialog';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-promo-management',
@@ -11,8 +12,11 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class PromoManagementComponent implements OnInit, OnDestroy {
   Promos: any = [];
-  private promoSubscription: Subscription;
 
+  private promoSubscription: Subscription;
+  searchInputControl = new FormControl('');
+
+  isLoading: boolean = false;
   limit: number = 10;
   page: number = 0;
   title: string = '';
@@ -20,6 +24,14 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   constructor(private promoService: PromoService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.searchInputControl.valueChanges
+      .pipe(debounceTime(1500))
+      .subscribe((value) => {
+        this.searchByTitle(value);
+        this.isLoading = true;
+      });
+  
+      this.isLoading = true;
     this.promoSubscription = this.promoService
       .getAllPromo(
         { limit: this.limit, page: this.page },
@@ -27,11 +39,13 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       )
       .subscribe({
         next: (promo: any) => {
-          this.Promos = promo;
           console.log(promo);
+          this.Promos = promo;
+          this.isLoading = false;
         },
         error: (error) => {
           console.error('Error fetching promo:', error);
+          this.isLoading = false;
         },
       });
   }
@@ -45,6 +59,26 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       console.log('The dialog was closed');
       console.log('Form data:', result);
     });
+  }
+
+  clearSearchInput(): void {
+    this.searchInputControl.setValue('');
+  }
+
+  searchByTitle(searchTerm: string): void {
+    this.promoSubscription = this.promoService
+      .getAllPromo(
+        { limit: this.limit, page: this.page },
+        { title: searchTerm }
+      )
+      .subscribe({
+        next: (promo: any) => {
+          this.Promos = promo;
+        },
+        error: (error) => {
+          console.error('Error fetching promo:', error);
+        },
+      });
   }
 
   ngOnDestroy(): void {
