@@ -1,19 +1,15 @@
-<!-- <button
-  mat-raised-button
-  style="background-color: brown; color: white;"
-  (click)="openAddDialog()"
->
-  Add food
-</button> -->
-
 <mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
   <mat-tab label="Food Cards">
+    <button
+      mat-raised-button
+      style="background-color: brown; color: white"
+      (click)="onAddFood()"
+    >
+      Add food
+    </button>
     <div class="card-content">
       <div *ngFor="let food of foodList">
-        <app-food-card
-          class="food-card"
-          [food]="food"
-        ></app-food-card>
+        <app-food-card class="food-card" [food]="food"></app-food-card>
       </div>
     </div>
   </mat-tab>

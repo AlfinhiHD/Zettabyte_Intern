@@ -1,92 +1,179 @@
 [
     {
-        "_id": "5362e647-3ab2-4e96-8e68-aa541b38e142",
-        "name": "Sushi",
-        "type": "Sushi",
-        "description": "Potongan kecil nasi beras dengan irisan ikan, udang, atau telur di atasnya.",
-        "price": 10,
-        "image": {
-            "cover": "sushi-cover.jpg",
-            "preview": "sushi-preview.jpg"
-        },
-        "ingredients": [
-            { "name": "Nasi Beras", "type": "Nasi", "price": 2, "amount": "100g" },
-            { "name": "Ikan", "type": "Laut", "price": 5, "amount": "50g" },
-            { "name": "Alga Laut", "type": "Sayuran", "price": 1, "amount": "5g" }
-        ],
-        "stock": 100,
-        "popularity": 95
-    },
-    {
-        "_id": "b5a0740a-484f-49f2-90ae-b6d21887f36d",
-        "name": "Ramen",
+        "_id": "89dbf6c1-0f0d-4a15-b7eb-21c451f7c6c9",
+        "name": "Miso Ramen",
         "type": "Ramen",
-        "description": "Mie Jepang yang disajikan dalam kuah kaldu ayam atau babi dengan topping seperti irisan daging babi, telur, dan rumput laut.",
-        "price": 8,
+        "description": "Mie Jepang yang disajikan dalam kuah kaldu miso dengan topping seperti irisan daging ayam, telur, dan rumput laut.",
+        "price": 9,
         "image": {
-            "cover": "ramen-cover.jpg",
-            "preview": "ramen-preview.jpg"
+            "cover": "miso-ramen-cover.jpg",
+            "preview": "miso-ramen-preview.jpg"
         },
         "ingredients": [
             { "name": "Mie", "type": "Tepung", "price": 2, "amount": "100g" },
-            { "name": "Kaldu Ayam", "type": "Kaldu", "price": 3, "amount": "200ml" },
-            { "name": "Daging Babi", "type": "Daging", "price": 4, "amount": "100g" }
+            { "name": "Kaldu Miso", "type": "Kaldu", "price": 3, "amount": "200ml" },
+            { "name": "Daging Ayam", "type": "Daging", "price": 4, "amount": "100g" }
         ],
-        "stock": 80,
+        "stock": 75,
         "popularity": 85
     },
     {
-        "_id": "c83ff5b3-38de-4d42-b65f-7fcf68f2700d",
-        "name": "Tempura",
-        "type": "Tempura",
-        "description": "Makanan gorengan Jepang yang terdiri dari udang, sayuran, atau seafood lainnya yang dilapisi dengan adonan tepung dan digoreng hingga renyah.",
-        "price": 12,
+        "_id": "b0e7f87b-f9b3-43df-9ef5-ff66ab2a2dd5",
+        "name": "Curry Ramen",
+        "type": "Ramen",
+        "description": "Mie Jepang yang disajikan dalam kuah kari dengan topping seperti irisan daging sapi, telur, dan wortel.",
+        "price": 10,
         "image": {
-            "cover": "tempura-cover.jpg",
-            "preview": "tempura-preview.jpg"
+            "cover": "curry-ramen-cover.jpg",
+            "preview": "curry-ramen-preview.jpg"
         },
         "ingredients": [
-            { "name": "Udang", "type": "Laut", "price": 6, "amount": "100g" },
-            { "name": "Sayuran", "type": "Sayuran", "price": 3, "amount": "200g" },
-            { "name": "Adonan Tepung", "type": "Tepung", "price": 2, "amount": "50g" }
+            { "name": "Mie", "type": "Tepung", "price": 2, "amount": "100g" },
+            { "name": "Kuah Kari", "type": "Kuah", "price": 3, "amount": "200ml" },
+            { "name": "Daging Sapi", "type": "Daging", "price": 4, "amount": "100g" }
         ],
         "stock": 70,
         "popularity": 80
     },
     {
-        "_id": "e7e5c524-741e-4bbd-af45-40b5c7e0c2f5",
-        "name": "Gyoza",
-        "type": "Gyoza",
-        "description": "Dumpling Jepang yang terbuat dari adonan tipis yang diisi dengan campuran daging cincang dan sayuran.",
-        "price": 6,
+        "_id": "39e1047c-f2df-44d3-84b2-21b682bb780d",
+        "name": "Beef Bento",
+        "type": "Bento",
+        "description": "Kotak makan berisi nasi dengan potongan daging sapi panggang, sayuran, dan telur.",
+        "price": 12,
         "image": {
-            "cover": "gyoza-cover.jpg",
-            "preview": "gyoza-preview.jpg"
+            "cover": "beef-bento-cover.jpg",
+            "preview": "beef-bento-preview.jpg"
         },
         "ingredients": [
-            { "name": "Adonan Tipis", "type": "Tepung", "price": 2, "amount": "100g" },
-            { "name": "Daging Cincang", "type": "Daging", "price": 3, "amount": "50g" },
-            { "name": "Sayuran", "type": "Sayuran", "price": 1, "amount": "30g" }
+            { "name": "Nasi", "type": "Nasi", "price": 2, "amount": "150g" },
+            { "name": "Daging Sapi Panggang", "type": "Daging", "price": 6, "amount": "100g" },
+            { "name": "Sayuran", "type": "Sayuran", "price": 2, "amount": "50g" },
+            { "name": "Telur", "type": "Telur", "price": 2, "amount": "1 buah" }
         ],
-        "stock": 90,
+        "stock": 60,
         "popularity": 75
     },
     {
-        "_id": "23d63db9-f8a2-4940-bab8-23e148db6d08",
-        "name": "Takoyaki",
-        "type": "Takoyaki",
-        "description": "Bola-bola kecil berisi gurita yang dibuat dari adonan tepung dan digoreng.",
-        "price": 7,
+        "_id": "54a22139-5eb4-4f3a-a700-4cb9c052ce29",
+        "name": "Katsu Bento",
+        "type": "Bento",
+        "description": "Kotak makan berisi nasi dengan potongan daging ayam goreng tepung, sayuran, dan telur.",
+        "price": 11,
         "image": {
-            "cover": "takoyaki-cover.jpg",
-            "preview": "takoyaki-preview.jpg"
+            "cover": "katsu-bento-cover.jpg",
+            "preview": "katsu-bento-preview.jpg"
         },
         "ingredients": [
-            { "name": "Gurita", "type": "Laut", "price": 5, "amount": "50g" },
-            { "name": "Adonan Tepung", "type": "Tepung", "price": 1, "amount": "50g" },
-            { "name": "Saus Takoyaki", "type": "Saus", "price": 1, "amount": "30g" }
+            { "name": "Nasi", "type": "Nasi", "price": 2, "amount": "150g" },
+            { "name": "Daging Ayam Goreng Tepung", "type": "Daging", "price": 5, "amount": "100g" },
+            { "name": "Sayuran", "type": "Sayuran", "price": 2, "amount": "50g" },
+            { "name": "Telur", "type": "Telur", "price": 2, "amount": "1 buah" }
+        ],
+        "stock": 65,
+        "popularity": 80
+    },
+    {
+        "_id": "9d7e06d5-d0d8-4140-8d5d-8e19c1f787f2",
+        "name": "Green Tea",
+        "type": "Minuman",
+        "description": "Minuman teh hijau segar.",
+        "price": 3,
+        "image": {
+            "cover": "green-tea-cover.jpg",
+            "preview": "green-tea-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Daun Teh Hijau", "type": "Teh", "price": 1, "amount": "5g" },
+            { "name": "Air", "type": "Air", "price": 1, "amount": "200ml" }
+        ],
+        "stock": 90,
+        "popularity": 70
+    },
+    {
+        "_id": "4d1f4568-5e2d-4b80-b499-efcd251a8d5a",
+        "name": "Sake",
+        "type": "Minuman",
+        "description": "Minuman beralkohol tradisional Jepang yang terbuat dari beras fermentasi.",
+        "price": 8,
+        "image": {
+            "cover": "sake-cover.jpg",
+            "preview": "sake-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Beras", "type": "Beras", "price": 6, "amount": "100ml" },
+            { "name": "Ragi", "type": "Ragi", "price": 1, "amount": "5g" }
+        ],
+        "stock": 50,
+        "popularity": 65
+    },
+    {
+        "_id": "0d597c6e-ef18-4878-a8fc-431f57aaae15",
+        "name": "Macha Latte",
+        "type": "Minuman",
+        "description": "Minuman susu dengan campuran teh matcha Jepang.",
+        "price": 5,
+        "image": {
+            "cover": "macha-latte-cover.jpg",
+            "preview": "macha-latte-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Teh Matcha", "type": "Teh", "price": 3, "amount": "5g" },
+            { "name": "Susu", "type": "Susu", "price": 1, "amount": "200ml" }
+        ],
+        "stock": 80,
+        "popularity": 75
+    },
+    {
+        "_id": "9af7a93e-5149-44b7-b01d-4dc4f69df65e",
+        "name": "Yakitori",
+        "type": "Snack",
+        "description": "Potongan daging yang ditusuk dan dipanggang, biasanya ayam, dengan saus manis yang lezat.",
+        "price": 6,
+        "image": {
+            "cover": "yakitori-cover.jpg",
+            "preview": "yakitori-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Daging Ayam", "type": "Daging", "price": 4, "amount": "100g" },
+            { "name": "Saus Manis", "type": "Saus", "price": 1, "amount": "50ml" }
+        ],
+        "stock": 70,
+        "popularity": 85
+    },
+    {
+        "_id": "c9cc3f7d-6bf2-4458-b482-12548e9a5976",
+        "name": "Onigiri",
+        "type": "Snack",
+        "description": "Segitiga nasi yang diisi dengan berbagai bahan seperti ikan, sayuran, atau daging.",
+        "price": 4,
+        "image": {
+            "cover": "onigiri-cover.jpg",
+            "preview": "onigiri-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Nasi", "type": "Nasi", "price": 2, "amount": "100g" },
+            { "name": "Isian", "type": "Isian", "price": 1, "amount": "50g" }
         ],
         "stock": 85,
-        "popularity": 70
+        "popularity": 80
+    },
+    {
+        "_id": "6c4ecf15-43ae-46df-8796-3cb50de83cf4",
+        "name": "Matcha Ice Cream",
+        "type": "Dessert",
+        "description": "Es krim rasa teh matcha yang lezat.",
+        "price": 7,
+        "image": {
+            "cover": "matcha-ice-cream-cover.jpg",
+            "preview": "matcha-ice-cream-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Teh Matcha", "type": "Teh", "price": 3, "amount": "5g" },
+            { "name": "Susu", "type": "Susu", "price": 2, "amount": "200ml" },
+            { "name": "Gula", "type": "Gula", "price": 1, "amount": "50g" }
+        ],
+        "stock": 60,
+        "popularity": 75
     }
 ]

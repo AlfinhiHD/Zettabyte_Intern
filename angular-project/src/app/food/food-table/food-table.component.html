@@ -1,23 +1,14 @@
-<!-- <div style="margin-left: 8vw; margin-top: 2vw">
+<div style="margin-left: 8vw; margin-top: 2vw">
     <mat-form-field
       style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
     >
       <mat-label>Role</mat-label>
-      <mat-select [(ngModel)]="roleValue" (ngModelChange)="filterfoods()">
+      <mat-select [(ngModel)]="typeValue" (ngModelChange)="filterFoods()">
         <mat-option value="">All</mat-option>
-        <mat-option value="Student">Student</mat-option>
-        <mat-option value="Teacher">Teacher</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <mat-form-field
-      style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
-    >
-      <mat-label>Gender</mat-label>
-      <mat-select [(ngModel)]="genderValue" (ngModelChange)="filterfoods()">
-        <mat-option value="">All</mat-option>
-        <mat-option value="Male">Male</mat-option>
-        <mat-option value="Female">Femal</mat-option>
+        <mat-option value="Ramen">Ramen</mat-option>
+        <mat-option value="Bento">Bento</mat-option>
+        <mat-option value="Snack">Snack</mat-option>
+        <mat-option value="Minuman">Minuman</mat-option>
       </mat-select>
     </mat-form-field>
   
@@ -27,11 +18,11 @@
       <mat-label>Search Type</mat-label>
       <mat-select
         [(ngModel)]="selectedSearchType"
-        (ngModelChange)="filterfoods()"
+        (ngModelChange)="filterFoods()"
       >
-        <mat-option value="realName">Real Name</mat-option>
-        <mat-option value="heroName">Hero Name</mat-option>
-        <mat-option value="email">Email</mat-option>
+        <mat-option value="name">Name</mat-option>
+        <mat-option value="price">Price</mat-option>
+        <mat-option value="stock">Stock</mat-option>
       </mat-select>
     </mat-form-field>
   
@@ -43,11 +34,11 @@
       <input
         matInput
         [(ngModel)]="searchValue"
-        (ngModelChange)="filterfoods()"
+        (ngModelChange)="filterFoods()"
         placeholder="Search"
       />
     </mat-form-field>
-  </div> -->
+  </div>
 
 <table
   style="padding: 1vw; width: 100%"

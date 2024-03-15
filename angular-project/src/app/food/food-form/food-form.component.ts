@@ -5,8 +5,7 @@ import Swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 import { FoodService } from '../food.service';
 import { FoodFormInit } from '../model/foodForm';
-import { TranslateService } from '@ngx-translate/core';
-// import { TranslateService } from '@ngx-translate/core';
+import { TranslateService } from '@ngx-translate/core';;
 
 @Component({
   selector: 'app-food-form',
@@ -16,8 +15,6 @@ import { TranslateService } from '@ngx-translate/core';
 export class FoodFormComponent implements OnInit {
   foodForm: FormGroup;
   id: string;
-  // roles: string[] = ['Student', 'Teacher'];
-  // genders: string[] = ['Male', 'Female', 'Others'];
 
   isFrench: boolean = true;
 
@@ -39,8 +36,12 @@ export class FoodFormComponent implements OnInit {
       }
     });
 
+    console.log(this.id)
+
     if (this.id) {
       const food = this.foodService.getFoodById(this.id);
+      console.log(food);
+      
       if (food) {
         this.foodForm.patchValue(food);
         this.setArrayData(food.ingredients);

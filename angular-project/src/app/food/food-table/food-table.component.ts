@@ -18,10 +18,9 @@ export class FoodTableComponent implements OnInit {
   sortedData: FoodType[] = [];
 
   searchValue: string = '';
-  roleValue: string = '';
-  genderValue: string = '';
+  typeValue: string = '';
 
-  selectedSearchType: string = 'realName';
+  selectedSearchType: string = 'name';
 
   displayedColumns: string[] = [
     'no',
@@ -53,31 +52,28 @@ export class FoodTableComponent implements OnInit {
     this.dataSource.sort = this.sort;
   }
 
-  // filterfoods(): void {
-  //   const filteredData = this.foodList.filter((food) => {
-  //     const searchValue = this.searchValue.toLowerCase();
-  //     const roleValue = this.roleValue.toLowerCase();
-  //     const genderValue = this.genderValue.toLowerCase();
+  filterFoods(): void {
+    const filteredData = this.foodList.filter((food) => {
+      const searchValue = this.searchValue.toLowerCase();
+      const typeValue = this.typeValue.toLowerCase();
 
-  //     const searchProps = {
-  //       realName: food.name.real.toLowerCase(),
-  //       email: food.email.toLowerCase(),
-  //       heroName: food.name.hero.toLowerCase(),
-  //     };
+      const searchProps = {
+        name: food.name.toLowerCase(),
+        price: food.price.toString(), // Mengonversi harga ke string
+        stock: food.stock.toString(), // Mengonversi stok ke string
+      };
 
-  //     const searchProp = searchProps[this.selectedSearchType];
+      const searchProp = searchProps[this.selectedSearchType];
 
-  //     return (
-  //       searchProp.includes(searchValue) &&
-  //       (roleValue === '' ||
-  //         food.role.toLowerCase() === roleValue) &&
-  //       (genderValue === '' ||
-  //         food.gender.toLowerCase() === genderValue)
-  //     );
-  //   });
+      return (
+        searchProp.includes(searchValue) &&
+        (typeValue === '' ||
+          food.type.toLowerCase() === typeValue)
+      );
+    });
 
-  //   this.dataSource.data = filteredData;
-  // }
+    this.dataSource.data = filteredData;
+}
 
   sortData(sort: Sort) {
     const data = this.sortedData.slice();
@@ -90,11 +86,6 @@ export class FoodTableComponent implements OnInit {
       const isAsc = sort.direction === 'asc';
       switch (sort.active) {
         case 'no':
-          return this.compareNumber(
-            parseInt(a[sort.active]),
-            parseInt(b[sort.active]),
-            isAsc
-          );
         case 'name':
         case 'type':
           return this.compareString(a[sort.active], b[sort.active], isAsc);
