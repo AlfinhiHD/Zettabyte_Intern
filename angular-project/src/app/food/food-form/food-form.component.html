@@ -9,7 +9,7 @@
   </div>
 </div>
 
-<form [formGroup]="foodForm" style="background-color: brown">
+<form [formGroup]="foodForm" (ngSubmit)="onSubmit()" style="background-color: brown">
   <div class="form-container mat-elevation-z8" style="background-color: white">
     <mat-form-field appearance="fill">
       <mat-label>{{ "FOOD_FORM.NAME" | translate }}</mat-label>
@@ -170,4 +170,5 @@
       Add Ingredients
     </button>
   </div>
+  <button mat-raised-button type="button" type="submit">Edit</button>
 </form>

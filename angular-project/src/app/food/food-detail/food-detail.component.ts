@@ -23,7 +23,7 @@ export class FoodDetailComponent implements OnInit {
     this.foodId = this.route.snapshot.paramMap.get('id');
     this.getFoodDetail(this.foodId);
     if (!this.food) {
-      this.router.navigate(['/home']);
+      this.router.navigate(['/food']);
     }
   }
 
@@ -51,7 +51,7 @@ export class FoodDetailComponent implements OnInit {
           'Your data has been deleted.',
           'success'
         )
-        this.router.navigate(['/home']);
+        this.router.navigate(['/food']);
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire(
           'Cancelled',

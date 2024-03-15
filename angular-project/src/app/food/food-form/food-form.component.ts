@@ -37,9 +37,7 @@ export class FoodFormComponent implements OnInit {
       if (!this.id) {
         this.foodForm.reset();
       }
-    })
-
-    
+    });
 
     if (this.id) {
       const food = this.foodService.getFoodById(this.id);
@@ -122,17 +120,12 @@ export class FoodFormComponent implements OnInit {
     }
 
     if (!this.id) {
-      console.log('masuk');
-
       formData.id = uuidv4();
-
       successMessage = 'Successfully added new data!';
       confirmButtonText = 'Yes, add it!';
-      this.foodService.addNewFood(formData);
     } else {
       successMessage = 'Your data has been edited!';
       confirmButtonText = 'Yes, edit it!';
-      this.foodService.updateFood(formData);
     }
 
     Swal.fire({
@@ -144,6 +137,11 @@ export class FoodFormComponent implements OnInit {
       cancelButtonText: 'No, keep it',
     }).then((result) => {
       if (result.isConfirmed) {
+        if (!this.id) {
+          this.foodService.addNewFood(formData);
+        } else {
+          this.foodService.updateFood(formData);
+        }
         this.router.navigate(['/food']);
         Swal.fire('Submitted!', successMessage, 'success');
       } else if (result.dismiss === Swal.DismissReason.cancel) {
