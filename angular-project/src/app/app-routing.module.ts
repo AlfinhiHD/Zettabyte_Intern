@@ -14,6 +14,10 @@ const routes: Routes = [
     path: 'promo',
     loadChildren: () => import('./promo-management/promo-management.module').then((m) => m.PromoManagementModule),
   },
+  {
+    path: 'food',
+    loadChildren: () => import('./food/food.module').then((m) => m.FoodModule),
+  },
   { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
