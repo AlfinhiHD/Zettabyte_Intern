@@ -28,7 +28,6 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       .pipe(debounceTime(1500))
       .subscribe((value) => {
         this.searchByTitle(value);
-        this.isLoading = true;
       });
 
     this.isLoading = true;
