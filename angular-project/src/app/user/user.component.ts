@@ -3,6 +3,8 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { UserService } from './user.service';
 import { MatTableDataSource } from '@angular/material/table';
+import { FormControl } from '@angular/forms';
+import { debounceTime } from 'rxjs';
 
 @Component({
   selector: 'app-user',
@@ -19,12 +21,15 @@ export class UserComponent implements OnInit {
     'position',
     'count_document',
   ];
+
+  searchInputControl = new FormControl('');
+  isLoading: boolean = false;
   dataSource = new MatTableDataSource<any>();
   searchInput: string = '';
   limit: number = 5;
   page: number = 0;
+  totalItems: number = 0;
   maxPage: number = 0;
-  isLoadingResults: boolean = false;
 
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
@@ -36,13 +41,23 @@ export class UserComponent implements OnInit {
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
+    this.searchInputControl.valueChanges
+      .pipe(debounceTime(1500))
+      .subscribe((value) => {
+        this.getAllUsers(value);
+      });
+
     this.getAllUsers();
   }
 
-  getAllUsers(): void {
-    this.isLoadingResults = true;
+  clearSearchInput(): void {
+    this.searchInputControl.setValue('');
+  }
+
+  getAllUsers(value?: string): void {
+    this.isLoading = true;
     this.userService
-      .getAllUsers({ limit: this.limit, page: this.page }, this.searchInput)
+      .getAllUsers({ limit: this.limit, page: this.page }, value)
       .subscribe({
         next: (users: any[]) => {
           console.log(users);
@@ -52,40 +67,19 @@ export class UserComponent implements OnInit {
           }));
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
-          this.isLoadingResults = false;
+          this.totalItems = users[0].count_document;
+          this.isLoading = false;
         },
         error: (error) => {
           console.error('Error fetching users:', error);
-          this.isLoadingResults = false;
+          this.isLoading = false;
         },
       });
   }
 
-  searchByLastName(): void {
-    if (this.searchInput.length >= 3) {
-      console.log('apa');
-      this.getAllUsers();
-    } else if (this.searchInput.length == 0) {
-      console.log('apa 0');
-    }
-  }
-
-  nextPage(): void {
-    this.page++;
-    this.getAllUsers();
-  }
-
-  previousPage(): void {
-    if (this.page > 0) {
-      this.page--;
-      this.getAllUsers();
-    }
-  }
-
-  validateLimit(): void {
-    if (this.limit < 1) {
-      this.limit = 1;
-    }
+  onPageChange(event: any): void {
+    this.page = event.pageIndex + 1;
+    this.limit = event.pageSize;
     this.getAllUsers();
   }
 }

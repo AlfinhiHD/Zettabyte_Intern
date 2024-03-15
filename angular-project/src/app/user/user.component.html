@@ -1,98 +1,76 @@
-<div class="example-container" style="padding-top: 5vw;">
-    <div class="search-container" style="color: black">
-      <mat-form-field appearance="fill">
-        <mat-label style="color: black">Search by Last Name</mat-label>
-        <input matInput (keyup)="searchByLastName()" [(ngModel)]="searchInput" />
-        <button
-          mat-button
-          matSuffix
-          mat-icon-button
-          aria-label="Clear"
-          *ngIf="searchInput"
-          (click)="searchInput = ''"
-        >
-          <mat-icon>close</mat-icon>
-        </button>
-      </mat-form-field>
-    </div>
-  
-    <mat-table #table [dataSource]="dataSource" matSort>
-      <ng-container matColumnDef="no">
-        <mat-header-cell *matHeaderCellDef>No.</mat-header-cell>
-        <mat-cell *matCellDef="let user">{{ user.no }}</mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="email">
-        <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
-        <mat-cell *matCellDef="let user">{{ user.email }}</mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="name">
-        <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
-        <mat-cell *matCellDef="let user"
-          >{{ user.civility }} {{ user.last_name }}
-          {{ user.first_name }}</mat-cell
-        >
-      </ng-container>
-  
-      <ng-container matColumnDef="sex">
-        <mat-header-cell *matHeaderCellDef>Sex</mat-header-cell>
-        <mat-cell *matCellDef="let user">{{ user.sex }}</mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="status">
-        <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
-        <mat-cell *matCellDef="let user">{{ user.status }}</mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="position">
-        <mat-header-cell *matHeaderCellDef>Position</mat-header-cell>
-        <mat-cell *matCellDef="let user">{{ user.position }}</mat-cell>
-      </ng-container>
-  
-      <ng-container matColumnDef="count_document">
-        <mat-header-cell *matHeaderCellDef>Count Document</mat-header-cell>
-        <mat-cell *matCellDef="let user">{{ user.count_document }}</mat-cell>
-      </ng-container>
-  
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-    </mat-table>
-  
-    <div class="button-wrapper">
-      <div class="manual-limit" style="color: black; margin-top: 2vw;">
-        <mat-form-field appearance="outline" class="manual-limit">
-          <mat-label style="color: black">Show:</mat-label>
-          <input
-            style="color: black"
-            type="number"
-            [(ngModel)]="limit"
-            (input)="validateLimit()"
-            matInput
-          />
-        </mat-form-field>
-      </div>
-  
-      <div class="manual-pagination">
-        <button
-          mat-button
-          style="color: black"
-          (click)="previousPage()"
-          [disabled]="page === 0"
-        >
-          Previous
-        </button>
-        <span
-          style="
-            color: black;
-            font-weight: 600;
-            padding-left: 1vw;
-            padding-right: 1vw;
-          "
-          >{{ page + 1 }}
-        </span>
-        <button mat-button style="color: black" (click)="nextPage()">Next</button>
-      </div>
-    </div>
+<div *ngIf="isLoading" class="overlay">
+  <mat-progress-spinner
+    class="full-screen-spinner"
+    diameter="50"
+    mode="indeterminate"
+  ></mat-progress-spinner>
+</div>
+
+<div class="example-container" style="padding-top: 2vw">
+  <div class="search-container" style="color: black">
+    <mat-form-field appearance="fill" style="color: black; margin-top: 1vw">
+      <mat-label>Search by Last Name</mat-label>
+      <input matInput [formControl]="searchInputControl" />
+      <button
+        mat-button
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        *ngIf="searchInputControl.value"
+        (click)="clearSearchInput()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
-  
+
+  <mat-table #table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="no">
+      <mat-header-cell *matHeaderCellDef>No.</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.no }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="email">
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.email }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+      <mat-cell *matCellDef="let user"
+        >{{ user.civility }} {{ user.last_name }}
+        {{ user.first_name }}</mat-cell
+      >
+    </ng-container>
+
+    <ng-container matColumnDef="sex">
+      <mat-header-cell *matHeaderCellDef>Sex</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.sex }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.status }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef>Position</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.position }}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="count_document">
+      <mat-header-cell *matHeaderCellDef>Count Document</mat-header-cell>
+      <mat-cell *matCellDef="let user">{{ user.count_document }}</mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+  </mat-table>
+  <mat-paginator
+    [pageSizeOptions]="[5, 10, 15]"
+    [pageSize]="limit"
+    [length]="totalItems"
+    (page)="onPageChange($event)"
+  >
+  </mat-paginator>
+</div>
