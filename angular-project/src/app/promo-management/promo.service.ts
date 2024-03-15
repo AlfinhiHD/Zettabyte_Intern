@@ -29,14 +29,15 @@ export class PromoService {
     `;
 
     return this.apollo
-      .watchQuery<any>({
+      .query<any>({
         query: GetAllPromos,
+        fetchPolicy: 'network-only',
         variables: {
           pagination: pagination,
           filter: filter,
         },
       })
-      .valueChanges.pipe(map((result) => result.data.GetAllPromos));
+      .pipe(map((result) => result.data.GetAllPromos));
   }
 
   createPromo(promoInput: PromoType): Observable<any> {

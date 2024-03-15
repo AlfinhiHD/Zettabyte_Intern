@@ -6,6 +6,21 @@ import { Router } from '@angular/router';
 import { promoFormInit } from '../model/promoFormInit';
 import Swal from 'sweetalert2';
 import { PromoType } from '../model/promo';
+import { Apollo, gql } from 'apollo-angular';
+
+const GetAllPromos = gql`
+query GetAllPromos($pagination: PaginationInput, $filter: PromoFilter) {
+  GetAllPromos(pagination: $pagination, filter: $filter) {
+    _id
+    ref
+    title
+    sub_title
+    description
+    image_url
+    count_document
+  }
+}
+`;
 
 @Component({
   selector: 'app-promo-form',
@@ -21,12 +36,12 @@ export class PromoFormComponent implements OnInit {
     private fb: FormBuilder,
     private promoService: PromoService,
     private router: Router,
-    private dialogRef: MatDialogRef<PromoFormComponent>
+    private dialogRef: MatDialogRef<PromoFormComponent>,
+    private apollo: Apollo
   ) {}
 
-  ngOnInit(): void {
-   
 
+  ngOnInit(): void {
     this.promoForm = promoFormInit(this.fb);
 
     if (!this.data?._id) {
@@ -34,8 +49,8 @@ export class PromoFormComponent implements OnInit {
     }
 
     if (this.data?._id) {
-      this.id = this.data._id
-      this.getOnePromo(this.data._id)
+      this.id = this.data._id;
+      this.getOnePromo(this.data._id);
     }
   }
 
@@ -61,20 +76,28 @@ export class PromoFormComponent implements OnInit {
         console.error('Gagal mengedit promo:', error);
         Swal.fire('Error!', error.message, 'error');
       }
-    )
+    );
   }
 
   createPromo(promoInput: PromoType): void {
-    this.promoService.createPromo(promoInput).subscribe(
-      (result) => {
-        console.log('Promo add:', result);
+    this.promoService.createPromo(promoInput).subscribe({
+      next: (next) => {
+        console.log('Promo add:' + next);
         Swal.fire('Success!', 'Promo berhasil dibuat.', 'success');
+
+        this.apollo.watchQuery<any>({
+          query: GetAllPromos,
+          fetchPolicy: 'network-only',
+          variables: {
+            pagination: {limit: 10, page: 0},
+          },
+        })
       },
-      (error) => {
+      error: (error) => {
         console.error('Gagal membuat promo:', error);
         Swal.fire('Error!', error.message, 'error');
-      }
-    );
+      },
+    });
   }
 
   onSubmit(): void {

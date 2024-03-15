@@ -30,8 +30,8 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
         this.searchByTitle(value);
         this.isLoading = true;
       });
-  
-      this.isLoading = true;
+
+    this.isLoading = true;
     this.promoSubscription = this.promoService
       .getAllPromo(
         { limit: this.limit, page: this.page },
