@@ -1,0 +1,7 @@
+{
+    "CHARACTER_FORM": {
+      "POPULARITY": "Popularity",
+      "POPULARITY_HINT": "Hint: Max 100",
+      "POPULARITY_REQUIRED": "Please input a valid popularity number (max: 100)"
+    }
+  }

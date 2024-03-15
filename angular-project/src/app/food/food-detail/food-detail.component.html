@@ -1,1 +1,18 @@
-<p>food-detail works!</p>
+<div class="container">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>{{food.name}}</mat-card-title>
+            <mat-card-subtitle>{{food.type}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="food.image.cover" alt="{{food.name}}">
+        <mat-card-content>
+            <p>{{food.description}}</p>
+            <div *ngFor="let ingredient of food.ingredients">
+                <p>{{ingredient.name}} - {{ingredient.amount}}</p>
+            </div>
+            <p>Price: {{food.price}}</p>
+            <p>Stock: {{food.stock}}</p>
+            <p>Popularity: {{food.popularity}}</p>
+        </mat-card-content>
+    </mat-card>
+</div>

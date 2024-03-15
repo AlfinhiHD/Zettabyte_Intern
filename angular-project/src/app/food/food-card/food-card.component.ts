@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { FoodType } from '../model/foodType';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-food-card',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FoodCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() food: FoodType
+
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  goToDetailFood(id: string) {
+    this.router.navigate(['detail', id]);
   }
 
 }

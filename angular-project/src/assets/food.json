@@ -1,0 +1,92 @@
+[
+    {
+        "_id": "5362e647-3ab2-4e96-8e68-aa541b38e142",
+        "name": "Sushi",
+        "type": "Sushi",
+        "description": "Potongan kecil nasi beras dengan irisan ikan, udang, atau telur di atasnya.",
+        "price": 10,
+        "image": {
+            "cover": "sushi-cover.jpg",
+            "preview": "sushi-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Nasi Beras", "type": "Nasi", "price": 2, "amount": "100g" },
+            { "name": "Ikan", "type": "Laut", "price": 5, "amount": "50g" },
+            { "name": "Alga Laut", "type": "Sayuran", "price": 1, "amount": "5g" }
+        ],
+        "stock": 100,
+        "popularity": 95
+    },
+    {
+        "_id": "b5a0740a-484f-49f2-90ae-b6d21887f36d",
+        "name": "Ramen",
+        "type": "Ramen",
+        "description": "Mie Jepang yang disajikan dalam kuah kaldu ayam atau babi dengan topping seperti irisan daging babi, telur, dan rumput laut.",
+        "price": 8,
+        "image": {
+            "cover": "ramen-cover.jpg",
+            "preview": "ramen-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Mie", "type": "Tepung", "price": 2, "amount": "100g" },
+            { "name": "Kaldu Ayam", "type": "Kaldu", "price": 3, "amount": "200ml" },
+            { "name": "Daging Babi", "type": "Daging", "price": 4, "amount": "100g" }
+        ],
+        "stock": 80,
+        "popularity": 85
+    },
+    {
+        "_id": "c83ff5b3-38de-4d42-b65f-7fcf68f2700d",
+        "name": "Tempura",
+        "type": "Tempura",
+        "description": "Makanan gorengan Jepang yang terdiri dari udang, sayuran, atau seafood lainnya yang dilapisi dengan adonan tepung dan digoreng hingga renyah.",
+        "price": 12,
+        "image": {
+            "cover": "tempura-cover.jpg",
+            "preview": "tempura-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Udang", "type": "Laut", "price": 6, "amount": "100g" },
+            { "name": "Sayuran", "type": "Sayuran", "price": 3, "amount": "200g" },
+            { "name": "Adonan Tepung", "type": "Tepung", "price": 2, "amount": "50g" }
+        ],
+        "stock": 70,
+        "popularity": 80
+    },
+    {
+        "_id": "e7e5c524-741e-4bbd-af45-40b5c7e0c2f5",
+        "name": "Gyoza",
+        "type": "Gyoza",
+        "description": "Dumpling Jepang yang terbuat dari adonan tipis yang diisi dengan campuran daging cincang dan sayuran.",
+        "price": 6,
+        "image": {
+            "cover": "gyoza-cover.jpg",
+            "preview": "gyoza-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Adonan Tipis", "type": "Tepung", "price": 2, "amount": "100g" },
+            { "name": "Daging Cincang", "type": "Daging", "price": 3, "amount": "50g" },
+            { "name": "Sayuran", "type": "Sayuran", "price": 1, "amount": "30g" }
+        ],
+        "stock": 90,
+        "popularity": 75
+    },
+    {
+        "_id": "23d63db9-f8a2-4940-bab8-23e148db6d08",
+        "name": "Takoyaki",
+        "type": "Takoyaki",
+        "description": "Bola-bola kecil berisi gurita yang dibuat dari adonan tepung dan digoreng.",
+        "price": 7,
+        "image": {
+            "cover": "takoyaki-cover.jpg",
+            "preview": "takoyaki-preview.jpg"
+        },
+        "ingredients": [
+            { "name": "Gurita", "type": "Laut", "price": 5, "amount": "50g" },
+            { "name": "Adonan Tepung", "type": "Tepung", "price": 1, "amount": "50g" },
+            { "name": "Saus Takoyaki", "type": "Saus", "price": 1, "amount": "30g" }
+        ],
+        "stock": 85,
+        "popularity": 70
+    }
+]
