@@ -1,18 +1,32 @@
 <div class="container">
-    <mat-card>
-        <mat-card-header>
-            <mat-card-title>{{food.name}}</mat-card-title>
-            <mat-card-subtitle>{{food.type}}</mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image [src]="food.image.cover" alt="{{food.name}}">
-        <mat-card-content>
-            <p>{{food.description}}</p>
-            <div *ngFor="let ingredient of food.ingredients">
-                <p>{{ingredient.name}} - {{ingredient.amount}}</p>
-            </div>
-            <p>Price: {{food.price}}</p>
-            <p>Stock: {{food.stock}}</p>
-            <p>Popularity: {{food.popularity}}</p>
-        </mat-card-content>
-    </mat-card>
+  <div class="food-details">
+    <button mat-raised-button color="primary" (click)="goBack()">Back</button>
+    <h2>{{ food.name }}</h2>
+    <p class="food-type">{{ food.type }}</p>
+    <img class="food-image" [src]="food.image.cover" alt="{{ food.name }}" />
+    <div class="description">
+      <p>{{ food.description }}</p>
+      <div *ngFor="let ingredient of food.ingredients">
+        <p>{{ ingredient.name }} - {{ ingredient.amount }}</p>
+      </div>
+    </div>
+    <div class="details">
+      <p><strong>Price:</strong> ${{ food.price }}</p>
+      <p><strong>Stock:</strong> {{ food.stock }}</p>
+      <p><strong>Popularity:</strong> {{ food.popularity }}</p>
+    </div>
+    <div class="actions">
+      <button
+        mat-raised-button
+        color="primary"
+        [routerLink]="['/food/form']"
+        [queryParams]="{ id: food._id }"
+      >
+        Edit
+      </button>
+      <button mat-raised-button color="warn" (click)="onDeleteFood(food._id)">
+        Delete
+      </button>
+    </div>
+  </div>
 </div>

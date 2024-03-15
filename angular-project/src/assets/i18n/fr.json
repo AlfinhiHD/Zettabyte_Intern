@@ -1,5 +1,5 @@
 {
-    "CHARACTER_FORM": {
+    "FOOD_FORM": {
       "POPULARITY": "Popularité",
       "POPULARITY_HINT": "Indice: Max 100",
       "POPULARITY_REQUIRED": "Veuillez saisir un nombre de popularité valide (max: 100)"

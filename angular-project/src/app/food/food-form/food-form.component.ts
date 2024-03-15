@@ -42,7 +42,7 @@ export class FoodFormComponent implements OnInit {
     
 
     if (this.id) {
-      const food = this.foodService.getfoodById(this.id);
+      const food = this.foodService.getFoodById(this.id);
       if (food) {
         this.foodForm.patchValue(food);
         this.setArrayData(food.ingredients);
@@ -68,7 +68,7 @@ export class FoodFormComponent implements OnInit {
           this.fb.group({
             name: [ingredients.name, Validators.required],
             type: [ingredients.type, Validators.required],
-            zipcode: [
+            price: [
               ingredients.price,
               [Validators.required, Validators.pattern(/^[0-9]*$/)],
             ],
@@ -83,9 +83,10 @@ export class FoodFormComponent implements OnInit {
     const ingredients = this.foodForm.get('ingredients') as FormArray;
     ingredients.push(
       this.fb.group({
-        street: ['', Validators.required],
-        city: ['', Validators.required],
-        zipcode: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+        name: ['', Validators.required],
+        type: ['', Validators.required],
+        price: ['', [Validators.required, Validators.pattern(/^[0-9]*$/)]],
+        amount: ['', Validators.required],
       })
     );
   }
@@ -125,15 +126,13 @@ export class FoodFormComponent implements OnInit {
 
       formData.id = uuidv4();
 
-      console.log(formData.id);
-
       successMessage = 'Successfully added new data!';
       confirmButtonText = 'Yes, add it!';
-      this.foodService.addNewfood(formData);
+      this.foodService.addNewFood(formData);
     } else {
       successMessage = 'Your data has been edited!';
       confirmButtonText = 'Yes, edit it!';
-      this.foodService.updatefood(formData);
+      this.foodService.updateFood(formData);
     }
 
     Swal.fire({

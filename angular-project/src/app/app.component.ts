@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'apollo-client-learning';
-  isSidenavOpen: boolean = false;
+  isSidenavOpen: boolean = true;
 
   toggleSidenav() {
     this.isSidenavOpen = !this.isSidenavOpen;

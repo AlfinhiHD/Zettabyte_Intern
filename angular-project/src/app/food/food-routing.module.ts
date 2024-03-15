@@ -14,7 +14,7 @@ const routes: Routes = [
     component: FoodFormComponent
   },
   {
-    path: 'detail',
+    path: 'detail/:id',
     component: FoodDetailComponent
   }
 

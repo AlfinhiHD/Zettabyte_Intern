@@ -16,8 +16,8 @@ export class FoodCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  goToDetailFood(id: string) {
-    this.router.navigate(['detail', id]);
-  }
+    goToDetailFood(id: string) {
+      this.router.navigate(['food/detail', id]);
+    }
 
 }

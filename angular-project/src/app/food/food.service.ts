@@ -13,10 +13,10 @@ export class FoodService {
   food$ = this.food.asObservable();
 
   constructor(private http: HttpClient) {
-    this.getfoods();
+    this.getFoods();
   }
 
-  getfoods(): void {
+  getFoods(): void {
     this.http.get<FoodType[]>('../../../assets/food.json').subscribe({
       next: (foods: FoodType[]) => {
         console.log(foods);
@@ -28,11 +28,11 @@ export class FoodService {
     });
   }
 
-  getfoodById(id: string) {
+  getFoodById(id: string) {
     return this.food.getValue().find((food) => food._id === id);
   }
 
-  deletefood(id: string) {
+  deleteFood(id: string) {
     const foodList = this.food.getValue();
     const index = foodList.findIndex((food) => food._id === id);
     if (index !== -1) {
@@ -41,13 +41,13 @@ export class FoodService {
     }
   }
 
-  addNewfood(newfood: FoodType) {
+  addNewFood(newfood: FoodType) {
     console.log(newfood);
     
     this.food.next([...this.food.getValue(), newfood]);
   }
 
-  updatefood(updatedfood: FoodType) {
+  updateFood(updatedfood: FoodType) {
 
     const food = this.food.getValue();
     const index = food.findIndex((food) => food._id === updatedfood._id);
