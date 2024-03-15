@@ -9,14 +9,13 @@
   <div class="action-wrapper">
     <button
       mat-raised-button
-      color="primary"
-      style="margin-bottom: 3vw; margin-top: 2vw"
+      style="margin-bottom: 3vw; margin-top: 2vw; background-color: #f2d1b5"
       (click)="openAddDialog()"
     >
       Add Promo
     </button>
 
-    <mat-form-field appearance="fill" style="color: black; margin-top: 1vw">
+    <mat-form-field appearance="fill" style="background-color: #f2d1b5; color: black; margin-top: 1vw">
       <mat-label>Search by Title</mat-label>
       <input matInput [formControl]="searchInputControl" />
       <button

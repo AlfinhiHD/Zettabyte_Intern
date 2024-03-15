@@ -19,7 +19,6 @@ export class UserComponent implements OnInit {
     'sex',
     'status',
     'position',
-    'count_document',
   ];
 
   searchInputControl = new FormControl('');

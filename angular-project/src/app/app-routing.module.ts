@@ -18,7 +18,7 @@ const routes: Routes = [
     path: 'food',
     loadChildren: () => import('./food/food.module').then((m) => m.FoodModule),
   },
-  // { path: '**', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'home', pathMatch: 'full' },
 ];
 
 @NgModule({
