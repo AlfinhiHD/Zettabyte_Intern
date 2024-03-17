@@ -36,7 +36,7 @@
     style="display: flex; flex-wrap: wrap; justify-content: space-around"
   >
     <div *ngFor="let promo of Promos">
-      <app-promo-card [promo]="promo"></app-promo-card>
+      <app-promo-card [promo]="promo" (promoDeleted)="getAllPromo()"></app-promo-card>
     </div>
   </div>
 </div>

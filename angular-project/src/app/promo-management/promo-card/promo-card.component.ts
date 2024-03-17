@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PromoService } from '../promo.service';
 import Swal from 'sweetalert2';
 import { MatDialog } from '@angular/material/dialog';
@@ -11,6 +11,7 @@ import { PromoDetailComponent } from '../promo-detail/promo-detail.component';
 })
 export class PromoCardComponent implements OnInit {
   @Input() promo: any;
+  @Output() promoDeleted: EventEmitter<any> = new EventEmitter();
 
   constructor(private promoService: PromoService, private dialog: MatDialog) {}
 
@@ -40,6 +41,7 @@ export class PromoCardComponent implements OnInit {
               'Promo telah dihapus.',
               'success'
             );
+            this.promoDeleted.emit();
           },
           (error) => {
             console.error('Gagal menghapus promo:', error);

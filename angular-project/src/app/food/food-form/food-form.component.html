@@ -1,19 +1,16 @@
-<div style="display: flex; justify-content: space-between">
-  <div style="display: flex">
-    <h3 style="margin-right: 1vw">FR</h3>
-
-    <mat-slide-toggle [(ngModel)]="isFrench" (change)="toggleLanguage()">
-    </mat-slide-toggle>
-
-    <h3 style="margin-left: 1vw">EN</h3>
-  </div>
+<div class="language-toggle">
+  <h3>FR</h3>
+  <mat-slide-toggle
+    [(ngModel)]="isFrench"
+    (change)="toggleLanguage()"
+  ></mat-slide-toggle>
+  <h3>EN</h3>
 </div>
 
-<form [formGroup]="foodForm" (ngSubmit)="onSubmit()" style="background-color: brown">
-  <div class="form-container mat-elevation-z8" style="background-color: white">
+<form [formGroup]="foodForm" (ngSubmit)="onSubmit()" class="food-form">
+  <div class="form-container mat-elevation-z8">
     <mat-form-field appearance="fill">
       <mat-label>{{ "FOOD_FORM.NAME" | translate }}</mat-label>
-      <mat-hint>{{ "FOOD_FORM.NAME_HINT" | translate }}</mat-hint>
       <input
         matInput
         formControlName="name"
@@ -34,7 +31,6 @@
           formControlName="cover"
           placeholder="{{ 'FOOD_FORM.IMAGE_COVER_PLACEHOLDER' | translate }}"
         />
-        <mat-hint>{{ "FOOD_FORM.IMAGE_COVER_HINT" | translate }}</mat-hint>
         <mat-error *ngIf="foodForm.get('image.cover').hasError('required')">
           {{ "FOOD_FORM.IMAGE_COVER" | translate }} is required
         </mat-error>
@@ -112,6 +108,7 @@
           let i = index
         "
         [formGroupName]="i"
+        class="ingredient-group"
       >
         <mat-form-field appearance="fill">
           <mat-label>Name</mat-label>
@@ -133,7 +130,12 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Price</mat-label>
-          <input matInput formControlName="price" placeholder="Enter price" />
+          <input
+            matInput
+            formControlName="price"
+            type="number"
+            placeholder="Enter price"
+          />
           <mat-error
             *ngIf="food.get('price').invalid && food.get('price').touched"
             >Price is required and must be a valid number</mat-error
@@ -142,7 +144,12 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Amount</mat-label>
-          <input matInput formControlName="amount" placeholder="Enter amount" />
+          <input
+            matInput
+            formControlName="amount"
+            type="number"
+            placeholder="Enter amount"
+          />
           <mat-error
             *ngIf="food.get('amount').invalid && food.get('amount').touched"
             >Amount is required and must be a valid number</mat-error
@@ -151,7 +158,7 @@
 
         <button
           mat-raised-button
-          style="margin-bottom: 4vw"
+          style="margin-bottom: 10px"
           type="button"
           (click)="removeField(i)"
           [disabled]="isFirstField(i)"
@@ -163,12 +170,12 @@
 
     <button
       mat-raised-button
+      style="margin-bottom: 10px"
       type="button"
       (click)="addField()"
-      style="margin-bottom: 4vw"
     >
       Add Ingredients
     </button>
   </div>
-  <button mat-raised-button type="button" type="submit">Edit</button>
+  <button mat-raised-button type="submit">Edit</button>
 </form>

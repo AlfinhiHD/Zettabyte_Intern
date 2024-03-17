@@ -6,8 +6,8 @@
         "description": "Mie Jepang yang disajikan dalam kuah kaldu miso dengan topping seperti irisan daging ayam, telur, dan rumput laut.",
         "price": 9,
         "image": {
-            "cover": "miso-ramen-cover.jpg",
-            "preview": "miso-ramen-preview.jpg"
+            "cover": "https://genkisushi.co.id/media/2020/05/Chicken-Soup-Ramen.png",
+            "preview": "https://www.souschef.co.uk/cdn/shop/articles/shutterstock_697241275_tonkotsu_ramen-landscape.jpg?"
         },
         "ingredients": [
             { "name": "Mie", "type": "Tepung", "price": 2, "amount": "100g" },

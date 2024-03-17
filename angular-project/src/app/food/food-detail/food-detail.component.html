@@ -1,11 +1,13 @@
 <div class="container">
   <div class="food-details">
-    <button mat-raised-button color="primary" (click)="goBack()">Back</button>
     <h2>{{ food.name }}</h2>
     <p class="food-type">{{ food.type }}</p>
-    <img class="food-image" [src]="food.image.cover" alt="{{ food.name }}" />
+    <img class="food-image" [src]="food.image.preview" alt="{{ food.name }}" style="height: 10vw; width: fit-content;"/>
     <div class="description">
+      <h3 style="font-weight: 600">Description :</h3>
       <p>{{ food.description }}</p>
+
+      <h3 style="font-weight: 600">Ingredients :</h3>
       <div *ngFor="let ingredient of food.ingredients">
         <p>{{ ingredient.name }} - {{ ingredient.amount }}</p>
       </div>

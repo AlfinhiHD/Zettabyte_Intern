@@ -29,7 +29,10 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       .subscribe((value) => {
         this.searchByTitle(value);
       });
+    this.getAllPromo();
+  }
 
+  getAllPromo() {
     this.isLoading = true;
     this.promoSubscription = this.promoService
       .getAllPromo(
@@ -37,10 +40,14 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
         { title: this.title }
       )
       .subscribe({
-        next: (promo: any) => {
-          console.log(promo);
-          this.Promos = promo;
-          this.isLoading = false;
+        next: (promo: any[]) => {
+          if (promo.length === 0) {
+            this.isLoading = false;
+          } else {
+            this.Promos = promo;
+            this.isLoading = false;
+          }
+
         },
         error: (error) => {
           console.error('Error fetching promo:', error);
@@ -55,8 +62,10 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log('Form data:', result);
+      console.log('dialog result:', result);
+      if (result === 'success') {
+        this.getAllPromo();
+      }
     });
   }
 
@@ -65,6 +74,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   }
 
   searchByTitle(searchTerm: string): void {
+    this.isLoading = true;
     this.promoSubscription = this.promoService
       .getAllPromo(
         { limit: this.limit, page: this.page },
@@ -72,7 +82,12 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       )
       .subscribe({
         next: (promo: any) => {
-          this.Promos = promo;
+          if (promo.length === 0) {
+            this.isLoading = false;
+          } else {
+            this.Promos = promo;
+            this.isLoading = false;
+          }
         },
         error: (error) => {
           console.error('Error fetching promo:', error);

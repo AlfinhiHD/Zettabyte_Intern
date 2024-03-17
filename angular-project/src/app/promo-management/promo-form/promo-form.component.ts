@@ -9,17 +9,17 @@ import { PromoType } from '../model/promo';
 import { Apollo, gql } from 'apollo-angular';
 
 const GetAllPromos = gql`
-query GetAllPromos($pagination: PaginationInput, $filter: PromoFilter) {
-  GetAllPromos(pagination: $pagination, filter: $filter) {
-    _id
-    ref
-    title
-    sub_title
-    description
-    image_url
-    count_document
+  query GetAllPromos($pagination: PaginationInput, $filter: PromoFilter) {
+    GetAllPromos(pagination: $pagination, filter: $filter) {
+      _id
+      ref
+      title
+      sub_title
+      description
+      image_url
+      count_document
+    }
   }
-}
 `;
 
 @Component({
@@ -39,7 +39,6 @@ export class PromoFormComponent implements OnInit {
     private dialogRef: MatDialogRef<PromoFormComponent>,
     private apollo: Apollo
   ) {}
-
 
   ngOnInit(): void {
     this.promoForm = promoFormInit(this.fb);
@@ -68,8 +67,8 @@ export class PromoFormComponent implements OnInit {
 
   updatePromo(id: string, promoUpdated: PromoType): void {
     this.promoService.updatePromo(id, promoUpdated).subscribe(
-      (result) => {
-        console.log('Promo edited:', result);
+      (next) => {
+        console.log('Promo edited:', next);
         Swal.fire('Success!', 'Promo berhasil diedit.', 'success');
       },
       (error) => {
@@ -83,15 +82,7 @@ export class PromoFormComponent implements OnInit {
     this.promoService.createPromo(promoInput).subscribe({
       next: (next) => {
         console.log('Promo add:' + next);
-        Swal.fire('Success!', 'Promo berhasil dibuat.', 'success');
-
-        this.apollo.watchQuery<any>({
-          query: GetAllPromos,
-          fetchPolicy: 'network-only',
-          variables: {
-            pagination: {limit: 10, page: 0},
-          },
-        })
+        Swal.fire('Success!', 'Promo berhasil dibuat.', 'success')
       },
       error: (error) => {
         console.error('Gagal membuat promo:', error);
@@ -136,13 +127,16 @@ export class PromoFormComponent implements OnInit {
 
         if (!this.id) {
           this.createPromo(formData);
+          this.dialogRef.close("success");
         } else {
           this.updatePromo(this.id, formData);
+          this.dialogRef.close("success");
         }
 
-        this.dialogRef.close();
+        
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire('Cancelled', 'Your form is safe :)', 'error');
+        
       }
     });
   }
