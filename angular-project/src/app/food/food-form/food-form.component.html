@@ -29,6 +29,20 @@
       </mat-error>
     </mat-form-field>
 
+    <mat-form-field appearance="fill">
+      <mat-label>{{ "FOOD_FORM.TYPE" | translate }}</mat-label>
+      <input
+        matInput
+        formControlName="type"
+        placeholder="{{ 'FOOD_FORM.TYPE_PLACEHOLDER' | translate }}"
+      />
+      <mat-error
+        *ngIf="foodForm.get('type').invalid && foodForm.get('type').touched"
+      >
+        {{ "FOOD_FORM.TYPE" | translate }} is required
+      </mat-error>
+    </mat-form-field>
+
     <div formGroupName="image" class="image-group">
       <mat-form-field appearance="fill" class="image-cover-food-input">
         <mat-label>{{ "FOOD_FORM.IMAGE_COVER" | translate }}</mat-label>

@@ -4,10 +4,11 @@ export const FoodFormInit = (fb: FormBuilder): FormGroup => {
   return fb.group({
     _id: [''],
     name: ['', Validators.required],
+    type: ['', Validators.required],
     description: ['', Validators.required],
-    price: [null, Validators.required],
+    price: [null, [Validators.required, Validators.pattern(/^[0-9]*$/)]],
     image: fb.group({
-      cover: ['', [Validators.required, Validators.pattern(/\.(gif|jpe?g|tiff|png|webp|bmp)$/i)]],
+      cover: ['', [Validators.required, Validators.pattern(/\.(gif|jpe?g|tiff|png|webp|bmp|jpe|jpg?)$/i)]],
       preview: ['', [Validators.required, Validators.pattern(/\.(gif|jpe?g|tiff|png|webp|bmp)$/i)]],
     }),
     ingredients: fb.array([

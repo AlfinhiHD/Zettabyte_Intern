@@ -3,6 +3,8 @@
     "NAME": "Nom",
     "NAME_PLACEHOLDER": "Entrez le nom",
     "NAME_REQUIRED": "Le nom est requis",
+    "TYPE": "Type",
+    "TYPE_PLACEHOLDER": "Entrez le type",
     "IMAGE_COVER": "Image de couverture",
     "IMAGE_COVER_PLACEHOLDER": "Entrez l'URL de l'image de couverture",
     "IMAGE_PREVIEW": "Image de prévisualisation",
@@ -29,6 +31,7 @@
   },
   "BUTTON": {
     "EDIT": "Modifier",
+    "ADD": "Ajouter",
     "ADD_INGREDIENTS": "Ajouter des ingrédients",
     "REMOVE_INGREDIENTS": "Supprimer les ingrédients"
   }

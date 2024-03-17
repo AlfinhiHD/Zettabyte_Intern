@@ -1,5 +1,10 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #sidenav mode="side" [opened]="isSidenavOpen" class="sidenav-navigation">
+  <mat-sidenav
+    #sidenav
+    mode="side"
+    [opened]="isSidenavOpen"
+    class="sidenav-navigation"
+  >
     <img
       style="
         width: 8vw;
@@ -9,41 +14,38 @@
       "
       src="https://i.pinimg.com/originals/c0/fb/ed/c0fbedf13d4d6f0540c4b3f0ecbb4e37.png"
     />
+
     <mat-nav-list>
       <a style="font-weight: 500" mat-list-item routerLink="/home">Home</a>
     </mat-nav-list>
     <mat-nav-list>
-      <a style="font-weight: 500" mat-list-item routerLink="/users">Customers</a>
+      <a style="font-weight: 500" mat-list-item routerLink="/food">Food</a>
     </mat-nav-list>
     <mat-nav-list>
       <a style="font-weight: 500" mat-list-item routerLink="/promo">Promo</a>
     </mat-nav-list>
     <mat-nav-list>
-      <a style="font-weight: 500" mat-list-item routerLink="/food">Food</a>
+      <a style="font-weight: 500" mat-list-item routerLink="/users"
+        >Customers</a
+      >
     </mat-nav-list>
   </mat-sidenav>
 
   <mat-sidenav-content>
     <div class="navbar-content mat-elevation-z8">
       <button
-        style="margin-left: 1vw; color: #f2d1b5;"
+        style="margin-left: 1vw; color: #f2d1b5"
         mat-icon-button
         (click)="toggleSidenav()"
       >
         <mat-icon style="font-size: 2vw">menu</mat-icon>
       </button>
-      <h1
-        style="
-          font-weight: 500;
-          margin-right: 2vw;
-          padding-top: 1vw;
-        "
-      >
+      <h1 style="font-weight: 500; margin-right: 2vw; padding-top: 1vw">
         Ichiraku Ramen!
       </h1>
     </div>
 
-    <div style="color: #f2d1b5;">
+    <div style="color: #f2d1b5">
       <div
         class="mat-elevation-z8"
         style="
