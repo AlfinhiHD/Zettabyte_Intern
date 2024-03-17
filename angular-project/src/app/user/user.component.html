@@ -93,7 +93,12 @@
   </mat-table>
 
   <ng-template #notFound>
-    <div class="not-found-message">User Not Found</div>
+    <div class="not-found-message">
+      <div class="flex-container">
+        <mat-icon>error</mat-icon>
+        <span>User Not Found</span>
+      </div>
+    </div>
   </ng-template>
 
   <mat-paginator
