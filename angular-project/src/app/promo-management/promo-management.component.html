@@ -9,16 +9,13 @@
   <div class="action-wrapper">
     <button
       mat-raised-button
-      style="margin-bottom: 3vw; margin-top: 2vw; background-color: #f2d1b5"
+      class="add-promo-button"
       (click)="openAddDialog()"
     >
       Add Promo
     </button>
 
-    <mat-form-field
-      appearance="fill"
-      style="background-color: #f2d1b5; color: black; margin-top: 1vw"
-    >
+    <mat-form-field class="search-promo-field" appearance="fill">
       <mat-label>Search by Title</mat-label>
       <input matInput [formControl]="searchInputControl" />
       <button
@@ -34,10 +31,7 @@
     </mat-form-field>
   </div>
 
-  <div
-    *ngIf="Promos.length > 0; else notFound"
-    style="display: flex; flex-wrap: wrap; justify-content: space-around"
-  >
+  <div *ngIf="Promos.length > 0; else notFound" class="promo-container">
     <div *ngFor="let promo of Promos">
       <app-promo-card
         [promo]="promo"
@@ -48,11 +42,12 @@
   <ng-template #notFound>
     <div class="not-found-message">User Not Found</div>
   </ng-template>
-  <div class="button-wrapper">
+
+  <div class="pagination-wrapper">
     <div class="manual-limit" style="color: black">
       <mat-form-field appearance="outline" class="manual-limit">
         <mat-label style="color: black">Show:</mat-label>
-        <mat-select [(ngModel)]="limit" (ngModelChange)="updateLimit()">
+        <mat-select [(ngModel)]="limit" (ngModelChange)="updateLimit()" >
           <mat-option [value]="5">5</mat-option>
           <mat-option [value]="10">10</mat-option>
           <mat-option [value]="15">15</mat-option>

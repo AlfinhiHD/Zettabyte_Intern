@@ -7,8 +7,10 @@
   margin-top: 2vw;
 }
 
-mat-tab {
-  font-size: larger;
+.food-tab-group {
+  background-color: #e1b486;
+  padding: 3vw;
+  border-radius: 2vw;
 }
 
 ::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
