@@ -15,7 +15,10 @@
       Add Promo
     </button>
 
-    <mat-form-field appearance="fill" style="background-color: #f2d1b5; color: black; margin-top: 1vw">
+    <mat-form-field
+      appearance="fill"
+      style="background-color: #f2d1b5; color: black; margin-top: 1vw"
+    >
       <mat-label>Search by Title</mat-label>
       <input matInput [formControl]="searchInputControl" />
       <button
@@ -32,11 +35,50 @@
   </div>
 
   <div
-    *ngIf="Promos.length"
+    *ngIf="Promos.length > 0; else notFound"
     style="display: flex; flex-wrap: wrap; justify-content: space-around"
   >
     <div *ngFor="let promo of Promos">
-      <app-promo-card [promo]="promo" (promoDeleted)="getAllPromo()"></app-promo-card>
+      <app-promo-card
+        [promo]="promo"
+        (promoDeleted)="getAllPromo()"
+      ></app-promo-card>
+    </div>
+  </div>
+  <ng-template #notFound>
+    <div class="not-found-message">User Not Found</div>
+  </ng-template>
+  <div class="button-wrapper">
+    <div class="manual-limit" style="color: black">
+      <mat-form-field appearance="outline" class="manual-limit">
+        <mat-label style="color: black">Show:</mat-label>
+        <mat-select [(ngModel)]="limit" (ngModelChange)="updateLimit()">
+          <mat-option [value]="5">5</mat-option>
+          <mat-option [value]="10">10</mat-option>
+          <mat-option [value]="15">15</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <div class="manual-pagination">
+      <button
+        mat-button
+        style="color: black"
+        (click)="previousPage()"
+        [disabled]="page === 0"
+      >
+        Previous
+      </button>
+      <span
+        style="
+          color: black;
+          font-weight: 600;
+          padding-left: 1vw;
+          padding-right: 1vw;
+        "
+        >{{ page + 1 }}
+      </span>
+      <button mat-button style="color: black" (click)="nextPage()">Next</button>
     </div>
   </div>
 </div>

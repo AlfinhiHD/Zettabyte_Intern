@@ -17,7 +17,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   searchInputControl = new FormControl('');
 
   isLoading: boolean = false;
-  limit: number = 10;
+  limit: number = 5;
   page: number = 0;
   title: string = '';
 
@@ -27,7 +27,8 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
     this.searchInputControl.valueChanges
       .pipe(debounceTime(1500))
       .subscribe((value) => {
-        this.searchByTitle(value);
+        this.title = value;
+        this.getAllPromo();
       });
     this.getAllPromo();
   }
@@ -42,12 +43,12 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       .subscribe({
         next: (promo: any[]) => {
           if (promo.length === 0) {
+            this.Promos = promo
             this.isLoading = false;
           } else {
             this.Promos = promo;
             this.isLoading = false;
           }
-
         },
         error: (error) => {
           console.error('Error fetching promo:', error);
@@ -73,26 +74,20 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
     this.searchInputControl.setValue('');
   }
 
-  searchByTitle(searchTerm: string): void {
-    this.isLoading = true;
-    this.promoSubscription = this.promoService
-      .getAllPromo(
-        { limit: this.limit, page: this.page },
-        { title: searchTerm }
-      )
-      .subscribe({
-        next: (promo: any) => {
-          if (promo.length === 0) {
-            this.isLoading = false;
-          } else {
-            this.Promos = promo;
-            this.isLoading = false;
-          }
-        },
-        error: (error) => {
-          console.error('Error fetching promo:', error);
-        },
-      });
+  nextPage(): void {
+    this.page++;
+    this.getAllPromo();
+  }
+
+  previousPage(): void {
+    if (this.page > 0) {
+      this.page--;
+      this.getAllPromo();
+    }
+  }
+
+  updateLimit(): void {
+    this.getAllPromo();
   }
 
   ngOnDestroy(): void {

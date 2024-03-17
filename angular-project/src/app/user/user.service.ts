@@ -15,7 +15,8 @@ export class UserService {
       last_name: string;
       status: string;
     },
-    last_name: string
+    last_name: string,
+    user_status: string
   ): Observable<any[]> {
     
     console.log(pagination);
@@ -28,6 +29,10 @@ export class UserService {
 
     if (last_name) {
       variables['last_name'] = last_name;
+    }
+
+    if (user_status) {
+      variables['user_status'] = user_status;
     }
 
     if (sorting && (sorting.last_name || sorting.status)) {
@@ -46,11 +51,13 @@ export class UserService {
         $pagination: PaginationInput
         $sorting: UserSorting
         $last_name: String
+        $user_status: EnumUserStatus
       ) {
         GetAllUsers(
           pagination: $pagination
           sorting: $sorting
           last_name: $last_name
+          user_status: $user_status
         ) {
           _id
           email
@@ -60,6 +67,7 @@ export class UserService {
           sex
           status
           position
+          user_status
           count_document
         }
       }
@@ -68,7 +76,7 @@ export class UserService {
     return this.apollo
       .query<any>({
         query: GetAllUsers,
-        variables: variables, // Menggunakan variabel yang sudah dibuat
+        variables: variables,
       })
       .pipe(map((result) => result.data.GetAllUsers));
   }

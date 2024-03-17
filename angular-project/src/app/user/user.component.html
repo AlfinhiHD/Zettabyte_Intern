@@ -11,6 +11,21 @@
     class="search-container"
     style="background-color: #f2d1b5; padding-left: 2vw"
   >
+    <mat-form-field
+      style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+    >
+      <mat-label>User Status</mat-label>
+      <mat-select
+        [(ngModel)]="userStatusValue"
+        (ngModelChange)="filterUserStatus()"
+      >
+        <mat-option value="">All</mat-option>
+        <mat-option value="incorrect_email">Incorrect Email</mat-option>
+        <mat-option value="pending">Pending</mat-option>
+        <mat-option value="active">Active</mat-option>
+      </mat-select>
+    </mat-form-field>
+
     <mat-form-field appearance="fill" style="color: black; margin-top: 1vw">
       <mat-label>Search by Last Name</mat-label>
       <input matInput [formControl]="searchInputControl" />
@@ -36,7 +51,7 @@
     *ngIf="dataSource.data.length > 0; else notFound"
   >
     <ng-container matColumnDef="email">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Email</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef>Email</mat-header-cell>
       <mat-cell *matCellDef="let user">{{ user.email }}</mat-cell>
     </ng-container>
 
@@ -49,18 +64,28 @@
     </ng-container>
 
     <ng-container matColumnDef="sex">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Sex</mat-header-cell>
-      <mat-cell *matCellDef="let user">{{ user.sex }}</mat-cell>
+      <mat-header-cell *matHeaderCellDef>Sex</mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        {{ getSexLabel(user.sex) }}
+      </mat-cell>
     </ng-container>
 
-    <ng-container matColumnDef="status">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Status</mat-header-cell>
-      <mat-cell *matCellDef="let user">{{ user.status | titlecase }}</mat-cell>
+    <ng-container matColumnDef="user_status">
+      <mat-header-cell *matHeaderCellDef mat-sort-header
+        >User Status</mat-header-cell
+      >
+      <mat-cell *matCellDef="let user">{{
+        user.user_status | titlecase
+      }}</mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="position">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Position</mat-header-cell>
-      <mat-cell *matCellDef="let user">{{ user.position }}</mat-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header>
+        Position
+      </mat-header-cell>
+      <mat-cell *matCellDef="let user">
+        {{ user.position ? user.position : "-" }}
+      </mat-cell>
     </ng-container>
 
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>

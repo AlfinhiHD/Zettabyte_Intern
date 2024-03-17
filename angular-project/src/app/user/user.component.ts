@@ -11,7 +11,13 @@ import { FoodType } from '../food/model/foodType';
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
-  displayedColumns: string[] = ['email', 'name', 'sex', 'status', 'position'];
+  displayedColumns: string[] = [
+    'email',
+    'name',
+    'sex',
+    'user_status',
+    'position',
+  ];
 
   searchInputControl = new FormControl('');
 
@@ -20,11 +26,15 @@ export class UserComponent implements OnInit {
 
   //Filter
   searchInput: string = '';
+  userStatusValue: string = '';
+
+  //Pagination
   limit: number = 5;
   page: number = 0;
   totalItems: number = 0;
   maxPage: number = 0;
 
+  //Sorting
   sorting = {
     lastNameSort: '',
     statusSort: '',
@@ -56,7 +66,8 @@ export class UserComponent implements OnInit {
           last_name: this.sorting.lastNameSort,
           status: this.sorting.statusSort,
         },
-        this.searchInput
+        this.searchInput,
+        this.userStatusValue
       )
       .subscribe({
         next: (users: any[]) => {
@@ -96,5 +107,23 @@ export class UserComponent implements OnInit {
         break;
     }
     this.getAllUsers();
+  }
+
+  filterUserStatus(): void {
+    console.log(this.userStatusValue);
+    this.getAllUsers();
+  }
+
+  getSexLabel(sex: string): string {
+    switch (sex) {
+      case 'F':
+        return 'Female';
+      case 'M':
+        return 'Male';
+      case 'N':
+        return 'Neutral';
+      default:
+        return '';
+    }
   }
 }

@@ -6,6 +6,7 @@ import { SharedModule } from '../shared/shared.module';
 import { PromoFormComponent } from './promo-form/promo-form.component';
 import { PromoManagementRoutingModule } from './promo-management-routing.module';
 import { PromoDetailComponent } from './promo-detail/promo-detail.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -19,6 +20,7 @@ import { PromoDetailComponent } from './promo-detail/promo-detail.component';
   imports: [
     CommonModule,
     SharedModule,
+    FormsModule,
     PromoManagementRoutingModule
   ],
   exports: [

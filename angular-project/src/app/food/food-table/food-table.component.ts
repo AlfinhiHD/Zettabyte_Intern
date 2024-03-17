@@ -59,8 +59,8 @@ export class FoodTableComponent implements OnInit {
 
       const searchProps = {
         name: food.name.toLowerCase(),
-        price: food.price.toString(), // Mengonversi harga ke string
-        stock: food.stock.toString(), // Mengonversi stok ke string
+        price: food.price.toString(),
+        stock: food.stock.toString(), 
       };
 
       const searchProp = searchProps[this.selectedSearchType];
