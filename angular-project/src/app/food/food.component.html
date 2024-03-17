@@ -1,11 +1,11 @@
-<mat-tab-group mat-stretch-tabs="false" mat-align-tabs="center">
+<mat-tab-group
+  mat-stretch-tabs="false"
+  mat-align-tabs="center"
+  style="background-color: #e1b486; padding: 3vw; border-radius: 2vw;"
+>
   <mat-tab label="Food Cards">
-    <button
-      mat-raised-button
-      style="background-color: #f2d1b5; color: rgb(0, 0, 0); margin-top: 2vw;"
-      (click)="onAddFood()"
-    >
-      Add food
+    <button mat-raised-button class="food-add-button" (click)="onAddFood()">
+      <mat-icon>add</mat-icon> Add Food
     </button>
     <div class="card-content">
       <div *ngFor="let food of foodList">
@@ -13,7 +13,7 @@
       </div>
     </div>
   </mat-tab>
-  <mat-tab label="Food Table" style="color: #f2d1b5;">
+  <mat-tab label="Food Table" style="color: #f2d1b5">
     <div class="table-content">
       <app-food-table></app-food-table>
     </div>

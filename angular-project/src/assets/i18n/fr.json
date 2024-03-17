@@ -1,7 +1,35 @@
 {
-    "FOOD_FORM": {
-      "POPULARITY": "Popularité",
-      "POPULARITY_HINT": "Indice: Max 100",
-      "POPULARITY_REQUIRED": "Veuillez saisir un nombre de popularité valide (max: 100)"
-    }
+  "FOOD_FORM": {
+    "NAME": "Nom",
+    "NAME_PLACEHOLDER": "Entrez le nom",
+    "NAME_REQUIRED": "Le nom est requis",
+    "IMAGE_COVER": "Image de couverture",
+    "IMAGE_COVER_PLACEHOLDER": "Entrez l'URL de l'image de couverture",
+    "IMAGE_PREVIEW": "Image de prévisualisation",
+    "IMAGE_PREVIEW_HINT": "Entrez l'URL de l'aperçu de l'image",
+    "IMAGE_PREVIEW_PLACEHOLDER": "Entrez l'URL de l'image de prévisualisation",
+    "DESCRIPTION": "Description",
+    "DESCRIPTION_REQUIRED": "La description est requise",
+    "PRICE": "Prix",
+    "PRICE_HINT": "Entrez le prix",
+    "POPULARITY": "Popularité",
+    "POPULARITY_HINT": "Entrez le niveau de popularité",
+    "POPULARITY_REQUIRED": "La popularité est requise"
+  },
+  "INGREDIENTS": {
+    "NAME": "Nom",
+    "TYPE": "Type",
+    "PRICE": "Prix",
+    "AMOUNT": "Quantité",
+    "NAME_REQUIRED": "Le nom est requis",
+    "TYPE_REQUIRED": "Le type est requis",
+    "PRICE_REQUIRED": "Le prix est requis et doit être un nombre valide",
+    "AMOUNT_REQUIRED": "La quantité est requise et doit être un nombre valide",
+    "REMOVE": "Supprimer les ingrédients"
+  },
+  "BUTTON": {
+    "EDIT": "Modifier",
+    "ADD_INGREDIENTS": "Ajouter des ingrédients",
+    "REMOVE_INGREDIENTS": "Supprimer les ingrédients"
   }
+}

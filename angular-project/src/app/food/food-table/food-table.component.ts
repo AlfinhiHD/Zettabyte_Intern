@@ -29,6 +29,7 @@ export class FoodTableComponent implements OnInit {
     'price',
     'stock',
     'popularity',
+    'action'
   ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;

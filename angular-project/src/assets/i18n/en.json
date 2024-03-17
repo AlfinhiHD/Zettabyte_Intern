@@ -1,7 +1,35 @@
 {
-    "FOOD_FORM": {
-      "POPULARITY": "Popularity",
-      "POPULARITY_HINT": "Hint: Max 100",
-      "POPULARITY_REQUIRED": "Please input a valid popularity number (max: 100)"
-    }
+  "FOOD_FORM": {
+    "NAME": "Name",
+    "NAME_PLACEHOLDER": "Enter name",
+    "NAME_REQUIRED": "Name is required",
+    "IMAGE_COVER": "Cover Image",
+    "IMAGE_COVER_PLACEHOLDER": "Enter cover image URL",
+    "IMAGE_PREVIEW": "Preview Image",
+    "IMAGE_PREVIEW_HINT": "Enter the URL for image preview",
+    "IMAGE_PREVIEW_PLACEHOLDER": "Enter preview image URL",
+    "DESCRIPTION": "Description",
+    "DESCRIPTION_REQUIRED": "Description is required",
+    "PRICE": "Price",
+    "PRICE_HINT": "Enter the price",
+    "POPULARITY": "Popularity",
+    "POPULARITY_HINT": "Enter the popularity level",
+    "POPULARITY_REQUIRED": "Popularity is required"
+  },
+  "INGREDIENTS": {
+    "NAME": "Name",
+    "TYPE": "Type",
+    "PRICE": "Price",
+    "AMOUNT": "Amount",
+    "NAME_REQUIRED": "Name is required",
+    "TYPE_REQUIRED": "Type is required",
+    "PRICE_REQUIRED": "Price is required and must be a valid number",
+    "AMOUNT_REQUIRED": "Amount is required and must be a valid number",
+    "REMOVE": "Remove ingredients"
+  },
+  "BUTTON": {
+    "EDIT": "Edit",
+    "ADD_INGREDIENTS": "Add Ingredients",
+    "REMOVE_INGREDIENTS": "Remove Ingredients"
   }
+}

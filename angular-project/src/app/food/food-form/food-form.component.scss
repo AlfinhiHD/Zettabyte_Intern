@@ -1,16 +1,45 @@
-.language-toggle {
+mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+button {
+  margin-bottom: 20px;
+}
+
+
+.food-form-top {
+  background-color: #331d1d;
+  color: #f2d1b5;
   display: flex;
+  padding: 1vw 1vw 0 1vw;
   justify-content: space-between;
 }
 
-.food-form {
-  background-color: brown;
+.food-form-title {
+  margin-left: 2vw;
+  font-weight: 500;
+  font-size: 2vw;
 }
 
-.form-container {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
+.language-toggle {
+  display: flex;
+}
+
+.language-toggle-item {
+  margin-right: 2vw;
+}
+
+.food-form {
+  padding-top: 2vw;
+  background-color: #f2d1b5;
+  padding-left: 15vw;
+  padding-right: 15vw;
+  color: black;
+}
+
+.image-cover-food-input {
+  padding-right: 4vw;
 }
 
 .image-group {
@@ -22,11 +51,10 @@
   margin-bottom: 20px;
 }
 
-mat-form-field {
-  width: 100%;
-  margin-bottom: 20px;
-}
 
-button {
-  margin-bottom: 20px;
+.submit-button {
+  width: 100%;
+  margin-top: 5vw;
+  background-color: #331d1d;
+  color: #f2d1b5;
 }

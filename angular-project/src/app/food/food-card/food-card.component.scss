@@ -1,5 +1,38 @@
 .food-card {
-    width: 10vw;
-    margin: 1vw;
-    background-color: #f2d1b5;
+  width: 15vw;
+  margin: 1vw;
+  background-color: #f2d1b5;
+  min-height: 15vw;
+}
+
+.food-image-card {
+  height: 15vw;
+}
+
+.food-content-card {
+  text-align: center;
+  font-size: 1.2vw;
+  font-weight: 400;
+}
+
+.mat-card-detail-button,
+.mat-card-detail-button > button {
+  width: 100%;
+  text-align: center;
+  background-color: #331d1d;
+  color: #f2d1b5;
+}
+
+@media screen and (max-width: 600px) {
+  .food-card {
+    width: 20vw;
+  }
+
+  .food-image-card {
+    height: 20vw;
+  }
+
+  .food-content-card {
+    font-size: 2vw;
+  }
 }

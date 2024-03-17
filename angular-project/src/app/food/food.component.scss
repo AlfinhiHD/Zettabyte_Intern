@@ -1,12 +1,32 @@
 .card-content {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    padding-top: 2vw;
-    padding-bottom: 2vw;
-    margin-top: 2vw;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  margin-top: 2vw;
+}
+
+mat-tab {
+  font-size: larger;
+}
+
+::ng-deep .mat-tab-list .mat-tab-labels .mat-tab-label-active {
+  color: #f2d1b5;
+  background-color: #331d1d;
+}
+
+.food-add-button {
+  padding: 0.5vw 2vw 0.5vw 2vw;
+  font-size: 1.1vw;
+  margin-left: 2.8vw;
+  background-color: #331d1d;
+  color: #f2d1b5;
+  margin-top: 2vw;
+}
+
+@media screen and (max-width: 800px) {
+  .food-add-button {
+    font-size: 3vw;
   }
-  
-  mat-tab {
-    font-size: larger;
-  }
+}

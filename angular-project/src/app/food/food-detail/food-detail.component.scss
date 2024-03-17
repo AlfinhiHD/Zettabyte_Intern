@@ -12,7 +12,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  margin-top: 6vw;
+  margin-top: 2vw;
   background-color: #f2d1b5;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
@@ -29,14 +29,27 @@
 .food-image {
   max-width: 100%;
   margin-top: 10px;
+  min-height: 15vw; 
+  width: 100%;
 }
 
 .description {
   margin-top: 20px;
 }
 
+.food-information {
+  display: flex;
+  margin-top: 2vw;
+}
+
+.ingredients {
+  flex: 1;
+  padding-right: 1vw;
+}
+
 .details {
-  margin-top: 20px;
+  flex: 1;
+  padding-left: 1vw;
 }
 
 .actions {

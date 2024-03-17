@@ -1,47 +1,43 @@
-<div style="padding-left: 8vw; margin-top: 2vw; background-color: #f2d1b5;">
-    <mat-form-field
-      style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw"
+<div class="food-table-top">
+  <mat-form-field class="type-food-filter">
+    <mat-label>Type</mat-label>
+    <mat-select [(ngModel)]="typeValue" (ngModelChange)="filterFoods()">
+      <mat-option value="">All</mat-option>
+      <mat-option value="Ramen">Ramen</mat-option>
+      <mat-option value="Bento">Bento</mat-option>
+      <mat-option value="Snack">Snack</mat-option>
+      <mat-option value="Minuman">Minuman</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="search-food-filter">
+    <mat-label>Search Type</mat-label>
+    <mat-select
+      [(ngModel)]="selectedSearchType"
+      (ngModelChange)="filterFoods()"
     >
-      <mat-label>Role</mat-label>
-      <mat-select [(ngModel)]="typeValue" (ngModelChange)="filterFoods()">
-        <mat-option value="">All</mat-option>
-        <mat-option value="Ramen">Ramen</mat-option>
-        <mat-option value="Bento">Bento</mat-option>
-        <mat-option value="Snack">Snack</mat-option>
-        <mat-option value="Minuman">Minuman</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <mat-form-field
-      style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw; background-color: #f2d1b5;"
-    >
-      <mat-label>Search Type</mat-label>
-      <mat-select
-        [(ngModel)]="selectedSearchType"
-        (ngModelChange)="filterFoods()"
-      >
-        <mat-option value="name">Name</mat-option>
-        <mat-option value="price">Price</mat-option>
-        <mat-option value="stock">Stock</mat-option>
-      </mat-select>
-    </mat-form-field>
-  
-    <mat-form-field
-      appearance="fill"
-      style="padding-top: 1vw; padding-left: 1vw; padding-right: 1vw; width: 17vw"
-    >
-      <mat-label>Search</mat-label>
-      <input
-        matInput
-        [(ngModel)]="searchValue"
-        (ngModelChange)="filterFoods()"
-        placeholder="Search"
-      />
-    </mat-form-field>
-  </div>
+      <mat-option value="name">Name</mat-option>
+      <mat-option value="price">Price</mat-option>
+      <mat-option value="stock">Stock</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field
+    appearance="fill"
+    class="search-food-input"
+  >
+    <mat-label>Search</mat-label>
+    <input
+      matInput
+      [(ngModel)]="searchValue"
+      (ngModelChange)="filterFoods()"
+      placeholder="Search"
+    />
+  </mat-form-field>
+</div>
 
 <table
-  style="padding: 1vw; width: 100%; background-color: #f2d1b5;"
+  class="food-table"
   mat-table
   [dataSource]="dataSource"
   matSort
@@ -73,7 +69,7 @@
 
   <ng-container matColumnDef="stock">
     <th mat-header-cell mat-sort-header="stock" *matHeaderCellDef>stock</th>
-    <td mat-cell style="text-align: center" *matCellDef="let food">
+    <td mat-cell *matCellDef="let food">
       {{ food.stock }}
     </td>
   </ng-container>
@@ -82,30 +78,27 @@
     <th mat-header-cell mat-sort-header="popularity" *matHeaderCellDef>
       Popularity
     </th>
-    <td mat-cell *matCellDef="let food" style="text-align: center">
+    <td mat-cell *matCellDef="let food">
       <span>{{ food.popularity }}</span>
     </td>
   </ng-container>
 
   <ng-container matColumnDef="action">
-      <th mat-header-cell *matHeaderCellDef>Action</th>
-      <td mat-cell *matCellDef="let food">
-        <button
-          mat-icon-button
-          color="primary"
-          (click)="goToDetailfood(food.id)"
-        >
-          <mat-icon>details</mat-icon>
-        </button>
-      </td>
-    </ng-container>
+    <th mat-header-cell *matHeaderCellDef>Action</th>
+    <td mat-cell *matCellDef="let food">
+      <button mat-icon-button class="food-icon-detail" (click)="goToDetailfood(food.id)">
+        <mat-icon>details</mat-icon>
+      </button>
+    </td>
+  </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
 </table>
 
 <mat-paginator
-  style="background-color: #f2d1b5;"
+  class="food-paginator"
+  style="background-color: #f2d1b5"
   [pageSizeOptions]="[5, 10, 15]"
   showFirstLastButtons
   aria-label="Select page of foods"

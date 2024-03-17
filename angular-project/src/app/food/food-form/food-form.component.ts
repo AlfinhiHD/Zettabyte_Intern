@@ -16,7 +16,7 @@ export class FoodFormComponent implements OnInit {
   foodForm: FormGroup;
   id: string;
 
-  isFrench: boolean = true;
+  isFrench: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -51,9 +51,9 @@ export class FoodFormComponent implements OnInit {
 
   toggleLanguage() {
     if (this.isFrench) {
-      this.translateService.use('en');
-    } else {
       this.translateService.use('fr');
+    } else {
+      this.translateService.use('en');
     }
   }
 

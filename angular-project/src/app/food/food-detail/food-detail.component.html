@@ -2,21 +2,28 @@
   <div class="food-details">
     <h2>{{ food.name }}</h2>
     <p class="food-type">{{ food.type }}</p>
-    <img class="food-image" [src]="food.image.preview" alt="{{ food.name }}" style="height: 10vw; width: fit-content;"/>
+    <img class="food-image" [src]="food.image.preview" alt="{{ food.name }}" />
     <div class="description">
       <h3 style="font-weight: 600">Description :</h3>
       <p>{{ food.description }}</p>
+    </div>
 
-      <h3 style="font-weight: 600">Ingredients :</h3>
-      <div *ngFor="let ingredient of food.ingredients">
-        <p>{{ ingredient.name }} - {{ ingredient.amount }}</p>
+    <div class="food-information">
+      <div class="ingredients">
+        <h3 style="font-weight: 600">Ingredients :</h3>
+        <div *ngFor="let ingredient of food.ingredients">
+          <p>{{ ingredient.name }} - {{ ingredient.amount }}</p>
+        </div>
+      </div>
+  
+      <div class="details">
+        <h3 style="font-weight: 600">Information :</h3>
+        <p><strong>Price:</strong> ${{ food.price }}</p>
+        <p><strong>Stock:</strong> {{ food.stock }}</p>
+        <p><strong>Popularity:</strong> {{ food.popularity }}</p>
       </div>
     </div>
-    <div class="details">
-      <p><strong>Price:</strong> ${{ food.price }}</p>
-      <p><strong>Stock:</strong> {{ food.stock }}</p>
-      <p><strong>Popularity:</strong> {{ food.popularity }}</p>
-    </div>
+   
     <div class="actions">
       <button
         mat-raised-button
