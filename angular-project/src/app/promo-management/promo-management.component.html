@@ -39,18 +39,24 @@
       ></app-promo-card>
     </div>
   </div>
+
   <ng-template #notFound>
-    <div class="not-found-message">User Not Found</div>
+    <div class="not-found-message">
+      <div class="flex-container">
+        <mat-icon>error</mat-icon>
+        <span>Promo Not Found</span>
+      </div>
+    </div>
   </ng-template>
 
   <div class="pagination-wrapper">
     <div class="manual-limit" style="color: black">
       <mat-form-field appearance="outline" class="manual-limit">
         <mat-label style="color: black">Show:</mat-label>
-        <mat-select [(ngModel)]="limit" (ngModelChange)="updateLimit()" >
+        <mat-select [(ngModel)]="limit" (ngModelChange)="updateLimit()">
+          <mat-option [value]="2">2</mat-option>
           <mat-option [value]="5">5</mat-option>
           <mat-option [value]="10">10</mat-option>
-          <mat-option [value]="15">15</mat-option>
         </mat-select>
       </mat-form-field>
     </div>

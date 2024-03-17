@@ -7,6 +7,12 @@
   margin-bottom: 10vw;
 }
 
+.food-detail-header {
+  display: flex;
+  justify-content: space-between;
+  text-align: end;
+}
+
 .food-details {
   max-width: 600px;
   padding: 20px;

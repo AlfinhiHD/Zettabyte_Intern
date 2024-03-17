@@ -17,7 +17,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   searchInputControl = new FormControl('');
 
   isLoading: boolean = false;
-  limit: number = 5;
+  limit: number = 2;
   page: number = 0;
   title: string = '';
 

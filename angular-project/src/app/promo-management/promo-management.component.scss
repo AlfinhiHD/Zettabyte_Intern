@@ -66,3 +66,26 @@
   height: 2.5vw;
   border-radius: 2vw;
 }
+
+.not-found-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30vw; 
+  font-size: 2vw;
+  font-weight: bold;
+  color: #333;
+  background-color: #e1b486; 
+}
+
+.not-found-message mat-icon {
+  font-size: 3vw; 
+  margin-bottom: 2vw;
+  color: black; 
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  gap: 2vw; 
+}

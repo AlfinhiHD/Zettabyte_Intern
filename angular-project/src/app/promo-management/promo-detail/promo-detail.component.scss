@@ -1,15 +1,21 @@
-.promo-details {
-  display: flex;
-  background-color: rgb(173, 173, 173);
-  padding-top: 4vw;
-  padding-bottom: 4vw;
+.promo-h3-title {
+  font-weight: 600;
 }
 
-.left-section {
+.promo-detail-container {
+  background-color: #f2d1b5;
+  padding: 2vw;
+}
+
+.promo-basic-info {
+  display: flex;
+}
+
+.left-section-promo-detail {
   margin-right: 20px;
 }
 
-.right-section {
+.right-section-promo-detail {
   flex-grow: 1;
   padding-left: 4vw;
 }
@@ -17,5 +23,14 @@
 .promo-image {
   max-width: 300px;
   max-height: 300px;
-  object-fit: cover;
+}
+
+.mat-dialog-title {
+  padding: 2vw;
+  color: #f2d1b5; 
+  background-color: #331d1d; 
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
 }

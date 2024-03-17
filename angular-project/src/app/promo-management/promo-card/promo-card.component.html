@@ -1,6 +1,4 @@
-<mat-card
-  class="promo-card"
->
+<mat-card class="promo-card">
   <mat-card-header>
     <mat-card-title [innerHTML]="promo.title"></mat-card-title>
     <mat-card-subtitle [innerHTML]="promo.sub_title"></mat-card-subtitle>
@@ -13,7 +11,7 @@
         : 'https://via.placeholder.com/150'
     "
     alt="Photo of Promo"
-    style="width: 10vw; display: block; margin: 0 auto"
+    style="width: 100%; max-height: 22vw; display: block; margin: 0 auto"
   />
 
   <mat-card-content>
@@ -24,7 +22,11 @@
     <button mat-raised-button color="warn" (click)="onDelete(promo._id)">
       Delete
     </button>
-    <button mat-raised-button color="primary" (click)="openDetailDialog()">
+    <button
+      mat-raised-button
+      style="background-color: #331d1d; color: #f2d1b5"
+      (click)="openDetailDialog()"
+    >
       Detail
     </button>
   </mat-card-actions>
