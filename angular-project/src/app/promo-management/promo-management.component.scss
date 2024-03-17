@@ -10,7 +10,6 @@
   align-items: center;
   z-index: 9998;
 }
-
 .action-wrapper {
   background-color: #331d1d;
   border-top-left-radius: 2vw;
@@ -38,8 +37,10 @@
 }
 
 .promo-container {
+  padding-top: 5vw;
   display: flex;
   flex-wrap: wrap;
+  height: 60vw;
   justify-content: space-around;
   background-color: #e1b486;
   color: #331d1d;
