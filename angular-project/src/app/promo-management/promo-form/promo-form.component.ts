@@ -8,20 +8,6 @@ import Swal from 'sweetalert2';
 import { PromoType } from '../model/promo';
 import { Apollo, gql } from 'apollo-angular';
 
-const GetAllPromos = gql`
-  query GetAllPromos($pagination: PaginationInput, $filter: PromoFilter) {
-    GetAllPromos(pagination: $pagination, filter: $filter) {
-      _id
-      ref
-      title
-      sub_title
-      description
-      image_url
-      count_document
-    }
-  }
-`;
-
 @Component({
   selector: 'app-promo-form',
   templateUrl: './promo-form.component.html',
@@ -37,7 +23,6 @@ export class PromoFormComponent implements OnInit {
     private promoService: PromoService,
     private router: Router,
     private dialogRef: MatDialogRef<PromoFormComponent>,
-    private apollo: Apollo
   ) {}
 
   ngOnInit(): void {
