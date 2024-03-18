@@ -6,6 +6,6 @@ export const promoFormInit = (fb: FormBuilder): FormGroup => {
     title: ['', Validators.required],
     sub_title: ['', Validators.required],
     description: ['', Validators.required],
-    image_url: ['', Validators.required],
+    image_url: ['', [Validators.required, Validators.pattern(/\.(gif|jpe?g|tiff|png|webp|bmp|jpe|jpg?)$/i)]],
   });
 };

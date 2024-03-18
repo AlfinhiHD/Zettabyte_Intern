@@ -2,7 +2,7 @@
   "FOOD_FORM": {
     "NAME": "Name",
     "NAME_PLACEHOLDER": "Enter name",
-    "NAME_REQUIRED": "Name is required",
+    "NAME_REQUIRED": "A Valid Name is required",
     "TYPE": "Type",
     "TYPE_PLACEHOLDER": "Enter type",
     "IMAGE_COVER": "Cover Image",
@@ -13,7 +13,8 @@
     "DESCRIPTION": "Description",
     "DESCRIPTION_REQUIRED": "Description is required",
     "PRICE": "Price",
-    "PRICE_HINT": "Enter the price",
+    "PRICE_HINT": "Enter the price (9, 9.9, 9.99)",
+    "PRICE_REQUIRED": "A Valid Price is required",
     "POPULARITY": "Popularity",
     "POPULARITY_HINT": "Enter the popularity level",
     "POPULARITY_REQUIRED": "Popularity is required"
@@ -23,7 +24,7 @@
     "TYPE": "Type",
     "PRICE": "Price",
     "AMOUNT": "Amount",
-    "NAME_REQUIRED": "Name is required",
+    "NAME_REQUIRED": "A Valid Name is required",
     "TYPE_REQUIRED": "Type is required",
     "PRICE_REQUIRED": "Price is required and must be a valid number",
     "AMOUNT_REQUIRED": "Amount is required and must be a valid number",

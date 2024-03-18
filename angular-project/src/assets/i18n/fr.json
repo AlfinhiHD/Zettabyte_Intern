@@ -13,7 +13,8 @@
     "DESCRIPTION": "Description",
     "DESCRIPTION_REQUIRED": "La description est requise",
     "PRICE": "Prix",
-    "PRICE_HINT": "Entrez le prix",
+    "PRICE_HINT": "Entrez le prix (9, 9.9, 9.99)",
+    "PRICE_REQUIRED": "Un prix valide est requis",
     "POPULARITY": "Popularité",
     "POPULARITY_HINT": "Entrez le niveau de popularité",
     "POPULARITY_REQUIRED": "La popularité est requise"

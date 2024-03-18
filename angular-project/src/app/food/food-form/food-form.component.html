@@ -31,11 +31,16 @@
 
     <mat-form-field appearance="fill">
       <mat-label>{{ "FOOD_FORM.TYPE" | translate }}</mat-label>
-      <input
-        matInput
+      <mat-select
         formControlName="type"
         placeholder="{{ 'FOOD_FORM.TYPE_PLACEHOLDER' | translate }}"
-      />
+      >
+        <mat-option value="Ramen">Ramen</mat-option>
+        <mat-option value="Bento">Bento</mat-option>
+        <mat-option value="Minuman">Minuman</mat-option>
+        <mat-option value="Snack">Snack</mat-option>
+        <mat-option value="Dessert">Dessert</mat-option>
+      </mat-select>
       <mat-error
         *ngIf="foodForm.get('type').invalid && foodForm.get('type').touched"
       >
@@ -92,14 +97,13 @@
       <input
         matInput
         formControlName="price"
-        type="number"
         placeholder="{{ 'FOOD_FORM.PRICE' | translate }}"
       />
       <mat-hint>{{ "FOOD_FORM.PRICE_HINT" | translate }}</mat-hint>
       <mat-error
         *ngIf="foodForm.get('price').invalid && foodForm.get('price').touched"
       >
-        {{ "FOOD_FORM.PRICE" | translate }} is required
+        {{ "FOOD_FORM.PRICE_REQUIRED" | translate }}
       </mat-error>
     </mat-form-field>
 
