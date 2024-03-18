@@ -11,7 +11,7 @@ import { PromoDetailComponent } from '../promo-detail/promo-detail.component';
 })
 export class PromoCardComponent implements OnInit {
   @Input() promo: any;
-  @Output() promoDeleted: EventEmitter<any> = new EventEmitter();
+  @Output() promoChanged: EventEmitter<any> = new EventEmitter();
 
   constructor(private promoService: PromoService, private dialog: MatDialog) {}
 
@@ -30,26 +30,18 @@ export class PromoCardComponent implements OnInit {
       showCancelButton: true,
       confirmButtonColor: '#3085d6',
       cancelButtonColor: '#d33',
-      confirmButtonText: 'Ya, hapus!'
+      confirmButtonText: 'Ya, hapus!',
     }).then((result) => {
       if (result.isConfirmed) {
         this.promoService.deletePromo(id).subscribe(
           (result) => {
             console.log('Promo berhasil dihapus:', result);
-            Swal.fire(
-              'Terhapus!',
-              'Promo telah dihapus.',
-              'success'
-            );
-            this.promoDeleted.emit();
+            Swal.fire('Terhapus!', 'Promo telah dihapus.', 'success');
+            this.promoChanged.emit();
           },
           (error) => {
             console.error('Gagal menghapus promo:', error);
-            Swal.fire(
-              'Gagal!',
-              'Gagal menghapus promo.',
-              'error'
-            );
+            Swal.fire('Gagal!', 'Gagal menghapus promo.', 'error');
           }
         );
       }
@@ -63,8 +55,11 @@ export class PromoCardComponent implements OnInit {
       disableClose: true,
     });
 
-    dialogRef.afterClosed().subscribe(result => {
+    dialogRef.afterClosed().subscribe((result) => {
       console.log('Form data card:', result);
+      if (result === 'success') {
+        this.promoChanged.emit();
+      }
     });
   }
 }

@@ -36,6 +36,7 @@ export class PromoDetailComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe((result) => {
+      this.result = result
       console.log('Form data:', result);
     });
   }

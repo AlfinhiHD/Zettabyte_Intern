@@ -35,7 +35,7 @@
     <div *ngFor="let promo of Promos">
       <app-promo-card
         [promo]="promo"
-        (promoDeleted)="getAllPromo()"
+        (promoChanged)="getAllPromo()"
       ></app-promo-card>
     </div>
   </div>

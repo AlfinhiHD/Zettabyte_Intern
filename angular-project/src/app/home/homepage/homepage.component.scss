@@ -1,47 +1,128 @@
 .home-container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 2vw 8vw 2vw 8vw;
-    background-color: #331d1d;
-    border-radius: 2vw;
+  margin: 0 auto;
+  padding: 2vw 2vw 2vw 2vw;
+  background-color: #331d1d;
+  border-radius: 2vw;
+}
+
+header {
+  margin-top: 5vw;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 4vw;
+  color: #f2d1b5;
+}
+
+main {
+  padding: 20px 0;
+}
+
+.intro-section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  color: #f2d1b5;
+}
+
+p {
+  font-size: 1.2rem;
+  color: white;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+}
+
+footer p {
+  font-size: 1rem;
+  color: #999;
+}
+
+.intro-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-top: 3vw;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+}
+
+.image-container {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.image-container img {
+  max-width: 100%;
+}
+
+.description-container {
+  margin-left: 5vw;
+  flex: 2;
+  text-align: left;
+}
+
+.ichiraku-section {
+  margin-top: 6vw;
+  margin-bottom: 5vw;
+}
+
+.description-container-2 {
+  margin-left: 5vw;
+  flex: 2;
+  text-align: left;
+}
+
+.image-container-2 img {
+  width: 35vw;
+}
+
+.image-container-2 {
+  flex: 1;
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .flex-container {
+    display: block;
   }
-  
-  header {
-    margin-top: 5vw;
-    text-align: center;
-    margin-bottom: 20px;
+
+  .image-container,
+  .image-container-2 {
+    margin: 0;
   }
+
   
+  .image-container-2 > img {
+    display: none;
+  }
+
+  .description-container,
+  .description-container-2 {
+    margin: 0;
+  }
+
   h1 {
-    font-size: 2.5rem;
-    margin-bottom: 4vw;
-    color: #f2d1b5;
+    font-size: 2rem;
   }
-  
-  main {
-    padding: 20px 0;
-  }
-  
-  .intro-section, .zettabyte-section {
-    margin-bottom: 30px;
-  }
-  
+
   h2 {
-    font-size: 1.8rem;
-    color: #f2d1b5;
+    font-size: 1.5rem;
   }
-  
+
   p {
-    font-size: 1.2rem;
-    color: white;
-  }
-  
-  footer {
-    text-align: center;
-    margin-top: 50px;
-  }
-  
-  footer p {
     font-size: 1rem;
-    color: #999;
   }
+}
