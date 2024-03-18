@@ -10,6 +10,27 @@
     </mat-select>
   </mat-form-field>
 
+  <div class="filter-container" style="color: black;">
+    <mat-form-field class="stock-filter">
+      <input
+        matInput
+        type="number"
+        placeholder="Filter by Stock"
+        [(ngModel)]="stockFilter"
+        (ngModelChange)="filterFoods()"
+      />
+    </mat-form-field>
+    <mat-form-field class="popularity-filter">
+      <input
+        matInput
+        type="number"
+        placeholder="Filter by Popularity"
+        [(ngModel)]="popularityFilter"
+        (ngModelChange)="filterFoods()"
+      />
+    </mat-form-field>
+  </div>
+
   <mat-form-field class="search-food-filter">
     <mat-label>Search Type</mat-label>
     <mat-select

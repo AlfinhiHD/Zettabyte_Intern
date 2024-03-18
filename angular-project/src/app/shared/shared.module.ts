@@ -22,6 +22,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { AccentRemovalPipe } from './pipes/accent-removal/accent-removal.pipe';
+import { CombineWordsPipe } from './pipes/combine-words/combine-words.pipe';
 
 const modules: any = [
   ReactiveFormsModule,
@@ -50,7 +52,10 @@ const modules: any = [
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AccentRemovalPipe,
+    CombineWordsPipe
+  ],
   imports: [CommonModule, ...modules],
   exports: [...modules],
 })

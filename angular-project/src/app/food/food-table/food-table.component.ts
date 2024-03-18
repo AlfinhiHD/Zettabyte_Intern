@@ -5,10 +5,12 @@ import { MatSort, Sort } from '@angular/material/sort';
 import { FoodService } from '../food.service';
 import { Router } from '@angular/router';
 import { MatTableDataSource } from '@angular/material/table';
+import { CombineWordsPipe } from 'src/app/shared/pipes/combine-words/combine-words.pipe';
 
 @Component({
   selector: 'app-food-table',
   templateUrl: './food-table.component.html',
+  providers: [CombineWordsPipe],
   styleUrls: ['./food-table.component.scss']
 })
 export class FoodTableComponent implements OnInit {
@@ -19,6 +21,8 @@ export class FoodTableComponent implements OnInit {
 
   searchValue: string = '';
   typeValue: string = '';
+  stockFilter: number;
+  popularityFilter: number;
 
   selectedSearchType: string = 'name';
 
@@ -37,7 +41,8 @@ export class FoodTableComponent implements OnInit {
 
   constructor(
     private foodService: FoodService,
-    private router: Router
+    private router: Router,
+    private combineWordsPipe : CombineWordsPipe
   ) {}
 
   ngOnInit(): void {
@@ -55,26 +60,31 @@ export class FoodTableComponent implements OnInit {
 
   filterFoods(): void {
     const filteredData = this.foodList.filter((food) => {
-      const searchValue = this.searchValue.toLowerCase();
-      const typeValue = this.typeValue.toLowerCase();
-
+      const searchValue = this.combineWordsPipe.transform(this.searchValue);
+      const typeValue = this.combineWordsPipe.transform(this.typeValue);
+  
       const searchProps = {
-        name: food.name.toLowerCase(),
+        name: this.combineWordsPipe.transform(food.name),
         price: food.price.toString(),
         stock: food.stock.toString(), 
       };
-
+  
       const searchProp = searchProps[this.selectedSearchType];
-
+  
+      const isStockValid = this.stockFilter === null || isNaN(this.stockFilter) ? true : food.stock < this.stockFilter;
+      const isPopularityValid = this.popularityFilter === null || isNaN(this.popularityFilter) ? true : food.popularity < this.popularityFilter;
+  
       return (
         searchProp.includes(searchValue) &&
         (typeValue === '' ||
-          food.type.toLowerCase() === typeValue)
+          this.combineWordsPipe.transform(food.type.toLowerCase()) === typeValue) &&
+        isStockValid &&
+        isPopularityValid
       );
     });
-
+  
     this.dataSource.data = filteredData;
-}
+  }
 
   sortData(sort: Sort) {
     const data = this.sortedData.slice();

@@ -1,5 +1,5 @@
-<div class="container">
-  <div class="food-details">
+<div class="food-detail-container">
+  <div class="food-detail">
     <div class="food-detail-header">
       <button mat-icon-button (click)="goBack()">
         <mat-icon>arrow_back</mat-icon>
@@ -11,28 +11,28 @@
     </div>
 
     <img class="food-image" [src]="food.image.preview" alt="{{ food.name }}" />
-    <div class="description">
+    <div class="food-description">
       <h3 style="font-weight: 600">Description :</h3>
       <p>{{ food.description }}</p>
     </div>
 
     <div class="food-information">
-      <div class="ingredients">
+      <div class="food-ingredients">
         <h3 style="font-weight: 600">Ingredients :</h3>
         <div *ngFor="let ingredient of food.ingredients">
           <p>{{ ingredient.name }} - {{ ingredient.amount }}</p>
         </div>
       </div>
 
-      <div class="details">
-        <h3 style="font-weight: 600">Information :</h3>
+      <div class="food-basicinfo">
+        <h3 style="font-weight: 600">Basic Information :</h3>
         <p><strong>Price:</strong> ${{ food.price }}</p>
         <p><strong>Stock:</strong> {{ food.stock }}</p>
         <p><strong>Popularity:</strong> {{ food.popularity }}</p>
       </div>
     </div>
 
-    <div class="actions">
+    <div class="food-detail-actions">
       <button mat-raised-button color="warn" (click)="onDeleteFood(food._id)">
         Delete
       </button>

@@ -4,10 +4,13 @@ import { PromoService } from './promo.service';
 import { PromoFormComponent } from './promo-form/promo-form.component';
 import { MatDialog } from '@angular/material/dialog';
 import { FormControl } from '@angular/forms';
+import { AccentRemovalPipe } from '../shared/pipes/accent-removal/accent-removal.pipe';
+import { CombineWordsPipe } from '../shared/pipes/combine-words/combine-words.pipe';
 
 @Component({
   selector: 'app-promo-management',
   templateUrl: './promo-management.component.html',
+  providers: [AccentRemovalPipe, CombineWordsPipe],
   styleUrls: ['./promo-management.component.scss'],
 })
 export class PromoManagementComponent implements OnInit, OnDestroy {
@@ -23,13 +26,20 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   page: number = 0;
   title: string = '';
 
-  constructor(private promoService: PromoService, private dialog: MatDialog) {}
+  constructor(
+    private promoService: PromoService,
+    private dialog: MatDialog,
+    private accentPipe: AccentRemovalPipe,
+    private combineWordsPipe: CombineWordsPipe
+  ) {}
 
   ngOnInit(): void {
     this.searchInputControl.valueChanges
       .pipe(debounceTime(1500))
       .subscribe((value) => {
-        this.title = value;
+        const processedValue = this.accentPipe.transform(value);
+        this.title = this.combineWordsPipe.transform(processedValue);
+
         this.getAllPromo();
       });
     this.getAllPromo();
@@ -44,22 +54,20 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       )
       .subscribe({
         next: (promo: any[]) => {
-          console.log(promo[0].count_document);
-
-          const totalCount = promo[0].count_document;
-          const currentPageCount = (this.page + 1) * this.limit;
-          if (currentPageCount >= totalCount) {
-            this.hasNextPage = false;
-          } else {
-            this.hasNextPage = true;
-          }
-
           if (promo.length === 0) {
             this.Promos = promo;
             this.isLoading = false;
           } else {
             this.Promos = promo;
             this.isLoading = false;
+
+            const totalCount = promo[0].count_document;
+            const currentPageCount = (this.page + 1) * this.limit;
+            if (currentPageCount >= totalCount) {
+              this.hasNextPage = false;
+            } else {
+              this.hasNextPage = true;
+            }
           }
         },
         error: (error) => {

@@ -6,7 +6,10 @@ export const FoodFormInit = (fb: FormBuilder): FormGroup => {
     name: ['', Validators.required],
     type: ['', Validators.required],
     description: ['', Validators.required],
-    price: [null, [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)]],
+    price: [
+      null,
+      [Validators.required, Validators.pattern(/^\d+(\.\d{1,2})?$/)],
+    ],
     image: fb.group({
       cover: [
         '',

@@ -5,6 +5,23 @@
   background-color: #f2d1b5;
   border-top-left-radius: 2vw;
   border-top-right-radius: 2vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.type-food-filter,
+.search-food-filter,
+.search-food-input,
+.stock-filter,
+.popularity-filter {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
 }
 
 .type-food-filter {
@@ -33,12 +50,12 @@
   padding: 1vw;
   width: 100%;
   background-color: #f2d1b5;
-  width: 100%; 
+  width: 100%;
 }
 
 .table-container {
-  overflow-x: auto; 
-  max-width: 100%; 
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 .food-icon-detail {
@@ -49,4 +66,3 @@
   border-bottom-left-radius: 2vw;
   border-bottom-right-radius: 2vw;
 }
-

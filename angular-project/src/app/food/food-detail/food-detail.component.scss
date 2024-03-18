@@ -1,4 +1,4 @@
-.container {
+.food-detail-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -13,7 +13,7 @@
   text-align: end;
 }
 
-.food-details {
+.food-detail {
   max-width: 600px;
   padding: 20px;
   border: 1px solid #ccc;
@@ -23,7 +23,7 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.food-details h2 {
+.food-detail h2 {
   margin-top: 0;
 }
 
@@ -39,7 +39,7 @@
   width: 100%;
 }
 
-.description {
+.food-description {
   margin-top: 20px;
 }
 
@@ -48,17 +48,17 @@
   margin-top: 2vw;
 }
 
-.ingredients {
+.food-ingredients {
   flex: 1;
   padding-right: 1vw;
 }
 
-.details {
+.food-basicinfo {
   flex: 1;
   padding-left: 1vw;
 }
 
-.actions {
+.food-detail-actions {
   margin-top: 20px;
   text-align: right;
 }

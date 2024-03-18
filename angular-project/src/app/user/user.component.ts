@@ -5,10 +5,13 @@ import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { FoodType } from '../food/model/foodType';
 import { MatPaginator } from '@angular/material/paginator';
+import { AccentRemovalPipe } from '../shared/pipes/accent-removal/accent-removal.pipe';
+import { CombineWordsPipe } from '../shared/pipes/combine-words/combine-words.pipe';
 
 @Component({
   selector: 'app-user',
   templateUrl: './user.component.html',
+  providers: [AccentRemovalPipe, CombineWordsPipe],
   styleUrls: ['./user.component.scss'],
 })
 export class UserComponent implements OnInit {
@@ -42,14 +45,19 @@ export class UserComponent implements OnInit {
     lastNameSort: '',
     userStatusSort: '',
   };
-  
-  constructor(private userService: UserService) {}
+
+  constructor(
+    private userService: UserService,
+    private accentPipe: AccentRemovalPipe,
+    private combineWordsPipe: CombineWordsPipe
+  ) {}
 
   ngOnInit(): void {
     this.searchInputControl.valueChanges
       .pipe(debounceTime(1500))
       .subscribe((value) => {
-        this.searchInput = value;
+        const processedValue = this.accentPipe.transform(value); 
+        this.searchInput = this.combineWordsPipe.transform(processedValue); 
         this.page = 0;
         this.paginator.firstPage();
         this.getAllUsers();
