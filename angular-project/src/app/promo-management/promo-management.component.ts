@@ -60,6 +60,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   openAddDialog(): void {
     const dialogRef = this.dialog.open(PromoFormComponent, {
       width: '100vw',
+      disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe((result) => {

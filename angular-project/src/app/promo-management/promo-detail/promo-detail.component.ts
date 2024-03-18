@@ -31,6 +31,7 @@ export class PromoDetailComponent implements OnInit {
     this.dialogRef.close();
     const dialogRef = this.dialog.open(PromoFormComponent, {
       width: '100vw',
+      disableClose: true,
       data: { _id: this.data._id }
     });
 

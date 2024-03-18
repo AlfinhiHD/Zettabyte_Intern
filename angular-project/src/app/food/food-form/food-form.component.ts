@@ -5,7 +5,7 @@ import Swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 import { FoodService } from '../food.service';
 import { FoodFormInit } from '../model/foodForm';
-import { TranslateService } from '@ngx-translate/core';;
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-food-form',
@@ -31,22 +31,19 @@ export class FoodFormComponent implements OnInit {
 
     this.route.queryParams.subscribe((queryParams) => {
       this.id = queryParams['id'];
+      console.log(this.id);
       if (!this.id) {
         this.foodForm.reset();
+      } else {
+        const food = this.foodService.getFoodById(this.id);
+        console.log(food);
+
+        if (food) {
+          this.foodForm.patchValue(food);
+          this.setArrayData(food.ingredients);
+        }
       }
     });
-
-    console.log(this.id)
-
-    if (this.id) {
-      const food = this.foodService.getFoodById(this.id);
-      console.log(food);
-      
-      if (food) {
-        this.foodForm.patchValue(food);
-        this.setArrayData(food.ingredients);
-      }
-    }
   }
 
   toggleLanguage() {

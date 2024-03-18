@@ -59,7 +59,8 @@ export class PromoCardComponent implements OnInit {
   openDetailDialog(): void {
     const dialogRef = this.dialog.open(PromoDetailComponent, {
       width: '500px',
-      data: this.promo
+      data: this.promo,
+      disableClose: true,
     });
 
     dialogRef.afterClosed().subscribe(result => {
