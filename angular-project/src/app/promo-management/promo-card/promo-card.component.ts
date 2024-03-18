@@ -64,7 +64,7 @@ export class PromoCardComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      console.log('Form data card:', result);
     });
   }
 }

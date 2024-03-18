@@ -13,7 +13,7 @@ export class UserService {
     pagination: { limit: number; page: number },
     sorting: {
       last_name: string;
-      status: string;
+      user_status: string;
     },
     last_name: string,
     user_status: string
@@ -35,13 +35,13 @@ export class UserService {
       variables['user_status'] = user_status;
     }
 
-    if (sorting && (sorting.last_name || sorting.status)) {
+    if (sorting && (sorting.last_name || sorting.user_status)) {
       const sortingParameters = {};
       if (sorting.last_name) {
         sortingParameters['last_name'] = sorting.last_name;
       }
-      if (sorting.status) {
-        sortingParameters['status'] = sorting.status;
+      if (sorting.user_status) {
+        sortingParameters['user_status'] = sorting.user_status;
       }
       variables['sorting'] = sortingParameters;
     }

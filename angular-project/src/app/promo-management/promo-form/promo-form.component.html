@@ -1,3 +1,11 @@
+<div *ngIf="isLoading" class="overlay">
+  <mat-progress-spinner
+    class="full-screen-spinner"
+    diameter="50"
+    mode="indeterminate"
+  ></mat-progress-spinner>
+</div>
+
 <h2 mat-dialog-title style="background-color: #9f3434; color: #ead6c5; padding: 2vw;">
   {{ data?._id ? "Edit Promo" : "Add New Promo" }}
 </h2>

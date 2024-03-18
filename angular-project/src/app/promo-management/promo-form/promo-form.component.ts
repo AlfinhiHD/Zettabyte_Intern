@@ -14,6 +14,7 @@ import { Apollo, gql } from 'apollo-angular';
   styleUrls: ['./promo-form.component.scss'],
 })
 export class PromoFormComponent implements OnInit {
+  isLoading: boolean = false
   promoForm: FormGroup;
   id: string;
 
@@ -22,7 +23,7 @@ export class PromoFormComponent implements OnInit {
     private fb: FormBuilder,
     private promoService: PromoService,
     private router: Router,
-    private dialogRef: MatDialogRef<PromoFormComponent>,
+    private dialogRef: MatDialogRef<PromoFormComponent>
   ) {}
 
   ngOnInit(): void {
@@ -39,35 +40,38 @@ export class PromoFormComponent implements OnInit {
   }
 
   getOnePromo(id: string): void {
-    this.promoService.getOnePromo(id).subscribe(
-      (promo) => {
-        console.log('Promo berhasil diperoleh:', promo);
-        this.promoForm.patchValue(promo);
+    this.isLoading = true
+    this.promoService.getOnePromo(id).subscribe({
+      next: (next) => {
+        console.log('Promo berhasil diperoleh:', next);
+        this.promoForm.patchValue(next);
+        this.isLoading = false
       },
-      (error) => {
+      error: (error) => {
         console.error('Gagal mendapatkan promo:', error);
-      }
-    );
+        this.isLoading = false
+      },
+    });
   }
 
   updatePromo(id: string, promoUpdated: PromoType): void {
-    this.promoService.updatePromo(id, promoUpdated).subscribe(
-      (next) => {
+    this.promoService.updatePromo(id, promoUpdated).subscribe({
+      next: (next) => {
         console.log('Promo edited:', next);
         Swal.fire('Success!', 'Promo berhasil diedit.', 'success');
       },
-      (error) => {
+      error: (error) => {
         console.error('Gagal mengedit promo:', error);
         Swal.fire('Error!', error.message, 'error');
-      }
-    );
+      },
+    });
   }
 
   createPromo(promoInput: PromoType): void {
     this.promoService.createPromo(promoInput).subscribe({
       next: (next) => {
         console.log('Promo add:' + next);
-        Swal.fire('Success!', 'Promo berhasil dibuat.', 'success')
+        Swal.fire('Success!', 'Promo berhasil dibuat.', 'success');
       },
       error: (error) => {
         console.error('Gagal membuat promo:', error);
@@ -112,16 +116,13 @@ export class PromoFormComponent implements OnInit {
 
         if (!this.id) {
           this.createPromo(formData);
-          this.dialogRef.close("success");
+          this.dialogRef.close('success');
         } else {
           this.updatePromo(this.id, formData);
-          this.dialogRef.close("success");
+          this.dialogRef.close('success');
         }
-
-        
       } else if (result.dismiss === Swal.DismissReason.cancel) {
         Swal.fire('Cancelled', 'Your form is safe :)', 'error');
-        
       }
     });
   }

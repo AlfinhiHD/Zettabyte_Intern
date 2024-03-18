@@ -17,7 +17,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   searchInputControl = new FormControl('');
 
   isLoading: boolean = false;
-  limit: number = 2;
+  limit: number = 5;
   page: number = 0;
   title: string = '';
 
@@ -66,6 +66,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('dialog result:', result);
       if (result === 'success') {
+        console.log("masuk")
         this.getAllPromo();
       }
     });

@@ -37,7 +37,7 @@ export class UserComponent implements OnInit {
   //Sorting
   sorting = {
     lastNameSort: '',
-    statusSort: '',
+    userStatusSort: '',
   };
 
   constructor(private userService: UserService) {}
@@ -64,7 +64,7 @@ export class UserComponent implements OnInit {
         { limit: this.limit, page: this.page },
         {
           last_name: this.sorting.lastNameSort,
-          status: this.sorting.statusSort,
+          user_status: this.sorting.userStatusSort,
         },
         this.searchInput,
         this.userStatusValue
@@ -100,8 +100,8 @@ export class UserComponent implements OnInit {
       case 'name':
         this.sorting.lastNameSort = event.direction;
         break;
-      case 'status':
-        this.sorting.statusSort = event.direction;
+      case 'user_status':
+        this.sorting.userStatusSort = event.direction;
         break;
       default:
         break;

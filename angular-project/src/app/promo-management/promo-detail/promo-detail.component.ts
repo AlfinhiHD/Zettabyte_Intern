@@ -10,6 +10,7 @@ import { PromoFormComponent } from '../promo-form/promo-form.component';
 })
 export class PromoDetailComponent implements OnInit {
   promo: PromoType;
+  result: string = "";
 
   constructor(
     public dialogRef: MatDialogRef<PromoDetailComponent>,
@@ -32,17 +33,17 @@ export class PromoDetailComponent implements OnInit {
     const dialogRef = this.dialog.open(PromoFormComponent, {
       width: '100vw',
       disableClose: true,
+      closeOnNavigation: true,
       data: { _id: this.data._id }
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
       console.log('Form data:', result);
     });
   }
 
 
   closeDialog(): void {
-    this.dialogRef.close();
+    this.dialogRef.close(this.result);
   }
 }
