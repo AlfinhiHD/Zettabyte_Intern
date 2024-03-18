@@ -7,10 +7,12 @@ import { FoodType } from './model/foodType';
   providedIn: 'root',
 })
 export class FoodService {
-  private food: BehaviorSubject<FoodType[]> = new BehaviorSubject<
-    FoodType[]
-  >([]);
+  private food: BehaviorSubject<FoodType[]> = new BehaviorSubject<FoodType[]>(
+    []
+  );
   food$ = this.food.asObservable();
+
+  foodsLoaded: boolean = false;
 
   constructor(private http: HttpClient) {
     this.getFoods();
@@ -21,6 +23,7 @@ export class FoodService {
       next: (foods: FoodType[]) => {
         console.log(foods);
         this.food.next(foods);
+        this.foodsLoaded = true;
       },
       error: (error) => {
         console.error('There was an error!', error);
@@ -29,6 +32,7 @@ export class FoodService {
   }
 
   getFoodById(id: string) {
+    console.log(this.food.getValue());
     return this.food.getValue().find((food) => food._id === id);
   }
 
@@ -43,12 +47,11 @@ export class FoodService {
 
   addNewFood(newfood: FoodType) {
     console.log(newfood);
-    
+
     this.food.next([...this.food.getValue(), newfood]);
   }
 
   updateFood(updatedfood: FoodType) {
-
     const food = this.food.getValue();
     const index = food.findIndex((food) => food._id === updatedfood._id);
     if (index !== -1) {
