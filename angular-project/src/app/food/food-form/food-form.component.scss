@@ -58,3 +58,9 @@ button {
   background-color: #331d1d;
   color: #f2d1b5;
 }
+
+@media screen and (max-width: 768px) {
+  .image-group {
+    display: block;
+  }
+}

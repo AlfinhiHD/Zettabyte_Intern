@@ -10,6 +10,16 @@
   flex-wrap: wrap;
 }
 
+.user-table-content {
+  background-color: #f2d1b5;
+  width: 100%;
+}
+
+.user-table-container {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
 .overlay {
   position: fixed;
   top: 0;
@@ -43,4 +53,10 @@
   display: flex;
   align-items: center;
   gap: 1vw;
+}
+
+@media screen and (max-width: 768px) {
+  .user-table-content {
+    width: fit-content;
+  }
 }

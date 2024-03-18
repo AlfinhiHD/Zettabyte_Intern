@@ -111,6 +111,6 @@ export class FoodTableComponent implements OnInit {
   }
 
   goToDetailfood(id: string) {
-    this.router.navigate(['detail', id]);
+    this.router.navigate(['food/detail', id]);
   }
 }

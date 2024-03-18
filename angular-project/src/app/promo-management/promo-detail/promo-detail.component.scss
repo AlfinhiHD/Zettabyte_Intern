@@ -5,6 +5,7 @@
 .promo-detail-container {
   background-color: #f2d1b5;
   padding: 2vw;
+  overflow-y: auto;
 }
 
 .promo-basic-info {
@@ -21,8 +22,9 @@
 }
 
 .promo-image {
-  max-width: 300px;
-  max-height: 300px;
+  width: 9vw;
+  height: 10vw;
+  margin-left: 1vw;
 }
 
 .mat-dialog-title {
@@ -33,4 +35,21 @@
 
 .mat-dialog-actions {
   justify-content: flex-end;
+}
+
+@media screen and (max-width: 768px) {
+  .promo-basic-info {
+    display: block;
+  }
+
+  .left-section-promo-detail,
+  .right-section-promo-detail {
+    margin-right: 0;
+    padding-left: 0;
+  }
+
+  .promo-image {
+    width: 10vw;
+    height: 15vw;
+  }
 }

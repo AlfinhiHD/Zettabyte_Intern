@@ -6,14 +6,14 @@
   ></mat-progress-spinner>
 </div>
 
-<h2 mat-dialog-title style="background-color: #9f3434; color: #ead6c5; padding: 2vw;">
+<h2
+  mat-dialog-title
+  style="background-color: #9f3434; color: #ead6c5; padding: 2vw"
+>
   {{ data?._id ? "Edit Promo" : "Add New Promo" }}
 </h2>
 
-<mat-dialog-content
-  class="mat-typography"
-  style="background-color: #331d1d"
->
+<mat-dialog-content class="mat-typography" style="background-color: #331d1d">
   <form [formGroup]="promoForm" style="background-color: #331d1d">
     <div
       class="form-container mat-elevation-z8"
@@ -67,6 +67,7 @@
       <mat-form-field appearance="fill">
         <mat-label> Description </mat-label>
         <textarea
+          style="height: 5vw"
           matInput
           formControlName="description"
           placeholder="Input description"
@@ -84,6 +85,7 @@
       <mat-form-field appearance="fill">
         <mat-label> Image Url </mat-label>
         <textarea
+          style="height: 5vw"
           matInput
           formControlName="image_url"
           placeholder="Input Image Url"
@@ -103,5 +105,11 @@
 
 <mat-dialog-actions align="end">
   <button mat-button mat-dialog-close>Cancel</button>
-  <button mat-raised-button style="background-color: #9f3434; color: #ead6c5;" (click)="onSubmit()">Submit</button>
+  <button
+    mat-raised-button
+    style="background-color: #9f3434; color: #ead6c5"
+    (click)="onSubmit()"
+  >
+    Submit
+  </button>
 </mat-dialog-actions>

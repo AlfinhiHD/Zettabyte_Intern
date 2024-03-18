@@ -40,7 +40,7 @@
   padding-top: 5vw;
   display: flex;
   flex-wrap: wrap;
-  min-height: 60vw;
+  min-height: 50vw;
   justify-content: space-around;
   background-color: #e1b486;
   color: #331d1d;
@@ -90,3 +90,24 @@
   align-items: center;
   gap: 2vw; 
 }
+
+// @media screen and (max-width: 768px) {
+//   .promo-container {
+//     padding-top: 10vw; /* Menyesuaikan padding atas */
+//   }
+
+//   .manual-limit,
+//   .manual-pagination {
+//     margin-top: 2vw; /* Menyesuaikan margin atas */
+//   }
+
+//   .not-found-message {
+//     height: 50vw; /* Menyesuaikan tinggi */
+//     font-size: 4vw; /* Menyesuaikan ukuran font */
+//   }
+
+//   .not-found-message mat-icon {
+//     font-size: 6vw; /* Menyesuaikan ukuran ikon */
+//     margin-bottom: 4vw; /* Menyesuaikan margin bawah */
+//   }
+// }

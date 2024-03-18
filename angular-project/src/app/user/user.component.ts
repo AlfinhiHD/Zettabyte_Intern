@@ -4,6 +4,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { FormControl } from '@angular/forms';
 import { debounceTime } from 'rxjs';
 import { FoodType } from '../food/model/foodType';
+import { MatPaginator } from '@angular/material/paginator';
 
 @Component({
   selector: 'app-user',
@@ -18,6 +19,8 @@ export class UserComponent implements OnInit {
     'user_status',
     'position',
   ];
+
+  @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
 
   searchInputControl = new FormControl('');
 
@@ -39,7 +42,7 @@ export class UserComponent implements OnInit {
     lastNameSort: '',
     userStatusSort: '',
   };
-
+  
   constructor(private userService: UserService) {}
 
   ngOnInit(): void {
@@ -47,6 +50,8 @@ export class UserComponent implements OnInit {
       .pipe(debounceTime(1500))
       .subscribe((value) => {
         this.searchInput = value;
+        this.page = 0;
+        this.paginator.firstPage();
         this.getAllUsers();
       });
 

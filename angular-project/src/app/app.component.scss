@@ -22,7 +22,7 @@ mat-nav-list > a {
 }
 
 .toggle-button > mat-icon {
-    font-size: 2vw
+  font-size: 2vw;
 }
 
 .sidenav-list {
@@ -48,4 +48,17 @@ mat-nav-list > a {
   background-color: #9f3434;
   min-height: 100vh;
   padding: 2vw 2vw 5vw 2vw;
+}
+
+@media screen and (max-width: 900px) {
+  .sidenav-image {
+    width: 25vw;
+  }
+
+  .navbar-title {
+    font-size: 4vw;
+    padding-top: 2vw;
+    padding-right: 2vw;
+
+  }
 }

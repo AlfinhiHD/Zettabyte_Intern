@@ -42,7 +42,9 @@
     </mat-form-field>
   </div>
 
-  <mat-table
+  <div class="user-table-container">
+    <mat-table
+    class="user-table-content"
     #table
     [dataSource]="dataSource"
     matSort
@@ -91,6 +93,8 @@
     <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
     <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
   </mat-table>
+  </div>
+
 
   <ng-template #notFound>
     <div class="not-found-message">
