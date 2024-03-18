@@ -67,6 +67,7 @@
         style="color: black"
         (click)="previousPage()"
         [disabled]="page === 0"
+        [ngClass]="{ 'disabled-button': page === 0 }"
       >
         Previous
       </button>
@@ -79,7 +80,15 @@
         "
         >{{ page + 1 }}
       </span>
-      <button mat-button style="color: black" (click)="nextPage()">Next</button>
+      <button
+        mat-button
+        style="color: black"
+        (click)="nextPage()"
+        [disabled]="!hasNextPage"
+        [ngClass]="{ 'disabled-button': !hasNextPage }"
+      >
+        Next
+      </button>
     </div>
   </div>
 </div>

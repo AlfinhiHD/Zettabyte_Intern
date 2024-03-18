@@ -91,6 +91,11 @@
   gap: 2vw; 
 }
 
+.disabled-button {
+  cursor: not-allowed; 
+  opacity: 0.5;
+}
+
 // @media screen and (max-width: 768px) {
 //   .promo-container {
 //     padding-top: 10vw; /* Menyesuaikan padding atas */

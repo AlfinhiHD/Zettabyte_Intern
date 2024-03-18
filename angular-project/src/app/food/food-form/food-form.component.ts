@@ -104,6 +104,7 @@ export class FoodFormComponent implements OnInit {
   }
 
   onSubmit(): void {
+    console.log(this.foodForm)
     const formData = this.foodForm.value;
     console.log(formData);
     let successMessage = '';

@@ -16,6 +16,8 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   private promoSubscription: Subscription;
   searchInputControl = new FormControl('');
 
+  hasNextPage: boolean = true;
+
   isLoading: boolean = false;
   limit: number = 5;
   page: number = 0;
@@ -42,8 +44,18 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
       )
       .subscribe({
         next: (promo: any[]) => {
+          console.log(promo[0].count_document);
+
+          const totalCount = promo[0].count_document;
+          const currentPageCount = (this.page + 1) * this.limit;
+          if (currentPageCount >= totalCount) {
+            this.hasNextPage = false;
+          } else {
+            this.hasNextPage = true;
+          }
+
           if (promo.length === 0) {
-            this.Promos = promo
+            this.Promos = promo;
             this.isLoading = false;
           } else {
             this.Promos = promo;
@@ -66,7 +78,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
     dialogRef.afterClosed().subscribe((result) => {
       console.log('dialog result:', result);
       if (result === 'success') {
-        console.log("masuk")
+        console.log('masuk');
         this.getAllPromo();
       }
     });

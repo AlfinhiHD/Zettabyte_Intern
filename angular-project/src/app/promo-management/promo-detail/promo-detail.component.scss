@@ -37,6 +37,10 @@
   justify-content: flex-end;
 }
 
+::ng-deep .mat-dialog-container {
+  background-color: #331d1d;
+}
+
 @media screen and (max-width: 768px) {
   .promo-basic-info {
     display: block;
