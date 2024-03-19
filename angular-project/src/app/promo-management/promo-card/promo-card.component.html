@@ -11,12 +11,12 @@
         : 'https://via.placeholder.com/150'
     "
     alt="Photo of Promo"
-    style="width: 100%; max-height: 22vw; display: block; margin: 0 auto"
+    style="width: 100%; max-height: 22vw; display: block; margin: 0 auto; object-fit: cover;"
   />
 
   <mat-card-content>
   </mat-card-content>
-  <mat-card-actions align="end">
+  <mat-card-actions align="end" class="button-container">
     <button mat-raised-button color="warn" (click)="onDelete(promo._id)">
       Delete
     </button>

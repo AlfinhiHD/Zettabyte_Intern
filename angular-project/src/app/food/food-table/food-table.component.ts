@@ -71,8 +71,8 @@ export class FoodTableComponent implements OnInit {
   
       const searchProp = searchProps[this.selectedSearchType];
   
-      const isStockValid = this.stockFilter === null || isNaN(this.stockFilter) ? true : food.stock < this.stockFilter;
-      const isPopularityValid = this.popularityFilter === null || isNaN(this.popularityFilter) ? true : food.popularity < this.popularityFilter;
+      const isStockValid = this.stockFilter === null || isNaN(this.stockFilter) ? true : food.stock <= this.stockFilter;
+      const isPopularityValid = this.popularityFilter === null || isNaN(this.popularityFilter) ? true : food.popularity <= this.popularityFilter;
   
       return (
         searchProp.includes(searchValue) &&

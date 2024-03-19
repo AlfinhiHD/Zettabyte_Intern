@@ -15,20 +15,9 @@
       Add Promo
     </button>
 
-    <mat-form-field class="search-promo-field" appearance="fill">
-      <mat-label>Search by Title</mat-label>
-      <input matInput [formControl]="searchInputControl" />
-      <button
-        mat-button
-        matSuffix
-        mat-icon-button
-        aria-label="Clear"
-        *ngIf="searchInputControl.value"
-        (click)="clearSearchInput()"
-      >
-        <mat-icon>close</mat-icon>
-      </button>
-    </mat-form-field>
+    <div class="search-bar-container">
+      <input type="text" class="search-bar" [formControl]="searchInputControl" placeholder="Search here" />
+    </div>
   </div>
 
   <div *ngIf="Promos.length > 0; else notFound" class="promo-container">
@@ -50,15 +39,20 @@
   </ng-template>
 
   <div class="pagination-wrapper">
-    <div class="manual-limit" style="color: black">
-      <mat-form-field appearance="outline" class="manual-limit">
-        <mat-label style="color: black">Show:</mat-label>
-        <mat-select [(ngModel)]="limit" (ngModelChange)="updateLimit()">
-          <mat-option [value]="2">2</mat-option>
-          <mat-option [value]="5">5</mat-option>
-          <mat-option [value]="10">10</mat-option>
-        </mat-select>
-      </mat-form-field>
+    
+    <div class="select-pagination-container">
+      <p>Show:</p>
+      <select
+        [(ngModel)]="limit"
+        (ngModelChange)="updateLimit()"
+        name=""
+        id=""
+        class="select-pagination"
+      >
+        <option value="2">2</option>
+        <option value="5">5</option>
+        <option value="10">10</option>
+      </select>
     </div>
 
     <div class="manual-pagination">

@@ -2,7 +2,6 @@
 <div class="promo-detail-container">
   <div mat-dialog-content class="promo-basic-info">
     <div class="left-section-promo-detail">
-      <p>ID: {{ promo._id }}</p>
       <img
         mat-card-image
         [src]="
@@ -21,7 +20,7 @@
       <p><strong>Subtitle:</strong> {{ promo.sub_title }}</p>
     </div>
   </div>
-  <div style="margin-top: 3vw">
+  <div style="margin-top: 10px">
     <h3 class="promo-h3-title">Description :</h3>
     <p [innerHTML]="promo.description"></p>
   </div>

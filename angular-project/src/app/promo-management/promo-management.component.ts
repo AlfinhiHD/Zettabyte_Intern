@@ -22,7 +22,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   hasNextPage: boolean = true;
 
   isLoading: boolean = false;
-  limit: number = 5;
+  limit: number = 2;
   page: number = 0;
   title: string = '';
 
@@ -109,6 +109,7 @@ export class PromoManagementComponent implements OnInit, OnDestroy {
   }
 
   updateLimit(): void {
+    this.limit = Number(this.limit);
     this.getAllPromo();
   }
 

@@ -1,8 +1,15 @@
 .promo-card {
-  width: 20vw;
   padding: 2vw;
   margin: 2vw;
   height: auto;
   color: #331d1d;
   background-color: #f2d1b5;
+}
+
+::ng-deep .mat-card-header-text {
+  margin: 0 !important;
+}
+
+.button-container {
+  margin: 0 !important;
 }
