@@ -123,7 +123,7 @@ export class FoodFormComponent implements OnInit {
     }
 
     if (!this.id) {
-      formData.id = uuidv4();
+      formData._id = uuidv4();
       successMessage = 'Successfully added new data!';
       confirmButtonText = 'Yes, add it!';
     } else {

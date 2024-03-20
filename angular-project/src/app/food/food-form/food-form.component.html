@@ -112,13 +112,13 @@
       <input
         matInput
         formControlName="stock"
-        placeholder="{{ 'FOOD_FORM.stock' | translate }}"
+        placeholder="{{ 'FOOD_FORM.STOCK' | translate }}"
       />
-      <mat-hint>{{ "FOOD_FORM.stock_HINT" | translate }}</mat-hint>
+      <mat-hint>{{ "FOOD_FORM.STOCK_HINT" | translate }}</mat-hint>
       <mat-error
         *ngIf="foodForm.get('stock').invalid && foodForm.get('stock').touched"
       >
-        {{ "FOOD_FORM.stock_REQUIRED" | translate }}
+        {{ "FOOD_FORM.STOCK_REQUIRED" | translate }}
       </mat-error>
     </mat-form-field>
 
