@@ -1,0 +1,19 @@
+<div>
+  <div style="width: 50%; background-color: teal; color: white">
+    <ckeditor
+      [editor]="Editor"
+      data="<br><br><br><br><br><br><br><br><br>"
+      (ready)="onReady($event)"
+    ></ckeditor>
+  </div>
+  <button
+    mat-raised-button
+    color=""
+    (click)="onSubmit()"
+    style="margin-top: 2rem"
+  >
+    Submit
+  </button>
+
+  <!-- <app-ckeditor-output [editorData]="editorData"></app-ckeditor-output> -->
+</div>
