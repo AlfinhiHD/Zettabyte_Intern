@@ -20,8 +20,8 @@ export class FoodTableComponent implements OnInit {
 
   searchValue: string = '';
   typeValue: string = '';
-  stockFilter: number = null;
-  popularityFilter: number = null;
+  stockFilter: string
+  popularityFilter: string
 
   selectedSearchType: string = 'name';
 
@@ -61,15 +61,14 @@ export class FoodTableComponent implements OnInit {
     const filteredData = this.foodList.filter((food) => {
       const searchValue = this.combineWordsPipe.transform(this.searchValue);
       const typeValue = this.combineWordsPipe.transform(this.typeValue);
+      const stockNumber = +this.stockFilter;
+      const popularityNumber = +this.popularityFilter;
 
       const searchProps = {
         name: this.combineWordsPipe.transform(food.name),
         price: food.price.toString(),
       };
       const searchProp = searchProps[this.selectedSearchType];
-
-      const stockNumber = +this.stockFilter;
-      const popularityNumber = +this.popularityFilter;
 
       const isStockValid = stockNumber === 0 ? true : food.stock <= stockNumber;
       const isPopularityValid =
