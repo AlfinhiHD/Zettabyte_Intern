@@ -140,7 +140,7 @@
       </mat-error>
     </mat-form-field>
 
-    <h1 style="margin-top: 2vw">Ingredients</h1>
+    <h1 class="margin-top-2vw">Ingredients</h1>
     <div formArrayName="ingredients">
       <div
         *ngFor="
@@ -208,7 +208,7 @@
 
         <button
           mat-raised-button
-          style="margin-bottom: 10px"
+          class="margin-bottom-10px"
           type="button"
           (click)="removeField(inIngredients)"
           [disabled]="isFirstField(inIngredients)"
@@ -220,7 +220,7 @@
 
     <button
       mat-raised-button
-      style="margin-bottom: 10px"
+      class="margin-bottom-10px"
       type="button"
       (click)="addField()"
     >

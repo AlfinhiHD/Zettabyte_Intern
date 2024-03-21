@@ -5,30 +5,30 @@
         <mat-icon>arrow_back</mat-icon>
       </button>
       <div>
-        <h2>{{ food.name }}</h2>
-        <p class="food-type">{{ food.type }}</p>
+        <h2>{{ food?.name }}</h2>
+        <p class="food-type">{{ food?.type }}</p>
       </div>
     </div>
 
-    <img class="food-image" [src]="food.image.preview" alt="{{ food.name }}" />
+    <img class="food-image" [src]="food?.image?.preview" alt="{{ food?.name }}" />
     <div class="food-description">
       <h3 style="font-weight: 600">Description :</h3>
-      <p>{{ food.description }}</p>
+      <p>{{ food?.description }}</p>
     </div>
 
     <div class="food-information">
       <div class="food-ingredients">
         <h3 style="font-weight: 600">Ingredients :</h3>
-        <div *ngFor="let ingredient of food.ingredients">
-          <p>{{ ingredient.name }} - {{ ingredient.amount }}</p>
+        <div *ngFor="let ingredient of food?.ingredients">
+          <p>{{ ingredient?.name }} - {{ ingredient?.amount }}</p>
         </div>
       </div>
 
       <div class="food-basicinfo">
         <h3 style="font-weight: 600">Basic Information :</h3>
-        <p><strong>Price:</strong> ${{ food.price }}</p>
-        <p><strong>Stock:</strong> {{ food.stock }}</p>
-        <p><strong>Popularity:</strong> {{ food.popularity }}</p>
+        <p><strong>Price:</strong> ${{ food?.price }}</p>
+        <p><strong>Stock:</strong> {{ food?.stock }}</p>
+        <p><strong>Popularity:</strong> {{ food?.popularity }}</p>
       </div>
     </div>
 
@@ -36,7 +36,7 @@
       <button
         mat-raised-button
         color="warn"
-        (click)="onDeleteFood(food._id)"
+        (click)="onDeleteFood(food?._id)"
         style="margin-right: 10px"
       >
         Delete
@@ -45,7 +45,7 @@
         mat-raised-button
         style="background-color: #331d1d; color: #f2d1b5"
         [routerLink]="['/food/form']"
-        [queryParams]="{ id: food._id }"
+        [queryParams]="{ id: food?._id }"
       >
         Edit
       </button>

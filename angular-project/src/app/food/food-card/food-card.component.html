@@ -1,22 +1,22 @@
 <mat-card class="food-card">
   <mat-card-header>
-    <mat-card-title>{{ food.name | uppercase }}</mat-card-title>
-    <mat-card-subtitle>{{ food.type }}</mat-card-subtitle>
+    <mat-card-title>{{ food?.name | uppercase }}</mat-card-title>
+    <mat-card-subtitle>{{ food?.type }}</mat-card-subtitle>
   </mat-card-header>
   <img
     mat-card-image
-    [src]="food.image.cover"
-    [alt]="food.name"
+    [src]="food?.image?.cover"
+    [alt]="food?.name"
     class="food-image-card"
   />
   <mat-card-content>
     <div class="food-content-card">
-      <p>Price: ${{ food.price }} | Stock: {{ food.stock }}</p>
+      <p>Price: ${{ food?.price }} | Stock: {{ food?.stock }}</p>
     </div>
   </mat-card-content>
   <mat-card-actions>
     <div class="food-card-detail-button">
-      <button (click)="goToDetailFood(food._id)" mat-button>DETAIL</button>
+      <button (click)="goToDetailFood(food?._id)" mat-button>DETAIL</button>
     </div>
   </mat-card-actions>
 </mat-card>
