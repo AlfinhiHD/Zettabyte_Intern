@@ -11,18 +11,17 @@ import { CombineWordsPipe } from 'src/app/shared/pipes/combine-words/combine-wor
   selector: 'app-food-table',
   templateUrl: './food-table.component.html',
   providers: [CombineWordsPipe],
-  styleUrls: ['./food-table.component.scss']
+  styleUrls: ['./food-table.component.scss'],
 })
 export class FoodTableComponent implements OnInit {
-
   foodList: FoodType[] = [];
   dataSource = new MatTableDataSource<FoodType>();
   sortedData: FoodType[] = [];
 
   searchValue: string = '';
   typeValue: string = '';
-  stockFilter: number;
-  popularityFilter: number;
+  stockFilter: number = null;
+  popularityFilter: number = null;
 
   selectedSearchType: string = 'name';
 
@@ -33,7 +32,7 @@ export class FoodTableComponent implements OnInit {
     'price',
     'stock',
     'popularity',
-    'action'
+    'action',
   ];
 
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -42,7 +41,7 @@ export class FoodTableComponent implements OnInit {
   constructor(
     private foodService: FoodService,
     private router: Router,
-    private combineWordsPipe : CombineWordsPipe
+    private combineWordsPipe: CombineWordsPipe
   ) {}
 
   ngOnInit(): void {
@@ -62,27 +61,30 @@ export class FoodTableComponent implements OnInit {
     const filteredData = this.foodList.filter((food) => {
       const searchValue = this.combineWordsPipe.transform(this.searchValue);
       const typeValue = this.combineWordsPipe.transform(this.typeValue);
-  
+
       const searchProps = {
         name: this.combineWordsPipe.transform(food.name),
         price: food.price.toString(),
-        stock: food.stock.toString(), 
       };
-  
       const searchProp = searchProps[this.selectedSearchType];
-  
-      const isStockValid = this.stockFilter === null || isNaN(this.stockFilter) ? true : food.stock <= this.stockFilter;
-      const isPopularityValid = this.popularityFilter === null || isNaN(this.popularityFilter) ? true : food.popularity <= this.popularityFilter;
-  
+
+      const stockNumber = +this.stockFilter;
+      const popularityNumber = +this.popularityFilter;
+
+      const isStockValid = stockNumber === 0 ? true : food.stock <= stockNumber;
+      const isPopularityValid =
+        popularityNumber === 0 ? true : food.popularity <= popularityNumber;
+
       return (
         searchProp.includes(searchValue) &&
         (typeValue === '' ||
-          this.combineWordsPipe.transform(food.type.toLowerCase()) === typeValue) &&
+          this.combineWordsPipe.transform(food.type.toLowerCase()) ===
+            typeValue) &&
         isStockValid &&
         isPopularityValid
       );
     });
-  
+
     this.dataSource.data = filteredData;
   }
 
@@ -101,7 +103,7 @@ export class FoodTableComponent implements OnInit {
         case 'type':
           return this.compareString(a[sort.active], b[sort.active], isAsc);
         case 'price':
-        case 'stock' :
+        case 'stock':
         case 'popularity':
           return this.compareNumber(a[sort.active], b[sort.active], isAsc);
         default:
@@ -118,6 +120,22 @@ export class FoodTableComponent implements OnInit {
   compareNumber(a: number, b: number, isAsc: boolean) {
     console.log(a);
     return (a - b) * (isAsc ? 1 : -1);
+  }
+
+  filterInput(event: any) {
+    const allowedKeys = [
+      'Backspace',
+      'Delete',
+      'ArrowLeft',
+      'ArrowRight',
+      'Tab',
+      'End',
+      'Home',
+    ];
+
+    if (!/\d/.test(event.key) && !allowedKeys.includes(event.key)) {
+      event.preventDefault();
+    }
   }
 
   goToDetailfood(id: string) {

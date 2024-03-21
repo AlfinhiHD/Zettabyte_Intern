@@ -24,6 +24,7 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { AccentRemovalPipe } from './pipes/accent-removal/accent-removal.pipe';
 import { CombineWordsPipe } from './pipes/combine-words/combine-words.pipe';
+import { NumbersOnlyDirective } from './directives/numbers-only/numbers-only.directive';
 
 const modules: any = [
   ReactiveFormsModule,
@@ -54,7 +55,8 @@ const modules: any = [
 @NgModule({
   declarations: [
     AccentRemovalPipe,
-    CombineWordsPipe
+    CombineWordsPipe,
+    NumbersOnlyDirective
   ],
   imports: [CommonModule, ...modules],
   exports: [...modules],

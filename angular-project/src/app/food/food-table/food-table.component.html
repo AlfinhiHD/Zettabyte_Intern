@@ -13,7 +13,7 @@
     <mat-form-field class="stock-filter">
       <input
         matInput
-        type="number"
+        (keydown)="filterInput($event)"
         placeholder="Filter by Stock Left"
         [(ngModel)]="stockFilter"
         (ngModelChange)="filterFoods()"
@@ -22,7 +22,7 @@
     <mat-form-field class="popularity-filter">
       <input
         matInput
-        type="number"
+        (keydown)="filterInput($event)"
         placeholder="Filter by Popularity"
         [(ngModel)]="popularityFilter"
         (ngModelChange)="filterFoods()"
@@ -37,7 +37,6 @@
     >
       <mat-option value="name">Name</mat-option>
       <mat-option value="price">Price</mat-option>
-      <mat-option value="stock">Stock</mat-option>
     </mat-select>
   </mat-form-field>
 
