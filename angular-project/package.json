@@ -24,6 +24,7 @@
     "@ckeditor/ckeditor5-build-decoupled-document": "^41.2.1",
     "bootstrap": "^5.3.3",
     "bootstrap-icons": "^1.11.3",
+    "primeflex": "^1.0.0",
     "rxjs": "~7.5.0",
     "sweetalert2": "^11.10.6",
     "tslib": "^2.3.0",
