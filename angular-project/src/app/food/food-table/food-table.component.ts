@@ -61,8 +61,8 @@ export class FoodTableComponent implements OnInit {
     const filteredData = this.foodList.filter((food) => {
       const searchValue = this.combineWordsPipe.transform(this.searchValue);
       const typeValue = this.combineWordsPipe.transform(this.typeValue);
-      const stockNumber = +this.stockFilter;
-      const popularityNumber = +this.popularityFilter;
+      // const stockNumber = +this.stockFilter;
+      // const popularityNumber = +this.popularityFilter;
 
       const searchProps = {
         name: this.combineWordsPipe.transform(food.name),
@@ -70,17 +70,18 @@ export class FoodTableComponent implements OnInit {
       };
       const searchProp = searchProps[this.selectedSearchType];
 
-      const isStockValid = stockNumber === 0 ? true : food.stock <= stockNumber;
-      const isPopularityValid =
-        popularityNumber === 0 ? true : food.popularity <= popularityNumber;
+      // const isStockValid = stockNumber === 0 ? 0 : food.stock <= stockNumber;
+      // const isPopularityValid =
+      //   popularityNumber === 0 ? 0 : food.popularity <= popularityNumber;
 
       return (
         searchProp.includes(searchValue) &&
         (typeValue === '' ||
           this.combineWordsPipe.transform(food.type.toLowerCase()) ===
-            typeValue) &&
-        isStockValid &&
-        isPopularityValid
+            typeValue) 
+        //     &&
+        // isStockValid &&
+        // isPopularityValid
       );
     });
 
